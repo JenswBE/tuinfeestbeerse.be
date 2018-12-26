@@ -1,3 +1,9 @@
+# Nikola
+cache
+.doit.db
+__pycache__
+output
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
