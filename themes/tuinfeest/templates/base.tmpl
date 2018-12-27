@@ -1,8 +1,29 @@
 <%
+# Imports
 from datetime import date, timedelta
-parts = data['general']['start_date'].split('.')
+
+# Remap data to local vars (support file renaming)
+general = data['general']
+artists = data['artists']
+
+# Get dates
+parts = general['start_date'].split('.')
 date_sat = date(int(parts[2]), int(parts[1]), int(parts[0]))
 date_sun = date_sat + timedelta(days=1)
+today = date.today()
+
+# Get other vars
+name_facebook = general['links'].get('facebook').strip('/').split('/')[-1] if general['links'].get('facebook') else ''
+
+# Define helpers
+def link(url, content, blank=True):
+	target = '_blank' if blank else '_self'
+	return "<a href=\"{}\" target=\"{}\">{}</a>".format(url, target, content)
+
+def link_icon(url, icon, appendix=False, blank=True):
+	icon = "<i class=\"fa fa-{}\"></i>".format(icon)
+	content = "{} {}".format(icon, appendix) if appendix else icon
+	return link(url, content, blank)
 %>
 
 <!doctype html>
@@ -94,8 +115,10 @@ date_sun = date_sat + timedelta(days=1)
             </div>
         </div>
         <ul class="socile-share">
-            <li><a href="mailto:${data['general']['email']}"><i class="fa fa-envelope"></i> <span>${data['general']['email']}</span></a></li>
-            <li><a href="${data['general']['facebook']['url']}"><i class="fa fa-facebook"></i> ${data['general']['facebook']['name']}</a></li>
+            <li>${link_icon("mailto:" + general['email'], "envelope", "<span>{}</span>".format(general['email']))}</li>
+            %if name_facebook:
+            	<li>${link_icon(general['links']['facebook'], "facebook", name_facebook)}</li>
+            %endif
         </ul>
         <div class="scrolldown">
             <a href="#pages">
@@ -110,7 +133,7 @@ date_sun = date_sat + timedelta(days=1)
             <div class="row">
                 <div class="col-lg-12 col-12">
                     <div class="about-wrap">
-                        ${data['general']['description']}
+                        ${general['description']}
                     </div>
                 </div>
             </div>
@@ -642,7 +665,7 @@ date_sun = date_sat + timedelta(days=1)
             </div>
         </div>
         <div class="row no-gutters">
-        	%for artist in data['artists']:
+        	%for artist in artists:
             <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
                 <div class="speaker-wrap">
                     <img src="/images/artists/${artist.get('picture')}" alt="">
@@ -651,9 +674,9 @@ date_sun = date_sat + timedelta(days=1)
                         <span>${artist['type']}</span>
                         <p>${artist['description']}</p>
                         <ul class="speaker-flow d-flex">
-                        	%for link in artist['links'].items():
-                        		%if link[1]:
-                            		<li><a href="${link[1]}" target="_blank"><i class="fa fa-${link[0]}"></i></a></li>
+                        	%for name, url in artist['links'].items():
+                        		%if url:
+                            		<li>${link_icon(url, name)}</li>
                             	%endif
                             %endfor
                         </ul>
@@ -818,15 +841,16 @@ date_sun = date_sat + timedelta(days=1)
             <div class="row">
                 <div class="col-md-8 col-12">
                     <div class="copyright">
-                        <p>&copy; <span>Jensw.be</span> ${date_sat.year}</p>
+                        <p>&copy; <a href="https://jensw.be" target="_blank" style="color: #f90048">Jensw.be</a> ${today.year}</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-12">
                     <ul class="socil-icon justify-content-end d-flex">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    	%for name, url in general['links'].items():
+                        		%if url:
+                            		<li>${link_icon(url, name)}</li>
+                            	%endif
+                        %endfor
                     </ul>
                 </div>
             </div>

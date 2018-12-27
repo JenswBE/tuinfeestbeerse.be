@@ -1,8 +1,12 @@
 start_date: 29.06.2019 # Datum van zaterdag in formaat DD.MM.YYYY
+
 email: info@tuinfeestbeerse.be
-facebook:
-  name: TuinfeestBeerse
-  url: https://www.facebook.com/TuinfeestBeerse/
+
+links: # Elk icoon op https://fontawesome.com/icons is ondersteund. Formaat = "icoon: link"
+  facebook: https://www.facebook.com/TuinfeestBeerse/
+  instagram: https://www.instagram.com/tuinfeest_beerse/
+  youtube: https://www.youtube.com/channel/UCdN0ff4rGCs9QGIcFIUlDXA
+
 description: >
   <h2>Over Tuinfeest</h2>
   <p>In 1985 heeft jeugdhuis Korridor (toen nog Jeugdhuis Krinkel) de eerste keer het initiatief genomen
