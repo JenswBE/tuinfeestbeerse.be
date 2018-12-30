@@ -5,6 +5,7 @@ from datetime import date, timedelta
 # Remap data to local vars (support file renaming)
 general = data['general']
 artists = data['artists']
+sponsors = data['sponsors']
 
 # Get dates
 parts = general['start_date'].split('.')
@@ -668,18 +669,24 @@ def link_icon(url, icon, appendix=False, blank=True):
         	%for artist in artists:
             <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
                 <div class="speaker-wrap">
-                    <img src="/images/artists/${artist.get('picture')}" alt="">
+                    <img src="/images/artists/${artist['picture']}" alt="">
                     <div class="speaker-content flex-style">
                         <h3>${artist['name']}</h3>
-                        <span>${artist['type']}</span>
-                        <p>${artist['description']}</p>
-                        <ul class="speaker-flow d-flex">
-                        	%for name, url in artist['links'].items():
-                        		%if url:
-                            		<li>${link_icon(url, name)}</li>
-                            	%endif
-                            %endfor
-                        </ul>
+                        %if artist.get('type'):
+                        	<span>${artist['type']}</span>
+                    	%endif
+                    	%if artist.get('description'):
+                        	<p>${artist['description']}</p>
+                        %endif
+                        %if artist.get('links'):
+	                        <ul class="speaker-flow d-flex">
+	                        	%for name, url in artist['links'].items():
+	                        		%if url:
+	                            		<li>${link_icon(url, name)}</li>
+	                            	%endif
+	                            %endfor
+	                        </ul>
+                        %endif
                     </div>
                 </div>
             </div>
@@ -700,88 +707,16 @@ def link_icon(url, icon, appendix=False, blank=True):
             </div>
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 col-sm-10 offset-sm-1 col-12">
-                    <div class="row">
-                        <div class="col-sm-4 col-6">
-                            <div class="sponsor-wrap">
-                                <a href="#">
-                                    <img src="/images/sponsor/1.png" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 col-6">
-                            <div class="sponsor-wrap">
-                                <a href="#">
-                                    <img src="/images/sponsor/1.png" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 col-6 d-sm-block d-none">
-                            <div class="sponsor-wrap">
-                                <a href="#">
-                                    <img src="/images/sponsor/1.png" alt="">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3 col-6">
-                    <div class="sponsor-wrap">
-                        <a href="#">
-                            <img src="/images/sponsor/1.png" alt="">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-3 col-6">
-                    <div class="sponsor-wrap">
-                        <a href="#">
-                            <img src="/images/sponsor/1.png" alt="">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-3 col-6">
-                    <div class="sponsor-wrap">
-                        <a href="#">
-                            <img src="/images/sponsor/1.png" alt="">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-3 col-6">
-                    <div class="sponsor-wrap">
-                        <a href="#">
-                            <img src="/images/sponsor/1.png" alt="">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-6 offset-lg-3 col-sm-8 offset-sm-2">
-                    <div class="row">
-                        <div class="col-sm-6 col-6">
-                            <div class="sponsor-wrap">
-                                <a href="#">
-                                    <img src="/images/sponsor/1.png" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-6">
-                            <div class="sponsor-wrap">
-                                <a href="#">
-                                    <img src="/images/sponsor/1.png" alt="">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 offset-lg-4 col-sm-4 offset-sm-4 col-6">
-                    <div class="sponsor-wrap">
-                        <a href="#">
-                            <img src="/images/sponsor/1.png" alt="">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-4 col-6 d-sm-none d-block">
-                    <div class="sponsor-wrap">
-                        <a href="#">
-                            <img src="/images/sponsor/1.png" alt="">
-                        </a>
+                	<div class="row">
+                		%for sponsor in sponsors:
+	                        <div class="col-sm-4 col-6">
+	                            <div class="sponsor-wrap">
+	                                <a href="${sponsor['link']}" target="_blank">
+	                                    <img src="/images/sponsor/${sponsor['picture']}" alt="${sponsor['title']}">
+	                                </a>
+	                            </div>
+	                        </div>
+                    	%endfor
                     </div>
                 </div>
             </div>

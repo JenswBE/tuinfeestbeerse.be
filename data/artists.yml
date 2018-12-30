@@ -1,3 +1,6 @@
+# Verplichte velden: name, picture
+# Standaard foto's voor artiesten zonder foto's: dj.jpg, band.jpg
+
 - name: DJ Polleke
   type: All-round DJ
   description: >
@@ -11,16 +14,88 @@
     topschijf en een paar platen van formaat voor de afwisseling.
   picture: polleke.jpg
   links:
-    facebook: fb
-    twitter: tw
-    youtube:
+    facebook: https://www.facebook.com/DJ-POLLEKE-225905228432/
+    youtube: https://www.youtube.com/channel/UCwE_Gdx71HxVaOxERTX9wgg
 
-- name: 
-  type:
-  description:
-  picture: 1.jpg
+
+- name: Celis
+  type:  All-round DJ
+  description: >
+    Opgericht op 2015. Dj Contests:<br/>
+      - Winner Neon Creatures 2017 Dj Contest<br/>
+      - Winner Back To School Dj Contest<br/>
+      - Winner Project X<br/>
+      - IKON Dj Contest
+  picture: celis.jpg
   links:
-    facebook:
-    twitter:
-    youtube:
-  
+    facebook: www.facebook.com/celisofficial
+    soundcloud: https://soundcloud.com/celisbe
+
+
+- name: DJ Lenny
+  type:  All-round DJ
+  picture: 0dj.jpg
+
+
+- name: Lucky Ones
+  type:  All-round DJ
+  description: Mathias Sterkens &amp; Stijn Vervoort uit Beerse
+  picture: lucky-ones.jpg
+
+
+- name: Band Marginal
+  type: Party-fun-rock-show-band
+  description: >
+    Acht wannabe-rockstar-figuren lopen elkaar toevallig tegen het lijf op de grens van
+    New Malle &amp; Zoersel-City, het rock &amp; roll-epicentrum van de Antwerpse Kempen
+    zeg maar...<br/><br/>
+    Zwaar gefrustreerd na alle rock &amp; roll mislukkingen van de laatste jaren besluiten
+    de heren de krachten te bundelen en voor een nieuwe revelatie in de &quot;scene&quot; te zorgen.
+    En dat lukt!!! Band Marginal groeit uit tot een heuse party-fun-rock-show-band, beschikt
+    over de nodige muzikale bagage en een open minded instelling. Een zeeeer open minded instelling!!!
+  picture: band-marginal.jpg
+
+
+- name: The Juice
+  type: Rock, Dirty Dancing and Pounding Classy Music
+  description: >
+    11 Jaar geleden werd in de Antwerpse Kempen de legendarische coverband The Jewish Hardrock Band
+    opgericht. Enkele jonge knapen kozen wat rock-covers uit en begonnen de lokale podia onveilig te
+    maken. Nu, een dikke tien jaar later, was het tijd om het over een andere boeg te gooien!
+    Versterkt door vrouwen-gezang en wat meer muzikale variatie dan in de begin jaren begint THE
+    JUICE aan een nieuw, legendarisch avontuur!!
+  picture: the-juice.jpg
+
+
+- name: Mr. Jack &amp; Dirty
+  type: Party-fun-rock-show-band
+  description: >
+    Opzoek naar een geweldig Dj Duo dat je evenement naar een hoger niveau tilt?!<br>
+    Mr Jack &amp; Dirty staan garant voor een geweldige sfeer op jouw evenement, door hun jaren
+    ervaring als ras echte all around Dj’s weten ze onmiddellijk hoe ze op het publiek moeten inspelen!
+    Niemand blijf stilzitten als deze 2 heren passeren! Privé feest, fuif, verjaardag of bedrijfsfeest?
+    ze kunnen ze het, en doen het ook!
+  picture: jack-dirty.jpg
+
+
+- name: Chackie Jam
+  type: Guility pleasure synthpop
+  description: >
+    Chackie Jam is opgestart op 16 maart 2018. Deze jonge band bestaat uit: Joey, Tom, Dilys, Jasmin,
+    Shari &amp; Vincent. Zij hebben dit jaar deelgenomen aan 'De Nieuwe Lichting' van Studio Brussel.
+    Via dit kanaal hebben wij voor deze band gekozen. Kom hen zeker horen in onze enige echte Live On Stage.
+  picture: chackie-jam.jpg
+
+
+- name: Vzw Salsmanians
+  type: Salsa
+  description: >
+    Opgericht op 1 juli 2009. Dansclub van vrijwilligers, voor salsa &amp; andere caribische dansen.
+    Wij verzorgen danslessen, workshops, initiaties, party's, demo's, salsadj-sets, ..
+    Salsacorner @ Tuinfeest Beerse<br>
+    FREE OPEN AIR PARTY<br>
+    20.30 initiation by Patrick Rosheuvel and Salsmanians Beerse www.salsacursus.be<br>
+    21.15 - 02.00 open air party with DJ SALSMANIAN! + animation by Patrick Rosheuvel<br>
+    FREE OPEN AIR PARTY (wooden floor, cocktailbar)<br>
+    Organised by JH Korridor Beerse, SalsaCorner supported by Salsmanians Beerse.
+  picture: salsa-manians.jpg
