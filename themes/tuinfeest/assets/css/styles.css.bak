@@ -15,7 +15,7 @@
     4. about-area start
     5. schedule-area start
     6. speaker-area start
-    7. partner-area start
+    7. sponsor-area start
     8. pricing-area start
     9. testimonial-area start
     10. content-area start
@@ -871,26 +871,26 @@ ul.menu.active {
 /*-------speaker-area end-------*/
 
 
-/*-------partner-area start-------*/
+/*-------sponsor-area start-------*/
 
-.partner-area {
+.sponsor-area {
     padding: 120px 0px 90px;
 }
 
-.partner-wrap {
+.sponsor-wrap {
     text-align: center;
     margin-bottom: 30px;
 }
-.partner-wrap a{
+.sponsor-wrap a{
 	display: block;
 	border: 1px solid #35353520;
 	padding: 20px;
 }
-.partner-wrap a:hover{
+.sponsor-wrap a:hover{
 	border-color: #f9004830;
 }
 
-/*-------partner-area end-------*/
+/*-------sponsor-area end-------*/
 
 /*-------pricing-area start-------*/
 
@@ -1311,20 +1311,20 @@ ul.menu.active {
 
 /*------video-area end------*/
 
-.partner-area2 {
+.sponsor-area2 {
     padding: 120px 0px 90px;
     position: relative;
 }
 
-.partner-area2:before,
-.partner-area2:after {
+.sponsor-area2:before,
+.sponsor-area2:after {
     position: absolute;
     content: "";
     z-index: -9;
     opacity: .3;
 }
 
-.partner-area2:before {
+.sponsor-area2:before {
     right: 30px;
     top: 50px;
     width: 510px;
@@ -1332,7 +1332,7 @@ ul.menu.active {
     background: url(../images/bg/2.png) no-repeat center center / cover;
 }
 
-.partner-area2:after {
+.sponsor-area2:after {
     left: 30px;
     bottom: 50px;
     width: 275px;

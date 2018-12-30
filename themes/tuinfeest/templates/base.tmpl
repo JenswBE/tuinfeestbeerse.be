@@ -27,6 +27,13 @@ def link_icon(url, icon, appendix=False, blank=True):
 	return link(url, content, blank)
 %>
 
+<%def name="menu_links()">
+	<li><a href="#about">Over Tuinfeest</a></li>
+    <li><a href="#time-table">Time table</a></li>
+    <li><a href="#artists">Artiesten</a></li>
+    <li><a href="#partners">Sponsors</a></li>
+</%def>
+
 <!doctype html>
 <html class="no-js" lang="nl">
 
@@ -65,9 +72,7 @@ def link_icon(url, icon, appendix=False, blank=True):
                 <div class="col-lg-8 d-none d-lg-block">
                     <div class="mainmenu">
                         <ul class="d-flex justify-content-end">
-                            <li><a href="#about">Over Tuinfeest</a></li>
-                            <li><a href="#time-table">Time table</a></li>
-                            <li><a href="#artists">Artiesten</a></li> 
+                            ${menu_links()}
                         </ul>
                     </div>
                 </div>
@@ -86,9 +91,7 @@ def link_icon(url, icon, appendix=False, blank=True):
                 <div class="row">
                     <div class="col-12">
                         <ul class="metismenu">
-							<li><a href="#about">Over Tuinfeest</a></li>
-                            <li><a href="#time-table">Time table</a></li>
-                            <li><a href="#artists">Artiesten</a></li> 
+							${menu_links()}
                         </ul>
                     </div>
                 </div>
@@ -122,15 +125,15 @@ def link_icon(url, icon, appendix=False, blank=True):
             %endif
         </ul>
         <div class="scrolldown">
-            <a href="#pages">
-                <img src="/asserts/images/scroll.png" alt="">
+            <a href="#about">
+                <img src="/assets/images/scroll.png" alt="">
             </a>
         </div>
     </div>
     <!-- slider-area end -->
     <!-- about-area start -->
-    <div class="about-area" id="pages">
-        <div class="container" id="about">
+    <div class="about-area" id="about">
+        <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-12">
                     <div class="about-wrap">
@@ -655,7 +658,7 @@ def link_icon(url, icon, appendix=False, blank=True):
     </div>
     <!-- schedule-area end -->
     <!-- speaker-area start -->
-    <div class="speaker-area">
+    <div class="speaker-area" id="artists">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -694,8 +697,8 @@ def link_icon(url, icon, appendix=False, blank=True):
         </div>
     </div>
     <!-- speaker-area end -->
-    <!-- sponsor-area start -->
-    <div class="sponsor-area">
+    <!-- partner-area start -->
+    <div class="partner-area" id="partners">
         <div class="container">
             <div class="row">
                 <div class="col-12">
