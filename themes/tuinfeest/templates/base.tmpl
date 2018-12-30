@@ -1,20 +1,87 @@
 <%
 # Imports
-from datetime import date, timedelta
+from datetime import date, timedelta, datetime
+from collections import OrderedDict
+from sys import exit
+import logging
 
 # Remap data to local vars (support file renaming)
-general = data['general']
-artists = data['artists']
-sponsors = data['sponsors']
+general_conf = data['general']
+artists_conf = data['artists']
+sponsors_conf = data['sponsors']
+timetable_conf = data['timetable']
 
 # Get dates
-parts = general['start_date'].split('.')
+parts = general_conf['start_date'].split('.')
 date_sat = date(int(parts[2]), int(parts[1]), int(parts[0]))
 date_sun = date_sat + timedelta(days=1)
 today = date.today()
 
 # Get other vars
-name_facebook = general['links'].get('facebook').strip('/').split('/')[-1] if general['links'].get('facebook') else ''
+name_facebook = general_conf['links'].get('facebook').strip('/').split('/')[-1] if general_conf['links'].get('facebook') else ''
+
+# Build time table
+if timetable_conf['settings']['show_timetable']:
+	days = []
+	
+	# Build lookup table
+	for day in timetable_conf['timetable']:
+		day_dict = {
+			'name': day['name'],
+			'start': datetime.strptime(day['start'], '%d.%m.%Y %H:%M'),
+			'end': datetime.strptime(day['end'], '%d.%m.%Y %H:%M'),
+			'locations': [],
+			'shows': [],
+		}
+		for location in day['locations']:
+			day_dict['locations'].append(location['name'])
+			for k, show in enumerate(location['shows']):
+				date_from = (day_dict['end'] if show['from'].startswith('0') else day_dict['start']).strftime('%d.%m.%Y ')
+				date_to = (day_dict['end'] if show['to'].startswith('0') else day_dict['start']).strftime('%d.%m.%Y ')
+				show_dict = {
+					'start': datetime.strptime(date_from + show['from'], '%d.%m.%Y %H:%M'),
+					'end': datetime.strptime(date_to + show['to'], '%d.%m.%Y %H:%M'),
+					'artist': show['artist'],
+					'location': location['name'],
+				}
+				day_dict['shows'].append(show_dict)
+		days.append(day_dict)
+	
+	# Build time table
+	timetable = OrderedDict()
+	half_hour = timedelta(minutes = 30)
+	for day in days:
+		current_start = day['start']
+		slots = []
+		while current_start < day['end']:
+			shows = []
+			current_end = current_start + half_hour
+			for location in day['locations']:
+				result = [s for s in day['shows'] if s['location'] == location and s['start'] <= current_start and s['end'] > current_start]
+				if len(result) == 1:
+					show = result[0]
+					if show['start'] == current_start:
+						shows.append({
+							'artist': show['artist'],
+							'length': (show['end'] - show['start']) / half_hour,
+						})
+				elif len(result) == 0:
+					shows.append({})
+				else:
+					logging.error("Overlapping time slices in shows: {}. Exiting ...".format(result))
+					exit(1)
+			slots.append({
+				'time': "{} - {}".format(current_start.strftime('%H:%M'), current_end.strftime('%H:%M')),
+				'shows': shows
+			})
+			current_start += half_hour
+		timetable[day['name']] = {
+			'locations': day['locations'],
+			'slots': slots,
+		}
+
+logging.error(repr(days))
+logging.error(repr(timetable))
 
 # Define helpers
 def link(url, content, blank=True):
@@ -29,9 +96,15 @@ def link_icon(url, icon, appendix=False, blank=True):
 
 <%def name="menu_links()">
 	<li><a href="#about">Over Tuinfeest</a></li>
-    <li><a href="#time-table">Time table</a></li>
-    <li><a href="#artists">Artiesten</a></li>
-    <li><a href="#partners">Sponsors</a></li>
+	%if timetable_conf['settings']['show_timetable']:
+    	<li><a href="#time-table">Time table</a></li>
+   	%endif
+   	%if artists_conf['settings']['show_artists']:
+    	<li><a href="#artists">Artiesten</a></li>
+    %endif
+   	%if sponsors_conf['settings']['show_sponsors']:
+    	<li><a href="#partners">Sponsors</a></li>
+	%endif
 </%def>
 
 <!doctype html>
@@ -119,9 +192,9 @@ def link_icon(url, icon, appendix=False, blank=True):
             </div>
         </div>
         <ul class="socile-share">
-            <li>${link_icon("mailto:" + general['email'], "envelope", "<span>{}</span>".format(general['email']))}</li>
+            <li>${link_icon("mailto:" + general_conf['email'], "envelope", "<span>{}</span>".format(general_conf['email']))}</li>
             %if name_facebook:
-            	<li>${link_icon(general['links']['facebook'], "facebook", name_facebook)}</li>
+            	<li>${link_icon(general_conf['links']['facebook'], "facebook", name_facebook)}</li>
             %endif
         </ul>
         <div class="scrolldown">
@@ -137,595 +210,132 @@ def link_icon(url, icon, appendix=False, blank=True):
             <div class="row">
                 <div class="col-lg-12 col-12">
                     <div class="about-wrap">
-                        ${general['description']}
+                        ${general_conf['description']}
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- about-area end -->
-    <!-- schedule-area start -->
-    <div class="schedule-area bg-1" id="time-table">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-title text-center">
-                        <h2>Time table</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <ul class="nav schedule-menu">
-                        <li><a class="active" data-toggle="tab" href="#event">Alle podia</a></li>
-                        <li><a data-toggle="tab" href="#festivity">Tent</a></li>
-                        <li><a data-toggle="tab" href="#masterclass">Gazonfuif</a></li>
-                        <li><a data-toggle="tab" href="#seminar">Salsa</a></li>
-                    </ul>
-                </div>
-                <div class="col-12">
-                    <div class="tab-content">
-                        <div class="tab-pane fade show active" id="event">
-                            <div class="schedule-wrap">
-                                <table class="table-responsive">
-                                    <thead>
-                                        <tr>
-                                            <th>Van</th>
-                                            <th>Tot</th>
-                                            <th>Podium</th>
-                                            <th>Artiest</th>
-                                            <th>Genre</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="time">8:00</td>
-                                            <td>
-                                                <p>Registration With Coffee</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td>
-                                                <p>Company Presentation</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td>
-                                                <p>Open Discussion</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="time">9:00</td>
-                                            <td>
-                                                <p>Company Presentation</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td>
-                                                <p>Design Your Name</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td></td>
-                                            <td>
-                                                <p>Open Discussion</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="time">10:00</td>
-                                            <td>
-                                                <p>Company Presentation</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td></td>
-                                            <td>
-                                                <p>Design Your Name</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td>
-                                                <p>Open Discussion</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="time">11:00</td>
-                                            <td>
-                                                <p>Design Your Name</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td>
-                                                <p>Open Discussion</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td>
-                                                <p>Company Presentation</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td class="party">Final Word & Party</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="festivity">
-                            <div class="schedule-wrap">
-                                <table class="table-responsive">
-                                    <thead>
-                                        <tr>
-                                            <th class="time"><i class="fa fa-clock-o"></i></th>
-                                            <th>Monday</th>
-                                            <th>Tuesday</th>
-                                            <th>Wednesday</th>
-                                            <th>Thursday</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="time">8:00</td>
-                                            <td>
-                                                <p>Company Presentation</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td>
-                                                <p>Design Your Name</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td></td>
-                                            <td>
-                                                <p>Open Discussion</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="time">9:00</td>
-                                            <td>
-                                                <p>Registration With Coffee</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td>
-                                                <p>Company Presentation</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td>
-                                                <p>Open Discussion</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="time">10:00</td>
-                                            <td>
-                                                <p>Design Your Name</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td>
-                                                <p>Open Discussion</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td></td>
-                                            <td>
-                                                <p>Company Presentation</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="time">11:00</td>
-                                            <td>
-                                                <p>Company Presentation</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td></td>
-                                            <td>
-                                                <p>Design Your Name</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td>
-                                                <p>Open Discussion</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="masterclass">
-                            <div class="schedule-wrap">
-                                <table class="table-responsive">
-                                    <thead>
-                                        <tr>
-                                            <th class="time"><i class="fa fa-clock-o"></i></th>
-                                            <th>Monday</th>
-                                            <th>Tuesday</th>
-                                            <th>Wednesday</th>
-                                            <th>Thursday</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="time">8:00</td>
-                                            <td>
-                                                <p>Registration With Coffee</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td>
-                                                <p>Company Presentation</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td>
-                                                <p>Open Discussion</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="time">9:00</td>
-                                            <td>
-                                                <p>Company Presentation</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td>
-                                                <p>Design Your Name</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td></td>
-                                            <td>
-                                                <p>Open Discussion</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="time">10:00</td>
-                                            <td>
-                                                <p>Company Presentation</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td></td>
-                                            <td>
-                                                <p>Design Your Name</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td>
-                                                <p>Open Discussion</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="time">11:00</td>
-                                            <td>
-                                                <p>Design Your Name</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td>
-                                                <p>Open Discussion</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td>
-                                                <p>Company Presentation</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td class="party">Final Word & Party</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="seminar">
-                            <div class="schedule-wrap">
-                                <table class="table-responsive">
-                                    <thead>
-                                        <tr>
-                                            <th class="time"><i class="fa fa-clock-o"></i></th>
-                                            <th>Monday</th>
-                                            <th>Tuesday</th>
-                                            <th>Wednesday</th>
-                                            <th>Thursday</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="time">8:00</td>
-                                            <td>
-                                                <p>Company Presentation</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td>
-                                                <p>Design Your Name</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td></td>
-                                            <td>
-                                                <p>Open Discussion</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="time">9:00</td>
-                                            <td>
-                                                <p>Registration With Coffee</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td>
-                                                <p>Company Presentation</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td>
-                                                <p>Open Discussion</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="time">10:00</td>
-                                            <td>
-                                                <p>Design Your Name</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td>
-                                                <p>Open Discussion</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td></td>
-                                            <td>
-                                                <p>Company Presentation</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="time">11:00</td>
-                                            <td>
-                                                <p>Company Presentation</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td></td>
-                                            <td>
-                                                <p>Design Your Name</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td>
-                                                <p>Open Discussion</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="sponsors">
-                            <div class="schedule-wrap">
-                                <table class="table-responsive">
-                                    <thead>
-                                        <tr>
-                                            <th class="time"><i class="fa fa-clock-o"></i></th>
-                                            <th>Monday</th>
-                                            <th>Tuesday</th>
-                                            <th>Wednesday</th>
-                                            <th>Thursday</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="time">8:00</td>
-                                            <td>
-                                                <p>Registration With Coffee</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td>
-                                                <p>Company Presentation</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td>
-                                                <p>Open Discussion</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="time">9:00</td>
-                                            <td>
-                                                <p>Company Presentation</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td>
-                                                <p>Design Your Name</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td></td>
-                                            <td>
-                                                <p>Open Discussion</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="time">10:00</td>
-                                            <td>
-                                                <p>Company Presentation</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td></td>
-                                            <td>
-                                                <p>Design Your Name</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td>
-                                                <p>Open Discussion</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="time">11:00</td>
-                                            <td>
-                                                <p>Design Your Name</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td>
-                                                <p>Open Discussion</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td>
-                                                <p>Company Presentation</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td class="party">Final Word & Party</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="workshop">
-                            <div class="schedule-wrap">
-                                <table class="table-responsive">
-                                    <thead>
-                                        <tr>
-                                            <th class="time"><i class="fa fa-clock-o"></i></th>
-                                            <th>Monday</th>
-                                            <th>Tuesday</th>
-                                            <th>Wednesday</th>
-                                            <th>Thursday</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="time">8:00</td>
-                                            <td>
-                                                <p>Company Presentation</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td>
-                                                <p>Design Your Name</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td></td>
-                                            <td>
-                                                <p>Open Discussion</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="time">9:00</td>
-                                            <td>
-                                                <p>Registration With Coffee</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td>
-                                                <p>Company Presentation</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td>
-                                                <p>Open Discussion</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="time">10:00</td>
-                                            <td>
-                                                <p>Design Your Name</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td>
-                                                <p>Open Discussion</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td></td>
-                                            <td>
-                                                <p>Company Presentation</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="time">11:00</td>
-                                            <td>
-                                                <p>Company Presentation</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td></td>
-                                            <td>
-                                                <p>Design Your Name</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                            <td>
-                                                <p>Open Discussion</p>
-                                                <span>Lorem ipsum dolor sit amet, ne graecis epicurei.</span>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- schedule-area end -->
-    <!-- speaker-area start -->
-    <div class="speaker-area" id="artists">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-title text-center">
-                        <h2>Artiesten</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row no-gutters">
-        	%for artist in artists:
-            <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
-                <div class="speaker-wrap">
-                    <img src="/images/artists/${artist['picture']}" alt="">
-                    <div class="speaker-content flex-style">
-                        <h3>${artist['name']}</h3>
-                        %if artist.get('type'):
-                        	<span>${artist['type']}</span>
-                    	%endif
-                    	%if artist.get('description'):
-                        	<p>${artist['description']}</p>
-                        %endif
-                        %if artist.get('links'):
-	                        <ul class="speaker-flow d-flex">
-	                        	%for name, url in artist['links'].items():
-	                        		%if url:
-	                            		<li>${link_icon(url, name)}</li>
-	                            	%endif
-	                            %endfor
-	                        </ul>
-                        %endif
-                    </div>
-                </div>
-            </div>
-            %endfor
-        </div>
-    </div>
-    <!-- speaker-area end -->
-    <!-- partner-area start -->
-    <div class="partner-area" id="partners">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-title text-center">
-                        <h2>Onze Sponsors</h2>
-                        <p>Onze Sponsors voor Tuinfeest ${date_sat.year}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2 col-sm-10 offset-sm-1 col-12">
-                	<div class="row">
-                		%for sponsor in sponsors:
-	                        <div class="col-sm-4 col-6">
-	                            <div class="partner-wrap">
-	                                <a href="${sponsor['link']}" target="_blank">
-	                                    <img src="/images/sponsor/${sponsor['picture']}" alt="${sponsor['title']}">
-	                                </a>
+    
+	%if timetable_conf['settings']['show_timetable']:
+	    <!-- schedule-area start -->
+	    <div class="schedule-area bg-1" id="time-table">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-12">
+	                    <div class="section-title text-center">
+	                        <h2>Time table</h2>
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="row">
+	                <div class="col-12">
+	                    <div class="tab-content">
+	                        <div class="tab-pane fade show active">
+	                            <div class="schedule-wrap table-responsive">
+	                                <table>
+	                                    <thead>
+	                                        <tr>
+	                                            <th class="time"><i class="fa fa-clock-o"></i></th>
+	                                            %for location in timetable['Zaterdag']['locations']:
+	                                            	<th>${location}</th>
+                                            	%endfor
+	                                        </tr>
+	                                    </thead>
+	                                    <tbody>
+	                                    	%for slot in timetable['Zaterdag']['slots']:
+		                                        <tr>
+		                                            <td class="time">${slot['time']}</td>
+		                                            %for show in slot['shows']:
+		                                            	<td rowspan="${int(show['length']) if show.get('length') else 1}">
+		                                            		<p>${show['artist'] if show.get('artist') else ''}</p>		
+	                                            		</td>
+		                                            %endfor
+		                                        </tr>
+	                                        %endfor
+	                                    </tbody>
+	                                </table>
 	                            </div>
 	                        </div>
-                    	%endfor
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- sponsor-area end -->
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	    <!-- schedule-area end -->
+	%endif
+	
+    %if artists_conf['settings']['show_artists']:
+	    <div class="speaker-area" id="artists">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-12">
+	                    <div class="section-title text-center">
+	                        <h2>Artiesten</h2>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	        <div class="row no-gutters">
+	        	%for artist in artists_conf['artists']:
+	            <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+	                <div class="speaker-wrap">
+	                    <img src="/images/artists/${artist['picture']}" alt="">
+	                    <div class="speaker-content flex-style">
+	                        <h3>${artist['name']}</h3>
+	                        %if artist.get('type'):
+	                        	<span>${artist['type']}</span>
+	                    	%endif
+	                    	%if artist.get('description'):
+	                        	<p>${artist['description']}</p>
+	                        %endif
+	                        %if artist.get('links'):
+		                        <ul class="speaker-flow d-flex">
+		                        	%for name, url in artist['links'].items():
+		                        		%if url:
+		                            		<li>${link_icon(url, name)}</li>
+		                            	%endif
+		                            %endfor
+		                        </ul>
+	                        %endif
+	                    </div>
+	                </div>
+	            </div>
+	            %endfor
+	        </div>
+	    </div>
+	%endif
+
+	%if sponsors_conf['settings']['show_sponsors']:
+	    <div class="partner-area" id="partners">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-12">
+	                    <div class="section-title text-center">
+	                        <h2>Onze Sponsors</h2>
+	                        <p>Onze Sponsors voor Tuinfeest ${date_sat.year}</p>
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="row">
+	                <div class="col-lg-8 offset-lg-2 col-sm-10 offset-sm-1 col-12">
+	                	<div class="row">
+	                		%for sponsor in sponsors_conf['sponsors']:
+		                        <div class="col-sm-4 col-6">
+		                            <div class="partner-wrap">
+		                                <a href="${sponsor['link']}" target="_blank">
+		                                    <img src="/images/sponsor/${sponsor['picture']}" alt="${sponsor['title']}">
+		                                </a>
+		                            </div>
+		                        </div>
+	                    	%endfor
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	%endif
    
     <!-- .content-area start -->
     <div class="content-area">
@@ -784,7 +394,7 @@ def link_icon(url, icon, appendix=False, blank=True):
                 </div>
                 <div class="col-md-4 col-12">
                     <ul class="socil-icon justify-content-end d-flex">
-                    	%for name, url in general['links'].items():
+                    	%for name, url in general_conf['links'].items():
                         		%if url:
                             		<li>${link_icon(url, name)}</li>
                             	%endif

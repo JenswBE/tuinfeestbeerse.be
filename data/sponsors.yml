@@ -1,35 +1,39 @@
-- title: Campine
-  link: http://www.campine.biz
-  picture: campine.png
-  
-- title: Klaverblad
-  link: https://www.facebook.com/drankenhandelklaverblad
-  picture: klaverblad.jpg
-  
-- title: Argenta - Kantoor Wouters
-  link: https://www.argenta.be
-  picture: argenta.jpg
-  
-- title: Vastgoedpartners
-  link: https://www.vastgoedpartners.be/nl
-  picture: vastgoed.png
-  
-- title: Wesa Productions
-  link: http://www.wesaproductions.be
-  picture: wesa.png
-  
-- title: GR Technics
-  link: http://www.gr-technics.be/nl/
-  picture: gr.png
-  
-- title: Walbers
-  link: http://www.walbers-anja.be
-  picture: walbers.jpg
-  
-- title: t broojke
-  link: http://www.tbroojke.be/
-  picture: broojke.jpg
-  
-- title: Brandstoffen Kenis
-  link: http://kenis-f.be/
-  picture: kenis.png
+settings:
+  show_sponsors: True
+
+sponsors:
+  - title: Campine
+    link: http://www.campine.biz
+    picture: campine.png
+    
+  - title: Klaverblad
+    link: https://www.facebook.com/drankenhandelklaverblad
+    picture: klaverblad.jpg
+    
+  - title: Argenta - Kantoor Wouters
+    link: https://www.argenta.be
+    picture: argenta.jpg
+    
+  - title: Vastgoedpartners
+    link: https://www.vastgoedpartners.be/nl
+    picture: vastgoed.png
+    
+  - title: Wesa Productions
+    link: http://www.wesaproductions.be
+    picture: wesa.png
+    
+  - title: GR Technics
+    link: http://www.gr-technics.be/nl/
+    picture: gr.png
+    
+  - title: Walbers
+    link: http://www.walbers-anja.be
+    picture: walbers.jpg
+    
+  - title: t broojke
+    link: http://www.tbroojke.be/
+    picture: broojke.jpg
+    
+  - title: Brandstoffen Kenis
+    link: http://kenis-f.be/
+    picture: kenis.png

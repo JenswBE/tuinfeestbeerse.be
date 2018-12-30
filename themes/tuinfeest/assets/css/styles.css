@@ -749,11 +749,14 @@ ul.menu.active {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, .1);
 }
 
+.schedule-wrap table {
+    width: 100%;
+}
+
 .schedule-wrap tr th {
-    height: 45px;
+	padding: 5px 20px;
     background: #f90048;
     color: #fff;
-    width: 260px;
     text-align: center;
     font-weight: 500;
     text-transform: uppercase;
@@ -761,17 +764,14 @@ ul.menu.active {
 }
 
 .schedule-wrap tr td {
-    width: 260px;
-    height: 150px;
     border-left: 1px solid #e0e3e5;
     border-bottom: 1px solid #e0e3e5;
     text-align: center;
-    padding: 0px 30px;
+    padding: 5px 20px;
 }
 
 .schedule-wrap tr th.time,
 .schedule-wrap tr td.time {
-    width: 80px;
     border-left: none;
 }
 
@@ -891,134 +891,6 @@ ul.menu.active {
 }
 
 /*-------partner-area end-------*/
-
-/*-------pricing-area start-------*/
-
-.pricing-area {
-    padding: 120px 0px 90px;
-}
-
-.pricing-wrap {
-    margin-bottom: 30px;
-    background: #fff;
-    padding: 40px 20px;
-    box-shadow: 0px 1px 10px rgba(0, 0, 0, .05);
-}
-
-.pricing-wrap:hover {
-    box-shadow: 0px 1px 20px rgba(0, 0, 0, .05);
-}
-
-.pricing-wrap span {
-    color: #1e2c39;
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 15px;
-    display: block;
-    padding-left: 15px
-}
-
-.pricing-wrap h4 {
-    font-size: 36px;
-    font-weight: 700;
-    color: #f90048;
-    position: relative;
-    padding-left: 15px;
-    line-height: 30px;
-}
-
-.pricing-wrap h4:before {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 5px;
-    height: 100%;
-    background: #ff8922;
-    content: "";
-    border-radius: 5px;
-}
-
-.pricing-wrap h3 {
-    font-weight: 700;
-    font-size: 50px;
-    line-height: 57px;
-    margin-bottom: 0;
-    margin-top: 19px;
-    text-align: right;
-}
-
-.pricing-wrap p {
-    font-size: 14px;
-    line-height: 24px;
-    margin: 30px 0px;
-}
-
-.pricing-wrap ul li {
-    font-size: 14px;
-    line-height: 28px;
-    transition: all .3s;
-    -webkit-transition: all .3s;
-    -moz-transition: all .3s;
-}
-
-.pricing-wrap ul li:hover {
-    color: #f90048;
-}
-
-.pricing-wrap button {
-    padding: 20px 80px;
-    border: none;
-    color: #fff;
-    text-transform: uppercase;
-    background: #f90048;
-    border-radius: 5px;
-    margin: 45px auto 0;
-    font-weight: 600;
-}
-
-.pricing-wrap button:hover {
-    background: #ff8922;
-}
-
-
-/*-------pricing-area end-------*/
-
-
-/*-------testimonial-area start-------*/
-
-.testmonial-area {
-    padding: 120px 0px;
-}
-
-.test-wrap {
-    background: #fff;
-    box-shadow: 0px 1px 7px rgba(0, 0, 0, .1);
-    padding: 40px 57px;
-    text-align: center;
-    margin: 5px;
-}
-
-.test-wrap span {
-    display: block;
-    height: 34px;
-    width: 55px;
-    margin: 0px auto 25px;
-}
-
-.test-img {
-    height: 70px;
-    width: 70px;
-    border-radius: 50%;
-    margin: 30px auto;
-}
-
-.test-wrap h4 {
-    text-transform: uppercase;
-    font-size: 18px;
-}
-
-
-/*-------testimonial-area end-------*/
 
 
 /*-------content-area start-------*/
