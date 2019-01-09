@@ -1266,7 +1266,7 @@ USE_CDN = False
 USE_BUNDLES = True
 
 # Plugins you don't want to use. Be careful :-)
-DISABLED_PLUGINS = ["render_galleries", "render_taxonomies"]
+DISABLED_PLUGINS = ["render_galleries", "render_taxonomies", "scale_images"]
 
 # Special settings to disable only parts of the indexes plugin.
 # Use with care.
