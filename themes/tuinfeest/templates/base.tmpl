@@ -106,334 +106,331 @@ def link_icon(url, icon, appendix=False, blank=True):
 
 <!doctype html>
 <html class="no-js" lang="nl">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Tuinfeest Beerse</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="/images/favicon.ico" type="image/x-icon" rel="icon"/>
-    <link href="/images/favicon.ico" type="image/x-icon" rel="shortcut icon"/> 
-    <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
-
-	<!-- Stylesheet bundle -->
-    <link rel="stylesheet" href="/assets/css/all.css">
-
-    <!-- Modernizr -->
-    <script src="/assets/js/vendor/modernizr-2.8.3.min.js"></script>
-</head>
-
-<body>
-    <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-    <!-- header-area start -->
-    <header class="header-area">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-4 col-md-8 col-8">
-                    <div class="logo">
-                        <a href="index.html">
-                            <img src="/images/logo.png" alt="">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-8 d-none d-lg-block">
-                    <div class="mainmenu">
-                        <ul class="d-flex justify-content-end">
-                            ${menu_links()}
-                        </ul>
-                    </div>
-                </div>
-                <div class="d-block d-lg-none col-md-4 col-4 pull-right col-sm-4">
-                    <ul class="menu">
-                        <li class="first"></li>
-                        <li class="second"></li>
-                        <li class="third"></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!-- responsive-menu area start -->
-        <div class="responsive-menu-area d-block d-lg-none">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <ul class="metismenu">
-							${menu_links()}
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- responsive-menu area start -->
-    </header>
-    <!-- header-area end -->
-    <!-- slider-area start -->
-    <div class="slider-area2 position-relative">
-        <div class="slider-active owl-carousel">
-            <div class="slider-items">
-                <img src="/images/slider/1.jpg" alt="" class="slider">
-                <div class="slider-content flex-style">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-10 col-12 offset-lg-1 text-center">
-                                <h2>Tuinfeest <span>${date_sat.year}</span></h2>
-                                <p>${date_sat.day} en ${date_sun.day} Juni, ${date_sat.year}</p>
-                                <div data-countdown="${date_sat.strftime('%Y/%m/%d')}"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <ul class="socile-share">
-            <li>${link_icon("mailto:" + general_conf['email'], "envelope", "<span>{}</span>".format(general_conf['email']))}</li>
-            %if name_facebook:
-            	<li>${link_icon(general_conf['links']['facebook'], "facebook", name_facebook)}</li>
-            %endif
-        </ul>
-        <div class="scrolldown">
-            <a href="#about">
-                <img src="/assets/images/scroll.png" alt="">
-            </a>
-        </div>
-    </div>
-    <!-- slider-area end -->
-    <!-- about-area start -->
-    <div class="about-area" id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-12">
-                    <div class="about-wrap">
-                        ${general_conf['description']}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- about-area end -->
-    
-	%if timetable_conf['settings']['show_timetable']:
-	    <!-- schedule-area start -->
-	    <div class="schedule-area bg-1" id="time-table">
-	        <div class="container">
+	<head>
+	    <meta charset="utf-8">
+	    <meta http-equiv="x-ua-compatible" content="ie=edge">
+	    <title>Tuinfeest Beerse</title>
+	    <meta name="description" content="">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <link href="/images/favicon.ico" type="image/x-icon" rel="icon"/>
+	    <link href="/images/favicon.ico" type="image/x-icon" rel="shortcut icon"/> 
+	    <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+	
+		<!-- Stylesheet bundle -->
+	    <link rel="stylesheet" href="/assets/css/all.css">
+	
+	    <!-- Modernizr -->
+	    <script src="/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+	</head>
+	<body>
+	    <!--[if lt IE 8]>
+	            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	        <![endif]-->
+	    <!-- header-area start -->
+	    <header class="header-area">
+	        <div class="container-fluid">
 	            <div class="row">
-	                <div class="col-12">
-	                    <div class="section-title text-center">
-	                        <h2>Time table</h2>
+	                <div class="col-lg-4 col-md-8 col-8">
+	                    <div class="logo">
+	                        <a href="index.html">
+	                            <img src="/images/logo.png" alt="">
+	                        </a>
+	                    </div>
+	                </div>
+	                <div class="col-lg-8 d-none d-lg-block">
+	                    <div class="mainmenu">
+	                        <ul class="d-flex justify-content-end">
+	                            ${menu_links()}
+	                        </ul>
+	                    </div>
+	                </div>
+	                <div class="d-block d-lg-none col-md-4 col-4 pull-right col-sm-4">
+	                    <ul class="menu">
+	                        <li class="first"></li>
+	                        <li class="second"></li>
+	                        <li class="third"></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	        <!-- responsive-menu area start -->
+	        <div class="responsive-menu-area d-block d-lg-none">
+	            <div class="container">
+	                <div class="row">
+	                    <div class="col-12">
+	                        <ul class="metismenu">
+								${menu_links()}
+	                        </ul>
 	                    </div>
 	                </div>
 	            </div>
-	            <div class="row">
-	                <div class="col-12">
-	                    <div class="tab-content">
-	                        <div class="tab-pane fade show active">
-	                            <div class="schedule-wrap table-responsive">
-	                                <table>
-	                                    <thead>
-	                                        <tr>
-	                                            <th class="time"><i class="fa fa-clock-o"></i></th>
-	                                            %for location in timetable['Zaterdag']['locations']:
-	                                            	<th>${location}</th>
-                                            	%endfor
-	                                        </tr>
-	                                    </thead>
-	                                    <tbody>
-	                                    	%for slot in timetable['Zaterdag']['slots']:
-		                                        <tr>
-		                                            <td class="time">${slot['time']}</td>
-		                                            %for show in slot['shows']:
-		                                            	<td rowspan="${int(show['length']) if show.get('length') else 1}">
-		                                            		<p>${show['artist'] if show.get('artist') else ''}</p>		
-	                                            		</td>
-		                                            %endfor
-		                                        </tr>
-	                                        %endfor
-	                                    </tbody>
-	                                </table>
+	        </div>
+	        <!-- responsive-menu area start -->
+	    </header>
+	    <!-- header-area end -->
+	    <!-- slider-area start -->
+	    <div class="slider-area2 position-relative">
+	        <div class="slider-active owl-carousel">
+	            <div class="slider-items">
+	                <img src="/images/slider/1.jpg" alt="" class="slider">
+	                <div class="slider-content flex-style">
+	                    <div class="container">
+	                        <div class="row">
+	                            <div class="col-lg-10 col-12 offset-lg-1 text-center">
+	                                <h2>Tuinfeest <span>${date_sat.year}</span></h2>
+	                                <p>${date_sat.day} en ${date_sun.day} Juni, ${date_sat.year}</p>
+	                                <div data-countdown="${date_sat.strftime('%Y/%m/%d')}"></div>
 	                            </div>
 	                        </div>
 	                    </div>
 	                </div>
 	            </div>
 	        </div>
+	        <ul class="social-share">
+	            <li>${link_icon("mailto:" + general_conf['email'], "envelope", "<span>{}</span>".format(general_conf['email']))}</li>
+	            %if name_facebook:
+	            	<li>${link_icon(general_conf['links']['facebook'], "facebook", name_facebook)}</li>
+	            %endif
+	        </ul>
+	        <div class="scrolldown">
+	            <a href="#about">
+	                <img src="/assets/images/scroll.png" alt="">
+	            </a>
+	        </div>
 	    </div>
-	    <!-- schedule-area end -->
-	%endif
-	
-    %if artists_conf['settings']['show_artists']:
-	    <div class="speaker-area" id="artists">
+	    <!-- slider-area end -->
+	    <!-- about-area start -->
+	    <div class="about-area" id="about">
 	        <div class="container">
 	            <div class="row">
-	                <div class="col-12">
-	                    <div class="section-title text-center">
-	                        <h2>Artiesten</h2>
+	                <div class="col-lg-12 col-12">
+	                    <div class="about-wrap">
+	                        ${general_conf['description']}
 	                    </div>
 	                </div>
 	            </div>
 	        </div>
-	        <div class="row no-gutters">
-	        	%for artist in artists_conf['artists']:
-	            <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
-	                <div class="speaker-wrap">
-	                    <img src="/images/artists/${artist['picture']}" alt="">
-	                    <div class="speaker-content flex-style">
-	                        <h3>${artist['name']}</h3>
-	                        %if artist.get('type'):
-	                        	<span>${artist['type']}</span>
-	                    	%endif
-	                    	%if artist.get('description'):
-	                        	<p>${artist['description']}</p>
-	                        %endif
-	                        %if artist.get('links'):
-		                        <ul class="speaker-flow d-flex">
-		                        	%for name, url in artist['links'].items():
-		                        		%if url:
-		                            		<li>${link_icon(url, name)}</li>
-		                            	%endif
-		                            %endfor
-		                        </ul>
-	                        %endif
-	                    </div>
-	                </div>
-	            </div>
-	            %endfor
-	        </div>
 	    </div>
-	%endif
-
-	%if sponsors_conf['settings']['show_sponsors']:
-	    <div class="partner-area" id="partners">
-	        <div class="container">
-	            <div class="row">
-	                <div class="col-12">
-	                    <div class="section-title text-center">
-	                        <h2>Onze Sponsors</h2>
-	                        <p>Onze Sponsors voor Tuinfeest ${date_sat.year}</p>
-	                    </div>
-	                </div>
-	            </div>
-	            <div class="row">
-	                <div class="col-lg-8 offset-lg-2 col-sm-10 offset-sm-1 col-12">
-	                	<div class="row">
-	                		%for sponsor in sponsors_conf['sponsors']:
-		                        <div class="col-sm-4 col-6">
-		                            <div class="partner-wrap">
-		                                <a href="${sponsor['link']}" target="_blank">
-		                                    <img src="/images/sponsor/${sponsor['picture']}" alt="${sponsor['title']}">
-		                                </a>
+	    <!-- about-area end -->
+	    
+		%if timetable_conf['settings']['show_timetable']:
+		    <!-- schedule-area start -->
+		    <div class="schedule-area bg-1" id="time-table">
+		        <div class="container">
+		            <div class="row">
+		                <div class="col-12">
+		                    <div class="section-title text-center">
+		                        <h2>Time table</h2>
+		                    </div>
+		                </div>
+		            </div>
+		            <div class="row">
+		                <div class="col-12">
+		                    <div class="tab-content">
+		                        <div class="tab-pane fade show active">
+		                            <div class="schedule-wrap table-responsive">
+		                                <table>
+		                                    <thead>
+		                                        <tr>
+		                                            <th class="time"><i class="fa fa-clock-o"></i></th>
+		                                            %for location in timetable['Zaterdag']['locations']:
+		                                            	<th>${location}</th>
+	                                            	%endfor
+		                                        </tr>
+		                                    </thead>
+		                                    <tbody>
+		                                    	%for slot in timetable['Zaterdag']['slots']:
+			                                        <tr>
+			                                            <td class="time">${slot['time']}</td>
+			                                            %for show in slot['shows']:
+			                                            	<td rowspan="${int(show['length']) if show.get('length') else 1}">
+			                                            		<p>${show['artist'] if show.get('artist') else ''}</p>		
+		                                            		</td>
+			                                            %endfor
+			                                        </tr>
+		                                        %endfor
+		                                    </tbody>
+		                                </table>
 		                            </div>
 		                        </div>
-	                    	%endfor
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		    <!-- schedule-area end -->
+		%endif
+		
+	    %if artists_conf['settings']['show_artists']:
+		    <div class="speaker-area" id="artists">
+		        <div class="container">
+		            <div class="row">
+		                <div class="col-12">
+		                    <div class="section-title text-center">
+		                        <h2>Artiesten</h2>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		        <div class="row no-gutters">
+		        	%for artist in artists_conf['artists']:
+		            <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+		                <div class="speaker-wrap">
+		                    <img src="/images/artists/${artist['picture']}" alt="">
+		                    <div class="speaker-content flex-style">
+		                        <h3>${artist['name']}</h3>
+		                        %if artist.get('type'):
+		                        	<span>${artist['type']}</span>
+		                    	%endif
+		                    	%if artist.get('description'):
+		                        	<p>${artist['description']}</p>
+		                        %endif
+		                        %if artist.get('links'):
+			                        <ul class="speaker-flow d-flex">
+			                        	%for name, url in artist['links'].items():
+			                        		%if url:
+			                            		<li>${link_icon(url, name)}</li>
+			                            	%endif
+			                            %endfor
+			                        </ul>
+		                        %endif
+		                    </div>
+		                </div>
+		            </div>
+		            %endfor
+		        </div>
+		    </div>
+		%endif
+	
+		%if sponsors_conf['settings']['show_sponsors']:
+		    <div class="partner-area" id="partners">
+		        <div class="container">
+		            <div class="row">
+		                <div class="col-12">
+		                    <div class="section-title text-center">
+		                        <h2>Onze Sponsors</h2>
+		                        <p>Onze Sponsors voor Tuinfeest ${date_sat.year}</p>
+		                    </div>
+		                </div>
+		            </div>
+		            <div class="row">
+		                <div class="col-lg-8 offset-lg-2 col-sm-10 offset-sm-1 col-12">
+		                	<div class="row">
+		                		%for sponsor in sponsors_conf['sponsors']:
+			                        <div class="col-sm-4 col-6">
+			                            <div class="partner-wrap">
+			                                <a href="${sponsor['link']}" target="_blank">
+			                                    <img src="/images/sponsor/${sponsor['picture']}" alt="${sponsor['title']}">
+			                                </a>
+			                            </div>
+			                        </div>
+		                    	%endfor
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		%endif
+	   
+	    <!-- .content-area start -->
+	    <div class="content-area">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-lg-3 col-sm-6 col-12">
+	                    <div class="content-items">
+	                        <div class="content-img">
+	                            <img src="/assets/images/icons/clock.png" alt="">
+	                        </div>
+	                        <h4>Wst. Conference Center</h4>
+	                        <p>San Francisco, CA</p>
+	                    </div>
+	                </div>
+	                <div class="col-lg-3 col-sm-6 col-12">
+	                    <div class="content-items">
+	                        <div class="content-img">
+	                            <img src="/assets/images/icons/location.png" alt="">
+	                        </div>
+	                        <h4>Jun ${date_sat.day}, ${date_sat.year}</h4>
+	                        <p>09:00 AM - 05:00 PM</p>
+	                    </div>
+	                </div>
+	                <div class="col-lg-3 col-sm-6 col-12">
+	                    <div class="content-items">
+	                        <div class="content-img">
+	                            <img src="/assets/images/icons/seat.png" alt="">
+	                        </div>
+	                        <h4>595 Available Seats</h4>
+	                        <p>Hurryup! few tickets are left</p>
+	                    </div>
+	                </div>
+	                <div class="col-lg-3 col-sm-6 col-12">
+	                    <div class="content-items">
+	                        <div class="content-img">
+	                            <img src="/assets/images/icons/lunch.png" alt="">
+	                        </div>
+	                        <h4>Free Lunch & Snacks</h4>
+	                        <p>Don't miss it</p>
 	                    </div>
 	                </div>
 	            </div>
 	        </div>
 	    </div>
-	%endif
-   
-    <!-- .content-area start -->
-    <div class="content-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-sm-6 col-12">
-                    <div class="content-items">
-                        <div class="content-img">
-                            <img src="/assets/images/icons/clock.png" alt="">
-                        </div>
-                        <h4>Wst. Conference Center</h4>
-                        <p>San Francisco, CA</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 col-12">
-                    <div class="content-items">
-                        <div class="content-img">
-                            <img src="/assets/images/icons/location.png" alt="">
-                        </div>
-                        <h4>Jun ${date_sat.day}, ${date_sat.year}</h4>
-                        <p>09:00 AM - 05:00 PM</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 col-12">
-                    <div class="content-items">
-                        <div class="content-img">
-                            <img src="/assets/images/icons/seat.png" alt="">
-                        </div>
-                        <h4>595 Available Seats</h4>
-                        <p>Hurryup! few tickets are left</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 col-12">
-                    <div class="content-items">
-                        <div class="content-img">
-                            <img src="/assets/images/icons/lunch.png" alt="">
-                        </div>
-                        <h4>Free Lunch & Snacks</h4>
-                        <p>Don't miss it</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- .content-area end -->
-
-    <div id="googleMap"></div>
-    <!-- footer-area start -->
-    <footer class="footer-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-12">
-                    <div class="copyright">
-                        <p>&copy; <a href="https://jensw.be" target="_blank" style="color: #f90048">Jensw.be</a> ${today.year}</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-12">
-                    <ul class="socil-icon justify-content-end d-flex">
-                    	%for name, url in general_conf['links'].items():
-                        		%if url:
-                            		<li>${link_icon(url, name)}</li>
-                            	%endif
-                        %endfor
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- footer-area end -->
-    <!-- jquery latest version -->
-    <script src="/assets/js/vendor/jquery-2.2.4.min.js"></script>
-    <!-- popper.min.js -->
-    <script src="/assets/js/vendor/popper.min.js"></script>
-    <!-- bootstrap js -->
-    <script src="/assets/js/bootstrap.min.js"></script>
-    <!-- owl.carousel.2.0.0-beta.2.4 css -->
-    <script src="/assets/js/owl.carousel.min.js"></script>
-    <!-- swiper.min.js -->
-    <script src="/assets/js/swiper.min.js"></script>
-    <!-- mailchimp.js -->
-    <script src="/assets/js/mailchimp.js"></script>
-    <!-- plugins js -->
-    <script src="/assets/js/jquery.canvasjs.min.js"></script>
-    <!-- metisMenu.min.js -->
-    <script src="/assets/js/metisMenu.min.js"></script>
-    <!-- plugins js -->
-    <script src="/assets/js/plugins.js"></script>
-    <!-- google map -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbeBYsZSDkbIyfUkoIw1Rt38eRQOQQU0o"></script>
-    <script>
-    function initialize() {
-        var e = { zoom: 15, scrollwheel: !1, center: new google.maps.LatLng(40.712764, -74.005667), styles: [{ elementType: "geometry", stylers: [{ color: "#f5f5f5" }] }, { elementType: "labels.icon", stylers: [{ visibility: "off" }] }, { elementType: "labels.text.fill", stylers: [{ color: "#616161" }] }, { elementType: "labels.text.stroke", stylers: [{ color: "#f5f5f5" }] }, { featureType: "administrative.land_parcel", elementType: "labels.text.fill", stylers: [{ color: "#bdbdbd" }] }, { featureType: "poi", elementType: "geometry", stylers: [{ color: "#eeeeee" }] }, { featureType: "poi", elementType: "labels.text.fill", stylers: [{ color: "#757575" }] }, { featureType: "poi.park", elementType: "geometry", stylers: [{ color: "#e5e5e5" }] }, { featureType: "poi.park", elementType: "labels.text.fill", stylers: [{ color: "#9e9e9e" }] }, { featureType: "road", elementType: "geometry", stylers: [{ color: "#ffffff" }] }, { featureType: "road.arterial", elementType: "labels.text.fill", stylers: [{ color: "#757575" }] }, { featureType: "road.highway", elementType: "geometry", stylers: [{ color: "#dadada" }] }, { featureType: "road.highway", elementType: "labels.text.fill", stylers: [{ color: "#616161" }] }, { featureType: "road.local", elementType: "labels.text.fill", stylers: [{ color: "#9e9e9e" }] }, { featureType: "transit.line", elementType: "geometry", stylers: [{ color: "#e5e5e5" }] }, { featureType: "transit.station", elementType: "geometry", stylers: [{ color: "#eeeeee" }] }, { featureType: "water", elementType: "geometry", stylers: [{ color: "#c9c9c9" }] }, { featureType: "water", elementType: "labels.text.fill", stylers: [{ color: "#9e9e9e" }] }] },
-
-            l = new google.maps.Map(document.getElementById("googleMap"), e);
-        new google.maps.Marker({ position: l.getCenter(), animation: google.maps.Animation.BOUNCE, map: l })
-    }
-
-    google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
-    <!-- main js -->
-    <script src="/assets/js/scripts.js"></script>
-</body>
-
+	    <!-- .content-area end -->
+	
+	    <div id="googleMap"></div>
+	    <!-- footer-area start -->
+	    <footer class="footer-area">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-md-8 col-12">
+	                    <div class="copyright">
+	                        <p>&copy; <a href="https://jensw.be" target="_blank" style="color: #f90048">Jensw.be</a> ${today.year}</p>
+	                    </div>
+	                </div>
+	                <div class="col-md-4 col-12">
+	                    <ul class="socil-icon justify-content-end d-flex">
+	                    	%for name, url in general_conf['links'].items():
+	                        		%if url:
+	                            		<li>${link_icon(url, name)}</li>
+	                            	%endif
+	                        %endfor
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </footer>
+	    <!-- footer-area end -->
+	    <!-- jquery latest version -->
+	    <script src="/assets/js/vendor/jquery-2.2.4.min.js"></script>
+	    <!-- popper.min.js -->
+	    <script src="/assets/js/vendor/popper.min.js"></script>
+	    <!-- bootstrap js -->
+	    <script src="/assets/js/bootstrap.min.js"></script>
+	    <!-- owl.carousel.2.0.0-beta.2.4 css -->
+	    <script src="/assets/js/owl.carousel.min.js"></script>
+	    <!-- swiper.min.js -->
+	    <script src="/assets/js/swiper.min.js"></script>
+	    <!-- mailchimp.js -->
+	    <script src="/assets/js/mailchimp.js"></script>
+	    <!-- plugins js -->
+	    <script src="/assets/js/jquery.canvasjs.min.js"></script>
+	    <!-- metisMenu.min.js -->
+	    <script src="/assets/js/metisMenu.min.js"></script>
+	    <!-- plugins js -->
+	    <script src="/assets/js/plugins.js"></script>
+	    <!-- google map -->
+	    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbeBYsZSDkbIyfUkoIw1Rt38eRQOQQU0o"></script>
+	    <script>
+	    function initialize() {
+	        var e = { zoom: 15, scrollwheel: !1, center: new google.maps.LatLng(40.712764, -74.005667), styles: [{ elementType: "geometry", stylers: [{ color: "#f5f5f5" }] }, { elementType: "labels.icon", stylers: [{ visibility: "off" }] }, { elementType: "labels.text.fill", stylers: [{ color: "#616161" }] }, { elementType: "labels.text.stroke", stylers: [{ color: "#f5f5f5" }] }, { featureType: "administrative.land_parcel", elementType: "labels.text.fill", stylers: [{ color: "#bdbdbd" }] }, { featureType: "poi", elementType: "geometry", stylers: [{ color: "#eeeeee" }] }, { featureType: "poi", elementType: "labels.text.fill", stylers: [{ color: "#757575" }] }, { featureType: "poi.park", elementType: "geometry", stylers: [{ color: "#e5e5e5" }] }, { featureType: "poi.park", elementType: "labels.text.fill", stylers: [{ color: "#9e9e9e" }] }, { featureType: "road", elementType: "geometry", stylers: [{ color: "#ffffff" }] }, { featureType: "road.arterial", elementType: "labels.text.fill", stylers: [{ color: "#757575" }] }, { featureType: "road.highway", elementType: "geometry", stylers: [{ color: "#dadada" }] }, { featureType: "road.highway", elementType: "labels.text.fill", stylers: [{ color: "#616161" }] }, { featureType: "road.local", elementType: "labels.text.fill", stylers: [{ color: "#9e9e9e" }] }, { featureType: "transit.line", elementType: "geometry", stylers: [{ color: "#e5e5e5" }] }, { featureType: "transit.station", elementType: "geometry", stylers: [{ color: "#eeeeee" }] }, { featureType: "water", elementType: "geometry", stylers: [{ color: "#c9c9c9" }] }, { featureType: "water", elementType: "labels.text.fill", stylers: [{ color: "#9e9e9e" }] }] },
+	
+	            l = new google.maps.Map(document.getElementById("googleMap"), e);
+	        new google.maps.Marker({ position: l.getCenter(), animation: google.maps.Animation.BOUNCE, map: l })
+	    }
+	
+	    google.maps.event.addDomListener(window, 'load', initialize);
+	    </script>
+	    <!-- main js -->
+	    <script src="/assets/js/scripts.js"></script>
+	</body>  
 </html>

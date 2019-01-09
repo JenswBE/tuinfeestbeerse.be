@@ -525,7 +525,7 @@ ul.menu.active {
     color: #ff8922;
 }
 
-.socile-share {
+.social-share {
     position: absolute;
     right: 15px;
     bottom: 30px;
@@ -533,23 +533,23 @@ ul.menu.active {
     display: flex;
 }
 
-.socile-share li {
+.social-share li {
     padding-left: 15px;
     color: #fff;
     font-weight: 300;
 }
 
-.socile-share li span {
+.social-share li span {
     display: inline-block;
     margin-left: 10px;
 }
 
-.socile-share li span:after {
+.social-share li span:after {
     content: "|";
     margin-left: 15px;
 }
 
-.socile-share li a {
+.social-share li a {
     color: #fff;
     font-family: 'Open Sans', sans-serif;
 }
@@ -754,20 +754,20 @@ ul.menu.active {
 }
 
 .schedule-wrap tr th {
-	padding: 5px 20px;
     background: #f90048;
     color: #fff;
     text-align: center;
     font-weight: 500;
     text-transform: uppercase;
     font-size: 14px;
+    line-heigth: 1.2em;
 }
 
 .schedule-wrap tr td {
     border-left: 1px solid #e0e3e5;
     border-bottom: 1px solid #e0e3e5;
     text-align: center;
-    padding: 5px 20px;
+    line-heigth: 1.2em;
 }
 
 .schedule-wrap tr th.time,
@@ -930,74 +930,6 @@ ul.menu.active {
 
 /*-------content-area end-------*/
 
-
-/*-------newsletter-area start-------*/
-
-.newsletter-area {
-    padding: 120px 0px;
-}
-
-.newsletter-content p {
-    font-size: 18px;
-    font-weight: 500;
-    font-family: 'Rubik', sans-serif;
-    color: #1e2c39;
-    padding-left: 50px;
-}
-
-.newsletter-content h2 {
-    font-size: 36px;
-    font-weight: 700;
-    color: #f90048;
-    margin-bottom: 0;
-    padding-left: 50px;
-    position: relative;
-}
-
-.newsletter-content h2:before {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    width: 35px;
-    height: 5px;
-    border-radius: 5px;
-    background: #ff8922;
-    content: "";
-}
-
-.newsletter-form input {
-    width: 100%;
-    height: 60px;
-    border-radius: 50px;
-    padding-left: 25px;
-    text-transform: uppercase;
-    background: #f1f8fc;
-    border: none;
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.newsletter-form button {
-    width: 100%;
-    height: 60px;
-    background: #f90048;
-    color: #fff;
-    font-weight: 600;
-    text-transform: uppercase;
-    border: none;
-    font-size: 14px;
-    border-radius: 50px;
-}
-
-.newsletter-form button:hover {
-    background: #ff8922;
-}
-
-
-/*-------newsletter-area end-------*/
 
 #googleMap {
     height: 550px;

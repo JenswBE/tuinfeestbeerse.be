@@ -43,21 +43,10 @@
         line-height: 35px;
     }
     .schedule-wrap tr td {
-        padding: 0px 14px;
+        line-height: 1.2em
     }
     .schedule-wrap tr td p {
         font-size: 15px;
-    }
-    .pricing-wrap h3 {
-        font-size: 35px;
-        line-height: 57px;
-        margin-top: 25px;
-    }
-    .pricing-wrap h4 {
-        font-size: 30px;
-    }
-    .test-wrap {
-        padding: 40px 14px;
     }
     .content-items {
         padding-left: 45px;
@@ -132,9 +121,6 @@
     .breadcumb-wrap {
         padding-top: 90px;
     }
-    .contact-form {
-        margin-bottom: 50px;
-    }
     .about-area2 {
         padding: 120px 0px;
     }
@@ -167,7 +153,6 @@
         font-size: 15px;
     }
     .schedule-wrap tr td {
-        height: 185px;
         padding: 0px 10px;
     }
     .about-wrap h2 {
@@ -208,12 +193,6 @@
     }
     .about-item span {
         margin-bottom: 30px;
-    }
-    .pricing-wrap h4 {
-        font-size: 24px;
-    }
-    .test-wrap {
-        padding: 40px 10px;
     }
     .content-area {
         padding: 100px 0px 70px;
@@ -297,9 +276,10 @@
     .schedule-wrap {
         overflow-x: scroll;
     }
-    .table-responsive {
-        width: 800px;
+    .table-responsive table {
+        width: 600px;
     }
+
 }
 
 
@@ -307,22 +287,6 @@
 @media (min-width: 576px) and (max-width: 767.98px) {
     .speaker-content p {
         display: none;
-    }
-    .pricing-wrap h3 {
-        font-size: 30px;
-        line-height: 45px;
-        margin-top: 30px;
-    }
-    .pricing-wrap button {
-        padding: 10px 50px;
-    }
-    .about-wrap2 h2 {
-        font-size: 50px;
-        line-height: 50px;
-        padding-left: 125px;
-    }
-    .about-wrap2 h2 span.text {
-        font-size: 80px;
     }
 }
 
