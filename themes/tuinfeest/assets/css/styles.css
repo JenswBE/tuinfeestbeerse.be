@@ -14,7 +14,7 @@
     3. slider-area start
     4. about-area start
     5. schedule-area start
-    6. speaker-area start
+    6. artist-area start
     7. partner-area start
     8. pricing-area start
     9. testimonial-area start
@@ -806,17 +806,17 @@ ul.menu.active {
 /*-------schedule-area end-------*/
 
 
-/*-------speaker-area start-------*/
+/*-------artist-area start-------*/
 
-.speaker-area {
+.artist-area {
     padding-top: 120px;
 }
 
-.speaker-wrap {
+.artist-wrap {
     position: relative;
 }
 
-.speaker-content {
+.artist-content {
     position: absolute;
     left: 0;
     top: 0;
@@ -828,18 +828,17 @@ ul.menu.active {
     opacity: 0;
 }
 
-.speaker-content:hover,
-.speaker-wrap:hover .speaker-content {
+.artist-wrap:hover .artist-content {
     opacity: 1;
 }
 
-.speaker-content h3 {
+.artist-content h3 {
     font-size: 30px;
     color: #fff;
     margin-bottom: 5px;
 }
 
-.speaker-content span {
+.artist-content span {
     display: block;
     color: #fff;
     font-size: 18px;
@@ -847,29 +846,29 @@ ul.menu.active {
     font-style: italic;
 }
 
-.speaker-content p {
+.artist-content p {
     color: #fff;
     font-size: 14px;
     line-height: 24px;
 }
 
-.speaker-content ul.speaker-flow {
+.artist-content ul.artist-flow {
     position: absolute;
     left: 30px;
     bottom: 15px;
 }
 
-.speaker-content ul.speaker-flow li {
+.artist-content ul.artist-flow li {
     margin-right: 10px;
 }
 
-.speaker-content ul.speaker-flow li a {
+.artist-content ul.artist-flow li a {
     color: #fff;
     font-size: 1.25em;
 }
 
 
-/*-------speaker-area end-------*/
+/*-------artist-area end-------*/
 
 
 /*-------partner-area start-------*/
@@ -1097,12 +1096,12 @@ ul.menu.active {
 /*------video-area strat------*/
 
 
-.speaker-area2 {
+.artist-area2 {
     position: relative;
     z-index: 9;
 }
 
-.speaker-area2:before {
+.artist-area2:before {
     position: absolute;
     left: 0;
     top: 0;
@@ -1272,7 +1271,7 @@ ul.menu.active {
     color: #f90048;
 }
 
-.speaker-area3 {
+.artist-area3 {
     padding-top: 0;
 }
 
