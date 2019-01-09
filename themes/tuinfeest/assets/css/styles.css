@@ -822,12 +822,13 @@ ul.menu.active {
     top: 0;
     width: 100%;
     height: 100%;
-    background: #f9004890;
+    background: #00000090;
     padding: 0px 30px;
     padding-bottom: 20px;
     opacity: 0;
 }
 
+.speaker-content:hover,
 .speaker-wrap:hover .speaker-content {
     opacity: 1;
 }
@@ -864,7 +865,7 @@ ul.menu.active {
 
 .speaker-content ul.speaker-flow li a {
     color: #fff;
-    font-size: 14px;
+    font-size: 1.25em;
 }
 
 

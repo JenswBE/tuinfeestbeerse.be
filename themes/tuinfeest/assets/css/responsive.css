@@ -276,6 +276,9 @@
     .schedule-wrap {
         overflow-x: scroll;
     }
+    .speaker-content {
+	    opacity: 1;
+	}
     .table-responsive table {
         width: 600px;
     }
@@ -296,6 +299,9 @@
 /* small mobile :480px. */
 
 @media (min-width: 480px) and (max-width: 575.98px) {
+	.speaker-wrap img {
+        width: 100%;
+    }
     .container {
         width: 450px;
     }
