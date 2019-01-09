@@ -950,11 +950,11 @@ ul.menu.active {
     color: #f90048;
 }
 
-.socil-icon li {
+.social-icon li {
     margin-left: 10px;
 }
 
-.socil-icon li a {
+.social-icon li a {
     display: block;
     height: 35px;
     width: 35px;
@@ -964,7 +964,7 @@ ul.menu.active {
     text-align: center;
 }
 
-.socil-icon li a:hover {
+.social-icon li a:hover {
     color: #f90048;
 }
 
