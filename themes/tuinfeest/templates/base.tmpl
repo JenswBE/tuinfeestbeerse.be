@@ -11,10 +11,22 @@ artists_conf = data['artists']
 sponsors_conf = data['sponsors']
 timetable_conf = data['timetable']
 
+# Error helper
+def exit_with_error(message, code=1):
+	logging.error(message)
+	exit(1)
+
 # Get dates
-parts = general_conf['start_date'].split('.')
-date_sat = date(int(parts[2]), int(parts[1]), int(parts[0]))
-date_sun = date_sat + timedelta(days=1)
+def get_timetable_day_start_end(name):
+	day = [d for d in timetable_conf['timetable'] if d['name'] == name]
+	if len(day) == 1:
+		day = day[0]
+	else:
+		exit_with_error("No day or multiple days found for name = \"{}\"".format(name))
+	return (datetime.strptime(day['start'], '%d.%m.%Y %H:%M'),datetime.strptime(day['end'], '%d.%m.%Y %H:%M'))
+	
+dt_sat_start, dt_sat_end = get_timetable_day_start_end('Zaterdag')
+dt_sun_start, dt_sun_end = get_timetable_day_start_end('Zondag')
 today = date.today()
 
 # Get other vars
@@ -26,26 +38,27 @@ if timetable_conf['settings']['show_timetable']:
 	
 	# Build lookup table
 	for day in timetable_conf['timetable']:
-		day_dict = {
-			'name': day['name'],
-			'start': datetime.strptime(day['start'], '%d.%m.%Y %H:%M'),
-			'end': datetime.strptime(day['end'], '%d.%m.%Y %H:%M'),
-			'locations': [],
-			'shows': [],
-		}
-		for location in day['locations']:
-			day_dict['locations'].append(location['name'])
-			for k, show in enumerate(location['shows']):
-				date_from = (day_dict['end'] if show['from'].startswith('0') else day_dict['start']).strftime('%d.%m.%Y ')
-				date_to = (day_dict['end'] if show['to'].startswith('0') else day_dict['start']).strftime('%d.%m.%Y ')
-				show_dict = {
-					'start': datetime.strptime(date_from + show['from'], '%d.%m.%Y %H:%M'),
-					'end': datetime.strptime(date_to + show['to'], '%d.%m.%Y %H:%M'),
-					'artist': show['artist'],
-					'location': location['name'],
-				}
-				day_dict['shows'].append(show_dict)
-		days.append(day_dict)
+		if day.get('locations'):
+			day_dict = {
+				'name': day['name'],
+				'start': datetime.strptime(day['start'], '%d.%m.%Y %H:%M'),
+				'end': datetime.strptime(day['end'], '%d.%m.%Y %H:%M'),
+				'locations': [],
+				'shows': [],
+			}
+			for location in day['locations']:
+				day_dict['locations'].append(location['name'])
+				for k, show in enumerate(location['shows']):
+					date_from = (day_dict['end'] if show['from'].startswith('0') else day_dict['start']).strftime('%d.%m.%Y ')
+					date_to = (day_dict['end'] if show['to'].startswith('0') else day_dict['start']).strftime('%d.%m.%Y ')
+					show_dict = {
+						'start': datetime.strptime(date_from + show['from'], '%d.%m.%Y %H:%M'),
+						'end': datetime.strptime(date_to + show['to'], '%d.%m.%Y %H:%M'),
+						'artist': show['artist'],
+						'location': location['name'],
+					}
+					day_dict['shows'].append(show_dict)
+			days.append(day_dict)
 	
 	# Build time table
 	timetable = OrderedDict()
@@ -68,8 +81,7 @@ if timetable_conf['settings']['show_timetable']:
 				elif len(result) == 0:
 					shows.append({})
 				else:
-					logging.error("Overlapping time slices in shows: {}. Exiting ...".format(result))
-					exit(1)
+					exit_with_error("Overlapping time slices in shows: {}. Exiting ...".format(result))
 			slots.append({
 				'time': "{} - {}".format(current_start.strftime('%H:%M'), current_end.strftime('%H:%M')),
 				'shows': shows
@@ -89,6 +101,7 @@ def link_icon(url, icon, appendix=False, blank=True):
 	icon = "<i class=\"fa fa-{}\"></i>".format(icon)
 	content = "{} {}".format(icon, appendix) if appendix else icon
 	return link(url, content, blank)
+
 %>
 
 <%def name="menu_links()">
@@ -178,9 +191,9 @@ def link_icon(url, icon, appendix=False, blank=True):
 	                    <div class="container">
 	                        <div class="row">
 	                            <div class="col-lg-10 col-12 offset-lg-1 text-center">
-	                                <h2>Tuinfeest <span>${date_sat.year}</span></h2>
-	                                <p>${date_sat.day} en ${date_sun.day} Juni, ${date_sat.year}</p>
-	                                <div data-countdown="${date_sat.strftime('%Y/%m/%d')}"></div>
+	                                <h2>Tuinfeest <span>${dt_sat_start.year}</span></h2>
+	                                <p>${dt_sat_start.day} en ${dt_sun_start.day} Juni, ${dt_sat_start.year}</p>
+	                                <div data-countdown="${dt_sat_start.strftime('%Y/%m/%d %H:%M')}"></div>
 	                            </div>
 	                        </div>
 	                    </div>
@@ -310,7 +323,7 @@ def link_icon(url, icon, appendix=False, blank=True):
 		                <div class="col-12">
 		                    <div class="section-title text-center">
 		                        <h2>Onze Sponsors</h2>
-		                        <p>Onze Sponsors voor Tuinfeest ${date_sat.year}</p>
+		                        <p>Onze Sponsors voor Tuinfeest ${dt_sat_start.year}</p>
 		                    </div>
 		                </div>
 		            </div>
@@ -352,8 +365,8 @@ def link_icon(url, icon, appendix=False, blank=True):
 	                        <div class="content-img">
 	                            <img src="/assets/images/icons/clock.png" alt="">
 	                        </div>
-	                        <h4>ZA ${date_sat.day} Juni ${date_sat.year}</h4>
-	                        <p>20:00 - 03:00</p>
+	                        <h4>ZA ${dt_sat_start.day} Juni ${dt_sat_start.year}</h4>
+	                        <p>${"{:02d}:{:02d} - {:02d}:{:02d}".format(dt_sat_start.hour, dt_sat_start.minute, dt_sat_end.hour, dt_sat_end.minute)}</p>
 	                    </div>
 	                </div>
 	                <div class="col-lg-3 col-sm-6 col-12">
@@ -361,8 +374,8 @@ def link_icon(url, icon, appendix=False, blank=True):
 	                        <div class="content-img">
 	                            <img src="/assets/images/icons/seat.png" alt="">
 	                        </div>
-	                        <h4>ZO ${date_sun.day} Juni ${date_sun.year}</h4>
-	                        <p>13:00 - 18:00</p>
+	                        <h4>ZO ${dt_sun_start.day} Juni ${dt_sun_start.year}</h4>
+	                        <p>${"{:02d}:{:02d} - {:02d}:{:02d}".format(dt_sun_start.hour, dt_sun_start.minute, dt_sun_end.hour, dt_sun_end.minute)}</p>
 	                    </div>
 	                </div>
 	                <div class="col-lg-3 col-sm-6 col-12">

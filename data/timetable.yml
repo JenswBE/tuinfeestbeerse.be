@@ -1,7 +1,15 @@
+# Bevat instellingen omtrent dagen van het festival en de timetables
+#
+# Opmerkingen:
+# - Datums en tijd staan in formaat DD.MM.YYYY HH:mm
+# - De volgorde in de timetable hieronder wordt overgenomen voor de time table op de website
+# - Er moet minstens een dag bestaan met naam "Zaterdag" en minstens een dag met naam "Zondag"
+
 settings:
   show_timetable: True
   
 timetable:
+# TODO Allow multiple days
   - name: Zaterdag
     start: "29.06.2019 20:00" # Datum en tijd in formaat DD.MM.YYYY HH:mm
     end: "30.06.2019 03:00"
@@ -47,3 +55,7 @@ timetable:
           - from: "20:00"
             to: "02:00"
             artist: Vzw Salsmanians
+
+  - name: Zondag
+    start: "30.06.2019 13:00"
+    end: "30.06.2019 18:00"
