@@ -63,19 +63,6 @@
     .content-area {
         padding: 100px 0px 70px;
     }
-    .header-area2 .mainmenu ul li {
-        padding: 15px 0px 15px 22px;
-    }
-    .header-area2 .mainmenu ul li a:before {
-        width: 15px;
-    }
-    .about-wrap2 h2 {
-        font-size: 45px;
-        line-height: 45px;
-    }
-    .tag-wrap ul li a {
-        padding: 5px 16px;
-    }
 }
 
 
@@ -117,19 +104,6 @@
     }
     #googleMap {
         height: 400px;
-    }
-    .breadcumb-wrap {
-        padding-top: 90px;
-    }
-    .about-area2 {
-        padding: 120px 0px;
-    }
-    .about-img2 {
-        margin-bottom: 50px;
-        text-align: center;
-    }
-    .sidebar-wrap {
-        margin-top: 50px;
     }
 }
 
@@ -197,16 +171,6 @@
     .content-area {
         padding: 100px 0px 70px;
     }
-    .newsletter-content h2 {
-        margin-bottom: 25px;
-    }
-    .newsletter-form input {
-        margin-bottom: 15px;
-    }
-    .header-area.header-area2 {
-        position: relative;
-        top: 0;
-    }
     .slider-area2 .slider-content {
         padding-top: 0px;
     }
@@ -232,13 +196,6 @@
     .header-wrapper {
         padding: 25px 0px;
     }
-    .breadcumb-wrap h2 {
-        line-height: 50px;
-        font-size: 50px;
-    }
-    .breadcumb-wrap {
-        padding-top: 95px;
-    }
     .copyright {
         text-align: center;
         margin-bottom: 10px;
@@ -248,27 +205,6 @@
     }
     .scrolldown {
         left: 5px;
-    }
-    .contact-form {
-        margin-bottom: 50px;
-    }
-    .about-area2 {
-        padding: 120px 0px;
-    }
-    .about-img2 {
-        margin-bottom: 50px;
-        text-align: center;
-    }
-    .about-wrap2 h2 span.text {
-        font-size: 50px;
-    }
-    .about-wrap2 h2 {
-        font-size: 30px;
-        line-height: 30px;
-        padding-left: 80px;
-    }
-    .sidebar-wrap {
-        margin-top: 50px;
     }
     .schedule-menu {
         margin-bottom: 35px;

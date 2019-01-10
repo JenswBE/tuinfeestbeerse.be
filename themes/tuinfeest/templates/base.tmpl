@@ -139,7 +139,7 @@ def link_icon(url, icon, appendix=False, blank=True):
 	                </div>
 	                <div class="col-lg-8 d-none d-lg-block">
 	                    <div class="mainmenu">
-	                        <ul class="d-flex justify-content-end">
+	                        <ul class="d-flex justify-content-end smooth-links">
 	                            ${menu_links()}
 	                        </ul>
 	                    </div>
@@ -158,7 +158,7 @@ def link_icon(url, icon, appendix=False, blank=True):
 	            <div class="container">
 	                <div class="row">
 	                    <div class="col-12">
-	                        <ul class="metismenu">
+	                        <ul class="metismenu smooth-links">
 								${menu_links()}
 	                        </ul>
 	                    </div>
@@ -168,6 +168,7 @@ def link_icon(url, icon, appendix=False, blank=True):
 	        <!-- responsive-menu area start -->
 	    </header>
 	    <!-- header-area end -->
+// TODO: Fix slider
 	    <!-- slider-area start -->
 	    <div class="slider-area2 position-relative">
 	        <div class="slider-active owl-carousel">
@@ -192,7 +193,7 @@ def link_icon(url, icon, appendix=False, blank=True):
 	            	<li>${link_icon(general_conf['links']['facebook'], "facebook", name_facebook)}</li>
 	            %endif
 	        </ul>
-	        <div class="scrolldown">
+	        <div class="scrolldown smooth-links">
 	            <a href="#about">
 	                <img src="/assets/images/scroll.png" alt="">
 	            </a>
@@ -339,19 +340,20 @@ def link_icon(url, icon, appendix=False, blank=True):
 	                <div class="col-lg-3 col-sm-6 col-12">
 	                    <div class="content-items">
 	                        <div class="content-img">
-	                            <img src="/assets/images/icons/clock.png" alt="">
+	                            <img src="/assets/images/icons/location.png" alt="">
 	                        </div>
-	                        <h4>Wst. Conference Center</h4>
-	                        <p>San Francisco, CA</p>
+	                        <h4>Nief park</h4>
+	                        <p>Bisschopslaan 5</p>
+	                        <p>2340 Beerse
 	                    </div>
 	                </div>
 	                <div class="col-lg-3 col-sm-6 col-12">
 	                    <div class="content-items">
 	                        <div class="content-img">
-	                            <img src="/assets/images/icons/location.png" alt="">
+	                            <img src="/assets/images/icons/clock.png" alt="">
 	                        </div>
-	                        <h4>Jun ${date_sat.day}, ${date_sat.year}</h4>
-	                        <p>09:00 AM - 05:00 PM</p>
+	                        <h4>ZA ${date_sat.day} Juni ${date_sat.year}</h4>
+	                        <p>20:00 - 03:00</p>
 	                    </div>
 	                </div>
 	                <div class="col-lg-3 col-sm-6 col-12">
@@ -359,8 +361,8 @@ def link_icon(url, icon, appendix=False, blank=True):
 	                        <div class="content-img">
 	                            <img src="/assets/images/icons/seat.png" alt="">
 	                        </div>
-	                        <h4>595 Available Seats</h4>
-	                        <p>Hurryup! few tickets are left</p>
+	                        <h4>ZO ${date_sun.day} Juni ${date_sun.year}</h4>
+	                        <p>13:00 - 18:00</p>
 	                    </div>
 	                </div>
 	                <div class="col-lg-3 col-sm-6 col-12">
@@ -368,8 +370,9 @@ def link_icon(url, icon, appendix=False, blank=True):
 	                        <div class="content-img">
 	                            <img src="/assets/images/icons/lunch.png" alt="">
 	                        </div>
-	                        <h4>Free Lunch & Snacks</h4>
-	                        <p>Don't miss it</p>
+	                        <h4>Spek en Ei</h4>
+	                        <p>Zaterdagavond</p>
+	                        <p>voor grote en kleine hongertjes</p>
 	                    </div>
 	                </div>
 	            </div>
