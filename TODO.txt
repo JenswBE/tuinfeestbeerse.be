@@ -1,5 +1,2 @@
 - Allow multiple days
-- Finish about section (above map in base.tmpl)
-- Fix artist description overflow
-- Fix maps (base.tmpl)
 - Fix slider (base.tmpl)
