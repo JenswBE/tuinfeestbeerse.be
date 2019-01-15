@@ -50,8 +50,8 @@
 
     //slider-area background setting
     function sliderBgSetting() {
-        if ($(".slider-active .slider-items,.slider-active2 .slider-items").length) {
-            $(".slider-active .slider-items,.slider-active2 .slider-items").each(function() {
+        if ($(".slider-active .slider-items,.slider-active .slider-items").length) {
+            $(".slider-active .slider-items,.slider-active .slider-items").each(function() {
                 var $this = $(this);
                 var img = $this.find(".slider").attr("src");
 
