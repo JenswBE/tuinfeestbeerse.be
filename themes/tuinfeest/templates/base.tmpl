@@ -186,25 +186,20 @@ def link_icon(url, icon, appendix=False, blank=True):
 	        <!-- responsive-menu area start -->
 	    </header>
 	    <!-- header-area end -->
-// TODO: Fix slider
 	    <!-- slider-area start -->
-	    <div class="slider-area2 position-relative">
+	    <div class="slider-area">
 	        <div class="slider-active owl-carousel">
 	            <div class="slider-items">
 	                <img src="/images/slider/1.jpg" alt="" class="slider">
-	                <div class="slider-content flex-style">
-	                    <div class="container">
-	                        <div class="row">
-	                            <div class="col-lg-10 col-12 offset-lg-1 text-center">
-	                                <h2>Tuinfeest <span>${dt_sat_start.year}</span></h2>
-	                                <p>${dt_sat_start.day} en ${dt_sun_start.day} Juni, ${dt_sat_start.year}</p>
-	                                <div data-countdown="${dt_sat_start.strftime('%Y/%m/%d %H:%M')}"></div>
-	                            </div>
-	                        </div>
-	                    </div>
-	                </div>
 	            </div>
 	        </div>
+	        <div id="slider-static" class="slider-content">
+                <div class="col-lg-10 col-12 offset-lg-1 text-center">
+                    <h2>Tuinfeest ${dt_sat_start.year}</h2>
+                    <p>${dt_sat_start.day} en ${dt_sun_start.day} Juni, ${dt_sat_start.year}</p>
+                    <div data-countdown="${dt_sat_start.strftime('%Y/%m/%d %H:%M')}"></div>
+                </div>
+            </div>
 	        <ul class="social-share">
 	            <li>${link_icon("mailto:" + general_conf['email'], "envelope", "<span>{}</span>".format(general_conf['email']))}</li>
 	            %if name_facebook:
