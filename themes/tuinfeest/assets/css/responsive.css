@@ -102,7 +102,7 @@
     .newsletter-content h2 {
         margin-bottom: 30px;
     }
-    #googleMap {
+    #map {
         height: 400px;
     }
 }
@@ -215,9 +215,9 @@
     .artist-content {
 	    opacity: 1;
 	}
-    .table-responsive table {
+ /*   .table-responsive table {
         width: 600px;
-    }
+    } */
 
 }
 

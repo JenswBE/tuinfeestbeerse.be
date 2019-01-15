@@ -739,6 +739,7 @@ ul.menu.active {
     border-bottom: 1px solid #e0e3e5;
     text-align: center;
     line-heigth: 1.2em;
+    min-width: 150px;
 }
 
 .schedule-wrap tr th.time,
@@ -749,6 +750,7 @@ ul.menu.active {
 .schedule-wrap tr td.time {
     font-weight: 600;
     color: #1e2c39;
+    width: 20%;
 }
 
 .schedule-wrap tr td p {
