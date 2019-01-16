@@ -4,12 +4,11 @@
 
 
 
-
 /* Normal desktop :992px. */
 
 @media (min-width: 992px) and (max-width: 1197.98px) {
     .header-area {
-        padding: 20px 0px;
+        padding: 10px 0px;
     }
     
     .mainmenu ul li {
@@ -32,10 +31,6 @@
         margin-bottom: 25px;
         line-height: 30px;
         padding-right: 170px;
-    }
-    
-    #slider-static {
-        padding-top: 100px;
     }
     
     .about-wrap h2 {
@@ -87,20 +82,12 @@
 
 @media (min-width: 768px) and (max-width: 991.98px) {
     .header-area {
-        padding: 15px 0px;
-    }
-    
-    .slider-items {
-        height: 650px;
+        padding: 10px 0px;
     }
     
     #slider-static h2 {
         line-height: 55px;
         font-size: 55px;
-    }
-    
-    #slider-static {
-        padding-top: 85px;
     }
     
     #slider-static h2 span:before {
@@ -134,11 +121,7 @@
 
 @media (max-width: 767.98px) {
     .header-area {
-        padding: 15px 0px;
-    }
-    
-    .slider-items {
-        height: 650px;
+        padding: 10px 0px;
     }
     
     .section-title h2 {
@@ -167,8 +150,21 @@
         font-size: 14px;
     }
     
-    .logo {
-        margin-bottom: 15px;
+    .slider-area #slider-static {
+        padding-top: 0px;
+    }
+    
+    .slider-area #slider-static p {
+        padding: 0px 0;
+    }
+    
+    .slider-area #slider-static span.cdown span {
+        font-size: 30px;
+        line-height: 35px;
+    }
+    
+    .slider-area #slider-static span.cdown p {
+        font-size: 14px;
     }
     
     #slider-static h2 {
@@ -206,31 +202,6 @@
         padding: 100px 0px 70px;
     }
     
-    .slider-area #slider-static {
-        padding-top: 0px;
-    }
-    
-    .slider-area #slider-static p {
-        padding: 0px 0;
-    }
-    
-    .slider-area #slider-static span.cdown span {
-        font-size: 30px;
-        line-height: 35px;
-    }
-    
-    .slider-area #slider-static span.cdown p {
-        font-size: 14px;
-    }
-    
-    .slider-area .slider-items {
-        height: 620px;
-    }
-    
-    .header-wrapper {
-        padding: 25px 0px;
-    }
-    
     .copyright {
         text-align: center;
         margin-bottom: 10px;
@@ -257,15 +228,24 @@
 	}
 }
 
-
-
 @media (min-width: 576px) and (max-width: 767.98px) {
     .artist-content span {
         display: none;
     }
 }
 
+@media (max-height: 576px) {
+    #slider-static {
+	    top: 120px;
+	}
+}
 
+@media (max-height: 350px), (max-width: 350px) {
+    #clock,
+    .social-share {
+	    display: none;
+	}
+}
 
 
 /* small mobile :480px. */

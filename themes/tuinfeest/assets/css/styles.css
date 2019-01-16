@@ -418,6 +418,11 @@ ul.menu.active {
 
 /*-------slider-area start-------*/
 
+.slider-area,
+.slider-area .slider-items {
+	height: 100vh;
+}
+
 .slider-area .slider-items {
     position: relative;
     z-index: 9;
@@ -425,7 +430,6 @@ ul.menu.active {
 
 .slider-area .slider-items img {
     visibility: hidden;
-    height: 1000px;
 }
 
 .slider-area .slider-items:before {
@@ -446,6 +450,10 @@ ul.menu.active {
     top: 200px;
     width: 100%;
     z-index: 999;
+}
+
+.slider-content {
+	padding-top: 0;
 }
 
 #slider-static h2 {
@@ -477,15 +485,14 @@ ul.menu.active {
 
 #slider-static span.cdown {
     display: block;
-    width: 23%;
-    border: 1% solid white;
+    width: 25%;
     float: left;
     text-align: center;
 }
 
 #slider-static span.cdown span {
     display: block;
-    font-size: 90px;
+    font-size: 80px;
     font-weight: 700;
     color: #fff;
     line-height: 90px;
@@ -502,7 +509,7 @@ ul.menu.active {
 .social-share {
     position: absolute;
     right: 15px;
-    bottom: 30px;
+    bottom: 15px;
     z-index: 999;
     display: flex;
 }

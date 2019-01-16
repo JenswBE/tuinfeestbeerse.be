@@ -197,7 +197,7 @@ def link_icon(url, icon, appendix=False, blank=True):
                 <div class="col-lg-10 col-12 offset-lg-1 text-center">
                     <h2>Tuinfeest ${dt_sat_start.year}</h2>
                     <p>${dt_sat_start.day} en ${dt_sun_start.day} Juni, ${dt_sat_start.year}</p>
-                    <div data-countdown="${dt_sat_start.strftime('%Y/%m/%d %H:%M')}"></div>
+                    <div id="clock" data-countdown="${dt_sat_start.strftime('%Y/%m/%d %H:%M')}"></div>
                 </div>
             </div>
 	        <ul class="social-share">
@@ -206,11 +206,6 @@ def link_icon(url, icon, appendix=False, blank=True):
 	            	<li>${link_icon(general_conf['links']['facebook'], "facebook", name_facebook)}</li>
 	            %endif
 	        </ul>
-	        <div class="scrolldown smooth-links">
-	            <a href="#about">
-	                <img src="/assets/images/scroll.png" alt="">
-	            </a>
-	        </div>
 	    </div>
 	    <!-- slider-area end -->
 	    <!-- about-area start -->
