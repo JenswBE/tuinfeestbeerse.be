@@ -14,25 +14,10 @@
         margin: 0,
         loop: true,
         nav: false,
+        autoplayTimeout: 4000,
         smartSpeed: 1200,
         autoplay: true,
-        navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
-        URLhashListener: true,
-        startPosition: 'URLHash',
-        responsive: {
-            0: {
-                items: 1,
-            },
-            450: {
-                items: 1,
-            },
-            768: {
-                items: 1
-            },
-            1000: {
-                items: 1
-            }
-        }
+        items: 1
     });
 
     // Slider-active
