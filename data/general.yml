@@ -7,6 +7,10 @@ links: # Elk icoon op https://fontawesome.com/icons is ondersteund. Formaat = "i
   facebook: https://www.facebook.com/TuinfeestBeerse/
   instagram: https://www.instagram.com/tuinfeest_beerse/
   youtube: https://www.youtube.com/channel/UCdN0ff4rGCs9QGIcFIUlDXA
+  
+backgrounds:
+  - 1.jpg
+  - 2.jpg
 
 description: >
   <h2>Over Tuinfeest</h2>

@@ -14,10 +14,9 @@
         margin: 0,
         loop: true,
         nav: false,
+        autoplayTimeout: 4000,
         smartSpeed: 1200,
         autoplay: true,
-        URLhashListener: true,
-        startPosition: 'URLHash',
         items: 1
     });
 
