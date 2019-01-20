@@ -248,7 +248,7 @@ a#scrollUp:hover {
     top: 100%;
     width: 150px;
     background: #fff;
-    z-index: 999;
+    z-index: 50;
     padding: 10px;
     visibility: hidden;
     opacity: 0;
@@ -449,7 +449,7 @@ ul.menu.active {
     left: 0;
     top: 200px;
     width: 100%;
-    z-index: 999;
+    z-index: 50;
 }
 
 .slider-content {
@@ -830,7 +830,7 @@ ol {
     top: 0;
     width: 100%;
     height: 100%;
-    background: #00000090;
+    background: rgba(0,0,0,0.6);
     padding: 20px 30px 40px 30px;
     opacity: 0;
 }
@@ -892,11 +892,11 @@ ol {
 }
 .partner-wrap a{
 	display: block;
-	border: 1px solid #35353520;
+	border: 1px solid rgba(53,53,53,0.125);
 	padding: 20px;
 }
 .partner-wrap a:hover{
-	border-color: #f9004830;
+	border-color: rgba(249,0,72,0.2);
 }
 
 /*-------partner-area end-------*/
