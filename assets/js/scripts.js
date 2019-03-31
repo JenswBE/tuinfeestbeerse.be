@@ -1,5 +1,9 @@
 (function($) {
     "use strict";
+    
+    $('.about-wrap').readmore({
+    	moreLink: '<a href="#" class="text-center">Lees meer</a>',
+    	lessLink: '<a href="#" class="text-center">Verbergen</a>'});
 
   // Responsive-menu trigger
     $(".menu").on('click', function() {
