@@ -3,6 +3,8 @@
 from datetime import date, timedelta, datetime
 from collections import OrderedDict
 from sys import exit
+from os import listdir
+from random import shuffle
 import logging
 
 # Remap data to local vars (support file renaming)
@@ -28,6 +30,10 @@ def get_timetable_day_start_end(name):
 dt_sat_start, dt_sat_end = get_timetable_day_start_end('Zaterdag')
 dt_sun_start, dt_sun_end = get_timetable_day_start_end('Zondag')
 today = date.today()
+
+# Get backgrounds
+backgrounds = listdir('images/slider/')
+backgrounds.sort()
 
 # Get other vars
 name_facebook = general_conf['links'].get('facebook').strip('/').split('/')[-1] if general_conf['links'].get('facebook') else ''
@@ -189,7 +195,7 @@ def link_icon(url, icon, appendix=False, blank=True):
 	    <!-- slider-area start -->
 	    <div class="slider-area">
 	        <div class="slider-active owl-carousel">
-	        	%for bg in general_conf['backgrounds']:
+	        	%for bg in backgrounds:
 	            <div class="slider-items">
 	                <img src="/images/slider/${bg}" alt="" class="slider">
 	            </div>
@@ -368,7 +374,8 @@ def link_icon(url, icon, appendix=False, blank=True):
 	                            <img src="/assets/images/icons/location.png" alt="">
 	                        </div>
 	                        <h4>Nief park</h4>
-	                        <p>Bisschopslaan 5</p>
+	                        <p>Ingang via:</p>
+	                        <p>Pastoriestraat 10</p>
 	                        <p>2340 Beerse
 	                    </div>
 	                </div>
@@ -469,7 +476,7 @@ def link_icon(url, icon, appendix=False, blank=True):
 		
 		    // Add marker for Nief Park
 		    var marker = L.marker(coord_nief_park).addTo(mymap);
-		    marker.bindPopup("Nief park<br>Bisschopslaan 5<br>2340 Beerse").openPopup();
+		    marker.bindPopup("NIEF PARK<br>Ingang via:<br>Pastoriestraat 10<br>2340 Beerse").openPopup();
 		});
 		</script>
 	    <!-- main js -->
