@@ -16,38 +16,34 @@ timetable:
       - name: Live on Stage
         shows:
           - from: "21:00"
-            to: "22:30"
-            artist: The Juice
+            to: "22:00"
+            artist: Lucky Man &amp; The Fourtune
     
-          - from: "23:00"
+          - from: "22:30"
             to: "00:00"
-            artist: Chackie Jam
+            artist: The Hillbilly Moonshiners
             
           - from: "00:30"
-            to: "02:00"
-            artist: Band Marginal
+            to: "01:00"
+            artist: Wim Soutaer
     
       - name: Gazonfuif
         shows:
           - from: "20:00"
-            to: "21:00"
-            artist: Celis
+            to: "21:30"
+            artist: DJ Daan
     
-          - from: "21:00"
-            to: "22:30"
+          - from: "21:30"
+            to: "23:00"
             artist: DJ Lenny
             
-          - from: "22:30"
-            to: "23:30"
-            artist: Lucky Ones
-    
-          - from: "23:30"
+          - from: "23:00"
             to: "01:00"
-            artist: Mr. Jack &amp; Dirty
-            
+            artist: DJ Polleke &amp; Celis
+    
           - from: "01:00"
             to: "03:00"
-            artist: DJ Polleke
+            artist: Mr. Jack &amp; Dirty
     
       - name: Salsa
         shows:

@@ -3,73 +3,56 @@ settings:
 
 artists:
   # Verplichte velden: name, picture
-  # Standaard foto's voor artiesten zonder foto's: dj.jpg, band.jpg
-  
-  - name: DJ Polleke
-    type: All-round DJ
+  # Standaard foto's voor artiesten zonder foto's: 0dj.jpg, 0band.jpg
+  # De tag van link, bv. "globe", is de naam van een FA icoon op https://fontawesome.com/v4.7.0/icons/
+
+  - name: Lucky Man &amp; The Fourtune
+    picture: 0band.jpg
+
+  - name: The Hillbilly Moonshiners
+    type: Bluegrass &amp; Country
     description: >
-      Goed, een kleine introductie voor de nieuwe generatie tuinfeesters dan:
-      DJ Polleke zorgt er al jaren voor dat wij met de grootste moeite van de
-      wereld ons park maar niet leegkrijgen om 3 uur. Nadat de Korridor Residents
-      de Gazonfuif in gang draaien, neemt Polleke het steevast over om het figuurlijk
-      dak er helemaal af te blazen (nu weet u ineens waarom wij al jaren voor een
-      openluchtfuif kiezen). Wat volgt, is jaar na jaar één van de meest legendarische
-      feestjes die Beerse ooit gekend heeft: topschijf na topschijf na kuskesdans na
-      topschijf en een paar platen van formaat voor de afwisseling.
-    picture: polleke.jpg
+      The Hillbilly Moonshiners are a contemporary bluegrass band playing your favorite tunes from today and back in the day. That’s right, folks: The Hillbilly Moonshiners drench your dearest radio hits in some dirty Louisiana swamp water. Heehaw!
+      <br><br>These five greasy, ungentlemanly Southerners (or Rednecks, if you will) like to have a good time, Bayou-style. Relive classic tunes by artists like George Baker and Bon Jovi, and party to modern day hit songs by Katy Perry, Miley Cyrus, Beyoncé, Pharrel, and the like. So, gulp down your homebrewed, vitamin-rich moonshine (you know, the type that made your cousin Wade go blind!) and shake that ass like it’s the Summer of 69!
+    picture: hillbilly-moonshiners.jpg
+    links:
+      globe: http://www.thehillbillymoonshiners.com/
+      facebook: https://www.facebook.com/thehillbillymoonshiners/
+      youtube: https://www.youtube.com/channel/UCsr5F2iNXgf8qhhMNgoNzGw
+
+  - name: Wim Soutaer
+    type: Poprock
+    picture: wim.jpg
+    links:
+      globe: https://www.wimsoutaer.com/
+      facebook: https://www.facebook.com/Wim-Soutaer-offici%C3%ABle-pagina-184910361623254/
+      twitter: https://twitter.com/wimsoutaer
+      youtube: https://www.youtube.com/results?search_query=wim+soutaer
+      instagram: https://www.instagram.com/wimsoutaer/
+
+  - name: DJ Daan
+    type:  All-round DJ
+    picture: 0dj.jpg
+    
+  - name: DJ Lenny
+    type:  All-round DJ
+    picture: lenny.jpg
+    links:
+      facebook: https://www.facebook.com/DJLenny007/
+
+  - name: DJ Polleke &amp; Celis
+    type: All-round DJ&apos;s
+    description: >
+      Wat is er beter dan DJ Polleke? 2 Pollekes natuurlijk!<br>
+      Dit jaar slaan Polleke en zijn zoon Celis, de handen in elkaar om u nog vettere schijven,
+      zottere dansplaten en coolere hits te brengen. Een combi dus om U tegen te zeggen en dé moment
+      om nog eens volledig los te gaan!
+    picture: polleke-celis.jpg
     links:
       facebook: https://www.facebook.com/DJ-POLLEKE-225905228432/
       youtube: https://www.youtube.com/channel/UCwE_Gdx71HxVaOxERTX9wgg
-  
-  
-  - name: Celis
-    type:  All-round DJ
-    description: >
-      Opgericht op 2015. Dj Contests:<br/>
-        - Winner Neon Creatures 2017 Dj Contest<br/>
-        - Winner Back To School Dj Contest<br/>
-        - Winner Project X<br/>
-        - IKON Dj Contest
-    picture: celis.jpg
-    links:
-      facebook: www.facebook.com/celisofficial
+      facebook-f: https://www.facebook.com/celisofficial
       soundcloud: https://soundcloud.com/celisbe
-  
-  
-  - name: DJ Lenny
-    type:  All-round DJ
-    picture: 0dj.jpg
-  
-  
-  - name: Lucky Ones
-    type:  All-round DJ
-    description: Mathias Sterkens &amp; Stijn Vervoort uit Beerse
-    picture: lucky-ones.jpg
-  
-  
-  - name: Band Marginal
-    type: Party-fun-rock-show-band
-    description: >
-      Acht wannabe-rockstar-figuren lopen elkaar toevallig tegen het lijf op de grens van
-      New Malle &amp; Zoersel-City, het rock &amp; roll-epicentrum van de Antwerpse Kempen
-      zeg maar...<br/><br/>
-      Zwaar gefrustreerd na alle rock &amp; roll mislukkingen van de laatste jaren besluiten
-      de heren de krachten te bundelen en voor een nieuwe revelatie in de &quot;scene&quot; te zorgen.
-      En dat lukt!!! Band Marginal groeit uit tot een heuse party-fun-rock-show-band, beschikt
-      over de nodige muzikale bagage en een open minded instelling. Een zeeeer open minded instelling!!!
-    picture: band-marginal.jpg
-  
-  
-  - name: The Juice
-    type: Rock, Dirty Dancing and Pounding Classy Music
-    description: >
-      11 Jaar geleden werd in de Antwerpse Kempen de legendarische coverband The Jewish Hardrock Band
-      opgericht. Enkele jonge knapen kozen wat rock-covers uit en begonnen de lokale podia onveilig te
-      maken. Nu, een dikke tien jaar later, was het tijd om het over een andere boeg te gooien!
-      Versterkt door vrouwen-gezang en wat meer muzikale variatie dan in de begin jaren begint THE
-      JUICE aan een nieuw, legendarisch avontuur!!
-    picture: the-juice.jpg
-  
   
   - name: Mr. Jack &amp; Dirty
     type: Party-fun-rock-show-band
@@ -80,16 +63,9 @@ artists:
       Niemand blijf stilzitten als deze 2 heren passeren! Privé feest, fuif, verjaardag of bedrijfsfeest?
       ze kunnen ze het, en doen het ook!
     picture: jack-dirty.jpg
-  
-  
-  - name: Chackie Jam
-    type: Guility pleasure synthpop
-    description: >
-      Chackie Jam is opgestart op 16 maart 2018. Deze jonge band bestaat uit: Joey, Tom, Dilys, Jasmin,
-      Shari &amp; Vincent. Zij hebben dit jaar deelgenomen aan 'De Nieuwe Lichting' van Studio Brussel.
-      Via dit kanaal hebben wij voor deze band gekozen. Kom hen zeker horen in onze enige echte Live On Stage.
-    picture: chackie-jam.jpg
-  
+    links:
+      facebook: https://www.facebook.com/Mr-Jack-Dirty-159397004786761/
+      
   
   - name: Vzw Salsmanians
     type: Salsa
