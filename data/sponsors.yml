@@ -1,17 +1,18 @@
 settings:
   show_sponsors: True
 
-sponsors:
+main-sponsors:
   - title: Campine
-    link: http://www.campine.biz
-    picture: campine.png
-    
+    link: https://www.campine.com/
+    picture: campine.jpg
+
+sponsors:    
   - title: Klaverblad
     link: https://www.facebook.com/drankenhandelklaverblad
     picture: klaverblad.jpg
     
   - title: Argenta - Kantoor Wouters
-    link: https://www.argenta.be
+    link: https://www.argenta.be/nl/kantoren/advieskantoor-wouters-bvba-3552.html
     picture: argenta.jpg
     
   - title: Vastgoedpartners
