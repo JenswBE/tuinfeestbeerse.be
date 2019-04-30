@@ -105,7 +105,7 @@ a {
 }
 
 a:hover {
-    color: #f90048;
+    color: #659975;
 }
 
 a:active,
@@ -180,7 +180,7 @@ div {
 }
 
 .bg-2 {
-    background: #f90048;
+    background: #659975;
 }
 
 .bg-fff {
@@ -202,7 +202,7 @@ a#scrollUp {
 }
 
 a#scrollUp:hover {
-    background: #f90048;
+    background: #659975;
 }
 
 .flex-style {
@@ -220,7 +220,7 @@ a#scrollUp:hover {
     top: 0;
     width: 100%;
     z-index: 99;
-    padding: 15px 0px;
+    padding: 5px 0px;
     border-bottom: 1px solid rgba(255, 255, 255, .5);
 }
 
@@ -234,11 +234,11 @@ a#scrollUp:hover {
 }
 
 .header-wrapper .mainmenu ul li:hover>a {
-    color: #f90048;
+    color: #659975;
 }
 
 .mainmenu ul li {
-    padding: 15px 0px 15px 40px;
+    padding: 25px 0px 25px 40px;
     position: relative;
 }
 
@@ -288,7 +288,7 @@ a#scrollUp:hover {
 }
 
 .mainmenu ul li:hover>a {
-    color: #f90048;
+    color: #659975;
 }
 
 .mainmenu ul li>a:before {
@@ -300,7 +300,7 @@ a#scrollUp:hover {
     -moz-transform: translateY(-50%);
     height: 3px;
     width: 15px;
-    background: #f90048;
+    background: #659975;
     content: "";
     opacity: 0;
 }
@@ -322,7 +322,7 @@ a#scrollUp:hover {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    background: #f90048;
+    background: #659975;
     cursor: pointer;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
@@ -371,7 +371,7 @@ ul.menu.active {
     left: 0;
     width: 100%;
     z-index: 99;
-    background: #f90048;
+    background: #659975;
     top: 100%;
     padding: 20px 0;
     transition: all .3s;
@@ -603,7 +603,7 @@ ol {
     padding-bottom: 25px;
     position: relative;
     font-weight: 700;
-    color: #f90048;
+    color: #659975;
     margin-bottom: 30px;
 }
 
@@ -613,7 +613,7 @@ ol {
     bottom: 0;
     width: 55px;
     height: 5px;
-    background: #ff8922;
+    background: #659975;
     content: "";
     border-radius: 5px;
 }
@@ -654,16 +654,16 @@ ol {
     font-size: 14px;
     text-transform: uppercase;
     color: #fff;
-    background: #f90048;
+    background: #659975;
     border-radius: 5px;
     text-align: center;
     font-weight: 700;
-    border: 2px solid #f90048;
+    border: 2px solid #659975;
 }
 
 .about-item a:hover {
     background: transparent;
-    color: #f90048;
+    color: #659975;
 }
 
 
@@ -680,7 +680,7 @@ ol {
     font-size: 60px;
     line-height: 50px;
     font-weight: 700;
-    color: #f90048;
+    color: #659975;
     position: relative;
     margin-bottom: 35px;
     padding-bottom: 25px;
@@ -690,7 +690,7 @@ ol {
     width: 150px;
     height: 5px;
     border-radius: 5px;
-    background: #ff8922;
+    background: #659975;
     bottom: 0;
     position: absolute;
     left: 50%;
@@ -729,7 +729,7 @@ ol {
 
 .schedule-menu li a:hover,
 .schedule-menu li a.active {
-    color: #f90048;
+    color: #659975;
 }
 
 .schedule-menu li a:before {
@@ -741,7 +741,7 @@ ol {
     -moz-transform: translateY(-50%);
     height: 2px;
     width: 0px;
-    background: #f90048;
+    background: #659975;
     content: "";
 }
 
@@ -760,7 +760,7 @@ ol {
 }
 
 .schedule-wrap tr th {
-    background: #f90048;
+    background: #659975;
     color: #fff;
     text-align: center;
     font-weight: 500;
@@ -801,7 +801,7 @@ ol {
 }
 
 .schedule-wrap tr td.party {
-    color: #f90048;
+    color: #659975;
     font-size: 16px;
     font-weight: 600;
 }
@@ -906,7 +906,7 @@ ol {
 
 .content-area {
     padding: 150px 0px 120px;
-    background: rgba(0, 0, 0, 0) linear-gradient(100deg, #ff8922, #f90048) repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) linear-gradient(100deg, #659975, #52d279) repeat scroll 0 0;
 }
 
 .content-items {
@@ -956,7 +956,11 @@ ol {
 }
 
 .footer-area p span {
-    color: #f90048;
+    color: #659975;
+}
+
+.copyright a {
+	color: #659975;
 }
 
 .social-icon li {
@@ -974,5 +978,5 @@ ol {
 }
 
 .social-icon li a:hover {
-    color: #f90048;
+    color: #659975;
 }

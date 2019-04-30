@@ -452,7 +452,7 @@ def link_icon(url, icon, appendix=False, blank=True):
 	            <div class="row">
 	                <div class="col-md-8 col-12">
 	                    <div class="copyright">
-	                        <p>&copy; <a href="https://jensw.be" target="_blank" style="color: #f90048">Jensw.be</a> ${today.year}</p>
+	                        <p>&copy; <a href="https://jensw.be" target="_blank">Jensw.be</a> ${today.year}</p>
 	                    </div>
 	                </div>
 	                <div class="col-md-4 col-12">
@@ -508,6 +508,7 @@ def link_icon(url, icon, appendix=False, blank=True):
 		    }).addTo(mymap);
 		
 		    // Add marker for Nief Park
+		    L.Icon.Default.prototype.options.imagePath = '/assets/images/icons/leaflet/';
 		    var marker = L.marker(coord_nief_park).addTo(mymap);
 		    marker.bindPopup("NIEF PARK<br>Ingang via:<br>Pastoriestraat 8<br>2340 Beerse").openPopup();
 		});
