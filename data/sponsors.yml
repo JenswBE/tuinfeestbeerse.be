@@ -6,26 +6,30 @@ main-sponsors:
     link: https://www.campine.com/
     picture: campine.jpg
 
-sponsors:    
+sponsors:
+  - title: Vastgoedpartners
+    link: https://www.vastgoedpartners.be/nl
+    picture: vastgoed.png
+
+  - title: Effenaf Graaf!
+    link: https://www.effenafgraaf.be/
+    picture: effenaf-graaf.png
+
   - title: Klaverblad
     link: https://www.facebook.com/drankenhandelklaverblad
     picture: klaverblad.jpg
+ 
+  - title: GR Technics
+    link: http://www.gr-technics.be
+    picture: gr.png
     
   - title: Argenta - Kantoor Wouters
     link: https://www.argenta.be/nl/kantoren/advieskantoor-wouters-bvba-3552.html
     picture: argenta.jpg
     
-  - title: Vastgoedpartners
-    link: https://www.vastgoedpartners.be/nl
-    picture: vastgoed.png
-    
   - title: Wesa Productions
     link: http://www.wesaproductions.be
     picture: wesa.png
-    
-  - title: Effenaf Graaf!
-    link: https://www.effenafgraaf.be/
-    picture: effenaf-graaf.png
     
   - title: Hermans
     link: https://www.hermans-heftrucks.be
