@@ -1,7 +1,7 @@
 (function($) {
     "use strict";
     
-    $('.about-wrap').readmore({
+    $('.readmore').readmore({
     	moreLink: '<a href="#" class="text-center">Lees meer</a>',
     	lessLink: '<a href="#" class="text-center">Verbergen</a>'});
 
