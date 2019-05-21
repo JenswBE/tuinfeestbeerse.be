@@ -812,14 +812,37 @@ ul.menu.active {
 /*-------content-area start-------*/
 
 .content-area {
-    padding: 150px 0px 120px;
+    padding: 50px 0px 50px;
     background: rgba(0, 0, 0, 0) linear-gradient(100deg, #3c57a4, #52d279) repeat scroll 0 0;
+	 display: -webkit-box;
+	 display: -moz-box;
+	 display: -ms-flexbox;
+	 display: -webkit-flex;
+	 display: flex;
+    align-items: center;
+  	justify-content: center;
+}
+
+.content-area .row {
+	 display: -webkit-box;
+	 display: -moz-box;
+	 display: -ms-flexbox;
+	 display: -webkit-flex;
+	 display: flex;
+    align-items: center;
+  	justify-content: center;
 }
 
 .content-items {
-    position: relative;
-    margin-bottom: 30px;
-    padding-left: 60px;
+	 display: -webkit-box;
+	 display: -moz-box;
+	 display: -ms-flexbox;
+	 display: -webkit-flex;
+	 display: flex;
+    flex: 1;
+    align-items: center;
+  	justify-content: center;
+  	margin-bottom: 10px;
 }
 
 .content-items h4 {
@@ -837,12 +860,18 @@ ul.menu.active {
 }
 
 .content-img {
-    position: absolute;
-    left: 0;
-    top: -7px;
-    width: 50px;
+    flex: 1;
+	align-self: flex-center;
+	text-align: right;
 }
 
+.content-img img {
+    margin-right: 20px;
+}
+
+.content-text {
+    flex: 1;
+}
 
 /*-------content-area end-------*/
 
