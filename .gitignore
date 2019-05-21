@@ -4,6 +4,9 @@ cache
 __pycache__
 output
 
+# Editor
+*~
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
