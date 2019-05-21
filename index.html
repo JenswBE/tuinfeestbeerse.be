@@ -575,10 +575,18 @@
 		      id: 'mapbox.streets',
 		      accessToken: 'pk.eyJ1IjoidHVpbmZlZXN0YmVlcnMiLCJhIjoiY2pxeTU1YzQxMDAxZzQ1cGV5NGlieGpnbyJ9.frYTXarGgo6JlWsXrtLs9A'
 		    }).addTo(mymap);
+		    
+		    var tfIcon = L.icon({
+			    iconUrl: '/assets/images/icons/leaflet/tf-marker.png',
+			    iconRetinaUrl: '/assets/images/icons/leaflet/tf-marker-2x.png',
+			    iconSize:     [75, 75], // size of the icon
+			    iconAnchor:   [37, 37],
+			    popupAnchor:  [0, -38]
+			});
 		
 		    // Add marker for Nief Park
 		    L.Icon.Default.prototype.options.imagePath = '/assets/images/icons/leaflet/';
-		    var marker = L.marker(coord_nief_park).addTo(mymap);
+		    var marker = L.marker(coord_nief_park, {icon: tfIcon}).addTo(mymap);
 		    marker.bindPopup("NIEF PARK<br>Ingang via:<br>Pastoriestraat 8<br>2340 Beerse").openPopup();
 		});
 		</script><!-- main js --><script src="assets/js/scripts.js"></script>
