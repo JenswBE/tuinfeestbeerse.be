@@ -2,523 +2,585 @@
 <html class="no-js" lang="nl">
 <head>
 <meta charset="utf-8">
-<meta content="ie=edge" http-equiv="x-ua-compatible">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
 <title>Tuinfeest Beerse</title>
-<meta content="" name="description">
-<meta content="width=device-width, initial-scale=1" name="viewport"><!-- Favicon -->
-<link href="assets/favicon/apple-icon-57x57.png" rel="apple-touch-icon" sizes="57x57">
-<link href="assets/favicon/apple-icon-60x60.png" rel="apple-touch-icon" sizes="60x60">
-<link href="assets/favicon/apple-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
-<link href="assets/favicon/apple-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
-<link href="assets/favicon/apple-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
-<link href="assets/favicon/apple-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
-<link href="assets/favicon/apple-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
-<link href="assets/favicon/apple-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
-<link href="assets/favicon/apple-icon-180x180.png" rel="apple-touch-icon" sizes="180x180">
-<link href="assets/favicon/android-icon-192x192.png" rel="icon" sizes="192x192" type="image/png">
-<link href="assets/favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
-<link href="assets/favicon/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png">
-<link href="assets/favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
-<link href="assets/favicon/manifest.json" rel="manifest">
-<meta content="#ffffff" name="msapplication-TileColor">
-<meta content="/assets/favicon/ms-icon-144x144.png" name="msapplication-TileImage">
-<meta content="#ffffff" name="theme-color"><!-- Stylesheet bundle -->
-<link href="assets/css/all.css" rel="stylesheet"><!-- Modernizr -->
-<script src="assets/js/vendor/modernizr-2.8.3.min.js"></script><!-- Leaflet Maps API -->
-<link crossorigin="" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" rel="stylesheet">
-<script crossorigin="" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Favicon --><link rel="apple-touch-icon" sizes="57x57" href="assets/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="assets/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="assets/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="assets/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="assets/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="assets/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="assets/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="assets/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+<link rel="manifest" href="assets/favicon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/assets/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!-- Stylesheet bundle --><link rel="stylesheet" href="assets/css/all.css">
+<!-- Modernizr --><script src="assets/js/vendor/modernizr-2.8.3.min.js"></script><!-- Leaflet Maps API --><link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin="">
+<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
 </head>
 <body>
-<!--[if lt IE 8]>
-                    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-                <![endif]-->
-<!-- header-area start -->
-<header class="header-area">
-<div class="container-fluid">
-<div class="row">
-<div class="col-lg-4 col-md-8 col-8">
-<div class="logo"><a href="#"><img alt="" src="images/logo.png"></a></div>
-</div>
-<div class="col-lg-8 d-none d-lg-block">
-<div class="mainmenu">
-<ul class="d-flex justify-content-end smooth-links">
+	    <!--[if lt IE 8]>
+	            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	        <![endif]-->
+	    <!-- header-area start -->
+	    <header class="header-area"><div class="container-fluid">
+	            <div class="row">
+	                <div class="col-lg-4 col-md-8 col-8">
+	                    <div class="logo">
+	                        <a href="#">
+	                            <img src="images/logo.png" alt=""></a>
+	                    </div>
+	                </div>
+	                <div class="col-lg-8 d-none d-lg-block">
+	                    <div class="mainmenu">
+	                        <ul class="d-flex justify-content-end smooth-links">
 <li><a href="#about">Over Tuinfeest</a></li>
-<li><a href="#time-table">Time table</a></li>
-<li><a href="#artists">Artiesten</a></li>
-<li><a href="#partners">Sponsors</a></li>
-<li><a href="#map">Waar?</a></li>
-</ul>
+    	<li><a href="#time-table">Time table</a></li>
+    	<li><a href="#artists">Artiesten</a></li>
+    	<li><a href="#partners">Sponsors</a></li>
+	<li><a href="#map">Waar?</a></li>
+
+	                        </ul>
 </div>
+	                </div>
+	                <div class="d-block d-lg-none col-md-4 col-4 pull-right col-sm-4">
+	                    <ul class="menu">
+<li class="first">
+	                        <li class="second">
+	                        <li class="third">
+	                    </ul>
 </div>
-<div class="d-block d-lg-none col-md-4 col-4 pull-right col-sm-4">
-<ul class="menu">
-<li class="first"></li>
-<li class="second"></li>
-<li class="third"></li>
-</ul>
-</div>
-</div>
-</div>
-<!-- responsive-menu area start -->
-<div class="responsive-menu-area d-block d-lg-none">
-<div class="container">
-<div class="row">
-<div class="col-12">
-<ul class="metismenu smooth-links">
+	            </div>
+	        </div>
+	        <!-- responsive-menu area start -->
+	        <div class="responsive-menu-area d-block d-lg-none">
+	            <div class="container">
+	                <div class="row">
+	                    <div class="col-12">
+	                        <ul class="metismenu smooth-links">
 <li><a href="#about">Over Tuinfeest</a></li>
-<li><a href="#time-table">Time table</a></li>
-<li><a href="#artists">Artiesten</a></li>
-<li><a href="#partners">Sponsors</a></li>
-<li><a href="#map">Waar?</a></li>
-</ul>
+    	<li><a href="#time-table">Time table</a></li>
+    	<li><a href="#artists">Artiesten</a></li>
+    	<li><a href="#partners">Sponsors</a></li>
+	<li><a href="#map">Waar?</a></li>
+
+	                        </ul>
 </div>
+	                </div>
+	            </div>
+	        </div>
+	        <!-- responsive-menu area start -->
+	    </header><!-- header-area end --><!-- slider-area start --><div class="slider-area">
+	        <div class="slider-active owl-carousel">
+	            <div class="slider-items">
+	                <img src="images/slider/01.jpg" alt="" class="slider">
 </div>
+	            <div class="slider-items">
+	                <img src="images/slider/02.jpg" alt="" class="slider">
 </div>
+	            <div class="slider-items">
+	                <img src="images/slider/03.jpg" alt="" class="slider">
 </div>
-<!-- responsive-menu area start --></header>
-<!-- header-area end --><!-- slider-area start -->
-<div class="slider-area">
-<div class="slider-active owl-carousel">
-<div class="slider-items"><img alt="" class="slider" src="images/slider/01.jpg"></div>
-<div class="slider-items"><img alt="" class="slider" src="images/slider/02.jpg"></div>
-<div class="slider-items"><img alt="" class="slider" src="images/slider/03.jpg"></div>
-<div class="slider-items"><img alt="" class="slider" src="images/slider/04.jpg"></div>
-<div class="slider-items"><img alt="" class="slider" src="images/slider/05.jpg"></div>
-<div class="slider-items"><img alt="" class="slider" src="images/slider/06.jpg"></div>
-<div class="slider-items"><img alt="" class="slider" src="images/slider/07.jpg"></div>
-<div class="slider-items"><img alt="" class="slider" src="images/slider/08.jpg"></div>
-<div class="slider-items"><img alt="" class="slider" src="images/slider/09.jpg"></div>
-<div class="slider-items"><img alt="" class="slider" src="images/slider/10.jpg"></div>
-<div class="slider-items"><img alt="" class="slider" src="images/slider/11.jpg"></div>
-<div class="slider-items"><img alt="" class="slider" src="images/slider/12.jpg"></div>
-<div class="slider-items"><img alt="" class="slider" src="images/slider/13.jpg"></div>
-<div class="slider-items"><img alt="" class="slider" src="images/slider/14.jpg"></div>
-<div class="slider-items"><img alt="" class="slider" src="images/slider/15.jpg"></div>
+	            <div class="slider-items">
+	                <img src="images/slider/04.jpg" alt="" class="slider">
 </div>
-<div class="slider-content" id="slider-static">
-<div class="col-lg-10 col-12 offset-lg-1 text-center">
-<h2>Tuinfeest 2019</h2>
-<p>29 en 30 Juni, 2019</p>
-<div data-countdown="2019/06/29 20:00" id="clock"></div>
+	            <div class="slider-items">
+	                <img src="images/slider/05.jpg" alt="" class="slider">
 </div>
+	            <div class="slider-items">
+	                <img src="images/slider/06.jpg" alt="" class="slider">
 </div>
-<ul class="social-share">
+	            <div class="slider-items">
+	                <img src="images/slider/07.jpg" alt="" class="slider">
+</div>
+	            <div class="slider-items">
+	                <img src="images/slider/08.jpg" alt="" class="slider">
+</div>
+	            <div class="slider-items">
+	                <img src="images/slider/09.jpg" alt="" class="slider">
+</div>
+	            <div class="slider-items">
+	                <img src="images/slider/10.jpg" alt="" class="slider">
+</div>
+	            <div class="slider-items">
+	                <img src="images/slider/11.jpg" alt="" class="slider">
+</div>
+	            <div class="slider-items">
+	                <img src="images/slider/12.jpg" alt="" class="slider">
+</div>
+	            <div class="slider-items">
+	                <img src="images/slider/13.jpg" alt="" class="slider">
+</div>
+	            <div class="slider-items">
+	                <img src="images/slider/14.jpg" alt="" class="slider">
+</div>
+	            <div class="slider-items">
+	                <img src="images/slider/15.jpg" alt="" class="slider">
+</div>
+	        </div>
+	        <div id="slider-static" class="slider-content">
+                <div class="col-lg-10 col-12 offset-lg-1 text-center">
+                    <h2>Tuinfeest 2019</h2>
+                    <p>29 en 30 Juni, 2019</p>
+                    <div id="clock" data-countdown="2019/06/29 20:00"></div>
+                </div>
+            </div>
+	        <ul class="social-share">
 <li><a href="mailto:info@tuinfeestbeerse.be" target="_blank"><i class="fa fa-envelope"></i> <span>info@tuinfeestbeerse.be</span></a></li>
-<li><a href="https://www.facebook.com/TuinfeestBeerse/" target="_blank"><i class="fa fa-facebook"></i> TuinfeestBeerse</a></li>
-</ul>
+	            	<li><a href="https://www.facebook.com/TuinfeestBeerse/" target="_blank"><i class="fa fa-facebook"></i> TuinfeestBeerse</a></li>
+	        </ul>
 </div>
-<!-- slider-area end -->
-<!-- about-area start -->
-<div class="about-area" id="about">
-<div class="container">
-<div class="row">
-<div class="col-lg-12 col-12">
-<div class="about-wrap readmore">
-<h2>Over Tuinfeest</h2>
-<p class="text-bold">Het Tuinfeest is een gratis festival met 3 verschillende podia op een groene toplocatie! Ga je graag los op de beste dansplaten, kom dan je hart ophalen met onze DJ's op de Gazonfuif. Toch meer fan van een live band, spring dan gerust binnen in de Live on Stage. Zeggen deze genres je niets, maar gooi je liever je heupen eens goed los? Kom je dan gerust uitleven aan onze Salsa stage! Heb je vervolgens nog wat bonnetjes over of ben je een fan van gezellige terrasje? Spring dan op zondag zeker eens binnen op ons Zomerterras. Hier kun je genieten van een lekker zwaar biertje of, indien zaterdag wat zwaar is uitgevallen, iets platter. Ook de kinderen hebben we zeker niet uit het oog verloren met een springkasteel, kleurwedstrijd, grimeuse, …</p>
+	    <!-- slider-area end -->
+	    <!-- about-area start -->
+	    <div class="about-area" id="about">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-lg-12 col-12">
+	                    <div class="about-wrap readmore">
+	                        <h2>Over Tuinfeest</h2> <p class="text-bold">Het Tuinfeest is een gratis festival met 3 verschillende podia op een groene toplocatie! Ga je graag los op de beste dansplaten, kom dan je hart ophalen met onze DJ's op de Gazonfuif. Toch meer fan van een live band, spring dan gerust binnen in de Live on Stage. Zeggen deze genres je niets, maar gooi je liever je heupen eens goed los? Kom je dan gerust uitleven aan onze Salsa stage! Heb je vervolgens nog wat bonnetjes over of ben je een fan van gezellige terrasje? Spring dan op zondag zeker eens binnen op ons Zomerterras. Hier kun je genieten van een lekker zwaar biertje of, indien zaterdag wat zwaar is uitgevallen, iets platter. Ook de kinderen hebben we zeker niet uit het oog verloren met een springkasteel, kleurwedstrijd, grimeuse, … </p>
 <p>In 1985 heeft jeugdhuis Korridor (toen nog Jeugdhuis Krinkel) de eerste keer het initiatief genomen om een feest te organiseren in de tuin van Huize Bastyns ( Nief Park). Tuinfeest was de doopnaam. Met enkele honderden bezoekers en vele positieve reacties heeft het jeugdhuis besloten om van het Tuinfeest een jaarlijks terugkerend evenement van te maken.</p>
 <p>Sinds het prille begin is de organisatie in handen van de jeugd van Beerse die actief was in het lokale jeugdhuis. Zo ligt de organisatie de laatste 10 jaar in handen van de gemotiveerde ploeg van <a href="https://www.jhkorridor.be" target="_blank">Jeugdhuis Korridor</a>. Zij duiken jaarlijks de laatste week van juni het park in om dag en nacht te werken en het park om te toveren in dé locatie om de zomer feestelijk in te zetten.</p>
 <p>In 2009 – voor het 25 jarig bestaan – is het zomerterras op zondag terug van onder het stof gehaald, iets wat de laatste 8 jaar alleen maar aan populariteit gewonnen heeft. Na een knaller van een feest op zaterdag, kunt u nu ook op zondag terecht in het park voor een gezellig terrasje, zware bieren en kinderanimatie.</p>
 <p>Het Tuinfeest is door de jaren heen geëvolueerd naar een vaste waarde in de agenda van vele Beersenaren. De honderden bezoekers van editie één zijn er intussen duizenden geworden, bestaande uit mensen die er 35 jaar geleden ook al bij waren tot 16-jarigen die een eerste keer komen kijken. Het kleine podium van dertig jaar geleden is vervangen door een grote tent voor live optredens, een gazonfuif werd toegevoegd om ook top-DJ’s aan het werk te kunnen zetten, en last maar allerminst least werd een deel van het park omgedoopt tot Caribbean Corner: cocktails drinken en een zwoel danske placeren onder begeleiding van live salsamuziek!</p>
 <p>Eén ding is in al die jaren niet veranderd: het Tuinfeest is volledig gratis! Omdat gratis toegang voor ons een belangrijk deel is van de volkse, losse sfeer die we nastreven op het Tuinfeest, willen we dit graag zo houden.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- about-area end -->
-<!-- schedule-area start -->
-<div class="schedule-area bg-1" id="time-table">
-<div class="container">
-<div class="row">
-<div class="col-12">
-<div class="section-title text-center">
-<h2>Time table</h2>
-</div>
-</div>
-</div>
-<div class="row">
-<div class="col-12">
-<div class="tab-content">
-<div class="tab-pane fade show active" id="dag1">
-<div class="schedule-wrap table-responsive">
-<table>
-<thead>
-<tr>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	    <!-- about-area end -->
+	    
+		    <!-- schedule-area start -->
+		    <div class="schedule-area bg-1" id="time-table">
+		        <div class="container">
+		            <div class="row">
+		                <div class="col-12">
+		                    <div class="section-title text-center">
+		                        <h2>Time table</h2>
+		                    </div>
+		                </div>
+		            </div>
+		            <div class="row">
+		                <div class="col-12">
+		                    <div class="tab-content">
+		                        <div class="tab-pane fade show active" id="dag1">
+		                            <div class="schedule-wrap table-responsive">
+		                                <table>
+<thead><tr>
 <th class="time"><i class="fa fa-clock-o"></i></th>
-<th>Live on Stage</th>
-<th>Gazonfuif</th>
-<th>Salsa</th>
-</tr>
-</thead>
+		                                            	<th>Live on Stage</th>
+		                                            	<th>Gazonfuif</th>
+		                                            	<th>Salsa</th>
+		                                        </tr></thead>
 <tbody>
 <tr>
 <td class="time">20:00 - 20:30</td>
-<td rowspan="1">
-<p></p>
-</td>
-<td rowspan="3">
-<p>DJ Daan</p>
-</td>
-<td rowspan="12">
-<p>Vzw Salsmanians</p>
-</td>
-</tr>
+			                                            	<td rowspan="1">
+			                                            		<p></p>		
+		                                            		</td>
+			                                            	<td rowspan="3">
+			                                            		<p>DJ Daan</p>		
+		                                            		</td>
+			                                            	<td rowspan="12">
+			                                            		<p>Vzw Salsmanians</p>		
+		                                            		</td>
+			                                        </tr>
 <tr>
 <td class="time">20:30 - 21:00</td>
-<td rowspan="1">
-<p></p>
-</td>
-</tr>
+			                                            	<td rowspan="1">
+			                                            		<p></p>		
+		                                            		</td>
+			                                        </tr>
 <tr>
 <td class="time">21:00 - 21:30</td>
-<td rowspan="2">
-<p>Lucky Man & The Fourtune</p>
-</td>
-</tr>
+			                                            	<td rowspan="2">
+			                                            		<p>Lucky Man &amp; The Fourtune</p>		
+		                                            		</td>
+			                                        </tr>
 <tr>
 <td class="time">21:30 - 22:00</td>
-<td rowspan="3">
-<p>DJ Lenny</p>
-</td>
-</tr>
+			                                            	<td rowspan="3">
+			                                            		<p>DJ Lenny</p>		
+		                                            		</td>
+			                                        </tr>
 <tr>
 <td class="time">22:00 - 22:30</td>
-<td rowspan="1">
-<p></p>
-</td>
-</tr>
+			                                            	<td rowspan="1">
+			                                            		<p></p>		
+		                                            		</td>
+			                                        </tr>
 <tr>
 <td class="time">22:30 - 23:00</td>
-<td rowspan="3">
-<p>The Hillbilly Moonshiners</p>
-</td>
-</tr>
+			                                            	<td rowspan="3">
+			                                            		<p>The Hillbilly Moonshiners</p>		
+		                                            		</td>
+			                                        </tr>
 <tr>
 <td class="time">23:00 - 23:30</td>
-<td rowspan="4">
-<p>DJ Polleke & Celis</p>
-</td>
-</tr>
+			                                            	<td rowspan="4">
+			                                            		<p>DJ Polleke &amp; Celis</p>		
+		                                            		</td>
+			                                        </tr>
 <tr>
 <td class="time">23:30 - 00:00</td>
-</tr>
+			                                        </tr>
 <tr>
 <td class="time">00:00 - 00:30</td>
-<td rowspan="1">
-<p></p>
-</td>
-</tr>
+			                                            	<td rowspan="1">
+			                                            		<p></p>		
+		                                            		</td>
+			                                        </tr>
 <tr>
 <td class="time">00:30 - 01:00</td>
-<td rowspan="1">
-<p>Wim Soutaer</p>
-</td>
-</tr>
+			                                            	<td rowspan="1">
+			                                            		<p>Wim Soutaer</p>		
+		                                            		</td>
+			                                        </tr>
 <tr>
 <td class="time">01:00 - 01:30</td>
-<td rowspan="1">
-<p></p>
-</td>
-<td rowspan="4">
-<p>Mr. Jack & Dirty</p>
-</td>
-</tr>
+			                                            	<td rowspan="1">
+			                                            		<p></p>		
+		                                            		</td>
+			                                            	<td rowspan="4">
+			                                            		<p>Mr. Jack &amp; Dirty</p>		
+		                                            		</td>
+			                                        </tr>
 <tr>
 <td class="time">01:30 - 02:00</td>
-<td rowspan="1">
-<p></p>
-</td>
-</tr>
+			                                            	<td rowspan="1">
+			                                            		<p></p>		
+		                                            		</td>
+			                                        </tr>
 <tr>
 <td class="time">02:00 - 02:30</td>
-<td rowspan="1">
-<p></p>
-</td>
-<td rowspan="1">
-<p></p>
-</td>
-</tr>
+			                                            	<td rowspan="1">
+			                                            		<p></p>		
+		                                            		</td>
+			                                            	<td rowspan="1">
+			                                            		<p></p>		
+		                                            		</td>
+			                                        </tr>
 <tr>
 <td class="time">02:30 - 03:00</td>
-<td rowspan="1">
-<p></p>
-</td>
-<td rowspan="1">
-<p></p>
-</td>
-</tr>
+			                                            	<td rowspan="1">
+			                                            		<p></p>		
+		                                            		</td>
+			                                            	<td rowspan="1">
+			                                            		<p></p>		
+		                                            		</td>
+			                                        </tr>
 </tbody>
 </table>
 </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- schedule-area end -->
-<div class="artist-area" id="artists">
-<div class="container">
-<div class="row">
-<div class="col-12">
-<div class="section-title text-center">
-<h2>Artiesten</h2>
-</div>
-</div>
-</div>
-</div>
-<div class="row no-gutters">
-<div class="col-xl-3 col-lg-4 col-sm-6 col-12">
-<div class="artist-wrap"><img alt="" src="images/artists/lmtf.jpg">
-<div class="artist-content flex-style">
-<h3>Lucky Man & The Fourtune</h3>
-</div>
-</div>
-</div>
-<div class="col-xl-3 col-lg-4 col-sm-6 col-12">
-<div class="artist-wrap"><img alt="" src="images/artists/hillbilly-moonshiners.jpg">
-<div class="artist-content flex-style">
-<h3>The Hillbilly Moonshiners</h3>
-<span>Bluegrass & Country</span>
-<p>The Hillbilly Moonshiners are a contemporary bluegrass band playing your favorite tunes from today and back in the day. That’s right, folks: The Hillbilly Moonshiners drench your dearest radio hits in some dirty Louisiana swamp water. Heehaw!<br>
-<br>
-These five greasy, ungentlemanly Southerners (or Rednecks, if you will) like to have a good time, Bayou-style. Relive classic tunes by artists like George Baker and Bon Jovi, and party to modern day hit songs by Katy Perry, Miley Cyrus, Beyoncé, Pharrel, and the like. So, gulp down your homebrewed, vitamin-rich moonshine (you know, the type that made your cousin Wade go blind!) and shake that ass like it’s the Summer of 69!</p>
-<ul class="artist-flow d-flex">
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		    <!-- schedule-area end -->
+		
+		    <div class="artist-area" id="artists">
+		        <div class="container">
+		            <div class="row">
+		                <div class="col-12">
+		                    <div class="section-title text-center">
+		                        <h2>Artiesten</h2>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		        <div class="row no-gutters">
+		            <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+		                <div class="artist-wrap">
+		                    <img src="images/artists/lmtf.jpg" alt=""><div class="artist-content flex-style">
+		                        <h3>Lucky Man &amp; The Fourtune</h3>
+		                    </div>
+		                </div>
+		            </div>
+		            <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+		                <div class="artist-wrap">
+		                    <img src="images/artists/hillbilly-moonshiners.jpg" alt=""><div class="artist-content flex-style">
+		                        <h3>The Hillbilly Moonshiners</h3>
+		                        	<span>Bluegrass &amp; Country</span>
+		                        	<p>The Hillbilly Moonshiners are a contemporary bluegrass band playing your favorite tunes from today and back in the day. That’s right, folks: The Hillbilly Moonshiners drench your dearest radio hits in some dirty Louisiana swamp water. Heehaw! <br><br>These five greasy, ungentlemanly Southerners (or Rednecks, if you will) like to have a good time, Bayou-style. Relive classic tunes by artists like George Baker and Bon Jovi, and party to modern day hit songs by Katy Perry, Miley Cyrus, Beyoncé, Pharrel, and the like. So, gulp down your homebrewed, vitamin-rich moonshine (you know, the type that made your cousin Wade go blind!) and shake that ass like it’s the Summer of 69!
+</p>
+			                        <ul class="artist-flow d-flex">
 <li><a href="http://www.thehillbillymoonshiners.com/" target="_blank"><i class="fa fa-globe"></i></a></li>
-<li><a href="https://www.facebook.com/thehillbillymoonshiners/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-<li><a href="https://www.youtube.com/channel/UCsr5F2iNXgf8qhhMNgoNzGw" target="_blank"><i class="fa fa-youtube"></i></a></li>
-</ul>
+			                            		<li><a href="https://www.facebook.com/thehillbillymoonshiners/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+			                            		<li><a href="https://www.youtube.com/channel/UCsr5F2iNXgf8qhhMNgoNzGw" target="_blank"><i class="fa fa-youtube"></i></a></li>
+			                        </ul>
 </div>
-</div>
-</div>
-<div class="col-xl-3 col-lg-4 col-sm-6 col-12">
-<div class="artist-wrap"><img alt="" src="images/artists/wim.jpg">
-<div class="artist-content flex-style">
-<h3>Wim Soutaer</h3>
-<span>Poprock</span>
-<ul class="artist-flow d-flex">
+		                </div>
+		            </div>
+		            <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+		                <div class="artist-wrap">
+		                    <img src="images/artists/wim.jpg" alt=""><div class="artist-content flex-style">
+		                        <h3>Wim Soutaer</h3>
+		                        	<span>Poprock</span>
+			                        <ul class="artist-flow d-flex">
 <li><a href="https://www.wimsoutaer.com/" target="_blank"><i class="fa fa-globe"></i></a></li>
-<li><a href="https://www.facebook.com/Wim-Soutaer-offici%C3%ABle-pagina-184910361623254/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-<li><a href="https://twitter.com/wimsoutaer" target="_blank"><i class="fa fa-twitter"></i></a></li>
-<li><a href="https://www.youtube.com/results?search_query=wim+soutaer" target="_blank"><i class="fa fa-youtube"></i></a></li>
-<li><a href="https://www.instagram.com/wimsoutaer/" target="_blank"><i class="fa fa-instagram"></i></a></li>
-</ul>
+			                            		<li><a href="https://www.facebook.com/Wim-Soutaer-offici%C3%ABle-pagina-184910361623254/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+			                            		<li><a href="https://twitter.com/wimsoutaer" target="_blank"><i class="fa fa-twitter"></i></a></li>
+			                            		<li><a href="https://www.youtube.com/results?search_query=wim+soutaer" target="_blank"><i class="fa fa-youtube"></i></a></li>
+			                            		<li><a href="https://www.instagram.com/wimsoutaer/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+			                        </ul>
 </div>
-</div>
-</div>
-<div class="col-xl-3 col-lg-4 col-sm-6 col-12">
-<div class="artist-wrap"><img alt="" src="images/artists/0dj.jpg">
-<div class="artist-content flex-style">
-<h3>DJ Daan</h3>
-<span>All-round DJ</span></div>
-</div>
-</div>
-<div class="col-xl-3 col-lg-4 col-sm-6 col-12">
-<div class="artist-wrap"><img alt="" src="images/artists/lenny.jpg">
-<div class="artist-content flex-style">
-<h3>DJ Lenny</h3>
-<span>All-round DJ</span>
-<ul class="artist-flow d-flex">
+		                </div>
+		            </div>
+		            <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+		                <div class="artist-wrap">
+		                    <img src="images/artists/0dj.jpg" alt=""><div class="artist-content flex-style">
+		                        <h3>DJ Daan</h3>
+		                        	<span>All-round DJ</span>
+		                    </div>
+		                </div>
+		            </div>
+		            <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+		                <div class="artist-wrap">
+		                    <img src="images/artists/lenny.jpg" alt=""><div class="artist-content flex-style">
+		                        <h3>DJ Lenny</h3>
+		                        	<span>All-round DJ</span>
+			                        <ul class="artist-flow d-flex">
 <li><a href="https://www.facebook.com/DJLenny007/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-</ul>
+			                        </ul>
 </div>
-</div>
-</div>
-<div class="col-xl-3 col-lg-4 col-sm-6 col-12">
-<div class="artist-wrap"><img alt="" src="images/artists/polleke-celis.jpg">
-<div class="artist-content flex-style">
-<h3>DJ Polleke & Celis</h3>
-<span>All-round DJ's</span>
-<p>Wat is er beter dan DJ Polleke? 2 Pollekes natuurlijk!<br>
-Dit jaar slaan Polleke en zijn zoon Celis, de handen in elkaar om u nog vettere schijven, zottere dansplaten en coolere hits te brengen. Een combi dus om U tegen te zeggen en dé moment om nog eens volledig los te gaan!</p>
-<ul class="artist-flow d-flex">
+		                </div>
+		            </div>
+		            <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+		                <div class="artist-wrap">
+		                    <img src="images/artists/polleke-celis.jpg" alt=""><div class="artist-content flex-style">
+		                        <h3>DJ Polleke &amp; Celis</h3>
+		                        	<span>All-round DJ's</span>
+		                        	<p>Wat is er beter dan DJ Polleke? 2 Pollekes natuurlijk!<br> Dit jaar slaan Polleke en zijn zoon Celis, de handen in elkaar om u nog vettere schijven, zottere dansplaten en coolere hits te brengen. Een combi dus om U tegen te zeggen en dé moment om nog eens volledig los te gaan!
+</p>
+			                        <ul class="artist-flow d-flex">
 <li><a href="https://www.facebook.com/DJ-POLLEKE-225905228432/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-<li><a href="https://www.youtube.com/channel/UCwE_Gdx71HxVaOxERTX9wgg" target="_blank"><i class="fa fa-youtube"></i></a></li>
-<li><a href="https://www.facebook.com/celisofficial" target="_blank"><i class="fa fa-facebook-f"></i></a></li>
-<li><a href="https://soundcloud.com/celisbe" target="_blank"><i class="fa fa-soundcloud"></i></a></li>
-</ul>
+			                            		<li><a href="https://www.youtube.com/channel/UCwE_Gdx71HxVaOxERTX9wgg" target="_blank"><i class="fa fa-youtube"></i></a></li>
+			                            		<li><a href="https://www.facebook.com/celisofficial" target="_blank"><i class="fa fa-facebook-f"></i></a></li>
+			                            		<li><a href="https://soundcloud.com/celisbe" target="_blank"><i class="fa fa-soundcloud"></i></a></li>
+			                        </ul>
 </div>
-</div>
-</div>
-<div class="col-xl-3 col-lg-4 col-sm-6 col-12">
-<div class="artist-wrap"><img alt="" src="images/artists/jack-dirty.jpg">
-<div class="artist-content flex-style">
-<h3>Mr. Jack & Dirty</h3>
-<span>Party-fun-rock-show-band</span>
-<p>Opzoek naar een geweldig Dj Duo dat je evenement naar een hoger niveau tilt?!<br>
-Mr Jack & Dirty staan garant voor een geweldige sfeer op jouw evenement, door hun jaren ervaring als ras echte all around Dj’s weten ze onmiddellijk hoe ze op het publiek moeten inspelen! Niemand blijf stilzitten als deze 2 heren passeren! Privé feest, fuif, verjaardag of bedrijfsfeest? ze kunnen ze het, en doen het ook!</p>
-<ul class="artist-flow d-flex">
+		                </div>
+		            </div>
+		            <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+		                <div class="artist-wrap">
+		                    <img src="images/artists/jack-dirty.jpg" alt=""><div class="artist-content flex-style">
+		                        <h3>Mr. Jack &amp; Dirty</h3>
+		                        	<span>Party-fun-rock-show-band</span>
+		                        	<p>Opzoek naar een geweldig Dj Duo dat je evenement naar een hoger niveau tilt?!<br> Mr Jack &amp; Dirty staan garant voor een geweldige sfeer op jouw evenement, door hun jaren ervaring als ras echte all around Dj’s weten ze onmiddellijk hoe ze op het publiek moeten inspelen! Niemand blijf stilzitten als deze 2 heren passeren! Privé feest, fuif, verjaardag of bedrijfsfeest? ze kunnen ze het, en doen het ook!
+</p>
+			                        <ul class="artist-flow d-flex">
 <li><a href="https://www.facebook.com/Mr-Jack-Dirty-159397004786761/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-</ul>
+			                        </ul>
 </div>
-</div>
-</div>
-<div class="col-xl-3 col-lg-4 col-sm-6 col-12">
-<div class="artist-wrap"><img alt="" src="images/artists/salsa-manians.jpg">
-<div class="artist-content flex-style">
-<h3>Vzw Salsmanians</h3>
-<span>Salsa</span>
-<p>Opgericht op 1 juli 2009. Dansclub van vrijwilligers, voor salsa & andere caribische dansen. Wij verzorgen danslessen, workshops, initiaties, party's, demo's, salsadj-sets, ..</p>
-<ul class="artist-flow d-flex">
+		                </div>
+		            </div>
+		            <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+		                <div class="artist-wrap">
+		                    <img src="images/artists/salsa-manians.jpg" alt=""><div class="artist-content flex-style">
+		                        <h3>Vzw Salsmanians</h3>
+		                        	<span>Salsa</span>
+		                        	<p>Opgericht op 1 juli 2009. Dansclub van vrijwilligers, voor salsa &amp; andere caribische dansen. Wij verzorgen danslessen, workshops, initiaties, party's, demo's, salsadj-sets, ..
+</p>
+			                        <ul class="artist-flow d-flex">
 <li><a href="https://www.salsmanians.be/" target="_blank"><i class="fa fa-globe"></i></a></li>
-<li><a href="https://www.facebook.com/salsmanians/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-</ul>
+			                            		<li><a href="https://www.facebook.com/salsmanians/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+			                        </ul>
 </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+	
+		    <div class="partner-area" id="partners">
+		        <div class="container">
+		            <div class="row">
+		                <div class="col-12">
+		                    <div class="section-title text-center">
+		                        <h2>Onze Sponsors</h2>
+		                        <p>Onze Sponsors voor Tuinfeest 2019</p>
+		                    </div>
+		                </div>
+		            </div>
+		            	
+		            <div class="row">
+		                <div class="col-lg-6 offset-lg-3 col-sm-8 offset-sm-2 col-12">
+		                	<div class="row">
+			                        <div class="col-12">
+			                            <div class="partner-wrap">
+			                                <a href="https://www.campine.com/" target="_blank">
+			                                    <img src="images/sponsor/campine.jpg" alt="Campine"></a>
+			                            </div>
+			                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		           	            
+		            <div class="row">
+		                <div class="col-lg-8 offset-lg-2 col-sm-10 offset-sm-1 col-12">
+		                	<div class="row">
+			                        <div class="col-sm-4 col-6">
+			                            <div class="partner-wrap">
+			                                <a href="https://www.vastgoedpartners.be/nl" target="_blank">
+			                                    <img src="images/sponsor/vastgoed.png" alt="Vastgoedpartners"></a>
+			                            </div>
+			                        </div>
+			                        <div class="col-sm-4 col-6">
+			                            <div class="partner-wrap">
+			                                <a href="https://www.effenafgraaf.be/" target="_blank">
+			                                    <img src="images/sponsor/effenaf-graaf.png" alt="Effenaf Graaf!"></a>
+			                            </div>
+			                        </div>
+			                        <div class="col-sm-4 col-6">
+			                            <div class="partner-wrap">
+			                                <a href="https://www.facebook.com/drankenhandelklaverblad" target="_blank">
+			                                    <img src="images/sponsor/klaverblad.jpg" alt="Klaverblad"></a>
+			                            </div>
+			                        </div>
+			                        <div class="col-sm-4 col-6">
+			                            <div class="partner-wrap">
+			                                <a href="http://www.gr-technics.be" target="_blank">
+			                                    <img src="images/sponsor/gr.png" alt="GR Technics"></a>
+			                            </div>
+			                        </div>
+			                        <div class="col-sm-4 col-6">
+			                            <div class="partner-wrap">
+			                                <a href="https://www.argenta.be/nl/kantoren/advieskantoor-wouters-bvba-3552.html" target="_blank">
+			                                    <img src="images/sponsor/argenta.jpg" alt="Argenta - Kantoor Wouters"></a>
+			                            </div>
+			                        </div>
+			                        <div class="col-sm-4 col-6">
+			                            <div class="partner-wrap">
+			                                <a href="http://www.wesaproductions.be" target="_blank">
+			                                    <img src="images/sponsor/wesa.png" alt="Wesa Productions"></a>
+			                            </div>
+			                        </div>
+			                        <div class="col-sm-4 col-6">
+			                            <div class="partner-wrap">
+			                                <a href="https://www.hermans-heftrucks.be" target="_blank">
+			                                    <img src="images/sponsor/hermans.png" alt="Hermans"></a>
+			                            </div>
+			                        </div>
+			                        <div class="col-sm-4 col-6">
+			                            <div class="partner-wrap">
+			                                <a href="http://www.huybs.be/" target="_blank">
+			                                    <img src="images/sponsor/huybs.png" alt="Huybs"></a>
+			                            </div>
+			                        </div>
+			                        <div class="col-sm-4 col-6">
+			                            <div class="partner-wrap">
+			                                <a href="http://www.uitinbeerse.be/" target="_blank">
+			                                    <img src="images/sponsor/uit-in-beerse.png" alt="Uit in Beerse"></a>
+			                            </div>
+			                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+	   
+	    <!-- .content-area start -->
+	    <div class="content-area">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-lg-3 col-sm-6 col-12">
+	                    <div class="content-items">
+	                        <div class="content-img">
+	                            <img src="assets/images/icons/location.png" alt="">
 </div>
+	                        <h4>Nief park</h4>
+	                        <p>Ingang via:</p>
+	                        <p>Pastoriestraat 8</p>
+	                        <p>2340 Beerse
+	                    </p>
 </div>
+	                </div>
+	                <div class="col-lg-3 col-sm-6 col-12">
+	                    <div class="content-items">
+	                        <div class="content-img">
+	                            <img src="assets/images/icons/clock.png" alt="">
 </div>
+	                        <h4>ZA 29 Juni 2019</h4>
+	                        <p>20:00 - 03:00</p>
+	                    </div>
+	                </div>
+	                <div class="col-lg-3 col-sm-6 col-12">
+	                    <div class="content-items">
+	                        <div class="content-img">
+	                            <img src="assets/images/icons/seat.png" alt="">
 </div>
-<div class="partner-area" id="partners">
-<div class="container">
-<div class="row">
-<div class="col-12">
-<div class="section-title text-center">
-<h2>Onze Sponsors</h2>
-<p>Onze Sponsors voor Tuinfeest 2019</p>
+	                        <h4>ZO 30 Juni 2019</h4>
+	                        <p>13:00 - 18:00</p>
+	                    </div>
+	                </div>
+	                <div class="col-lg-3 col-sm-6 col-12">
+	                    <div class="content-items">
+	                        <div class="content-img">
+	                            <img src="assets/images/icons/lunch.png" alt="">
 </div>
-</div>
-</div>
-<div class="row">
-<div class="col-lg-6 offset-lg-3 col-sm-8 offset-sm-2 col-12">
-<div class="row">
-<div class="col-12">
-<div class="partner-wrap"><a href="https://www.campine.com/" target="_blank"><img alt="Campine" src="images/sponsor/campine.jpg"></a></div>
-</div>
-</div>
-</div>
-</div>
-<div class="row">
-<div class="col-lg-8 offset-lg-2 col-sm-10 offset-sm-1 col-12">
-<div class="row">
-<div class="col-sm-4 col-6">
-<div class="partner-wrap"><a href="https://www.vastgoedpartners.be/nl" target="_blank"><img alt="Vastgoedpartners" src="images/sponsor/vastgoed.png"></a></div>
-</div>
-<div class="col-sm-4 col-6">
-<div class="partner-wrap"><a href="https://www.effenafgraaf.be/" target="_blank"><img alt="Effenaf Graaf!" src="images/sponsor/effenaf-graaf.png"></a></div>
-</div>
-<div class="col-sm-4 col-6">
-<div class="partner-wrap"><a href="https://www.facebook.com/drankenhandelklaverblad" target="_blank"><img alt="Klaverblad" src="images/sponsor/klaverblad.jpg"></a></div>
-</div>
-<div class="col-sm-4 col-6">
-<div class="partner-wrap"><a href="http://www.gr-technics.be" target="_blank"><img alt="GR Technics" src="images/sponsor/gr.png"></a></div>
-</div>
-<div class="col-sm-4 col-6">
-<div class="partner-wrap"><a href="https://www.argenta.be/nl/kantoren/advieskantoor-wouters-bvba-3552.html" target="_blank"><img alt="Argenta - Kantoor Wouters" src="images/sponsor/argenta.jpg"></a></div>
-</div>
-<div class="col-sm-4 col-6">
-<div class="partner-wrap"><a href="http://www.wesaproductions.be" target="_blank"><img alt="Wesa Productions" src="images/sponsor/wesa.png"></a></div>
-</div>
-<div class="col-sm-4 col-6">
-<div class="partner-wrap"><a href="https://www.hermans-heftrucks.be" target="_blank"><img alt="Hermans" src="images/sponsor/hermans.png"></a></div>
-</div>
-<div class="col-sm-4 col-6">
-<div class="partner-wrap"><a href="http://www.huybs.be/" target="_blank"><img alt="Huybs" src="images/sponsor/huybs.png"></a></div>
-</div>
-<div class="col-sm-4 col-6">
-<div class="partner-wrap"><a href="http://www.uitinbeerse.be/" target="_blank"><img alt="Uit in Beerse" src="images/sponsor/uit-in-beerse.png"></a></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- .content-area start -->
-<div class="content-area">
-<div class="container">
-<div class="row">
-<div class="col-lg-3 col-sm-6 col-12">
-<div class="content-items">
-<div class="content-img"><img alt="" src="assets/images/icons/location.png"></div>
-<h4>Nief park</h4>
-<p>Ingang via:</p>
-<p>Pastoriestraat 8</p>
-<p>2340 Beerse</p>
-</div>
-</div>
-<div class="col-lg-3 col-sm-6 col-12">
-<div class="content-items">
-<div class="content-img"><img alt="" src="assets/images/icons/clock.png"></div>
-<h4>ZA 29 Juni 2019</h4>
-<p>20:00 - 03:00</p>
-</div>
-</div>
-<div class="col-lg-3 col-sm-6 col-12">
-<div class="content-items">
-<div class="content-img"><img alt="" src="assets/images/icons/seat.png"></div>
-<h4>ZO 30 Juni 2019</h4>
-<p>13:00 - 18:00</p>
-</div>
-</div>
-<div class="col-lg-3 col-sm-6 col-12">
-<div class="content-items">
-<div class="content-img"><img alt="" src="assets/images/icons/lunch.png"></div>
-<h4>Spek en Ei</h4>
-<p>Zaterdagavond</p>
-<p>voor grote en kleine hongertjes</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- .content-area end -->
-<div hight="400" id="map"></div>
-<!-- footer-area start -->
-<footer class="footer-area">
-<div class="container">
-<div class="row">
-<div class="col-md-8 col-12">
-<div class="copyright">
-<p>© <a href="https://jensw.be" target="_blank">Jensw.be</a> 2019</p>
-</div>
-</div>
-<div class="col-md-4 col-12">
-<ul class="social-icon justify-content-end d-flex">
-<li><a href="https://www.facebook.com/TuinfeestBeerse/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-<li><a href="https://www.instagram.com/tuinfeest_beerse/" target="_blank"><i class="fa fa-instagram"></i></a></li>
-<li><a href="https://www.youtube.com/channel/UCdN0ff4rGCs9QGIcFIUlDXA" target="_blank"><i class="fa fa-youtube"></i></a></li>
-</ul>
-</div>
-</div>
-</div>
-</footer>
-<!-- footer-area end --><!-- jquery latest version -->
-<script src="assets/js/vendor/jquery-2.2.4.min.js"></script><!-- popper.min.js -->
-<script src="assets/js/vendor/popper.min.js"></script><!-- bootstrap js -->
-<script src="assets/js/bootstrap.min.js"></script><!-- owl.carousel.2.0.0-beta.2.4 css -->
-<script src="assets/js/owl.carousel.min.js"></script><!-- swiper.min.js -->
-<script src="assets/js/swiper.min.js"></script><!-- mailchimp.js -->
-<script src="assets/js/mailchimp.js"></script><!-- plugins js -->
-<script src="assets/js/jquery.canvasjs.min.js"></script><!-- metisMenu.min.js -->
-<script src="assets/js/metisMenu.min.js"></script><!-- plugins js -->
-<script src="assets/js/plugins.js"></script><!-- Leaflet Map -->
-<script>
+	                        <h4>Spek en Ei</h4>
+	                        <p>Zaterdagavond</p>
+	                        <p>voor grote en kleine hongertjes</p>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	    <!-- .content-area end -->
 
-                jQuery(document).ready(function(){
-                    // Basic setup
-                    var coord_nief_park = [51.31681, 4.85721];
-                    var mymap = L.map('map', {
-                        dragging: false,
-                        scrollWheelZoom: false,
-                        inertia: false,
-                        noMoveStart: true,
-                        tap: false
-                    }).setView(coord_nief_park, 16); 
-                
-                    // Add map tile layer
-                    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-                      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap<\/a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA<\/a>, Imagery © <a href="https://www.mapbox.com/">Mapbox<\/a>',
-                      maxZoom: 18,
-                      id: 'mapbox.streets',
-                      accessToken: 'pk.eyJ1IjoidHVpbmZlZXN0YmVlcnMiLCJhIjoiY2pxeTU1YzQxMDAxZzQ1cGV5NGlieGpnbyJ9.frYTXarGgo6JlWsXrtLs9A'
-                    }).addTo(mymap);
-                
-                    // Add marker for Nief Park
-                    L.Icon.Default.prototype.options.imagePath = '/assets/images/icons/leaflet/';
-                    var marker = L.marker(coord_nief_park).addTo(mymap);
-                    marker.bindPopup("NIEF PARK<br>Ingang via:<br>Pastoriestraat 8<br>2340 Beerse").openPopup();
-                });
-</script><!-- main js -->
-<script src="assets/js/scripts.js"></script>
+	    <div id="map" hight="400"></div>
+	    <!-- footer-area start -->
+	    <footer class="footer-area"><div class="container">
+	            <div class="row">
+	                <div class="col-md-8 col-12">
+	                    <div class="copyright">
+	                        <p>© <a href="https://jensw.be" target="_blank">Jensw.be</a> 2019</p>
+	                    </div>
+	                </div>
+	                <div class="col-md-4 col-12">
+	                    <ul class="social-icon justify-content-end d-flex">
+<li><a href="https://www.facebook.com/TuinfeestBeerse/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+	                            		<li><a href="https://www.instagram.com/tuinfeest_beerse/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+	                            		<li><a href="https://www.youtube.com/channel/UCdN0ff4rGCs9QGIcFIUlDXA" target="_blank"><i class="fa fa-youtube"></i></a></li>
+	                    </ul>
+</div>
+	            </div>
+	        </div>
+	    </footer><!-- footer-area end --><!-- jquery latest version --><script src="assets/js/vendor/jquery-2.2.4.min.js"></script><!-- popper.min.js --><script src="assets/js/vendor/popper.min.js"></script><!-- bootstrap js --><script src="assets/js/bootstrap.min.js"></script><!-- owl.carousel.2.0.0-beta.2.4 css --><script src="assets/js/owl.carousel.min.js"></script><!-- swiper.min.js --><script src="assets/js/swiper.min.js"></script><!-- mailchimp.js --><script src="assets/js/mailchimp.js"></script><!-- plugins js --><script src="assets/js/jquery.canvasjs.min.js"></script><!-- metisMenu.min.js --><script src="assets/js/metisMenu.min.js"></script><!-- plugins js --><script src="assets/js/plugins.js"></script><!-- Leaflet Map --><script>
+		jQuery(document).ready(function(){
+		    // Basic setup
+		    var coord_nief_park = [51.31681, 4.85721];
+		    var mymap = L.map('map', {
+		    	dragging: false,
+		    	scrollWheelZoom: false,
+		    	inertia: false,
+		    	noMoveStart: true,
+		    	tap: false
+		    }).setView(coord_nief_park, 16); 
+		
+		    // Add map tile layer
+		    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+		      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		      maxZoom: 18,
+		      id: 'mapbox.streets',
+		      accessToken: 'pk.eyJ1IjoidHVpbmZlZXN0YmVlcnMiLCJhIjoiY2pxeTU1YzQxMDAxZzQ1cGV5NGlieGpnbyJ9.frYTXarGgo6JlWsXrtLs9A'
+		    }).addTo(mymap);
+		
+		    // Add marker for Nief Park
+		    L.Icon.Default.prototype.options.imagePath = '/assets/images/icons/leaflet/';
+		    var marker = L.marker(coord_nief_park).addTo(mymap);
+		    marker.bindPopup("NIEF PARK<br>Ingang via:<br>Pastoriestraat 8<br>2340 Beerse").openPopup();
+		});
+		</script><!-- main js --><script src="assets/js/scripts.js"></script>
 </body>
 </html>

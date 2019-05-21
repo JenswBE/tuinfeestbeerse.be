@@ -40,12 +40,13 @@
 <meta content="#ffffff" name="theme-color">
 <!-- Stylesheet bundle -->
 <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
-<link href="/assets/css/responsive.css" rel="stylesheet">
-<link href="/beersbegot/beersbegot.css" rel="stylesheet">
 <link href="/assets/css/font-awesome.min.css" rel="stylesheet">
+<link href="/beersbegot/beersbegot.css" rel="stylesheet">
+<link href="/assets/css/responsive.css" rel="stylesheet">
 
 <!-- Modernizr -->
 <script src="/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+
 <!-- Leaflet Maps API -->
 <link crossorigin=""
 	href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
@@ -54,6 +55,8 @@
 <script crossorigin=""
 	integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
 	src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+	
+<script src="/assets/js/plugins.js"></script>
 </head>
 <body>
 	<!--[if lt IE 8]>
@@ -109,7 +112,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 col-12">
-					<div class="about-wrap">
+					<div class="about-wrap readmore">
 						<h2>BEERS Begot!</h2>
 						<p>Beerse is bangelijk, buitengewoon en en zit bomvol talent. Omdat we dit voor eens en voor altijd aan
 						   de wereld (de Kempen dus) willen laten zien, ontstond het idee voor BEERS BEGOT: we gaan in alle
@@ -321,7 +324,7 @@
 					<img alt="" src="/beersbegot/img/Niels.png">
 					<div class="artist-content flex-style">
 						<p>
-							<span class="bold">XXX</span>
+							<span class="bold"></span>
 						</p>
 					</div>
 				</div>
@@ -332,7 +335,7 @@
 					<img alt="" src="/beersbegot/img/Geert.png">
 					<div class="artist-content flex-style">
 						<p>
-							<span class="bold">XXX</span>
+							<span class="bold"></span>
 						</p>
 					</div>
 				</div>
@@ -343,7 +346,7 @@
 					<img alt="" src="/beersbegot/img/Jochen.png">
 					<div class="artist-content flex-style">
 						<p>
-							<span class="bold">XXX</span>
+							<span class="bold"></span>
 						</p>
 					</div>
 				</div>
@@ -441,43 +444,28 @@
 	<div class="content-area">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-3 col-sm-6 col-12">
+				<div class="col-lg-6 col-sm-6 col-12">
 					<div class="content-items">
 						<div class="content-img">
 							<img alt="" src="/assets/images/icons/location.png">
 						</div>
-						<h4>Nief park</h4>
-						<p>Ingang via:</p>
-						<p>Pastoriestraat 8</p>
-						<p>2340 Beerse</p>
+						<div class="content-text">
+							<h4>Nief park</h4>
+							<p>Ingang via:</p>
+							<p>Pastoriestraat 8</p>
+							<p>2340 Beerse</p>
+						</div>
 					</div>
 				</div>
-				<div class="col-lg-3 col-sm-6 col-12">
+				<div class="col-lg-6 col-sm-6 col-12">
 					<div class="content-items">
 						<div class="content-img">
 							<img alt="" src="/assets/images/icons/clock.png">
 						</div>
-						<h4>ZA 29 Juni 2019</h4>
-						<p>20:00 - 03:00</p>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6 col-12">
-					<div class="content-items">
-						<div class="content-img">
-							<img alt="" src="/assets/images/icons/seat.png">
+						<div class="content-text">
+							<h4>VRIJ 28 Juni 2019</h4>
+							<p>20:00 - 00:00</p>
 						</div>
-						<h4>ZO 30 Juni 2019</h4>
-						<p>13:00 - 18:00</p>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6 col-12">
-					<div class="content-items">
-						<div class="content-img">
-							<img alt="" src="/assets/images/icons/lunch.png">
-						</div>
-						<h4>Spek en Ei</h4>
-						<p>Zaterdagavond</p>
-						<p>voor grote en kleine hongertjes</p>
 					</div>
 				</div>
 			</div>
