@@ -627,7 +627,7 @@ GITHUB_REMOTE_NAME = 'origin'
 
 # Whether or not github_deploy should commit to the source branch automatically
 # before deploying.
-GITHUB_COMMIT_SOURCE = True
+GITHUB_COMMIT_SOURCE = False
 
 # Where the output site should be located
 # If you don't use an absolute path, it will be considered as relative
@@ -663,8 +663,8 @@ GITHUB_COMMIT_SOURCE = True
 #
 from nikola import filters
 FILTERS = {
-#  ".html": [filters.html_tidy_mini],
-#  ".css": [filters.yui_compressor],
+  ".html": [filters.html_tidy_mini],
+  ".css": [filters.yui_compressor],
 }
 
 # Executable for the "yui_compressor" filter (defaults to 'yui-compressor').
