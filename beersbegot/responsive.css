@@ -1,0 +1,153 @@
+/* (1366x768) WXGA Display */
+
+@media screen and (min-width: 1366.98px) and (max-width: 1920px) {}
+
+
+
+/* Normal desktop :992px. */
+
+@media (min-width: 992px) and (max-width: 1197.98px) {
+    .header-area {
+        padding: 10px 0px;
+    }
+    
+    .mainmenu ul li {
+        padding: 15px 0px 15px 35px;
+    }
+    
+    .about-wrap h2 {
+        font-size: 40px;
+    }
+    
+    .about-item p {
+        font-size: 15px;
+    }
+    
+    .section-title h2 {
+        font-size: 45px;
+        line-height: 35px;
+    }
+    
+    .content-items {
+        padding-left: 45px;
+    }
+    
+    .content-img {
+        width: 30px;
+    }
+    
+    .content-items h4 {
+        font-size: 12px;
+    }
+    
+    .content-items h4 {
+        font-size: 12px;
+    }
+    
+    .content-area {
+        padding: 100px 0px 70px;
+    }
+}
+
+
+
+
+/* Normal desktop :991px. */
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .header-area {
+        padding: 10px 0px;
+    }
+    
+    .section-title h2 {
+        font-size: 40px;
+        line-height: 35px;
+    }
+    
+    .schedule-wrap tr td {
+        padding: 0px 10px;
+    }
+    
+    .content-area {
+        padding: 100px 0px 70px;
+    }
+    
+    #map {
+        height: 400px;
+    }
+}
+
+
+
+
+/*mobile :320px. */
+
+@media (max-width: 767.98px) {
+    .header-area {
+        padding: 10px 0px;
+    }
+    
+    .section-title h2 {
+        font-size: 35px;
+        line-height: 35px
+    }
+    
+    .section-title p {
+        font-size: 15px;
+    }
+    
+    .schedule-wrap tr td {
+        padding: 0px 10px;
+    }
+    
+    .about-wrap h2 {
+        font-size: 34px;
+        line-height: 30px;
+    }
+    
+    p {
+        font-size: 14px;
+    }
+    
+    body {
+        font-size: 14px;
+    }
+    
+    
+    .about-item span {
+        margin-bottom: 30px;
+    }
+    
+    .content-area {
+        padding: 100px 0px 70px;
+    }
+    
+    .copyright {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    
+    ul.social-icon.justify-content-end.d-flex {
+        justify-content: center !important;
+    }
+    
+    .scrolldown {
+        left: 5px;
+    }
+    
+    .artist-content {
+	    opacity: 1;
+	}
+}
+
+
+/* small mobile :480px. */
+
+@media (min-width: 480px) and (max-width: 575.98px) {
+	.artist-wrap img {
+        width: 100%;
+    }
+    .container {
+        width: 450px;
+    }
+}
