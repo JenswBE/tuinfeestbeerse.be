@@ -745,12 +745,15 @@ ul.menu.active {
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.6);
     padding: 20px 30px 40px 30px;
+}
+
+.artist-hover {
+    background: rgba(0,0,0,0.6);
     opacity: 0;
 }
 
-.artist-wrap:hover .artist-content {
+.artist-wrap:hover .artist-hover {
     opacity: 1;
 }
 
