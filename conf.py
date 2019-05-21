@@ -663,8 +663,8 @@ GITHUB_COMMIT_SOURCE = True
 #
 from nikola import filters
 FILTERS = {
-  ".html": [filters.html_tidy_mini],
-  ".css": [filters.yui_compressor],
+#  ".html": [filters.html_tidy_mini],
+#  ".css": [filters.yui_compressor],
 }
 
 # Executable for the "yui_compressor" filter (defaults to 'yui-compressor').
