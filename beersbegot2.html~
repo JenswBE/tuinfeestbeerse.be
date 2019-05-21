@@ -74,7 +74,8 @@
 				<div class="col-lg-8 d-none d-lg-block">
 					<div class="mainmenu">
 						<ul class="d-flex justify-content-end smooth-links">
-							<li><a href="#artists">Lokaal talent</a></li>
+							<li><a href="#muziek">Muzikaal talent</a></li>
+							<li><a href="#techniek">Technisch talent</a></li>
 							<li><a href="#partners">Sponsors</a></li>
 							<li><a href="#map">Waar?</a></li>
 						</ul>
@@ -95,7 +96,8 @@
 				<div class="row">
 					<div class="col-12">
 						<ul class="metismenu smooth-links">
-							<li><a href="#artists">Lokaal talent</a></li>
+							<li><a href="#muziek">Muzikaal talent</a></li>
+							<li><a href="#techniek">Technisch talent</a></li>
 							<li><a href="#partners">Sponsors</a></li>
 							<li><a href="#map">Waar?</a></li>
 						</ul>
@@ -163,12 +165,12 @@
 	</div>
 	<!-- about-area end -->
 	
-	<div class="artist-area" id="artists">
+	<div class="artist-area" id="muziek">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
 					<div class="section-title text-center">
-						<h2>Talent van BEERS</h2>
+						<h2>Muziek van BEERS</h2>
 					</div>
 				</div>
 			</div>
@@ -373,7 +375,23 @@
 					</div>
 				</div>
 			</div>
-			
+
+		</div>
+	</div>
+
+
+	<div class="artist-area" id="techniek">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="section-title text-center">
+						<h2>Muziek van BEERS</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row no-gutters">
+					
 			<div class="col-xl-3 col-lg-4 col-sm-6 col-12">
 				<div class="artist-wrap">
 					<img alt="" src="/beersbegot/img/Niels.png">
@@ -385,6 +403,18 @@
 					</div>
 				</div>
 			</div>
+			
+			<div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+				<div class="artist-wrap">
+					<img alt="" src="/beersbegot/img/Bob.png">
+					<div class="artist-content flex-style">
+						<h3>De crew</h3>
+						<p>
+							Light
+						</p>
+					</div>
+				</div>
+			</div>			
 			
 			<div class="col-xl-3 col-lg-4 col-sm-6 col-12">
 				<div class="artist-wrap">
@@ -416,7 +446,7 @@
 					<div class="artist-content flex-style">
 						<h3>De crew</h3>
 						<p>
-							- Frank Denies (front of house)<br>- Bob Mostmans (light)<br>- Raf Winten (crew)
+							- Frank Denies (front of house)<br>- Raf Winten (crew)
 						</p>
 					</div>
 				</div>
