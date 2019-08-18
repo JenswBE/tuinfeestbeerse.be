@@ -1,5 +1,5 @@
 settings:
-  show_artists: True
+  show_artists: False
 
 artists:
   # Verplichte velden: name, picture

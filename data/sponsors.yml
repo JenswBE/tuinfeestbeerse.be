@@ -1,5 +1,5 @@
 settings:
-  show_sponsors: True
+  show_sponsors: False
 
 main-sponsors:
   - title: Campine

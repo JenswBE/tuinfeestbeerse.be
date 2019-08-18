@@ -117,12 +117,11 @@ def link_icon(url, icon, appendix=False, blank=True):
    	%endif
    	%if artists_conf['settings']['show_artists']:
     	<li><a href="#artists">Artiesten</a></li>
-    %endif
+	%endif
    	%if sponsors_conf['settings']['show_sponsors']:
     	<li><a href="#partners">Sponsors</a></li>
 	%endif
 	<li><a href="#map">Waar?</a></li>
-	<li><a href="/beersbegot" target="_blank"><i class="fa fa-share-square-o" aria-hidden="true"></i> Beers Begot!</a></li>
 </%def>
 
 <!doctype html>
@@ -238,7 +237,11 @@ def link_icon(url, icon, appendix=False, blank=True):
 	        <div class="container">
 	            <div class="row">
 	                <div class="col-lg-12 col-12">
+                            %if general_conf['description_readmore']:
 	                    <div class="about-wrap readmore">
+	                    %else:
+	                    <div class="about-wrap">
+	                    %endif
 	                        ${general_conf['description']}
 	                    </div>
 	                </div>
