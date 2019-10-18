@@ -1,4 +1,0 @@
-Sitemap: https://tuinfeestbeerse.be/sitemapindex.xml
-
-User-Agent: *
-Host: tuinfeestbeerse.be

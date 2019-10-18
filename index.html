@@ -1,227 +1,309 @@
-<!DOCTYPE html>
-<html class="no-js" lang="nl">
-<head>
-<meta charset="utf-8">
-<meta content="ie=edge" http-equiv="x-ua-compatible">
-<title>Tuinfeest Beerse</title>
-<meta content="" name="description">
-<meta content="width=device-width, initial-scale=1" name="viewport"><!-- Favicon -->
-<link href="assets/favicon/apple-icon-57x57.png" rel="apple-touch-icon" sizes="57x57">
-<link href="assets/favicon/apple-icon-60x60.png" rel="apple-touch-icon" sizes="60x60">
-<link href="assets/favicon/apple-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
-<link href="assets/favicon/apple-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
-<link href="assets/favicon/apple-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
-<link href="assets/favicon/apple-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
-<link href="assets/favicon/apple-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
-<link href="assets/favicon/apple-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
-<link href="assets/favicon/apple-icon-180x180.png" rel="apple-touch-icon" sizes="180x180">
-<link href="assets/favicon/android-icon-192x192.png" rel="icon" sizes="192x192" type="image/png">
-<link href="assets/favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
-<link href="assets/favicon/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png">
-<link href="assets/favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
-<link href="assets/favicon/manifest.json" rel="manifest">
-<meta content="#ffffff" name="msapplication-TileColor">
-<meta content="/assets/favicon/ms-icon-144x144.png" name="msapplication-TileImage">
-<meta content="#ffffff" name="theme-color"><!-- Stylesheet bundle -->
-<link href="assets/css/all.css" rel="stylesheet"><!-- Modernizr -->
-<script src="assets/js/vendor/modernizr-2.8.3.min.js"></script><!-- Leaflet Maps API -->
-<link crossorigin="" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" rel="stylesheet">
-<script crossorigin="" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
-</head>
-<body>
-<!--[if lt IE 8]>
-                    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-                <![endif]-->
-<!-- header-area start -->
-<header class="header-area">
-<div class="container-fluid">
-<div class="row">
-<div class="col-lg-4 col-md-8 col-8">
-<div class="logo"><a href="#"><img alt="" src="images/logo.png"></a></div>
-</div>
-<div class="col-lg-8 d-none d-lg-block">
-<div class="mainmenu">
-<ul class="d-flex justify-content-end smooth-links">
-<li><a href="#about">Over Tuinfeest</a></li>
-<li><a href="#map">Waar?</a></li>
-</ul>
-</div>
-</div>
-<div class="d-block d-lg-none col-md-4 col-4 pull-right col-sm-4">
-<ul class="menu">
-<li class="first"></li>
-<li class="second"></li>
-<li class="third"></li>
-</ul>
-</div>
-</div>
-</div>
-<!-- responsive-menu area start -->
-<div class="responsive-menu-area d-block d-lg-none">
-<div class="container">
-<div class="row">
-<div class="col-12">
-<ul class="metismenu smooth-links">
-<li><a href="#about">Over Tuinfeest</a></li>
-<li><a href="#map">Waar?</a></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<!-- responsive-menu area start --></header>
-<!-- header-area end --><!-- slider-area start -->
-<div class="slider-area">
-<div class="slider-active owl-carousel">
-<div class="slider-items"><img alt="" class="slider" src="images/slider/01.jpg"></div>
-<div class="slider-items"><img alt="" class="slider" src="images/slider/02.jpg"></div>
-<div class="slider-items"><img alt="" class="slider" src="images/slider/03.jpg"></div>
-<div class="slider-items"><img alt="" class="slider" src="images/slider/04.jpg"></div>
-<div class="slider-items"><img alt="" class="slider" src="images/slider/05.jpg"></div>
-<div class="slider-items"><img alt="" class="slider" src="images/slider/06.jpg"></div>
-<div class="slider-items"><img alt="" class="slider" src="images/slider/07.jpg"></div>
-<div class="slider-items"><img alt="" class="slider" src="images/slider/08.jpg"></div>
-<div class="slider-items"><img alt="" class="slider" src="images/slider/09.jpg"></div>
-<div class="slider-items"><img alt="" class="slider" src="images/slider/10.jpg"></div>
-<div class="slider-items"><img alt="" class="slider" src="images/slider/11.jpg"></div>
-<div class="slider-items"><img alt="" class="slider" src="images/slider/12.jpg"></div>
-<div class="slider-items"><img alt="" class="slider" src="images/slider/13.jpg"></div>
-<div class="slider-items"><img alt="" class="slider" src="images/slider/14.jpg"></div>
-<div class="slider-items"><img alt="" class="slider" src="images/slider/15.jpg"></div>
-</div>
-<div class="slider-content" id="slider-static">
-<div class="col-lg-10 col-12 offset-lg-1 text-center">
-<h2>Tuinfeest 2020</h2>
-<p>27 en 28 Juni, 2020</p>
-<div data-countdown="2020/06/27 20:00" id="clock"></div>
-</div>
-</div>
-<ul class="social-share">
-<li><a href="mailto:info@tuinfeestbeerse.be" target="_blank"><i class="fa fa-envelope"></i> <span>info@tuinfeestbeerse.be</span></a></li>
-<li><a href="https://www.facebook.com/TuinfeestBeerse/" target="_blank"><i class="fa fa-facebook"></i> TuinfeestBeerse</a></li>
-</ul>
-</div>
-<!-- slider-area end -->
-<!-- about-area start -->
-<div class="about-area" id="about">
-<div class="container">
-<div class="row">
-<div class="col-lg-12 col-12">
-<div class="about-wrap">
-<h2>Op naar editie 2020</h2>
-<p style="font-size: 1.3rem">Bedankt om van 2019 mee een topeditie mee te maken!</p>
-<p style="font-size: 1.3rem">Momenteel zijn we druk in de weer met gazon te zaaien, eieren zoeken en de graafste artiesten te boeken om van 2020 weer een spetterende editie te maken! Vanaf het voorjaar kun je hier terug terecht voor meer info. Kom tegen dan dus zeker opnieuw een kijkje nemen!</p>
-<p style="font-size: 1.3rem">Tuinfeest Crew</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- about-area end -->
-<!-- .content-area start -->
-<div class="content-area">
-<div class="container">
-<div class="row">
-<div class="col-lg-3 col-sm-6 col-12">
-<div class="content-items">
-<div class="content-img"><img alt="" src="assets/images/icons/location.png"></div>
-<h4>Nief park</h4>
-<p>Ingang via:</p>
-<p>Pastoriestraat 8</p>
-<p>2340 Beerse</p>
-</div>
-</div>
-<div class="col-lg-3 col-sm-6 col-12">
-<div class="content-items">
-<div class="content-img"><img alt="" src="assets/images/icons/clock.png"></div>
-<h4>ZA 27 Juni 2020</h4>
-<p>20:00 - 03:00</p>
-</div>
-</div>
-<div class="col-lg-3 col-sm-6 col-12">
-<div class="content-items">
-<div class="content-img"><img alt="" src="assets/images/icons/seat.png"></div>
-<h4>ZO 28 Juni 2020</h4>
-<p>13:00 - 18:00</p>
-</div>
-</div>
-<div class="col-lg-3 col-sm-6 col-12">
-<div class="content-items">
-<div class="content-img"><img alt="" src="assets/images/icons/lunch.png"></div>
-<h4>Spek en Ei</h4>
-<p>Zaterdagavond</p>
-<p>voor grote en kleine hongertjes</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- .content-area end -->
-<div hight="400" id="map"></div>
-<!-- footer-area start -->
-<footer class="footer-area">
-<div class="container">
-<div class="row">
-<div class="col-md-8 col-12">
-<div class="copyright">
-<p>© <a href="https://jensw.be" target="_blank">Jensw.be</a> 2019</p>
-</div>
-</div>
-<div class="col-md-4 col-12">
-<ul class="social-icon justify-content-end d-flex">
-<li><a href="https://www.facebook.com/TuinfeestBeerse/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-<li><a href="https://www.instagram.com/tuinfeest_beerse/" target="_blank"><i class="fa fa-instagram"></i></a></li>
-<li><a href="https://www.youtube.com/channel/UCdN0ff4rGCs9QGIcFIUlDXA" target="_blank"><i class="fa fa-youtube"></i></a></li>
-</ul>
-</div>
-</div>
-</div>
-</footer>
-<!-- footer-area end --><!-- jquery latest version -->
-<script src="assets/js/vendor/jquery-2.2.4.min.js"></script><!-- popper.min.js -->
-<script src="assets/js/vendor/popper.min.js"></script><!-- bootstrap js -->
-<script src="assets/js/bootstrap.min.js"></script><!-- owl.carousel.2.0.0-beta.2.4 css -->
-<script src="assets/js/owl.carousel.min.js"></script><!-- swiper.min.js -->
-<script src="assets/js/swiper.min.js"></script><!-- mailchimp.js -->
-<script src="assets/js/mailchimp.js"></script><!-- plugins js -->
-<script src="assets/js/jquery.canvasjs.min.js"></script><!-- metisMenu.min.js -->
-<script src="assets/js/metisMenu.min.js"></script><!-- plugins js -->
-<script src="assets/js/plugins.js"></script><!-- Leaflet Map -->
-<script>
 
-                jQuery(document).ready(function(){
-                    // Basic setup
-                    var coord_nief_park = [51.31681, 4.85721];
-                    var mymap = L.map('map', {
-                        dragging: false,
-                        scrollWheelZoom: false,
-                        inertia: false,
-                        noMoveStart: true,
-                        tap: false
-                    }).setView(coord_nief_park, 16); 
-                
-                    // Add map tile layer
-                    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-                      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap<\/a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA<\/a>, Imagery © <a href="https://www.mapbox.com/">Mapbox<\/a>',
-                      maxZoom: 18,
-                      id: 'mapbox.streets',
-                      accessToken: 'pk.eyJ1IjoidHVpbmZlZXN0YmVlcnMiLCJhIjoiY2pxeTU1YzQxMDAxZzQ1cGV5NGlieGpnbyJ9.frYTXarGgo6JlWsXrtLs9A'
-                    }).addTo(mymap);
-                    
-                    var tfIcon = L.icon({
-                            iconUrl: '/assets/images/icons/leaflet/tf-marker.png',
-                            iconRetinaUrl: '/assets/images/icons/leaflet/tf-marker-2x.png',
-                            iconSize:     [75, 75], // size of the icon
-                            iconAnchor:   [37, 37],
-                            popupAnchor:  [0, -38]
-                        });
-                
-                    // Add marker for Nief Park
-                    L.Icon.Default.prototype.options.imagePath = '/assets/images/icons/leaflet/';
-                    var marker = L.marker(coord_nief_park, {icon: tfIcon}).addTo(mymap);
-                    marker.bindPopup("NIEF PARK<br>Ingang via:<br>Pastoriestraat 8<br>2340 Beerse").openPopup();
-                });
-</script><!-- main js -->
-<script src="assets/js/scripts.js"></script>
-</body>
+
+
+
+<!doctype html>
+<html class="no-js" lang="nl">
+	<head>
+	    <meta charset="utf-8">
+	    <meta http-equiv="x-ua-compatible" content="ie=edge">
+	    <title>Tuinfeest Beerse</title>
+	    <meta name="description" content="">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	    <!-- Favicon -->
+	    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon/apple-icon-57x57.png">
+			<link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon/apple-icon-60x60.png">
+			<link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon/apple-icon-72x72.png">
+			<link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon/apple-icon-76x76.png">
+			<link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon/apple-icon-114x114.png">
+			<link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon/apple-icon-120x120.png">
+			<link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon/apple-icon-144x144.png">
+			<link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon/apple-icon-152x152.png">
+			<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-icon-180x180.png">
+			<link rel="icon" type="image/png" sizes="192x192"  href="/assets/favicon/android-icon-192x192.png">
+			<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+			<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+			<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+			<link rel="manifest" href="/assets/favicon/manifest.json">
+			<meta name="msapplication-TileColor" content="#ffffff">
+			<meta name="msapplication-TileImage" content="/assets/favicon/ms-icon-144x144.png">
+			<meta name="theme-color" content="#ffffff">
+
+			<!-- Stylesheets -->
+	    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+			<link rel="stylesheet" href="/assets/css/animate.css">
+			<link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
+			<link rel="stylesheet" href="/assets/css/swiper.min.css">
+			<link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+			<link rel="stylesheet" href="/assets/css/flaticon.css">
+			<link rel="stylesheet" href="/assets/css/magnific-popup.css">
+			<link rel="stylesheet" href="/assets/css/metisMenu.min.css">
+			<link rel="stylesheet" href="/assets/css/styles.css">
+			<link rel="stylesheet" href="/assets/css/responsive.css">
+
+	    <!-- Modernizr -->
+	    <script src="/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+
+	    <!-- Leaflet Maps API -->
+			<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+			<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
+	</head>
+	<body>
+	    <!--[if lt IE 8]>
+	            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	        <![endif]-->
+	    <!-- header-area start -->
+	    <header class="header-area">
+	        <div class="container-fluid">
+	            <div class="row">
+	                <div class="col-lg-4 col-md-8 col-8">
+	                    <div class="logo">
+	                        <a href="index.html">
+	                            <img src="/assets/images/logo.png" alt="">
+	                        </a>
+	                    </div>
+	                </div>
+	                <div class="col-lg-8 d-none d-lg-block">
+	                    <div class="mainmenu">
+	                        <ul class="d-flex justify-content-end smooth-links">
+	                            
+	<li><a href="#about">Over Tuinfeest</a></li>
+	<li><a href="#map">Waar?</a></li>
+
+	                        </ul>
+	                    </div>
+	                </div>
+	                <div class="d-block d-lg-none col-md-4 col-4 pull-right col-sm-4">
+	                    <ul class="menu">
+	                        <li class="first"></li>
+	                        <li class="second"></li>
+	                        <li class="third"></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	        <!-- responsive-menu area start -->
+	        <div class="responsive-menu-area d-block d-lg-none">
+	            <div class="container">
+	                <div class="row">
+	                    <div class="col-12">
+	                        <ul class="metismenu smooth-links">
+															
+	<li><a href="#about">Over Tuinfeest</a></li>
+	<li><a href="#map">Waar?</a></li>
+
+	                        </ul>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	        <!-- responsive-menu area start -->
+	    </header>
+	    <!-- header-area end -->
+	    <!-- slider-area start -->
+	    <div class="slider-area">
+	        <div class="slider-active owl-carousel">
+	            <div class="slider-items">
+	                <img src="/assets/images/slider/01.jpg" alt="" class="slider">
+	            </div>
+	            <div class="slider-items">
+	                <img src="/assets/images/slider/02.jpg" alt="" class="slider">
+	            </div>
+	            <div class="slider-items">
+	                <img src="/assets/images/slider/03.jpg" alt="" class="slider">
+	            </div>
+	            <div class="slider-items">
+	                <img src="/assets/images/slider/04.jpg" alt="" class="slider">
+	            </div>
+	            <div class="slider-items">
+	                <img src="/assets/images/slider/05.jpg" alt="" class="slider">
+	            </div>
+	            <div class="slider-items">
+	                <img src="/assets/images/slider/06.jpg" alt="" class="slider">
+	            </div>
+	            <div class="slider-items">
+	                <img src="/assets/images/slider/07.jpg" alt="" class="slider">
+	            </div>
+	            <div class="slider-items">
+	                <img src="/assets/images/slider/08.jpg" alt="" class="slider">
+	            </div>
+	            <div class="slider-items">
+	                <img src="/assets/images/slider/09.jpg" alt="" class="slider">
+	            </div>
+	            <div class="slider-items">
+	                <img src="/assets/images/slider/10.jpg" alt="" class="slider">
+	            </div>
+	            <div class="slider-items">
+	                <img src="/assets/images/slider/11.jpg" alt="" class="slider">
+	            </div>
+	            <div class="slider-items">
+	                <img src="/assets/images/slider/12.jpg" alt="" class="slider">
+	            </div>
+	            <div class="slider-items">
+	                <img src="/assets/images/slider/13.jpg" alt="" class="slider">
+	            </div>
+	            <div class="slider-items">
+	                <img src="/assets/images/slider/14.jpg" alt="" class="slider">
+	            </div>
+	            <div class="slider-items">
+	                <img src="/assets/images/slider/15.jpg" alt="" class="slider">
+	            </div>
+	        </div>
+	        <div id="slider-static" class="slider-content">
+                <div class="col-lg-10 col-12 offset-lg-1 text-center">
+                    <h2>Tuinfeest 2020</h2>
+                    <p>27 en 28 Juni, 2020</p>
+                    <div id="clock" data-countdown="2020/06/27 20:00"></div>
+                </div>
+            </div>
+	        <ul class="social-share">
+	            <li><a href="mailto:info@tuinfeestbeerse.be" target="_blank"><i class="fa fa-envelope"></i> <span>info@tuinfeestbeerse.be</span></a></li>
+	            	<li><a href="https://www.facebook.com/TuinfeestBeerse/" target="_blank"><i class="fa fa-facebook"></i> TuinfeestBeerse</a></li>
+	        </ul>
+	    </div>
+	    <!-- slider-area end -->
+	    <!-- about-area start -->
+	    <div class="about-area" id="about">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-lg-12 col-12">
+	                    <div class="about-wrap">
+	                        <h2>Op naar editie 2020</h2> <p style="font-size: 1.3rem">Bedankt om van 2019 mee een topeditie te maken!</p> <p style="font-size: 1.3rem">Momenteel zijn we druk in de weer met gazon te zaaien, eieren zoeken en de graafste artiesten te boeken om van 2020 weer een spetterende editie te maken! Vanaf het voorjaar kun je hier terug terecht voor meer info. Kom tegen dan dus zeker opnieuw een kijkje nemen!</p> <p style="font-size: 1.3rem">Tuinfeest Crew</p>
+
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	    <!-- about-area end -->
+
+
+
+
+	    <!-- .content-area start -->
+	    <div class="content-area">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-lg-3 col-sm-6 col-12">
+	                    <div class="content-items">
+	                        <div class="content-img">
+	                            <img src="/assets/images/icons/location.png" alt="">
+	                        </div>
+	                        <h4>Nief park</h4>
+	                        <p>Ingang via:</p>
+	                        <p>Pastoriestraat 8</p>
+	                        <p>2340 Beerse
+	                    </div>
+	                </div>
+	                <div class="col-lg-3 col-sm-6 col-12">
+	                    <div class="content-items">
+	                        <div class="content-img">
+	                            <img src="/assets/images/icons/clock.png" alt="">
+	                        </div>
+	                        <h4>ZA 27 Juni 2020</h4>
+	                        <p>20:00 - 03:00</p>
+	                    </div>
+	                </div>
+	                <div class="col-lg-3 col-sm-6 col-12">
+	                    <div class="content-items">
+	                        <div class="content-img">
+	                            <img src="/assets/images/icons/seat.png" alt="">
+	                        </div>
+	                        <h4>ZO 28 Juni 2020</h4>
+	                        <p>13:00 - 18:00</p>
+	                    </div>
+	                </div>
+	                <div class="col-lg-3 col-sm-6 col-12">
+	                    <div class="content-items">
+	                        <div class="content-img">
+	                            <img src="/assets/images/icons/lunch.png" alt="">
+	                        </div>
+	                        <h4>Spek en Ei</h4>
+	                        <p>Zaterdagavond</p>
+	                        <p>voor grote en kleine hongertjes</p>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	    <!-- .content-area end -->
+
+	    <div id="map" hight="400"></div>
+	    <!-- footer-area start -->
+	    <footer class="footer-area">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-md-8 col-12">
+	                    <div class="copyright">
+	                        <p>&copy; <a href="https://jensw.be" target="_blank">Jensw.be</a> 2019</p>
+	                    </div>
+	                </div>
+	                <div class="col-md-4 col-12">
+	                    <ul class="social-icon justify-content-end d-flex">
+	                            		<li><a href="https://www.facebook.com/TuinfeestBeerse/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+	                            		<li><a href="https://www.instagram.com/tuinfeest_beerse/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+	                            		<li><a href="https://www.youtube.com/channel/UCdN0ff4rGCs9QGIcFIUlDXA" target="_blank"><i class="fa fa-youtube"></i></a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </footer>
+	    <!-- footer-area end -->
+	    <!-- jquery latest version -->
+	    <script src="/assets/js/vendor/jquery-2.2.4.min.js"></script>
+	    <!-- popper.min.js -->
+	    <script src="/assets/js/vendor/popper.min.js"></script>
+	    <!-- bootstrap js -->
+	    <script src="/assets/js/bootstrap.min.js"></script>
+	    <!-- owl.carousel.2.0.0-beta.2.4 css -->
+	    <script src="/assets/js/owl.carousel.min.js"></script>
+	    <!-- swiper.min.js -->
+	    <script src="/assets/js/swiper.min.js"></script>
+	    <!-- mailchimp.js -->
+	    <script src="/assets/js/mailchimp.js"></script>
+	    <!-- plugins js -->
+	    <script src="/assets/js/jquery.canvasjs.min.js"></script>
+	    <!-- metisMenu.min.js -->
+	    <script src="/assets/js/metisMenu.min.js"></script>
+	    <!-- plugins js -->
+	    <script src="/assets/js/plugins.js"></script>
+	    <!-- Leaflet Map -->
+	    <script>
+		jQuery(document).ready(function(){
+		    // Basic setup
+		    var coord_nief_park = [51.31681, 4.85721];
+		    var mymap = L.map('map', {
+		    	dragging: false,
+		    	scrollWheelZoom: false,
+		    	inertia: false,
+		    	noMoveStart: true,
+		    	tap: false
+		    }).setView(coord_nief_park, 16);
+
+		    // Add map tile layer
+		    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+		      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		      maxZoom: 18,
+		      id: 'mapbox.streets',
+		      accessToken: 'pk.eyJ1IjoidHVpbmZlZXN0YmVlcnMiLCJhIjoiY2pxeTU1YzQxMDAxZzQ1cGV5NGlieGpnbyJ9.frYTXarGgo6JlWsXrtLs9A'
+		    }).addTo(mymap);
+
+		    var tfIcon = L.icon({
+			    iconUrl: '/assets/images/icons/leaflet/tf-marker.png',
+			    iconRetinaUrl: '/assets/images/icons/leaflet/tf-marker-2x.png',
+			    iconSize:     [75, 75], // size of the icon
+			    iconAnchor:   [37, 37],
+			    popupAnchor:  [0, -38]
+			});
+
+		    // Add marker for Nief Park
+		    L.Icon.Default.prototype.options.imagePath = '/assets/images/icons/leaflet/';
+		    var marker = L.marker(coord_nief_park, {icon: tfIcon}).addTo(mymap);
+		    marker.bindPopup("NIEF PARK<br>Ingang via:<br>Pastoriestraat 8<br>2340 Beerse").openPopup();
+		});
+		</script>
+	    <!-- main js -->
+	    <script src="/assets/js/scripts.js"></script>
+	</body>
 </html>
