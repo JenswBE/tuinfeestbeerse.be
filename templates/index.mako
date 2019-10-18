@@ -26,13 +26,13 @@ def get_timetable_day_start_end(name):
 	else:
 		exit_with_error("No day or multiple days found for name = \"{}\"".format(name))
 	return (datetime.strptime(day['start'], '%d.%m.%Y %H:%M'),datetime.strptime(day['end'], '%d.%m.%Y %H:%M'))
-	
+
 dt_sat_start, dt_sat_end = get_timetable_day_start_end('Zaterdag')
 dt_sun_start, dt_sun_end = get_timetable_day_start_end('Zondag')
 today = date.today()
 
 # Get backgrounds
-backgrounds = listdir('images/slider/')
+backgrounds = listdir('static/assets/images/slider/')
 backgrounds.sort()
 
 # Get other vars
@@ -41,7 +41,7 @@ name_facebook = general_conf['links'].get('facebook').strip('/').split('/')[-1] 
 # Build time table
 if timetable_conf['settings']['show_timetable']:
 	days = []
-	
+
 	# Build lookup table
 	for day in timetable_conf['timetable']:
 		if day.get('locations'):
@@ -65,7 +65,7 @@ if timetable_conf['settings']['show_timetable']:
 					}
 					day_dict['shows'].append(show_dict)
 			days.append(day_dict)
-	
+
 	# Build time table
 	timetable = OrderedDict()
 	half_hour = timedelta(minutes = 30)
@@ -132,35 +132,44 @@ def link_icon(url, icon, appendix=False, blank=True):
 	    <title>Tuinfeest Beerse</title>
 	    <meta name="description" content="">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	    
+
 	    <!-- Favicon -->
 	    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon/apple-icon-57x57.png">
-		<link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon/apple-icon-60x60.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon/apple-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon/apple-icon-76x76.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon/apple-icon-114x114.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon/apple-icon-120x120.png">
-		<link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon/apple-icon-144x144.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon/apple-icon-152x152.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-icon-180x180.png">
-		<link rel="icon" type="image/png" sizes="192x192"  href="/assets/favicon/android-icon-192x192.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
-		<link rel="manifest" href="/assets/favicon/manifest.json">
-		<meta name="msapplication-TileColor" content="#ffffff">
-		<meta name="msapplication-TileImage" content="/assets/favicon/ms-icon-144x144.png">
-		<meta name="theme-color" content="#ffffff">
-	
-		<!-- Stylesheet bundle -->
-	    <link rel="stylesheet" href="/assets/css/all.css">
-	
+			<link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon/apple-icon-60x60.png">
+			<link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon/apple-icon-72x72.png">
+			<link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon/apple-icon-76x76.png">
+			<link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon/apple-icon-114x114.png">
+			<link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon/apple-icon-120x120.png">
+			<link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon/apple-icon-144x144.png">
+			<link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon/apple-icon-152x152.png">
+			<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-icon-180x180.png">
+			<link rel="icon" type="image/png" sizes="192x192"  href="/assets/favicon/android-icon-192x192.png">
+			<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+			<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+			<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+			<link rel="manifest" href="/assets/favicon/manifest.json">
+			<meta name="msapplication-TileColor" content="#ffffff">
+			<meta name="msapplication-TileImage" content="/assets/favicon/ms-icon-144x144.png">
+			<meta name="theme-color" content="#ffffff">
+
+			<!-- Stylesheets -->
+	    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+			<link rel="stylesheet" href="/assets/css/animate.css">
+			<link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
+			<link rel="stylesheet" href="/assets/css/swiper.min.css">
+			<link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+			<link rel="stylesheet" href="/assets/css/flaticon.css">
+			<link rel="stylesheet" href="/assets/css/magnific-popup.css">
+			<link rel="stylesheet" href="/assets/css/metisMenu.min.css">
+			<link rel="stylesheet" href="/assets/css/styles.css">
+			<link rel="stylesheet" href="/assets/css/responsive.css">
+
 	    <!-- Modernizr -->
 	    <script src="/assets/js/vendor/modernizr-2.8.3.min.js"></script>
-	    
+
 	    <!-- Leaflet Maps API -->
-		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
-		<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
+			<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+			<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
 	</head>
 	<body>
 	    <!--[if lt IE 8]>
@@ -173,7 +182,7 @@ def link_icon(url, icon, appendix=False, blank=True):
 	                <div class="col-lg-4 col-md-8 col-8">
 	                    <div class="logo">
 	                        <a href="index.html">
-	                            <img src="/images/logo.png" alt="">
+	                            <img src="/assets/images/logo.png" alt="">
 	                        </a>
 	                    </div>
 	                </div>
@@ -199,7 +208,7 @@ def link_icon(url, icon, appendix=False, blank=True):
 	                <div class="row">
 	                    <div class="col-12">
 	                        <ul class="metismenu smooth-links">
-								${menu_links()}
+															${menu_links()}
 	                        </ul>
 	                    </div>
 	                </div>
@@ -213,9 +222,9 @@ def link_icon(url, icon, appendix=False, blank=True):
 	        <div class="slider-active owl-carousel">
 	        	%for bg in backgrounds:
 	            <div class="slider-items">
-	                <img src="/images/slider/${bg}" alt="" class="slider">
+	                <img src="/assets/images/slider/${bg}" alt="" class="slider">
 	            </div>
-	            %endfor
+	          %endfor
 	        </div>
 	        <div id="slider-static" class="slider-content">
                 <div class="col-lg-10 col-12 offset-lg-1 text-center">
@@ -249,7 +258,7 @@ def link_icon(url, icon, appendix=False, blank=True):
 	        </div>
 	    </div>
 	    <!-- about-area end -->
-	    
+
 		%if timetable_conf['settings']['show_timetable']:
 		    <!-- schedule-area start -->
 		    <div class="schedule-area bg-1" id="time-table">
@@ -266,7 +275,7 @@ def link_icon(url, icon, appendix=False, blank=True):
 		            	<div class="col-12">
 		                    <ul class="nav schedule-menu">
 		                    	%for day in timetable:
-		                        <li><a 
+		                        <li><a
 		                        	%if loop.first:
 		                        	class="active"
 		                        	%endif
@@ -295,7 +304,7 @@ def link_icon(url, icon, appendix=False, blank=True):
 			                                            <td class="time">${slot['time']}</td>
 			                                            %for show in slot['shows']:
 			                                            	<td rowspan="${int(show['length']) if show.get('length') else 1}">
-			                                            		<p>${show['artist'] if show.get('artist') else ''}</p>		
+			                                            		<p>${show['artist'] if show.get('artist') else ''}</p>
 		                                            		</td>
 			                                            %endfor
 			                                        </tr>
@@ -312,7 +321,7 @@ def link_icon(url, icon, appendix=False, blank=True):
 		    </div>
 		    <!-- schedule-area end -->
 		%endif
-		
+
 	    %if artists_conf['settings']['show_artists']:
 		    <div class="artist-area" id="artists">
 		        <div class="container">
@@ -328,7 +337,7 @@ def link_icon(url, icon, appendix=False, blank=True):
 		        	%for artist in artists_conf['artists']:
 		            <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
 		                <div class="artist-wrap">
-		                    <img src="/images/artists/${artist['picture']}" alt="">
+		                    <img src="/assets/images/artists/${artist['picture']}" alt="">
 		                    <div class="artist-content flex-style">
 		                        <h3>${artist['name']}</h3>
 		                        %if artist.get('type'):
@@ -353,7 +362,7 @@ def link_icon(url, icon, appendix=False, blank=True):
 		        </div>
 		    </div>
 		%endif
-	
+
 		%if sponsors_conf['settings']['show_sponsors']:
 		    <div class="partner-area" id="partners">
 		        <div class="container">
@@ -365,7 +374,7 @@ def link_icon(url, icon, appendix=False, blank=True):
 		                    </div>
 		                </div>
 		            </div>
-		            	
+
 		            <div class="row">
 		                <div class="col-lg-6 offset-lg-3 col-sm-8 offset-sm-2 col-12">
 		                	<div class="row">
@@ -373,7 +382,7 @@ def link_icon(url, icon, appendix=False, blank=True):
 			                        <div class="col-12">
 			                            <div class="partner-wrap">
 			                                <a href="${sponsor['link']}" target="_blank">
-			                                    <img src="/images/sponsor/${sponsor['picture']}" alt="${sponsor['title']}">
+			                                    <img src="/assets/images/sponsor/${sponsor['picture']}" alt="${sponsor['title']}">
 			                                </a>
 			                            </div>
 			                        </div>
@@ -381,7 +390,7 @@ def link_icon(url, icon, appendix=False, blank=True):
 		                    </div>
 		                </div>
 		            </div>
-		           	            
+
 		            <div class="row">
 		                <div class="col-lg-8 offset-lg-2 col-sm-10 offset-sm-1 col-12">
 		                	<div class="row">
@@ -389,7 +398,7 @@ def link_icon(url, icon, appendix=False, blank=True):
 			                        <div class="col-sm-4 col-6">
 			                            <div class="partner-wrap">
 			                                <a href="${sponsor['link']}" target="_blank">
-			                                    <img src="/images/sponsor/${sponsor['picture']}" alt="${sponsor['title']}">
+			                                    <img src="/assets/images/sponsor/${sponsor['picture']}" alt="${sponsor['title']}">
 			                                </a>
 			                            </div>
 			                        </div>
@@ -400,7 +409,7 @@ def link_icon(url, icon, appendix=False, blank=True):
 		        </div>
 		    </div>
 		%endif
-	   
+
 	    <!-- .content-area start -->
 	    <div class="content-area">
 	        <div class="container">
@@ -501,8 +510,8 @@ def link_icon(url, icon, appendix=False, blank=True):
 		    	inertia: false,
 		    	noMoveStart: true,
 		    	tap: false
-		    }).setView(coord_nief_park, 16); 
-		
+		    }).setView(coord_nief_park, 16);
+
 		    // Add map tile layer
 		    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
 		      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -510,7 +519,7 @@ def link_icon(url, icon, appendix=False, blank=True):
 		      id: 'mapbox.streets',
 		      accessToken: 'pk.eyJ1IjoidHVpbmZlZXN0YmVlcnMiLCJhIjoiY2pxeTU1YzQxMDAxZzQ1cGV5NGlieGpnbyJ9.frYTXarGgo6JlWsXrtLs9A'
 		    }).addTo(mymap);
-		    
+
 		    var tfIcon = L.icon({
 			    iconUrl: '/assets/images/icons/leaflet/tf-marker.png',
 			    iconRetinaUrl: '/assets/images/icons/leaflet/tf-marker-2x.png',
@@ -518,7 +527,7 @@ def link_icon(url, icon, appendix=False, blank=True):
 			    iconAnchor:   [37, 37],
 			    popupAnchor:  [0, -38]
 			});
-		
+
 		    // Add marker for Nief Park
 		    L.Icon.Default.prototype.options.imagePath = '/assets/images/icons/leaflet/';
 		    var marker = L.marker(coord_nief_park, {icon: tfIcon}).addTo(mymap);
@@ -527,5 +536,5 @@ def link_icon(url, icon, appendix=False, blank=True):
 		</script>
 	    <!-- main js -->
 	    <script src="/assets/js/scripts.js"></script>
-	</body>  
+	</body>
 </html>

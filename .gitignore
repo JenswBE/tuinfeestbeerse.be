@@ -1,7 +1,4 @@
-# Nikola
-cache
-.doit.db*
-__pycache__
+# Custom
 output
 
 # Editor

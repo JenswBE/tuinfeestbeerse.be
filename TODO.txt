@@ -1,2 +1,0 @@
-- Fix slider (base.tmpl)
-- Fix slider links on small displays (base.tmpl)
