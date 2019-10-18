@@ -1,0 +1,52 @@
+version: 2
+
+jobs:
+  build-website:
+    docker:
+      - image: python:3.7
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: pip install melthon
+      - run:
+          name: Build website
+          command: melthon build -o workspace/output
+      - persist_to_workspace:
+          root: workspace
+          paths: output
+
+  deploy-website:
+    docker:
+      - image: node:8.10.0
+    steps:
+      - checkout
+      - attach_workspace:
+          at: workspace
+      - run:
+          name: Disable jekyll builds
+          command: touch docs/_build/html/.nojekyll
+      - run:
+          name: Install and configure dependencies
+          command: |
+            npm install -g --silent gh-pages@2.1.1
+            git config user.email "ci-build@jensw.be"
+            git config user.name "ci-build"
+      - add_ssh_keys:
+          fingerprints:
+            - "92:da:f1:f6:5a:5a:77:a9:94:f0:fb:ed:b8:12:7d:a0"
+      - run:
+          name: Deploy docs to gh-pages branch
+          command: gh-pages --dotfiles --message "[skip ci] Updates" --dist workspace/output
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build-website
+      - deploy-website:
+          requires:
+            - build-website
+    filters:
+      branches:
+        only: master
