@@ -7,10 +7,10 @@ mail-artist: artiesten@tuinfeestbeerse.be
 links: # Elk icoon op https://fontawesome.com/v4.7.0/icons/ is ondersteund.
   info:
     title: info@tuinfeestbeerse.be
-    link: info@tuinfeestbeerse.be
+    link: mailto:info@tuinfeestbeerse.be
   music:
     title: artiesten@tuinfeestbeerse.be
-    link: artiesten@tuinfeestbeerse.be
+    link: mailto:artiesten@tuinfeestbeerse.be
   facebook:
     title: Facebook
     link: https://www.facebook.com/TuinfeestBeerse/
