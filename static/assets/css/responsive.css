@@ -235,15 +235,14 @@
 }
 
 @media (max-height: 576px) {
-    #slider-static {
-	    top: 120px;
+   #slider-static {
+    	top: 120px;
 	}
 }
 
 @media (max-height: 350px), (max-width: 350px) {
-    #clock,
-    .social-share {
-	    display: none;
+   #clock {
+    	display: none;
 	}
 }
 

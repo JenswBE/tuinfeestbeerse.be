@@ -35,18 +35,18 @@ backgrounds = listdir('static/assets/images/slider/')
 backgrounds.sort()
 
 # Get other vars
-name_facebook = general_conf['links'].get('facebook').strip('/').split('/')[-1] if general_conf['links'].get('facebook') else ''
+name_facebook = general_conf['links'].get('facebook')['link'].strip('/').split('/')[-1] if general_conf['links'].get('facebook') else ''
 
 # Define helpers
-def link(url, content, blank=True):
-  target = '_blank' if blank else '_self'
-  return "<a href=\"{}\" target=\"{}\">{}</a>".format(url, target, content)
+def link(url, content, title=False, blank=True):
+  target = 'target="{}"'.format('_blank' if blank else '_self')
+  title = 'title="{}"'.format(title) if title else ''
+  return "<a href=\"{}\" {} {}>{}</a>".format(url, target, title, content)
 
-def link_icon(url, icon, appendix=False, blank=True):
+def link_icon(url, icon, title=False, appendix=False, blank=True):
   icon = "<i class=\"fa fa-{}\"></i>".format(icon)
   content = "{} {}".format(icon, appendix) if appendix else icon
-  return link(url, content, blank)
-
+  return link(url, content, title, blank)
 %>
 
 <%def name="menu_links()">
@@ -173,9 +173,10 @@ def link_icon(url, icon, appendix=False, blank=True):
                 </div>
             </div>
           <ul class="social-share">
-              <li>${link_icon("mailto:" + general_conf['email'], "envelope", "<span>{}</span>".format(general_conf['email']))}</li>
+              <li>${link_icon("mailto:" + general_conf['mail-info'], "envelope", appendix="<span>{}</span>".format(general_conf['mail-info']))}</li>
+              <li>${link_icon("mailto:" + general_conf['mail-artist'], "music", appendix="<span>{}</span>".format(general_conf['mail-artist']))}</li>
               %if name_facebook:
-                <li>${link_icon(general_conf['links']['facebook'], "facebook", name_facebook)}</li>
+                <li>${link_icon(general_conf['links']['facebook'], "facebook", appendix="<span>{}</span>".format(name_facebook))}</li>
               %endif
           </ul>
       </div>
@@ -409,10 +410,10 @@ def link_icon(url, icon, appendix=False, blank=True):
                   </div>
                   <div class="col-md-4 col-12">
                       <ul class="social-icon justify-content-end d-flex">
-                        %for name, url in general_conf['links'].items():
-                              %if url:
-                                  <li>${link_icon(url, name)}</li>
-                                %endif
+                          %for name, item in general_conf['links'].items():
+                              %if name:
+                                  <li>${link_icon(item['link'], name, item['title'])}</li>
+                              %endif
                           %endfor
                       </ul>
                   </div>

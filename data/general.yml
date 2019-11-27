@@ -1,12 +1,25 @@
 # Bevat algemene instellingen voor de website
 # Datums voor zaterdag en zondag zijn in te stellen in "timetable.yml"
 
-email: info@tuinfeestbeerse.be
+mail-info: info@tuinfeestbeerse.be
+mail-artist: artiesten@tuinfeestbeerse.be
 
-links: # Elk icoon op https://fontawesome.com/icons is ondersteund. Formaat = "icoon: link"
-  facebook: https://www.facebook.com/TuinfeestBeerse/
-  instagram: https://www.instagram.com/tuinfeest_beerse/
-  youtube: https://www.youtube.com/channel/UCdN0ff4rGCs9QGIcFIUlDXA
+links: # Elk icoon op https://fontawesome.com/v4.7.0/icons/ is ondersteund.
+  info:
+    title: info@tuinfeestbeerse.be
+    link: info@tuinfeestbeerse.be
+  music:
+    title: artiesten@tuinfeestbeerse.be
+    link: artiesten@tuinfeestbeerse.be
+  facebook:
+    title: Facebook
+    link: https://www.facebook.com/TuinfeestBeerse/
+  instagram:
+    title: Instagram
+    link: https://www.instagram.com/tuinfeest_beerse/
+  youtube:
+    title: YouTube
+    link: https://www.youtube.com/channel/UCdN0ff4rGCs9QGIcFIUlDXA
 
 description: >
   <h2>Op naar editie 2020</h2>
