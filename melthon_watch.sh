@@ -10,4 +10,4 @@ command -v inotifywait >/dev/null 2>&1 || { echo >&2 "inotifywait is missing, pl
 # Start watching
 echo "'melthon build ${*}' will be executed on file changes."
 echo "Start watching ..."
-inotifywait -qmr --exclude "output/.*" --event close_write --format "build ${*}" . | xargs -L 1 melthon
+inotifywait -qmr --exclude "output/.*" --event close_write --format "build ${*}" . | xargs -n1 melthon

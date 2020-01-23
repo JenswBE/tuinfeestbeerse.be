@@ -8,31 +8,22 @@ import logging
 
 # Remap data to local vars (support file renaming)
 general_conf = data['general']
-artists_conf = data['artists']
 sponsors_conf = data['sponsors']
-timetable_conf = data['timetable']
 football_conf = data['football']
+
+# Dates
+dt_fb_start = datetime.strptime(football_conf['start'], '%d.%m.%Y %H:%M')
+dt_fb_end = datetime.strptime(football_conf['end'], '%d.%m.%Y %H:%M')
+dt_fb_start2 = datetime.strptime(football_conf['start2'], '%d.%m.%Y %H:%M')
+dt_fb_end2 = datetime.strptime(football_conf['end2'], '%d.%m.%Y %H:%M')
 
 # Error helper
 def exit_with_error(message, code=1):
   logging.error(message)
   exit(1)
 
-# Get dates
-def get_timetable_day_start_end(name):
-  day = [d for d in timetable_conf['timetable'] if d['name'] == name]
-  if len(day) == 1:
-    day = day[0]
-  else:
-    exit_with_error("No day or multiple days found for name = \"{}\"".format(name))
-  return (datetime.strptime(day['start'], '%d.%m.%Y %H:%M'),datetime.strptime(day['end'], '%d.%m.%Y %H:%M'))
-
-dt_sat_start, dt_sat_end = get_timetable_day_start_end('Zaterdag')
-dt_sun_start, dt_sun_end = get_timetable_day_start_end('Zondag')
-dt_football = datetime.strptime(football_conf['start'], '%d.%m.%Y %H:%M')
-
 # Get backgrounds
-backgrounds_url = 'assets/images/slider/'
+backgrounds_url = 'assets/images/football/slider'
 backgrounds = listdir('static/' + backgrounds_url)
 backgrounds.sort()
 
@@ -52,16 +43,7 @@ def link_icon(url, icon, title=False, appendix=False, blank=True):
 %>
 
 <%def name="menu_links()">
-  %if football_conf['show_football']:
-      <li><a href="${football_conf['page_name']}">EK Finland - Belgi&euml;</a></li>
-  %endif
-  <li><a href="#about">Over Tuinfeest</a></li>
-  %if timetable_conf['settings']['show_timetable']:
-      <li><a href="#time-table">Time table</a></li>
-  %endif
-  %if artists_conf['settings']['show_artists']:
-      <li><a href="#artists">Artiesten</a></li>
-  %endif
+  <li><a href="/">Tuinfeest ${dt_fb_start.year}</a></li>
   %if sponsors_conf['settings']['show_sponsors']:
       <li><a href="#partners">Sponsors</a></li>
   %endif
@@ -172,9 +154,10 @@ def link_icon(url, icon, title=False, appendix=False, blank=True):
           </div>
           <div id="slider-static" class="slider-content">
                 <div class="col-lg-10 col-12 offset-lg-1 text-center">
-                    <h2>Tuinfeest ${dt_sat_start.year}</h2>
-                    <p>${dt_sat_start.day} en ${dt_sun_start.day} Juni, ${dt_sat_start.year}</p>
-                    <div id="clock" data-countdown="${dt_sat_start.strftime('%Y/%m/%d %H:%M')}"></div>
+                    <h2>EK Finland - Belgi&euml;</h2>
+                    <p>${football_conf["day_name"].capitalize()} ${dt_fb_start.day} Juni ${dt_fb_start.year}, ${dt_fb_start.strftime('%H:%M')} - ${dt_fb_end.strftime('%H:%M')}</p>
+                    <p>Misschien ook: ${football_conf["day_name2"].capitalize()} ${dt_fb_start2.day} Juni ${dt_fb_start2.year}, ${dt_fb_start2.strftime('%H:%M')} - ${dt_fb_end2.strftime('%H:%M')}</p>
+                    <div id="clock" data-countdown="${dt_fb_start.strftime('%Y/%m/%d %H:%M')}"></div>
                 </div>
             </div>
           <ul class="social-share">
@@ -191,119 +174,18 @@ def link_icon(url, icon, title=False, appendix=False, blank=True):
           <div class="container">
               <div class="row">
                   <div class="col-lg-12 col-12">
-                      <% readmore = "readmore" if general_conf['description_readmore'] else "" %>
-                      <div class="about-wrap ${readmore}">
-                          ${general_conf['description']}
+                            %if football_conf['description_readmore']:
+                      <div class="about-wrap readmore">
+                      %else:
+                      <div class="about-wrap">
+                      %endif
+                          ${football_conf['description']}
                       </div>
                   </div>
               </div>
           </div>
       </div>
       <!-- about-area end -->
-
-    %if timetable_conf['settings']['show_timetable']:
-        <!-- schedule-area start -->
-        <div class="schedule-area bg-1" id="time-table">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="section-title text-center">
-                            <h2>Time table</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                  %if len(timetable) > 1:
-                  <div class="col-12">
-                        <ul class="nav schedule-menu">
-                          %for day in timetable:
-                            <li><a
-                              %if loop.first:
-                              class="active"
-                              %endif
-                              data-toggle="tab" href="#dag${loop.index + 1}">${day}</a></li>
-                            %endfor
-                        </ul>
-                    </div>
-                    %endif
-                    <div class="col-12">
-                        <div class="tab-content">
-                          %for day in timetable:
-                            <div class="tab-pane fade ${'show active' if loop.first else ''}" id="dag${loop.index + 1}">
-                                <div class="schedule-wrap table-responsive">
-                                    <table>
-                                        <thead>
-                                            <tr>
-                                                <th class="time"><i class="fa fa-clock-o"></i></th>
-                                                %for location in timetable[day]['locations']:
-                                                  <th>${location}</th>
-                                                %endfor
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                          %for slot in timetable[day]['slots']:
-                                              <tr>
-                                                  <td class="time">${slot['time']}</td>
-                                                  %for show in slot['shows']:
-                                                    <td rowspan="${int(show['length']) if show.get('length') else 1}">
-                                                      <p>${show['artist'] if show.get('artist') else ''}</p>
-                                                    </td>
-                                                  %endfor
-                                              </tr>
-                                            %endfor
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            %endfor
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- schedule-area end -->
-    %endif
-
-      %if artists_conf['settings']['show_artists']:
-        <div class="artist-area" id="artists">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="section-title text-center">
-                            <h2>Artiesten</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row no-gutters">
-              %for artist in artists_conf['artists']:
-                <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
-                    <div class="artist-wrap">
-                        <img src="/assets/images/artists/${artist['picture']}" alt="">
-                        <div class="artist-content flex-style">
-                            <h3>${artist['name']}</h3>
-                            %if artist.get('type'):
-                              <span>${artist['type']}</span>
-                          %endif
-                          %if artist.get('description'):
-                              <p>${artist['description']}</p>
-                            %endif
-                            %if artist.get('links'):
-                              <ul class="artist-flow d-flex">
-                                %for name, url in artist['links'].items():
-                                  %if url:
-                                      <li>${link_icon(url, name)}</li>
-                                    %endif
-                                  %endfor
-                              </ul>
-                            %endif
-                        </div>
-                    </div>
-                </div>
-                %endfor
-            </div>
-        </div>
-    %endif
 
     %if sponsors_conf['settings']['show_sponsors']:
         <div class="partner-area" id="partners">
@@ -312,7 +194,7 @@ def link_icon(url, icon, title=False, appendix=False, blank=True):
                     <div class="col-12">
                         <div class="section-title text-center">
                             <h2>Onze Sponsors</h2>
-                            <p>Onze Sponsors voor Tuinfeest ${dt_sat_start.year}</p>
+                            <p>Onze Sponsors voor Tuinfeest ${dt_fb_start.year}</p>
                         </div>
                     </div>
                 </div>
@@ -356,7 +238,7 @@ def link_icon(url, icon, title=False, appendix=False, blank=True):
       <div class="content-area">
           <div class="container">
               <div class="row">
-                  <div class="col-lg-3 col-sm-6 col-12">
+                  <div class="col-lg-4 col-sm-6 col-12">
                       <div class="content-items">
                           <div class="content-img">
                               <img src="/assets/images/icons/location.png" alt="">
@@ -367,32 +249,24 @@ def link_icon(url, icon, title=False, appendix=False, blank=True):
                           <p>2340 Beerse
                       </div>
                   </div>
-                  <div class="col-lg-3 col-sm-6 col-12">
+                  <div class="col-lg-4 col-sm-6 col-12">
                       <div class="content-items">
                           <div class="content-img">
                               <img src="/assets/images/icons/clock.png" alt="">
                           </div>
-                          <h4>ZA ${dt_sat_start.day} Juni ${dt_sat_start.year}</h4>
-                          <p>${"{:02d}:{:02d} - {:02d}:{:02d}".format(dt_sat_start.hour, dt_sat_start.minute, dt_sat_end.hour, dt_sat_end.minute)}</p>
+                          <p>H&eacute;&eacute;l zeker</p>
+                          <h4>MA ${dt_fb_start.day} Juni ${dt_fb_start.year}</h4>
+                          <p>${"{:02d}:{:02d} - {:02d}:{:02d}".format(dt_fb_start.hour, dt_fb_start.minute, dt_fb_end.hour, dt_fb_end.minute)}</p>
                       </div>
                   </div>
-                  <div class="col-lg-3 col-sm-6 col-12">
+                  <div class="col-lg-4 col-sm-6 col-12">
                       <div class="content-items">
                           <div class="content-img">
-                              <img src="/assets/images/icons/seat.png" alt="">
+                              <img src="/assets/images/icons/clock.png" alt="">
                           </div>
-                          <h4>ZO ${dt_sun_start.day} Juni ${dt_sun_start.year}</h4>
-                          <p>${"{:02d}:{:02d} - {:02d}:{:02d}".format(dt_sun_start.hour, dt_sun_start.minute, dt_sun_end.hour, dt_sun_end.minute)}</p>
-                      </div>
-                  </div>
-                  <div class="col-lg-3 col-sm-6 col-12">
-                      <div class="content-items">
-                          <div class="content-img">
-                              <img src="/assets/images/icons/lunch.png" alt="">
-                          </div>
-                          <h4>Spek en Ei</h4>
-                          <p>Zaterdagavond</p>
-                          <p>voor grote en kleine hongertjes</p>
+                          <p>Misschien ook</p>
+                          <h4>ZA ${dt_fb_start2.day} Juni ${dt_fb_start2.year}</h4>
+                          <p>${"{:02d}:{:02d} - {:02d}:{:02d}".format(dt_fb_start2.hour, dt_fb_start2.minute, dt_fb_end2.hour, dt_fb_end2.minute)}</p>
                       </div>
                   </div>
               </div>
