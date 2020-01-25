@@ -312,7 +312,7 @@ def link_icon(url, icon, title=False, appendix=False, blank=True):
                     <div class="col-12">
                         <div class="section-title text-center">
                             <h2>Onze Sponsors</h2>
-                            <p>Onze Sponsors voor Tuinfeest ${dt_sat_start.year}</p>
+                            <p>Bedankt voor jullie steun aan Tuinfeest ${dt_sat_start.year}!</p>
                         </div>
                     </div>
                 </div>

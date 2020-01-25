@@ -1,48 +1,52 @@
 settings:
-  show_sponsors: False
+  show_sponsors: True
 
-main-sponsors:
-  - title: Campine
-    link: https://www.campine.com/
-    picture: campine.jpg
+main-sponsors: []
+  # - title: Campine
+  #   link: https://www.campine.com/
+  #   picture: campine.jpg
 
 sponsors:
-  - title: Vastgoedpartners
-    link: https://www.vastgoedpartners.be/nl
-    picture: vastgoed.png
-
-  - title: Effenaf Graaf!
-    link: https://www.effenafgraaf.be/
-    picture: effenaf-graaf.png
-
+  # - title: Vastgoedpartners
+  #   link: https://www.vastgoedpartners.be/nl
+  #   picture: vastgoed.png
+  #
+  # - title: Effenaf Graaf!
+  #   link: https://www.effenafgraaf.be/
+  #   picture: effenaf-graaf.png
+  #
   - title: Klaverblad
     link: https://www.facebook.com/drankenhandelklaverblad
     picture: klaverblad.jpg
- 
-  - title: GR Technics
-    link: http://www.gr-technics.be
-    picture: gr.png
-    
+  #
+  # - title: GR Technics
+  #   link: http://www.gr-technics.be
+  #   picture: gr.png
+  #
   - title: Argenta - Kantoor Wouters
     link: https://www.argenta.be/nl/kantoren/advieskantoor-wouters-bvba-3552.html
     picture: argenta.jpg
-    
-  - title: Wesa Productions
-    link: http://www.wesaproductions.be
-    picture: wesa.png
-    
+  #
+  # - title: Wesa Productions
+  #   link: http://www.wesaproductions.be
+  #   picture: wesa.png
+  #
   - title: Hermans
     link: https://www.hermans-heftrucks.be
     picture: hermans.png
-    
-  - title: Huybs
-    link: http://www.huybs.be/
-    picture: huybs.png
-    
+
+  - title: Ardore
+    link: https://ardore.be/
+    picture: ardore.png
+  #
+  # - title: Huybs
+  #   link: http://www.huybs.be/
+  #   picture: huybs.png
+  #
   - title: Uit in Beerse
     link: http://www.uitinbeerse.be/
     picture: uit-in-beerse.png
 
-  - title: t&apos; Broojke
-    link: http://tbroojke.be
-    picture: broojke.jpg
+  # - title: t&apos; Broojke
+  #   link: http://tbroojke.be
+  #   picture: broojke.jpg
