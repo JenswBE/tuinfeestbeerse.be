@@ -156,7 +156,6 @@ def link_icon(url, icon, title=False, appendix=False, blank=True):
                 <div class="col-lg-10 col-12 offset-lg-1 text-center">
                     <h2>EK Finland - Belgi&euml;</h2>
                     <p>${football_conf["day_name"].capitalize()} ${dt_fb_start.day} Juni ${dt_fb_start.year}, ${dt_fb_start.strftime('%H:%M')} - ${dt_fb_end.strftime('%H:%M')}</p>
-                    <p>Misschien ook: ${football_conf["day_name2"].capitalize()} ${dt_fb_start2.day} Juni ${dt_fb_start2.year}, ${dt_fb_start2.strftime('%H:%M')} - ${dt_fb_end2.strftime('%H:%M')}</p>
                     <div id="clock" data-countdown="${dt_fb_start.strftime('%Y/%m/%d %H:%M')}"></div>
                 </div>
             </div>
@@ -235,41 +234,8 @@ def link_icon(url, icon, title=False, appendix=False, blank=True):
     %endif
 
       <!-- .content-area start -->
-      <div class="content-area">
+      <div class="content-area-thin">
           <div class="container">
-              <div class="row">
-                  <div class="col-lg-4 col-sm-6 col-12">
-                      <div class="content-items">
-                          <div class="content-img">
-                              <img src="/assets/images/icons/location.png" alt="">
-                          </div>
-                          <h4>Nief park</h4>
-                          <p>Ingang via:</p>
-                          <p>Pastoriestraat 8</p>
-                          <p>2340 Beerse
-                      </div>
-                  </div>
-                  <div class="col-lg-4 col-sm-6 col-12">
-                      <div class="content-items">
-                          <div class="content-img">
-                              <img src="/assets/images/icons/clock.png" alt="">
-                          </div>
-                          <p>H&eacute;&eacute;l zeker</p>
-                          <h4>MA ${dt_fb_start.day} Juni ${dt_fb_start.year}</h4>
-                          <p>${"{:02d}:{:02d} - {:02d}:{:02d}".format(dt_fb_start.hour, dt_fb_start.minute, dt_fb_end.hour, dt_fb_end.minute)}</p>
-                      </div>
-                  </div>
-                  <div class="col-lg-4 col-sm-6 col-12">
-                      <div class="content-items">
-                          <div class="content-img">
-                              <img src="/assets/images/icons/clock.png" alt="">
-                          </div>
-                          <p>Misschien ook</p>
-                          <h4>ZA ${dt_fb_start2.day} Juni ${dt_fb_start2.year}</h4>
-                          <p>${"{:02d}:{:02d} - {:02d}:{:02d}".format(dt_fb_start2.hour, dt_fb_start2.minute, dt_fb_end2.hour, dt_fb_end2.minute)}</p>
-                      </div>
-                  </div>
-              </div>
           </div>
       </div>
       <!-- .content-area end -->
