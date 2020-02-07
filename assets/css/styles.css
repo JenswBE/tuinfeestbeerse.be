@@ -101,6 +101,10 @@
   src: url('/assets/fonts/Futura/Futura 900 Heavy Italic.ttf');
 }
 
+.text-bold {
+  font-weight: bold;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -692,6 +696,7 @@ ol {
 
 .about-wrap p {
     margin-bottom: 20px;
+    font-size: 1.2rem;
 }
 
 .about-item {
@@ -978,6 +983,11 @@ ol {
 
 .content-area {
     padding: 150px 0px 120px;
+    background: rgba(0, 0, 0, 0) linear-gradient(100deg, #659975, #52d279) repeat scroll 0 0;
+}
+
+.content-area-thin {
+    padding: 10px 0px 0px;
     background: rgba(0, 0, 0, 0) linear-gradient(100deg, #659975, #52d279) repeat scroll 0 0;
 }
 
