@@ -155,8 +155,9 @@ def link_icon(url, icon, title=False, appendix=False, blank=True):
           <div id="slider-static" class="slider-content">
                 <div class="col-lg-10 col-12 offset-lg-1 text-center">
                     <h2>EK Finland - Belgi&euml;</h2>
-                    <p>${football_conf["day_name"].capitalize()} ${dt_fb_start.day} Juni ${dt_fb_start.year}, ${dt_fb_start.strftime('%H:%M')} - ${dt_fb_end.strftime('%H:%M')}</p>
-                    <div id="clock" data-countdown="${dt_fb_start.strftime('%Y/%m/%d %H:%M')}"></div>
+                    <p>Geannuleerd</p>
+                    ## <p>${football_conf["day_name"].capitalize()} ${dt_fb_start.day} Juni ${dt_fb_start.year}, ${dt_fb_start.strftime('%H:%M')} - ${dt_fb_end.strftime('%H:%M')}</p>
+                    ## <div id="clock" data-countdown="${dt_fb_start.strftime('%Y/%m/%d %H:%M')}"></div>
                 </div>
             </div>
           <ul class="social-share">
