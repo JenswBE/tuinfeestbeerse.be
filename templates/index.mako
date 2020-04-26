@@ -173,8 +173,9 @@ def link_icon(url, icon, title=False, appendix=False, blank=True):
           <div id="slider-static" class="slider-content">
                 <div class="col-lg-10 col-12 offset-lg-1 text-center">
                     <h2>Tuinfeest ${dt_sat_start.year}</h2>
-                    <p>${dt_sat_start.day} en ${dt_sun_start.day} Juni, ${dt_sat_start.year}</p>
-                    <div id="clock" data-countdown="${dt_sat_start.strftime('%Y/%m/%d %H:%M')}"></div>
+                    <p>Geannuleerd</p>
+                    ## <p>${dt_sat_start.day} en ${dt_sun_start.day} Juni, ${dt_sat_start.year}</p>
+                    ## <div id="clock" data-countdown="${dt_sat_start.strftime('%Y/%m/%d %H:%M')}"></div>
                 </div>
             </div>
           <ul class="social-share">
@@ -353,7 +354,8 @@ def link_icon(url, icon, title=False, appendix=False, blank=True):
     %endif
 
       <!-- .content-area start -->
-      <div class="content-area">
+       <!--
+       <div class="content-area">
           <div class="container">
               <div class="row">
                   <div class="col-lg-3 col-sm-6 col-12">
@@ -398,6 +400,7 @@ def link_icon(url, icon, title=False, appendix=False, blank=True):
               </div>
           </div>
       </div>
+      -->
       <!-- .content-area end -->
 
       <div id="map" hight="400"></div>
