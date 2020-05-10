@@ -357,97 +357,97 @@ def link_icon(url, icon, title=False, appendix=False, blank=True):
         </div>
     %endif
 
-      <!-- .content-area start -->
-       <!--
-       <div class="content-area">
-          <div class="container">
-              <div class="row">
-                  <div class="col-lg-3 col-sm-6 col-12">
-                      <div class="content-items">
-                          <div class="content-img">
-                              <img src="/assets/images/icons/location.png" alt="">
-                          </div>
-                          <h4>Nief park</h4>
-                          <p>Ingang via:</p>
-                          <p>Pastoriestraat 8</p>
-                          <p>2340 Beerse
-                      </div>
-                  </div>
-                  <div class="col-lg-3 col-sm-6 col-12">
-                      <div class="content-items">
-                          <div class="content-img">
-                              <img src="/assets/images/icons/clock.png" alt="">
-                          </div>
-                          <h4>ZA ${dt_sat_start.day} Juni ${dt_sat_start.year}</h4>
-                          <p>${"{:02d}:{:02d} - {:02d}:{:02d}".format(dt_sat_start.hour, dt_sat_start.minute, dt_sat_end.hour, dt_sat_end.minute)}</p>
-                      </div>
-                  </div>
-                  <div class="col-lg-3 col-sm-6 col-12">
-                      <div class="content-items">
-                          <div class="content-img">
-                              <img src="/assets/images/icons/seat.png" alt="">
-                          </div>
-                          <h4>ZO ${dt_sun_start.day} Juni ${dt_sun_start.year}</h4>
-                          <p>${"{:02d}:{:02d} - {:02d}:{:02d}".format(dt_sun_start.hour, dt_sun_start.minute, dt_sun_end.hour, dt_sun_end.minute)}</p>
-                      </div>
-                  </div>
-                  <div class="col-lg-3 col-sm-6 col-12">
-                      <div class="content-items">
-                          <div class="content-img">
-                              <img src="/assets/images/icons/lunch.png" alt="">
-                          </div>
-                          <h4>Spek en Ei</h4>
-                          <p>Zaterdagavond</p>
-                          <p>voor grote en kleine hongertjes</p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-      -->
-      <!-- .content-area end -->
+    <!-- .content-area start -->
+    <!--
+    <div class="content-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6 col-12">
+                    <div class="content-items">
+                        <div class="content-img">
+                            <img src="/assets/images/icons/location.png" alt="">
+                        </div>
+                        <h4>Nief park</h4>
+                        <p>Ingang via:</p>
+                        <p>Pastoriestraat 8</p>
+                        <p>2340 Beerse
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-12">
+                    <div class="content-items">
+                        <div class="content-img">
+                            <img src="/assets/images/icons/clock.png" alt="">
+                        </div>
+                        <h4>ZA ${dt_sat_start.day} Juni ${dt_sat_start.year}</h4>
+                        <p>${"{:02d}:{:02d} - {:02d}:{:02d}".format(dt_sat_start.hour, dt_sat_start.minute, dt_sat_end.hour, dt_sat_end.minute)}</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-12">
+                    <div class="content-items">
+                        <div class="content-img">
+                            <img src="/assets/images/icons/seat.png" alt="">
+                        </div>
+                        <h4>ZO ${dt_sun_start.day} Juni ${dt_sun_start.year}</h4>
+                        <p>${"{:02d}:{:02d} - {:02d}:{:02d}".format(dt_sun_start.hour, dt_sun_start.minute, dt_sun_end.hour, dt_sun_end.minute)}</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-12">
+                    <div class="content-items">
+                        <div class="content-img">
+                            <img src="/assets/images/icons/lunch.png" alt="">
+                        </div>
+                        <h4>Spek en Ei</h4>
+                        <p>Zaterdagavond</p>
+                        <p>voor grote en kleine hongertjes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    -->
+    <!-- .content-area end -->
 
-      <div id="map" hight="400"></div>
-      <!-- footer-area start -->
-      <footer class="footer-area">
-          <div class="container">
-              <div class="row">
-                  <div class="col-md-8 col-12">
-                      <div class="copyright">
-                          <p>&copy; <a href="https://jensw.be" target="_blank">Jensw.be</a> ${date.today().year}</p>
-                      </div>
-                  </div>
-                  <div class="col-md-4 col-12">
-                      <ul class="social-icon justify-content-end d-flex">
-                          %for name, item in general_conf['links'].items():
-                              %if name:
-                                  <li>${link_icon(item['link'], name, item['title'])}</li>
-                              %endif
-                          %endfor
-                      </ul>
-                  </div>
-              </div>
-          </div>
-      </footer>
-      <!-- footer-area end -->
-      <!-- jquery latest version -->
-      <script src="/assets/js/vendor/jquery-2.2.4.min.js"></script>
-      <!-- popper.min.js -->
-      <script src="/assets/js/vendor/popper.min.js"></script>
-      <!-- bootstrap js -->
-      <script src="/assets/js/bootstrap.min.js"></script>
-      <!-- owl.carousel.2.0.0-beta.2.4 css -->
-      <script src="/assets/js/owl.carousel.min.js"></script>
-      <!-- swiper.min.js -->
-      <script src="/assets/js/swiper.min.js"></script>
-      <!-- plugins js -->
-      <script src="/assets/js/jquery.canvasjs.min.js"></script>
-      <!-- metisMenu.min.js -->
-      <script src="/assets/js/metisMenu.min.js"></script>
-      <!-- plugins js -->
-      <script src="/assets/js/plugins.js"></script>
-      <!-- Leaflet Map -->
-      <script>
+    <div id="map" hight="400"></div>
+    <!-- footer-area start -->
+    <footer class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-12">
+                    <div class="copyright">
+                        <p>&copy; <a href="https://jensw.be" target="_blank">Jensw.be</a> ${date.today().year}</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12">
+                    <ul class="social-icon justify-content-end d-flex">
+                        %for name, item in general_conf['links'].items():
+                            %if name:
+                                <li>${link_icon(item['link'], name, item['title'])}</li>
+                            %endif
+                        %endfor
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer-area end -->
+    <!-- jquery latest version -->
+    <script src="/assets/js/vendor/jquery-2.2.4.min.js"></script>
+    <!-- popper.min.js -->
+    <script src="/assets/js/vendor/popper.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <!-- owl.carousel.2.0.0-beta.2.4 css -->
+    <script src="/assets/js/owl.carousel.min.js"></script>
+    <!-- swiper.min.js -->
+    <script src="/assets/js/swiper.min.js"></script>
+    <!-- plugins js -->
+    <script src="/assets/js/jquery.canvasjs.min.js"></script>
+    <!-- metisMenu.min.js -->
+    <script src="/assets/js/metisMenu.min.js"></script>
+    <!-- plugins js -->
+    <script src="/assets/js/plugins.js"></script>
+    <!-- Leaflet Map -->
+    <script>
     jQuery(document).ready(function(){
         // Basic setup
         var coord_nief_park = {
@@ -478,7 +478,7 @@ def link_icon(url, icon, title=False, appendix=False, blank=True):
           iconSize:     [50, 50], // size of the icon
           iconAnchor:   [25, 25],
           popupAnchor:  [0, -25]
-      });
+        });
 
         // Add marker for Nief Park
         L.Icon.Default.prototype.options.imagePath = '/assets/images/icons/leaflet/';

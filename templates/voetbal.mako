@@ -294,20 +294,23 @@ def link_icon(url, icon, title=False, appendix=False, blank=True):
         }).setView(coord_nief_park, 16);
 
         // Add map tile layer
-        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+        // Add map tile layer
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
           attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
           maxZoom: 18,
-          id: 'mapbox.streets',
+          tileSize: 512,
+          zoomOffset: -1,
+          id: 'mapbox/streets-v11',
           accessToken: 'pk.eyJ1IjoidHVpbmZlZXN0YmVlcnMiLCJhIjoiY2pxeTU1YzQxMDAxZzQ1cGV5NGlieGpnbyJ9.frYTXarGgo6JlWsXrtLs9A'
         }).addTo(mymap);
 
         var tfIcon = L.icon({
-          iconUrl: '/assets/images/icons/leaflet/tf-marker.png',
-          iconRetinaUrl: '/assets/images/icons/leaflet/tf-marker-2x.png',
-          iconSize:     [75, 75], // size of the icon
-          iconAnchor:   [37, 37],
-          popupAnchor:  [0, -38]
-      });
+          iconUrl: '/assets/images/icons/leaflet/tf-marker-groen.png',
+          iconRetinaUrl: '/assets/images/icons/leaflet/tf-marker-2x-groen.png',
+          iconSize:     [50, 50], // size of the icon
+          iconAnchor:   [25, 25],
+          popupAnchor:  [0, -25]
+        });
 
         // Add marker for Nief Park
         L.Icon.Default.prototype.options.imagePath = '/assets/images/icons/leaflet/';
