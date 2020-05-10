@@ -270,7 +270,10 @@
       <script>
     jQuery(document).ready(function(){
         // Basic setup
-        var coord_nief_park = [51.31681, 4.85721];
+        var coord_nief_park = {
+            lat: 51.31681,
+            lng: 4.85765
+        }
         var mymap = L.map('map', {
           dragging: false,
           scrollWheelZoom: false,
