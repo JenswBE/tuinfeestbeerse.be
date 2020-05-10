@@ -112,8 +112,12 @@ def link_icon(url, icon, title=False, appendix=False, blank=True):
       <script src="/assets/js/vendor/modernizr-2.8.3.min.js"></script>
 
       <!-- Leaflet Maps API -->
-      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
-      <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin=""/>
+      <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
   </head>
   <body>
       <!--[if lt IE 8]>
@@ -446,7 +450,10 @@ def link_icon(url, icon, title=False, appendix=False, blank=True):
       <script>
     jQuery(document).ready(function(){
         // Basic setup
-        var coord_nief_park = [51.31681, 4.85721];
+        var coord_nief_park = {
+            lat: 51.31681,
+            lng: 4.85765
+        } 
         var mymap = L.map('map', {
           dragging: false,
           scrollWheelZoom: false,
@@ -456,19 +463,21 @@ def link_icon(url, icon, title=False, appendix=False, blank=True):
         }).setView(coord_nief_park, 16);
 
         // Add map tile layer
-        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
           attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
           maxZoom: 18,
-          id: 'mapbox.streets',
+          tileSize: 512,
+          zoomOffset: -1,
+          id: 'mapbox/streets-v11',
           accessToken: 'pk.eyJ1IjoidHVpbmZlZXN0YmVlcnMiLCJhIjoiY2pxeTU1YzQxMDAxZzQ1cGV5NGlieGpnbyJ9.frYTXarGgo6JlWsXrtLs9A'
         }).addTo(mymap);
 
         var tfIcon = L.icon({
-          iconUrl: '/assets/images/icons/leaflet/tf-marker.png',
-          iconRetinaUrl: '/assets/images/icons/leaflet/tf-marker-2x.png',
-          iconSize:     [75, 75], // size of the icon
-          iconAnchor:   [37, 37],
-          popupAnchor:  [0, -38]
+          iconUrl: '/assets/images/icons/leaflet/tf-marker-groen.png',
+          iconRetinaUrl: '/assets/images/icons/leaflet/tf-marker-2x-groen.png',
+          iconSize:     [50, 50], // size of the icon
+          iconAnchor:   [25, 25],
+          popupAnchor:  [0, -25]
       });
 
         // Add marker for Nief Park
