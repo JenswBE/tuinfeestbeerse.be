@@ -186,7 +186,7 @@ def link_icon(url, icon, title=False, appendix=False, blank=True):
               <li>${link_icon("mailto:" + general_conf['mail-info'], "envelope", appendix="<span>{}</span>".format(general_conf['mail-info']))}</li>
               <li>${link_icon("mailto:" + general_conf['mail-artist'], "music", appendix="<span>{}</span>".format(general_conf['mail-artist']))}</li>
               %if name_facebook:
-                <li>${link_icon(general_conf['links']['facebook'], "facebook", appendix="<span>{}</span>".format(name_facebook))}</li>
+                <li>${link_icon(general_conf['links']['facebook']['link'], "facebook", appendix="<span>{}</span>".format(name_facebook))}</li>
               %endif
           </ul>
       </div>
