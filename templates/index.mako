@@ -100,7 +100,6 @@ def link_icon(url, icon, title=False, appendix=False, blank=True):
       <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
       <link rel="stylesheet" href="/assets/css/animate.css">
       <link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
-      <link rel="stylesheet" href="/assets/css/swiper.min.css">
       <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
       <link rel="stylesheet" href="/assets/css/flaticon.css">
       <link rel="stylesheet" href="/assets/css/magnific-popup.css">
@@ -438,8 +437,6 @@ def link_icon(url, icon, title=False, appendix=False, blank=True):
     <script src="/assets/js/bootstrap.min.js"></script>
     <!-- owl.carousel.2.0.0-beta.2.4 css -->
     <script src="/assets/js/owl.carousel.min.js"></script>
-    <!-- swiper.min.js -->
-    <script src="/assets/js/swiper.min.js"></script>
     <!-- plugins js -->
     <script src="/assets/js/jquery.canvasjs.min.js"></script>
     <!-- metisMenu.min.js -->
