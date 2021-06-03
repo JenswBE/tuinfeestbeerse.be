@@ -111,7 +111,7 @@ def link_icon(url, icon, title=False, appendix=False, blank=True):
       <script src="/assets/js/vendor/modernizr-2.8.3.min.js"></script>
 
       <!-- GoatCounter -->
-      <script data-goatcounter="https://stats.tuinfeestbeerse.be/count" async src="https://stats.tuinfeestbeerse.be/count.js"></script>
+      <script data-goatcounter="https://stats.tuinfeestbeerse.be/count" async defer src="https://stats.tuinfeestbeerse.be/count.js"></script>
 
       <!-- Leaflet Maps API -->
       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
