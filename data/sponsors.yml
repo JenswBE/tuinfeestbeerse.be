@@ -1,7 +1,8 @@
 settings:
-  show_sponsors: True
+  show_sponsors: False
 
-main-sponsors: []
+main-sponsors:
+  []
   # - title: Campine
   #   link: https://www.campine.com/
   #   picture: campine.jpg

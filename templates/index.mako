@@ -179,9 +179,8 @@ def link_icon(url, icon, title=False, appendix=False, blank=True):
           <div id="slider-static" class="slider-content">
                 <div class="col-lg-10 col-12 offset-lg-1 text-center">
                     <h2>Tuinfeest ${dt_sat_start.year}</h2>
-                    <p>Geannuleerd</p>
-                    ## <p>${dt_sat_start.day} en ${dt_sun_start.day} Juni, ${dt_sat_start.year}</p>
-                    ## <div id="clock" data-countdown="${dt_sat_start.strftime('%Y/%m/%d %H:%M')}"></div>
+                    <p>${dt_sat_start.day} en ${dt_sun_start.day} Juni, ${dt_sat_start.year}</p>
+                    <div id="clock" data-countdown="${dt_sat_start.strftime('%Y/%m/%d %H:%M')}"></div>
                 </div>
             </div>
           <ul class="social-share">
