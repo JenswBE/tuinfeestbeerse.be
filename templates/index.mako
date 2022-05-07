@@ -313,7 +313,7 @@ def link_icon(url, icon, title=False, appendix=False, blank=True):
 
     %if sponsors_conf['settings']['show_sponsors']:
         <div class="partner-area" id="partners">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
                         <div class="section-title text-center">
@@ -324,10 +324,10 @@ def link_icon(url, icon, title=False, appendix=False, blank=True):
                 </div>
 
                 <div class="row">
-                    <div class="col-lg-6 offset-lg-3 col-sm-8 offset-sm-2 col-12">
+                    <div class="col-lg-8 offset-lg-2 col-sm-8 offset-sm-2 col-12">
                       <div class="row">
                         %for sponsor in sponsors_conf['main-sponsors']:
-                              <div class="col-12">
+                              <div class="col-12 col-lg-6">
                                   <div class="partner-wrap">
                                       <a href="${sponsor['link']}" target="_blank">
                                           <img src="/assets/images/sponsor/${sponsor['picture']}" alt="${sponsor['title']}">
@@ -343,7 +343,7 @@ def link_icon(url, icon, title=False, appendix=False, blank=True):
                     <div class="col-lg-8 offset-lg-2 col-sm-10 offset-sm-1 col-12">
                       <div class="row">
                         %for sponsor in sponsors_conf['sponsors']:
-                              <div class="col-sm-4 col-6">
+                              <div class="col-lg-3 col-md-4 col-sm-4 col-6">
                                   <div class="partner-wrap">
                                       <a href="${sponsor['link']}" target="_blank">
                                           <img src="/assets/images/sponsor/${sponsor['picture']}" alt="${sponsor['title']}">
