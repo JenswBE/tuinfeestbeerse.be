@@ -1,44 +1,76 @@
 settings:
-  show_artists: False
+  show_artists: True
 
 artists:
   # Verplichte velden: name, picture
   # Standaard foto's voor artiesten zonder foto's: 0dj.jpg, 0band.jpg
   # De tag van link, bv. "globe", is de naam van een FA icoon op https://fontawesome.com/v4.7.0/icons/
 
-  - name: Lucky Man &amp; The Fourtune
-    picture: lmtf.jpg
-
-  - name: The Hillbilly Moonshiners
-    type: Bluegrass &amp; Country
+  - name: Sub-lime
+    type: Rock band
+    picture: sub-lime.jpg
     description: >
-      The Hillbilly Moonshiners are a contemporary bluegrass band playing your favorite tunes from today and back in the day. That’s right, folks: The Hillbilly Moonshiners drench your dearest radio hits in some dirty Louisiana swamp water. Heehaw!
-      <br><br>These five greasy, ungentlemanly Southerners (or Rednecks, if you will) like to have a good time, Bayou-style. Relive classic tunes by artists like George Baker and Bon Jovi, and party to modern day hit songs by Katy Perry, Miley Cyrus, Beyoncé, Pharrel, and the like. So, gulp down your homebrewed, vitamin-rich moonshine (you know, the type that made your cousin Wade go blind!) and shake that ass like it’s the Summer of 69!
-    picture: hillbilly-moonshiners.jpg
+      Sub-Lime is een 5-koppige rockband met roots in de Kempen.
+      Met een setlist geïnspireerd op iconische bands zoals Kiss, QOTSA, Foo Fighters, ...
+      krijgen ze jong en oud samen op de dansvloer.
     links:
-      globe: http://www.thehillbillymoonshiners.com/
-      facebook: https://www.facebook.com/thehillbillymoonshiners/
-      youtube: https://www.youtube.com/channel/UCsr5F2iNXgf8qhhMNgoNzGw
+      globe: https://www.sub-lime.be/
+      facebook: https://www.facebook.com/watch/sublimeband/
 
-  - name: Wim Soutaer
-    type: Poprock
-    picture: wim.jpg
+  - name: The Skadillacs
+    type: Ska band
+    picture: skadillacs.jpg
     links:
-      globe: https://www.wimsoutaer.com/
-      facebook: https://www.facebook.com/Wim-Soutaer-offici%C3%ABle-pagina-184910361623254/
-      twitter: https://twitter.com/wimsoutaer
-      youtube: https://www.youtube.com/results?search_query=wim+soutaer
-      instagram: https://www.instagram.com/wimsoutaer/
+      globe: http://www.theskadillacs.be/
+      facebook: https://www.facebook.com/theskadillacs
 
-  - name: DJ Daan
+  - name: De Romeo&apos;s
+    type: Ambiance band
+    picture: romeos.jpg
+    links:
+      globe: https://deromeos.be/
+      facebook: https://www.facebook.com/deromeos
+      twitter: https://twitter.com/romeosofficial
+      instagram: https://www.instagram.com/deromeos/
+
+  - name: De Koperdieven
+    type: Koper cover band
+    picture: koperdieven.jpg
+    description: >
+      Een zootje losgeslagen ongeregeld die niets liever doen dan elk feestje op zijn kop te zetten.
+      Dit doen ze door dansbare, meezingbare en brulbare nummers op een bijna strafbare manier op jullie los te laten.
+      De koperdieven&hellip; ze stelen de show!
+    links:
+      facebook: https://www.facebook.com/koperdieven
+
+  - name: Winnaar DJ contest @ JH Den Beir
+    picture: den-beir.jpg
+    description: >
+      De enige echte winnaar van de
+      <a href="https://www.facebook.com/events/729280071543041" style="color: lightblue; font-weight: bold">DJ contest van JH Den Beir</a>.
+    links:
+      facebook: https://www.facebook.com/events/729280071543041
+
+  - name: DJ N1CO
     type:  All-round DJ
-    picture: 0dj.jpg
+    picture: n1co.jpg
+    links:
+      facebook: https://www.facebook.com/N1COfficial
     
   - name: DJ Lenny
     type:  All-round DJ
     picture: lenny.jpg
     links:
       facebook: https://www.facebook.com/DJLenny007/
+    
+  - name: DJ Double-U
+    type:  All-round DJ
+    picture: double-u.jpg
+    links:
+      globe: https://www.djdouble-u.be/
+      facebook: https://www.facebook.com/Double.U.DJ/
+      instagram: https://www.instagram.com/double_u_dj/
+      soundcloud: https://soundcloud.com/dj-doubleu
 
   - name: DJ Polleke &amp; Celis
     type: All-round DJ&apos;s
@@ -52,20 +84,7 @@ artists:
       facebook: https://www.facebook.com/DJ-POLLEKE-225905228432/
       youtube: https://www.youtube.com/channel/UCwE_Gdx71HxVaOxERTX9wgg
       facebook-f: https://www.facebook.com/celisofficial
-      soundcloud: https://soundcloud.com/celisbe
-  
-  - name: Mr. Jack &amp; Dirty
-    type: Party-fun-rock-show-band
-    description: >
-      Opzoek naar een geweldig Dj Duo dat je evenement naar een hoger niveau tilt?!<br>
-      Mr Jack &amp; Dirty staan garant voor een geweldige sfeer op jouw evenement, door hun jaren
-      ervaring als ras echte all around Dj’s weten ze onmiddellijk hoe ze op het publiek moeten inspelen!
-      Niemand blijf stilzitten als deze 2 heren passeren! Privé feest, fuif, verjaardag of bedrijfsfeest?
-      ze kunnen ze het, en doen het ook!
-    picture: jack-dirty.jpg
-    links:
-      facebook: https://www.facebook.com/Mr-Jack-Dirty-159397004786761/
-      
+      soundcloud: https://soundcloud.com/celisbe      
   
   - name: Vzw Salsmanians
     type: Salsa
