@@ -16,16 +16,20 @@ timetable:
       - name: Live on Stage
         shows:
           - from: "21:00"
-            to: "22:00"
-            artist: Lucky Man &amp; The Fourtune
+            to: "22:15"
+            artist: Sub-lime
 
-          - from: "22:30"
+          - from: "22:45"
             to: "00:00"
-            artist: The Hillbilly Moonshiners
+            artist: The Skadillacs
 
           - from: "00:30"
             to: "01:00"
-            artist: Wim Soutaer
+            artist: De Romeo&apos;s
+
+          - from: "01:00"
+            to: "02:00"
+            artist: De Koperdieven
 
       - name: Gazonfuif
         shows:
