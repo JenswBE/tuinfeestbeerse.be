@@ -7,8 +7,9 @@
 }
 
 div.carousel-caption {
-  width: 100%;
-  height: 100%;
+  /* Based on https://stackoverflow.com/a/44464238 */
+  position: absolute;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
