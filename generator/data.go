@@ -8,22 +8,22 @@ import (
 )
 
 type Data struct {
-	SliderImages map[string][]string
+	CarouselImages map[string][]string
 }
 
 func GetData(staticDir string) Data {
 	// Init data
-	data := Data{SliderImages: map[string][]string{}}
+	data := Data{CarouselImages: map[string][]string{}}
 
-	// Load slider images
-	sliderImagesPath := filepath.Join(staticDir, "assets/images/sliders")
-	filepath.WalkDir(sliderImagesPath, func(path string, d fs.DirEntry, err error) error {
+	// Load carousel images
+	carouselImagesPath := filepath.Join(staticDir, "assets/images/carousels")
+	filepath.WalkDir(carouselImagesPath, func(path string, d fs.DirEntry, err error) error {
 		if d.IsDir() {
 			return nil
 		}
 		segments := strings.Split(path, string(os.PathSeparator))
 		dirName := segments[len(segments)-2]
-		data.SliderImages[dirName] = append(data.SliderImages[dirName], strings.TrimPrefix(path, staticDir+string(os.PathSeparator)))
+		data.CarouselImages[dirName] = append(data.CarouselImages[dirName], strings.TrimPrefix(path, staticDir+string(os.PathSeparator)))
 		return nil
 	})
 	return data

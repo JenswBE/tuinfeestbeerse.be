@@ -41,30 +41,24 @@ div.carousel-caption {
   margin-bottom: 70px;
 }
 
-.carousel-caption span.cdown {
-  display: block;
-  width: 25%;
-  float: left;
-  text-align: center;
-}
-
-.carousel-caption span.cdown span {
-  display: block;
-  font-size: 80px;
-  font-weight: 700;
-  color: #fff;
-  line-height: 90px;
-}
-
-.carousel-caption span.cdown p {
-  padding: 0px;
+.carousel-caption p.carousel-clock-legend {
   font-size: 16px;
   text-transform: uppercase;
-  margin-bottom: 0;
   color: white;
 }
 
-h2.tf-about {
+.carousel-caption p.carousel-clock-value {
+  font-size: 80px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.tf-section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.tf-section h2 {
   font-size: 50px;
   line-height: 40px;
   padding-bottom: 25px;
@@ -74,7 +68,7 @@ h2.tf-about {
   margin-bottom: 30px;
 }
 
-h2.tf-about:before {
+.tf-section h2::before {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -83,4 +77,25 @@ h2.tf-about:before {
   background: #659975;
   content: "";
   border-radius: 5px;
+}
+
+#tf-about p {
+  color: #9599a2;
+}
+
+#tf-about #collapseAboutButton {
+  color: black;
+  text-decoration: none;
+}
+
+#tf-about #collapseAboutButton:hover {
+  color: #9599a2;
+}
+
+#tf-about #collapseAboutButton[aria-expanded="false"] .text-expanded {
+  display: none;
+}
+
+#tf-about #collapseAboutButton[aria-expanded="true"] .text-collapsed {
+  display: none;
 }
