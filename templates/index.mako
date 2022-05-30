@@ -106,6 +106,7 @@ def link_icon(url, icon, title=False, appendix=False, blank=True):
       <link rel="stylesheet" href="/assets/css/metisMenu.min.css">
       <link rel="stylesheet" href="/assets/css/styles.css">
       <link rel="stylesheet" href="/assets/css/responsive.css">
+      <link rel="stylesheet" href="/assets/css/custom.css">
 
       <!-- Modernizr -->
       <script src="/assets/js/vendor/modernizr-2.8.3.min.js"></script>
@@ -219,51 +220,24 @@ def link_icon(url, icon, title=False, appendix=False, blank=True):
                     </div>
                 </div>
                 <div class="row">
-                  %if len(timetable) > 1:
-                  <div class="col-12">
-                        <ul class="nav schedule-menu">
-                          %for day in timetable:
-                            <li><a
-                              %if loop.first:
-                              class="active"
-                              %endif
-                              data-toggle="tab" href="#dag${loop.index + 1}">${day}</a></li>
-                            %endfor
-                        </ul>
-                    </div>
-                    %endif
-                    <div class="col-12">
-                        <div class="tab-content">
-                          %for day in timetable:
-                            <div class="tab-pane fade ${'show active' if loop.first else ''}" id="dag${loop.index + 1}">
-                                <div class="schedule-wrap table-responsive">
-                                    <table>
-                                        <thead>
-                                            <tr>
-                                                <th class="time"><i class="fa fa-clock-o"></i></th>
-                                                %for location in timetable[day]['locations']:
-                                                  <th>${location}</th>
-                                                %endfor
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                          %for slot in timetable[day]['slots']:
-                                              <tr>
-                                                  <td class="time">${slot['time']}</td>
-                                                  %for show in slot['shows']:
-                                                    <td rowspan="${int(show['length']) if show.get('length') else 1}">
-                                                      <p>${show['artist'] if show.get('artist') else ''}</p>
-                                                    </td>
-                                                  %endfor
-                                              </tr>
-                                            %endfor
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            %endfor
+                    <div class="col-3 d-flex flex-column">
+                        <p height="30" class="timetable-header"><i class="fa fa-clock-o"></i></p>
+                        %for slot in timetable[0]['slots']:
+                        <div height="30" class="timetable-slot">
+                            ${slot}
                         </div>
+                        %endfor
                     </div>
+                    %for location in timetable[0]['locations']:
+                    <div class="col-3 d-flex flex-column">
+                        <p height="30" class="timetable-header">${location['name']}</p>
+                        %for show in location['shows']:
+                        <div height="30" class="timetable-slot">
+                            ${show['artist']}
+                        </div>
+                        %endfor
+                    </div>
+                    %endfor
                 </div>
             </div>
         </div>
