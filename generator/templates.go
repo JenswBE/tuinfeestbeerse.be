@@ -13,7 +13,7 @@ import (
 func ParseTemplates(templateDir, outputDir string, data Data) {
 	// Init template and parse components
 	templ := template.New("")
-	templ.ParseGlob(path.Join(templateDir, "*.component.html"))
+	templ.ParseGlob(path.Join(templateDir, "*component*.html"))
 
 	// Parse and execute pages
 	filepath.Walk(templateDir, func(templPath string, info os.FileInfo, err error) error {
@@ -39,7 +39,12 @@ func ParseTemplates(templateDir, outputDir string, data Data) {
 			log.Fatal().Err(err).Str("template", templPath).Msg("Failed to create parsed page output file")
 			return err
 		}
-		templ.ExecuteTemplate(file, info.Name(), data)
+		log.Info().Str("template", info.Name()).Msg("Executing template ...")
+		err = templ.ExecuteTemplate(file, info.Name(), data)
+		if err != nil {
+			log.Fatal().Err(err).Str("template", info.Name()).Msg("Failed to execute template")
+			return err
+		}
 		return nil
 	})
 }

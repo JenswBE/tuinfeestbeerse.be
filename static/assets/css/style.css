@@ -79,6 +79,10 @@ div.carousel-caption {
   border-radius: 5px;
 }
 
+.tf-section-bluegrey {
+  background-color: #f1f8fc;
+}
+
 #tf-about p {
   color: #9599a2;
 }
