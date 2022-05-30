@@ -26,7 +26,7 @@
       style="z-index: 10000"
     >
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/">
           <img
             src="/assets/images/logo.png"
             alt="Logo Tuinfeest"
@@ -39,8 +39,8 @@
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
@@ -51,10 +51,10 @@
           id="navbarNavAltMarkup"
         >
           <div class="navbar-nav text-uppercase fw-bold">
-            <a class="nav-link text-white" href="#about">Over tuinfeest</a>
-            <a class="nav-link text-white" href="#artists">Artiesten</a>
-            <a class="nav-link text-white" href="#partners">Sponsors</a>
-            <a class="nav-link text-white" href="#map">Waar?</a>
+            <a class="nav-link text-white" href="#tf-about">Over tuinfeest</a>
+            <a class="nav-link text-white" href="#tf-artists">Artiesten</a>
+            <a class="nav-link text-white" href="#tf-partners">Sponsors</a>
+            <a class="nav-link text-white" href="#tf-map">Waar?</a>
           </div>
         </div>
       </div>
@@ -66,17 +66,20 @@
       {{ template "index.component.about.html" . }}
     </div>
 
-    <div class="tf-section tf-section-bluegrey container-fluid">
+    <div
+      id="tf-timetable"
+      class="tf-section tf-section-bluegrey container-fluid"
+    >
       <div class="container">
         {{ template "index.component.timetable.html" . }}
       </div>
     </div>
 
-    <div class="tf-section container-fluid px-0">
+    <div id="tf-artists" class="tf-section container-fluid px-0">
       {{ template "index.component.artists.html" . }}
     </div>
 
-    <div class="tf-section container">
+    <div id="tf-partners" class="tf-section container">
       {{ template "index.component.sponsors.html" . }}
     </div>
 
