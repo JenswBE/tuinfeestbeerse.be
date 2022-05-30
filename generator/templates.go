@@ -14,6 +14,10 @@ import (
 func ParseTemplates(templateDir, outputDir string, templateData data.Data) {
 	// Init template and parse components
 	templ := template.New("")
+	templ.Funcs(template.FuncMap{
+		"raw":           raw,
+		"trimAfterDash": trimAfterDash,
+	})
 	templ.ParseGlob(path.Join(templateDir, "*component*.html"))
 
 	// Parse and execute pages
@@ -48,4 +52,12 @@ func ParseTemplates(templateDir, outputDir string, templateData data.Data) {
 		}
 		return nil
 	})
+}
+
+func raw(input string) template.HTML {
+	return template.HTML(input)
+}
+
+func trimAfterDash(input string) string {
+	return strings.SplitN(input, "-", 1)[0]
 }

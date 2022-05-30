@@ -1,13 +1,7 @@
 package data
 
 import (
-	"io/fs"
-	"os"
-	"path/filepath"
-	"strings"
 	"time"
-
-	"github.com/rs/zerolog/log"
 )
 
 const (
@@ -17,38 +11,47 @@ const (
 var SaturdayStart = time.Date(2022, time.June, 25, 20, 0, 0, 0, getTimeZoneLocation())
 var SaturdayEnd = time.Date(2022, time.June, 26, 3, 0, 0, 0, getTimeZoneLocation())
 
-type Data struct {
-	CarouselImages map[string][]string
-	Timetable      Timetable
+func getGeneral() General {
+	return General{
+		EventStart: SaturdayStart,
+		Links: map[string]GeneralLink{
+			"mail-info": {
+				Title: "info@tuinfeestbeerse.be",
+				Link:  "mailto:info@tuinfeestbeerse.be",
+				Icon:  "info",
+			},
+			"mail-artists": {
+				Title: "artiesten@tuinfeestbeerse.be",
+				Link:  "mailto:artiesten@tuinfeestbeerse.be",
+				Icon:  "music-note-beamed",
+			},
+			"facebook": {
+				Title: "Facebook",
+				Link:  "https://www.facebook.com/TuinfeestBeerse/",
+				Icon:  "facebook",
+			},
+			"instagram": {
+				Title: "Instagram",
+				Link:  "https://www.instagram.com/tuinfeest_beerse/",
+				Icon:  "instagram",
+			},
+			"youtube": {
+				Title: "YouTube",
+				Link:  "https://www.youtube.com/channel/UCdN0ff4rGCs9QGIcFIUlDXA",
+				Icon:  "youtube",
+			},
+		},
+	}
 }
 
-func GetData(dataDir, staticDir string) (Data, error) {
-	// Init data
-	data := Data{
-		CarouselImages: map[string][]string{},
-	}
-
-	// Load carousel images
-	carouselImagesPath := filepath.Join(staticDir, "assets/images/carousels")
-	filepath.WalkDir(carouselImagesPath, func(path string, d fs.DirEntry, err error) error {
-		if d.IsDir() {
-			return nil
-		}
-		segments := strings.Split(path, string(os.PathSeparator))
-		dirName := segments[len(segments)-2]
-		data.CarouselImages[dirName] = append(data.CarouselImages[dirName], strings.TrimPrefix(path, staticDir+string(os.PathSeparator)))
-		return nil
-	})
-
-	// Load other data
-	data.Timetable = getTimetable(SaturdayStart, SaturdayEnd)
-	return data, nil
+type General struct {
+	EventStart time.Time
+	// List of link displayed at the bottom
+	Links map[string]GeneralLink
 }
 
-func getTimeZoneLocation() *time.Location {
-	location, err := time.LoadLocation(TimeZone)
-	if err != nil {
-		log.Fatal().Str("timezone", TimeZone).Msg("Failed to load timezone data")
-	}
-	return location
+type GeneralLink struct {
+	Title string // Title of the link
+	Icon  string // Name of icon. See https://icons.getbootstrap.com for supported names.
+	Link  string // URL of the link
 }

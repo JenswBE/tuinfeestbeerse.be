@@ -161,9 +161,9 @@ div.carousel-caption {
   display: block;
   position: relative;
   top: 50%;
-  left: 60%;
+  left: 80%;
   height: 1px;
-  width: 340%;
+  width: 920%;
   border-top: 1px solid black;
 }
 
@@ -171,4 +171,82 @@ div.carousel-caption {
   z-index: 1;
   background: #53cf79;
   width: 98%;
+}
+
+/* =========================== */
+/* =         ARTISTS         = */
+/* =========================== */
+
+.artist-wrap {
+  position: relative;
+}
+
+.artist-content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 20px 30px 40px 30px;
+  opacity: 0;
+}
+
+.artist-wrap:hover .artist-content {
+  opacity: 1;
+}
+
+.artist-content h3 {
+  font-size: 30px;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.artist-content span {
+  display: block;
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+.artist-content p {
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.5em;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.artist-content div.artist-links {
+  position: absolute;
+  left: 30px;
+  bottom: 15px;
+}
+
+.artist-content div.artist-links p {
+  margin-right: 10px;
+}
+
+.artist-content div.artist-links p a {
+  color: #fff;
+  font-size: 1.25em;
+}
+
+/* =========================== */
+/* =        SPONSORS         = */
+/* =========================== */
+/* Named "partners" to circumvent content blockers */
+
+.partner-wrap {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.partner-wrap a {
+  display: block;
+  border: 1px solid rgba(53, 53, 53, 0.125);
+  padding: 20px;
+}
+.partner-wrap a:hover {
+  border-color: rgba(249, 0, 72, 0.2);
 }

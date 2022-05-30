@@ -1,0 +1,35 @@
+<h2 class="text-center">Artiesten</h2>
+
+<div class="row gx-0">
+  {{ range .Artists.Artists }}
+  <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+    <div class="artist-wrap">
+      <img
+        src="/assets/images/artists/{{ .Picture }}"
+        alt="{{ .Name }}"
+        class="img-fluid"
+      />
+      <div class="artist-content d-flex flex-column justify-content-center">
+        <div>
+          <h3>{{ .Name }}</h3>
+          {{ if .Type }}
+          <span>{{ .Type }}</span>
+          {{ end }} {{ if .Description }}
+          <p>{{ raw .Description }}</p>
+          {{ end }} {{ if .Links }}
+        </div>
+        <div class="artist-links d-flex">
+          {{ range $icon, $url := .Links }}
+          <p>
+            <a href="{{ $url }}" target="_blank">
+              <i class="bi bi-{{ trimAfterDash $icon }}"></i>
+            </a>
+          </p>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+  {{ end }}
+</div>
