@@ -7,10 +7,11 @@ import (
 	"path/filepath"
 	"strings"
 
+	"github.com/JenswBE/tuinfeestbeerse.be/data"
 	"github.com/rs/zerolog/log"
 )
 
-func ParseTemplates(templateDir, outputDir string, data Data) {
+func ParseTemplates(templateDir, outputDir string, templateData data.Data) {
 	// Init template and parse components
 	templ := template.New("")
 	templ.ParseGlob(path.Join(templateDir, "*component*.html"))
@@ -40,7 +41,7 @@ func ParseTemplates(templateDir, outputDir string, data Data) {
 			return err
 		}
 		log.Info().Str("template", info.Name()).Msg("Executing template ...")
-		err = templ.ExecuteTemplate(file, info.Name(), data)
+		err = templ.ExecuteTemplate(file, info.Name(), templateData)
 		if err != nil {
 			log.Fatal().Err(err).Str("template", info.Name()).Msg("Failed to execute template")
 			return err

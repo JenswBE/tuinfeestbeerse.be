@@ -3,6 +3,7 @@ package main
 import (
 	"os"
 
+	"github.com/JenswBE/tuinfeestbeerse.be/data"
 	"github.com/JenswBE/tuinfeestbeerse.be/generator"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
@@ -14,7 +15,10 @@ func main() {
 
 	// Fetch data
 	log.Info().Msg("Fetching data ...")
-	data := generator.GetData("static")
+	data, err := data.GetData("data", "static")
+	if err != nil {
+		log.Fatal().Err(err).Msg("Failed to get data")
+	}
 
 	// Refresh output dir
 	log.Info().Msg("Refreshing output dir ...")

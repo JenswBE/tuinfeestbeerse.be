@@ -1,3 +1,44 @@
+/* =========================== */
+/* =         GENERAL         = */
+/* =========================== */
+
+.tf-section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.tf-section h2 {
+  font-size: 50px;
+  line-height: 40px;
+  padding-bottom: 25px;
+  font-weight: 700;
+  color: #659975;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.tf-section h2:before {
+  width: 150px;
+  height: 5px;
+  border-radius: 5px;
+  background: #659975;
+  bottom: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  content: "";
+}
+
+.tf-section-bluegrey {
+  background-color: #f1f8fc;
+}
+
+/* =========================== */
+/* =         CAROUSEL        = */
+/* =========================== */
+
 .carousel-item img {
   object-fit: cover;
 }
@@ -53,34 +94,23 @@ div.carousel-caption {
   color: #fff;
 }
 
-.tf-section {
-  padding-top: 120px;
-  padding-bottom: 120px;
-}
+/* =========================== */
+/* =          ABOUT          = */
+/* =========================== */
 
-.tf-section h2 {
-  font-size: 50px;
-  line-height: 40px;
-  padding-bottom: 25px;
+#tf-about h2#tf-about-title {
   position: relative;
-  font-weight: 700;
-  color: #659975;
-  margin-bottom: 30px;
 }
 
-.tf-section h2::before {
+#tf-about h2#tf-about-title::before {
   position: absolute;
-  left: 0;
+  left: 25px;
   bottom: 0;
-  width: 55px;
+  width: 50px;
   height: 5px;
   background: #659975;
   content: "";
   border-radius: 5px;
-}
-
-.tf-section-bluegrey {
-  background-color: #f1f8fc;
 }
 
 #tf-about p {
@@ -102,4 +132,43 @@ div.carousel-caption {
 
 #tf-about #collapseAboutButton[aria-expanded="true"] .text-collapsed {
   display: none;
+}
+
+/* =========================== */
+/* =        TIME TABLE       = */
+/* =========================== */
+
+.timetable-header {
+  margin: 0;
+  background: #659975;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: white;
+  text-transform: uppercase;
+}
+
+.timetable-slot {
+  margin: 0;
+}
+
+.timetable-slot p {
+  margin: 0;
+  z-index: 1;
+}
+
+.timetable-slot::before {
+  content: " ";
+  display: block;
+  position: relative;
+  top: 50%;
+  left: 60%;
+  height: 1px;
+  width: 340%;
+  border-top: 1px solid black;
+}
+
+.timetable-show {
+  z-index: 1;
+  background: #53cf79;
+  width: 98%;
 }
