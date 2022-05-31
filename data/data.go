@@ -13,7 +13,8 @@ import (
 type Data struct {
 	Artists        Artists
 	CarouselImages map[string][]string
-	EventStart     time.Time
+	SaturdayStart  time.Time
+	SundayStart    time.Time
 	General        General
 	Sponsors       Sponsors
 	Timetable      Timetable
@@ -21,13 +22,13 @@ type Data struct {
 
 func GetData(dataDir, staticDir string) (Data, error) {
 	// Init data
+	general := getGeneral()
 	data := Data{
 		Artists:        getArtists(),
 		CarouselImages: map[string][]string{},
-		EventStart:     SaturdayStart,
-		General:        getGeneral(),
+		General:        general,
 		Sponsors:       getSponsors(),
-		Timetable:      getTimetable(SaturdayStart, SaturdayEnd),
+		Timetable:      getTimetable(general.SaturdayStart, general.SaturdayEnd),
 	}
 
 	// Load carousel images
@@ -41,9 +42,6 @@ func GetData(dataDir, staticDir string) (Data, error) {
 		data.CarouselImages[dirName] = append(data.CarouselImages[dirName], strings.TrimPrefix(path, staticDir+string(os.PathSeparator)))
 		return nil
 	})
-
-	// Load other data
-	data.Timetable = getTimetable(SaturdayStart, SaturdayEnd)
 	return data, nil
 }
 

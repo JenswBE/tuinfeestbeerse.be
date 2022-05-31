@@ -1,0 +1,28 @@
+<footer style="background-color: #252525" class="py-5">
+  <div class="container">
+    <div class="d-flex flex-column flex-md-row align-items-center">
+      <div>
+        <p class="d-flex flex-wrap justify-content-evenly mb-0">
+          {{ range .General.Links }}
+          <a
+            class="btn btn-light rounded-pill m-2"
+            href="{{ .Link }}"
+            title="{{ .Title }}"
+          >
+            <i class="bi bi-{{ .Icon }}"></i>
+          </a>
+          {{ end }}
+        </p>
+      </div>
+      <div class="order-md-first flex-md-grow-1 m-3">
+        <div class="copyright">
+          <p class="text-white mb-0">
+            &copy;
+            <a href="https://jensw.be" target="_blank">Jensw.be</a>
+            {{ .General.SaturdayStart.Format "2006" }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -35,6 +35,22 @@
   background-color: #f1f8fc;
 }
 
+.tf-section-greengradient {
+  background: rgba(0, 0, 0, 0) linear-gradient(100deg, #659975, #52d279) repeat
+    scroll 0 0;
+}
+
+/* =========================== */
+/* =         NAVBAR          = */
+/* =========================== */
+.navbar-nav .nav-link {
+  color: white !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #659975 !important;
+}
+
 /* =========================== */
 /* =         CAROUSEL        = */
 /* =========================== */
@@ -138,7 +154,7 @@ div.carousel-caption {
 /* =        TIME TABLE       = */
 /* =========================== */
 
-.timetable-header {
+#tf-timetable .timetable-header {
   margin: 0;
   background: #659975;
   padding-top: 5px;
@@ -147,16 +163,16 @@ div.carousel-caption {
   text-transform: uppercase;
 }
 
-.timetable-slot {
+#tf-timetable .timetable-slot {
   margin: 0;
 }
 
-.timetable-slot p {
+#tf-timetable .timetable-slot p {
   margin: 0;
   z-index: 1;
 }
 
-.timetable-slot::before {
+#tf-timetable .timetable-slot::before {
   content: " ";
   display: block;
   position: relative;
@@ -167,7 +183,7 @@ div.carousel-caption {
   border-top: 1px solid black;
 }
 
-.timetable-show {
+#tf-timetable .timetable-show {
   z-index: 1;
   background: #53cf79;
   width: 98%;
@@ -177,11 +193,11 @@ div.carousel-caption {
 /* =         ARTISTS         = */
 /* =========================== */
 
-.artist-wrap {
+#tf-artists .artist-wrap {
   position: relative;
 }
 
-.artist-content {
+#tf-artists .artist-content {
   position: absolute;
   left: 0;
   top: 0;
@@ -192,17 +208,17 @@ div.carousel-caption {
   opacity: 0;
 }
 
-.artist-wrap:hover .artist-content {
+#tf-artists .artist-wrap:hover .artist-content {
   opacity: 1;
 }
 
-.artist-content h3 {
+#tf-artists .artist-content h3 {
   font-size: 30px;
   color: #fff;
   margin-bottom: 5px;
 }
 
-.artist-content span {
+#tf-artists .artist-content span {
   display: block;
   color: #fff;
   font-size: 18px;
@@ -210,7 +226,7 @@ div.carousel-caption {
   font-style: italic;
 }
 
-.artist-content p {
+#tf-artists .artist-content p {
   color: #fff;
   font-size: 14px;
   line-height: 1.5em;
@@ -218,17 +234,17 @@ div.carousel-caption {
   margin-bottom: 10px;
 }
 
-.artist-content div.artist-links {
+#tf-artists .artist-content div.artist-links {
   position: absolute;
   left: 30px;
   bottom: 15px;
 }
 
-.artist-content div.artist-links p {
+#tf-artists .artist-content div.artist-links p {
   margin-right: 10px;
 }
 
-.artist-content div.artist-links p a {
+#tf-artists .artist-content div.artist-links p a {
   color: #fff;
   font-size: 1.25em;
 }
@@ -238,15 +254,28 @@ div.carousel-caption {
 /* =========================== */
 /* Named "partners" to circumvent content blockers */
 
-.partner-wrap {
+#tf-partners .partner-wrap {
   text-align: center;
   margin-bottom: 30px;
 }
-.partner-wrap a {
+
+#tf-partners .partner-wrap a {
   display: block;
   border: 1px solid rgba(53, 53, 53, 0.125);
   padding: 20px;
 }
-.partner-wrap a:hover {
+
+#tf-partners .partner-wrap a:hover {
   border-color: rgba(249, 0, 72, 0.2);
 }
+
+/* =========================== */
+/* =           INFO          = */
+/* =========================== */
+#tf-info p {
+  margin-bottom: 0;
+}
+
+/* =========================== */
+/* =          FOOTER         = */
+/* =========================== */

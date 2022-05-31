@@ -9,8 +9,8 @@ import (
 )
 
 const (
-	TimetablePixelsPerMinute float64 = 1  // Number of pixels to represent 1 minute on the timetable
-	TimetableTimeslotMinutes float64 = 30 // Number of minutes for each timeslot
+	TimetablePixelsPerMinute float64 = 1.2 // Number of pixels to represent 1 minute on the timetable
+	TimetableTimeslotMinutes float64 = 30  // Number of minutes for each timeslot
 )
 
 func getTimetable(eventStart, eventEnd time.Time) Timetable {

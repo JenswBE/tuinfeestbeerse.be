@@ -1,35 +1,39 @@
-<h2 class="text-center">Time table</h2>
-<div class="row gx-0 text-center fw-bold">
-  <div class="offset-1 col-1 px-0">
-    <p class="timetable-header">
-      <i class="bi bi-clock"></i>
-    </p>
-    {{ range $.Timetable.Slots }}
-    <p
-      class="timetable-slot"
-      style="height: {{ $.Timetable.SlotHeightPixels }}px; line-height: {{ $.Timetable.SlotHeightPixels }}px"
-    >
-      {{ . }}
-    </p>
-    {{ end }}
-  </div>
-  {{ range $.Timetable.Locations }}
-  <div class="col-3">
-    <p class="timetable-header">{{ .Name }}</p>
-    <div class="position-relative">
-      {{ range .Shows }}
-      <div
-        class="timetable-show position-absolute rounded-3 d-flex flex-column justify-content-center"
-        height="{{ $.Timetable.SlotHeightPixels }}"
-        style="top: {{ .StartPixels }}px; height: {{ .HeightPixels }}px;"
-      >
-        <p class="my-0">{{ .Name }}</p>
-        <p class="fw-normal my-0">
-          {{ .Start.Format "15:04" }} - {{ .End.Format "15:04" }}
+<div id="tf-timetable" class="tf-section tf-section-bluegrey container-fluid">
+  <div class="container">
+    <h2 class="text-center">Time table</h2>
+    <div class="row gx-0 text-center fw-bold">
+      <div class="offset-1 col-1 px-0">
+        <p class="timetable-header">
+          <i class="bi bi-clock"></i>
         </p>
+        {{ range $.Timetable.Slots }}
+        <p
+          class="timetable-slot"
+          style="height: {{ $.Timetable.SlotHeightPixels }}px; line-height: {{ $.Timetable.SlotHeightPixels }}px"
+        >
+          {{ . }}
+        </p>
+        {{ end }}
+      </div>
+      {{ range $.Timetable.Locations }}
+      <div class="col-3">
+        <p class="timetable-header">{{ .Name }}</p>
+        <div class="position-relative">
+          {{ range .Shows }}
+          <div
+            class="timetable-show position-absolute rounded-3 d-flex flex-column justify-content-center"
+            height="{{ $.Timetable.SlotHeightPixels }}"
+            style="top: {{ .StartPixels }}px; height: {{ .HeightPixels }}px;"
+          >
+            <p class="my-0">{{ .Name }}</p>
+            <p class="fw-normal my-0">
+              {{ .Start.Format "15:04" }} - {{ .End.Format "15:04" }}
+            </p>
+          </div>
+          {{ end }}
+        </div>
       </div>
       {{ end }}
     </div>
   </div>
-  {{ end }}
 </div>

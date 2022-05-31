@@ -14,5 +14,5 @@ reflex -R 'output/.*' --verbose go run .
 ```bash
 # Start local webserver
 cd output
-python http.server
+python -m http.server
 ```

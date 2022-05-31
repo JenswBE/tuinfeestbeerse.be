@@ -13,12 +13,12 @@ import (
 
 func ParseTemplates(templateDir, outputDir string, templateData data.Data) {
 	// Init template and parse components
-	templ := template.New("")
-	templ.Funcs(template.FuncMap{
+	rootTemplate := template.New("")
+	rootTemplate.Funcs(template.FuncMap{
 		"raw":           raw,
 		"trimAfterDash": trimAfterDash,
 	})
-	templ.ParseGlob(path.Join(templateDir, "*component*.html"))
+	rootTemplate.ParseGlob(path.Join(templateDir, "*component*.html"))
 
 	// Parse and execute pages
 	filepath.Walk(templateDir, func(templPath string, info os.FileInfo, err error) error {
@@ -27,6 +27,11 @@ func ParseTemplates(templateDir, outputDir string, templateData data.Data) {
 		}
 		if !strings.HasSuffix(templPath, ".page.html") {
 			return nil
+		}
+		templ, err := rootTemplate.Clone()
+		if err != nil {
+			log.Fatal().Err(err).Str("template", templPath).Msg("Failed to clone root template")
+			return err
 		}
 		if _, err = templ.ParseFiles(templPath); err != nil {
 			log.Fatal().Err(err).Str("template", templPath).Msg("Failed to parse template")
