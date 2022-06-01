@@ -1,0 +1,73 @@
+<div id="tf-info" class="container-fluid tf-section tf-section-greengradient">
+  <div class="container text-white">
+    <div class="row align-content-center">
+      <div class="col-lg-3 col-sm-6 col-12">
+        <div class="d-flex py-3">
+          <img
+            src="/assets/images/icons/location.png"
+            alt="Location icon"
+            height="50"
+          />
+          <div class="ps-3">
+            <p class="fw-bold">NIEF PARK</p>
+            <p>Ingang via:</p>
+            <p>Pastoriestraat 8</p>
+            <p>2340 Beerse</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6 col-12">
+        <div class="d-flex py-3">
+          <img
+            src="/assets/images/icons/clock.png"
+            alt="Clock icon"
+            height="50"
+          />
+          <div class="ps-3">
+            <p class="fw-bold">
+              ZA {{ .General.SaturdayStart.Format "02" }} JUNI {{
+              .General.SaturdayStart.Format "2006" }}
+            </p>
+            <p>
+              {{ .General.SaturdayStart.Format "15:04" }} - {{
+              .General.SaturdayEnd.Format "15:04" }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6 col-12">
+        <div class="d-flex py-3">
+          <img
+            src="/assets/images/icons/seat.png"
+            alt="Chair icon"
+            height="50"
+          />
+          <div class="ps-3">
+            <p class="fw-bold">
+              ZO {{ .General.SundayStart.Format "02" }} JUNI {{
+              .General.SundayStart.Format "2006" }}
+            </p>
+            <p>
+              {{ .General.SundayStart.Format "15:04" }} - {{
+              .General.SundayEnd.Format "15:04" }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6 col-12">
+        <div class="d-flex py-3">
+          <img
+            src="/assets/images/icons/lunch.png"
+            alt="Lunch icon"
+            height="50"
+          />
+          <div class="ps-3">
+            <p class="fw-bold">SPEK EN EI</p>
+            <p>Zaterdagavond</p>
+            <p>voor grote en kleine hongertjes</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

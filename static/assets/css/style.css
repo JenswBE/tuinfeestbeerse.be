@@ -1,0 +1,309 @@
+/* =========================== */
+/* =         GENERAL         = */
+/* =========================== */
+
+.tf-section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.tf-section h2 {
+  font-size: 50px;
+  line-height: 40px;
+  padding-bottom: 25px;
+  font-weight: 700;
+  color: #659975;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.tf-section h2:before {
+  width: 150px;
+  height: 5px;
+  border-radius: 5px;
+  background: #659975;
+  bottom: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  content: "";
+}
+
+.tf-section-bluegrey {
+  background-color: #f1f8fc;
+}
+
+.tf-section-greengradient {
+  background: rgba(0, 0, 0, 0) linear-gradient(100deg, #659975, #52d279) repeat
+    scroll 0 0;
+}
+
+/* =========================== */
+/* =         NAVBAR          = */
+/* =========================== */
+.navbar-nav .nav-link {
+  color: white !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #659975 !important;
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  nav.navbar.bg-dark {
+    background-color: transparent !important;
+  }
+}
+
+/* =========================== */
+/* =         CAROUSEL        = */
+/* =========================== */
+
+.carousel-item img {
+  object-fit: cover;
+}
+
+.carousel-inner {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+div.carousel-caption {
+  /* Based on https://stackoverflow.com/a/44464238 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  justify-content: flex-start !important;
+}
+
+.carousel-caption h1 {
+  line-height: 50px;
+  font-size: 50px;
+  font-weight: 700;
+  color: #fff;
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+
+.carousel-caption #carousel-clock {
+  display: none !important;
+}
+
+@media (min-height: 420px) {
+  .carousel-caption #carousel-clock {
+    display: flex !important;
+  }
+}
+
+@media (min-height: 576px) {
+  div.carousel-caption {
+    justify-content: center !important;
+  }
+
+  .carousel-caption h1 {
+    margin-top: 0;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (min-height: 576px) {
+  .carousel-caption h1 {
+    line-height: 90px;
+    font-size: 90px;
+  }
+}
+
+.carousel-caption p.carousel-dates {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  line-height: 34px;
+}
+
+.carousel-caption p.carousel-clock-legend {
+  font-size: 16px;
+  text-transform: uppercase;
+  color: white;
+}
+
+.carousel-caption p.carousel-clock-value {
+  font-size: 80px;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* =========================== */
+/* =          ABOUT          = */
+/* =========================== */
+
+#tf-about h2#tf-about-title {
+  position: relative;
+}
+
+#tf-about h2#tf-about-title::before {
+  position: absolute;
+  left: 25px;
+  bottom: 0;
+  width: 50px;
+  height: 5px;
+  background: #659975;
+  content: "";
+  border-radius: 5px;
+}
+
+#tf-about p {
+  color: #9599a2;
+}
+
+#tf-about #collapseAboutButton {
+  color: black;
+  text-decoration: none;
+}
+
+#tf-about #collapseAboutButton:hover {
+  color: #9599a2;
+}
+
+#tf-about #collapseAboutButton[aria-expanded="false"] .text-expanded {
+  display: none;
+}
+
+#tf-about #collapseAboutButton[aria-expanded="true"] .text-collapsed {
+  display: none;
+}
+
+/* =========================== */
+/* =        TIME TABLE       = */
+/* =========================== */
+
+#tf-timetable .timetable-header {
+  margin: 0;
+  background: #659975;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: white;
+  text-transform: uppercase;
+}
+
+#tf-timetable .timetable-slot {
+  margin: 0;
+}
+
+#tf-timetable .timetable-slot p {
+  margin: 0;
+  z-index: 1;
+}
+
+#tf-timetable .timetable-slot::before {
+  content: " ";
+  display: block;
+  position: relative;
+  top: 50%;
+  left: 80%;
+  height: 1px;
+  width: 920%;
+  border-top: 1px solid black;
+}
+
+#tf-timetable .timetable-show {
+  z-index: 1;
+  background: #53cf79;
+  width: 98%;
+}
+
+/* =========================== */
+/* =         ARTISTS         = */
+/* =========================== */
+
+#tf-artists .artist-wrap {
+  position: relative;
+}
+
+#tf-artists .artist-content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 20px 30px 40px 30px;
+  opacity: 0;
+}
+
+#tf-artists .artist-wrap:hover .artist-content {
+  opacity: 1;
+}
+
+#tf-artists .artist-content h3 {
+  font-size: 30px;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+#tf-artists .artist-content span {
+  display: block;
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+#tf-artists .artist-content p {
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.5em;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+#tf-artists .artist-content div.artist-links {
+  position: absolute;
+  left: 30px;
+  bottom: 15px;
+}
+
+#tf-artists .artist-content div.artist-links p {
+  margin-right: 10px;
+}
+
+#tf-artists .artist-content div.artist-links p a {
+  color: #fff;
+  font-size: 1.25em;
+}
+
+/* =========================== */
+/* =        SPONSORS         = */
+/* =========================== */
+/* Named "partners" to circumvent content blockers */
+
+#tf-partners .partner-wrap {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#tf-partners .partner-wrap a {
+  display: block;
+  border: 1px solid rgba(53, 53, 53, 0.125);
+  padding: 20px;
+}
+
+#tf-partners .partner-wrap a:hover {
+  border-color: rgba(249, 0, 72, 0.2);
+}
+
+/* =========================== */
+/* =           INFO          = */
+/* =========================== */
+#tf-info p {
+  margin-bottom: 0;
+}
+
+/* =========================== */
+/* =          FOOTER         = */
+/* =========================== */

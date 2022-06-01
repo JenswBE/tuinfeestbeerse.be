@@ -1,0 +1,48 @@
+<div id="tf-partners" class="tf-section container">
+  <h2 class="text-center">Onze Sponsors</h2>
+
+  <p class="text-center" style="color: #9599a2">
+    Bedankt voor jullie steun aan Tuinfeest {{ .General.SaturdayStart.Format
+    "2006" }}!
+  </p>
+
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-sm-8 offset-sm-2 col-12">
+      <div class="row">
+        {{ range .Sponsors.MainSponsors }}
+        <div class="col-12 col-lg-6">
+          <div class="partner-wrap">
+            <a href="{{ .Link }}" target="_blank">
+              <img
+                src="/assets/images/sponsor/{{ .Picture }}"
+                alt="{{ .Name }}"
+                class="img-fluid"
+              />
+            </a>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-sm-10 offset-sm-1 col-12">
+      <div class="row">
+        {{ range .Sponsors.Sponsors }}
+        <div class="col-lg-3 col-md-4 col-sm-4 col-6">
+          <div class="partner-wrap">
+            <a href="{{ .Link }}" target="_blank">
+              <img
+                src="/assets/images/sponsor/{{ .Picture }}"
+                alt="{{ .Name }}"
+                class="img-fluid"
+              />
+            </a>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>
