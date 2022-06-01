@@ -1,7 +1,35 @@
 <div id="tf-timetable" class="tf-section tf-section-bluegrey container-fluid">
   <div class="container">
     <h2 class="text-center">Time table</h2>
-    <div class="row gx-0 text-center fw-bold">
+    <div class="row gx-0 text-center fw-bold d-md-none">
+      <table class="table align-middle">
+        <thead>
+          <tr>
+            <th scope="col">Podium</th>
+            <th scope="col">Start</th>
+            <th scope="col">Einde</th>
+            <th scope="col">Artiest</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{ range $il, $loc := $.Timetable.Locations }}
+          <!-- Shows start -->
+          {{ range $is, $show := $loc.Shows }}
+          <tr>
+            {{ if eq $is 0 }}
+            <th scope="row" rowspan="{{ len $loc.Shows }}">{{ $loc.Name }}</th>
+            {{ end }}
+            <td>{{ $show.Start.Format "15:04" }}</td>
+            <td>{{ $show.End.Format "15:04" }}</td>
+            <td>{{ $show.Name }}</td>
+          </tr>
+          {{ end }}
+          <!-- Shows end -->
+          {{ end }}
+        </tbody>
+      </table>
+    </div>
+    <div class="row gx-0 text-center fw-bold d-none d-md-flex">
       <div class="offset-1 col-1 px-0">
         <p class="timetable-header">
           <i class="bi bi-clock"></i>
