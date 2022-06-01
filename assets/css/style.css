@@ -94,7 +94,7 @@ div.carousel-caption {
   display: none !important;
 }
 
-@media (min-height: 420px) {
+@media (min-height: 420px) and (min-width: 450px) {
   .carousel-caption #carousel-clock {
     display: flex !important;
   }
