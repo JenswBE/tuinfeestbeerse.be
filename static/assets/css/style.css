@@ -51,6 +51,13 @@
   color: #659975 !important;
 }
 
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  nav.navbar.bg-dark {
+    background-color: transparent !important;
+  }
+}
+
 /* =========================== */
 /* =         CAROUSEL        = */
 /* =========================== */
@@ -71,31 +78,52 @@ div.carousel-caption {
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.4);
+  justify-content: flex-start !important;
 }
 
-.carousel-caption h2 {
-  line-height: 90px;
-  font-size: 90px;
+.carousel-caption h1 {
+  line-height: 50px;
+  font-size: 50px;
   font-weight: 700;
   color: #fff;
-  margin-bottom: 30px;
+  margin-top: 100px;
+  margin-bottom: 20px;
 }
 
-.carousel-caption p {
+.carousel-caption #carousel-clock {
+  display: none !important;
+}
+
+@media (min-height: 420px) {
+  .carousel-caption #carousel-clock {
+    display: flex !important;
+  }
+}
+
+@media (min-height: 576px) {
+  div.carousel-caption {
+    justify-content: center !important;
+  }
+
+  .carousel-caption h1 {
+    margin-top: 0;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (min-height: 576px) {
+  .carousel-caption h1 {
+    line-height: 90px;
+    font-size: 90px;
+  }
+}
+
+.carousel-caption p.carousel-dates {
   color: #fff;
   font-size: 24px;
   font-weight: 500;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   line-height: 34px;
-  padding-right: 100px;
-}
-
-.carousel-caption p {
-  padding: 0px 100px;
-}
-
-.carousel-caption ul {
-  margin-bottom: 70px;
 }
 
 .carousel-caption p.carousel-clock-legend {

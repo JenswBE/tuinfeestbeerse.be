@@ -16,47 +16,40 @@
       />
     </div>
     {{ end }}
-    <div class="carousel-caption d-flex flex-column justify-content-center">
-      <h2>Tuinfeest 2022</h2>
-      <p>25 en 26 Juni, 2022</p>
-      <div
-        id="carousel-clock"
-        data-date="2022-06-25T20:00:00.000+02:00"
-        class="justify-content-center d-none d-md-flex"
-      >
-        <div class="d-flex flex-column">
-          <p id="carousel-clock-days" class="carousel-clock-value">0</p>
-          <p class="carousel-clock-legend">DAGEN</p>
-        </div>
-        <div class="d-flex flex-column">
-          <p id="carousel-clock-hours" class="carousel-clock-value">0</p>
-          <p class="carousel-clock-legend">UREN</p>
-        </div>
-        <div class="d-flex flex-column">
-          <p id="carousel-clock-minutes" class="carousel-clock-value">0</p>
-          <p class="carousel-clock-legend">MINUTEN</p>
-        </div>
-        <div class="d-flex flex-column">
-          <p id="carousel-clock-seconds" class="carousel-clock-value">0</p>
-          <p class="carousel-clock-legend">SECONDEN</p>
+    <div
+      class="carousel-caption d-flex flex-column justify-content-center"
+      style="overflow-y: hide"
+    >
+      <h1>Tuinfeest 2022</h1>
+      <p class="carousel-dates">
+        {{ .General.SaturdayStart.Format "02" }} en {{
+        .General.SundayStart.Format "02" }} Juni {{
+        .General.SaturdayStart.Format "2006" }}
+      </p>
+      <div class="container">
+        <div
+          id="carousel-clock"
+          data-date="{{ .General.SaturdayStart.Format "2006-01-02T15:04:05.999Z07:00" }}"
+          class="justify-content-center d-none d-md-flex justify-content-evenly"
+        >
+          <div class="d-flex flex-column">
+            <p id="carousel-clock-days" class="carousel-clock-value">0</p>
+            <p class="carousel-clock-legend">DAGEN</p>
+          </div>
+          <div class="d-flex flex-column">
+            <p id="carousel-clock-hours" class="carousel-clock-value">0</p>
+            <p class="carousel-clock-legend">UREN</p>
+          </div>
+          <div class="d-flex flex-column">
+            <p id="carousel-clock-minutes" class="carousel-clock-value">0</p>
+            <p class="carousel-clock-legend">MINUTEN</p>
+          </div>
+          <div class="d-flex flex-column">
+            <p id="carousel-clock-seconds" class="carousel-clock-value">0</p>
+            <p class="carousel-clock-legend">SECONDEN</p>
+          </div>
         </div>
       </div>
-      <!-- <div class="d-flex align-self-end">
-            <li>
-              ${link_icon("mailto:" + general_conf['mail-info'], "envelope",
-              appendix="<span>{}</span>".format(general_conf['mail-info']))}
-            </li>
-            <li>
-              ${link_icon("mailto:" + general_conf['mail-artist'], "music",
-              appendix="<span>{}</span>".format(general_conf['mail-artist']))}
-            </li>
-            %if name_facebook:
-            <li>
-              ${link_icon(general_conf['links']['facebook']['link'], "facebook",
-              appendix="<span>{}</span>".format(name_facebook))}
-            </li>
-            %endif
-          </div> -->
     </div>
   </div>
 </div>
