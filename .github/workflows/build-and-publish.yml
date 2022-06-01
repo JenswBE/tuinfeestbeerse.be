@@ -15,7 +15,9 @@ jobs:
           check-latest: true
 
       - name: Build website
-        run: go run .
+        run: |
+          mkdir -p output
+          go run .
 
       - name: Publish to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
