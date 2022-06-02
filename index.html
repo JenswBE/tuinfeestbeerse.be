@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="nl">
   <head>
@@ -14,12 +15,6 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
       integrity="sha256-YW7U7x59rUPZ3DWzQKbalM/9j2Cp8wapJVQPRxL4w1k="
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/leaflet@1.8.0/dist/leaflet.css"
-      integrity="sha256-O4WK/g+HUIRMtgNwSRMA+lTFXVCZOSNwqMt2jboE8gg="
       crossorigin="anonymous"
     />
     <link href="/assets/css/style.css" rel="stylesheet" />
@@ -102,50 +97,61 @@
 />
 <meta name="theme-color" content="#ffffff" />
 
+    
+    
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/leaflet@1.8.0/dist/leaflet.css"
+  integrity="sha256-O4WK/g+HUIRMtgNwSRMA+lTFXVCZOSNwqMt2jboE8gg="
+  crossorigin="anonymous"
+/>
+
   </head>
   <body>
-    <nav
-      class="navbar position-absolute w-100 navbar-expand-lg navbar-dark border-bottom border-white bg-dark"
-      style="z-index: 10000"
-    >
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/">
-          <img
-            src="/assets/images/logo.png"
-            alt="Logo Tuinfeest"
-            width="56"
-            height="56"
-            class="d-inline-block align-text-top"
-          />
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="collapse navbar-collapse justify-content-end"
-          id="navbarNavAltMarkup"
-        >
-          <div class="navbar-nav text-uppercase fw-bold">
-            <a class="nav-link" href="#tf-about">Over tuinfeest</a>
-            <a class="nav-link" href="#tf-timetable">Time table</a>
-            <a class="nav-link" href="#tf-artists">Artiesten</a>
-            <a class="nav-link" href="#tf-partners">Sponsors</a>
-            <a class="nav-link" href="#tf-map">Waar?</a>
-          </div>
-        </div>
-      </div>
-    </nav>
-
     
+<nav
+  class="navbar position-absolute w-100 navbar-expand-lg navbar-dark border-bottom border-white bg-dark"
+  style="z-index: 10000"
+>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">
+      <img
+        src="/assets/images/logo.png"
+        alt="Logo Tuinfeest"
+        width="56"
+        height="56"
+        class="d-inline-block align-text-top"
+      />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
     <div
+      class="collapse navbar-collapse justify-content-end"
+      id="navbarNavAltMarkup"
+    >
+      <div class="navbar-nav text-uppercase fw-bold">
+        <a class="nav-link" href="#tf-about">Over tuinfeest</a>
+        <a class="nav-link" href="#tf-timetable">Time table</a>
+        <a class="nav-link" href="#tf-artists">Artiesten</a>
+        <a class="nav-link" href="#tf-partners">Sponsors</a>
+        <a class="nav-link" href="#tf-map">Waar?</a>
+        <a class="nav-link" href="/huisreglement">Huisreglement</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<div
   class="carousel slide"
   data-bs-ride="carousel"
   data-bs-pause="false"
@@ -272,8 +278,8 @@
 </div>
 
 
-    
-    <div id="tf-about" class="tf-section container">
+
+<div id="tf-about" class="tf-section container">
   <h2 id="tf-about-title">Over Tuinfeest</h2>
   <p class="text-bold">
     Het Tuinfeest is een gratis festival met 3 verschillende podia op een groene
@@ -354,8 +360,8 @@
 </div>
 
 
-    
-    <div id="tf-timetable" class="tf-section tf-section-bluegrey container-fluid">
+
+<div id="tf-timetable" class="tf-section tf-section-bluegrey container-fluid">
   <div class="container">
     <h2 class="text-center">Time table</h2>
     <div class="row gx-0 text-center fw-bold d-md-none">
@@ -710,8 +716,8 @@
 </div>
 
 
-    
-    <div id="tf-artists" class="tf-section container-fluid px-0">
+
+<div id="tf-artists" class="tf-section container-fluid px-0">
   <h2 class="text-center">Artiesten</h2>
 
   <div class="row gx-0">
@@ -1080,8 +1086,8 @@
 </div>
 
 
-    
-    <div id="tf-partners" class="tf-section container">
+
+<div id="tf-partners" class="tf-section container">
   <h2 class="text-center">Onze Sponsors</h2>
 
   <p class="text-center" style="color: #9599a2">
@@ -1238,8 +1244,8 @@
 </div>
 
 
-    
-    <div id="tf-info" class="container-fluid tf-section tf-section-greengradient">
+
+<div id="tf-info" class="container-fluid tf-section tf-section-greengradient">
   <div class="container text-white">
     <div class="row align-content-center">
       <div class="col-lg-3 col-sm-6 col-12">
@@ -1310,8 +1316,9 @@
 </div>
 
 
-    
-    <div id="tf-map" height="550" style="height: 550px; width: 100%"></div>
+
+<div id="tf-map" height="550" style="height: 550px; width: 100%"></div>
+
 
     
     <footer style="background-color: #252525" class="py-5">
@@ -1363,6 +1370,9 @@
         </p>
       </div>
       <div class="order-md-first flex-md-grow-1 m-3">
+        <p>
+          <a href="/huisreglement">Huisreglement</a>
+        </p>
         <div class="copyright">
           <p class="text-white mb-0">
             &copy;
@@ -1382,18 +1392,32 @@
       crossorigin="anonymous"
     ></script>
     <script
-      src="https://cdn.jsdelivr.net/npm/leaflet@1.8.0/dist/leaflet.js"
-      integrity="sha256-OnFzHtqrwoenz6OjU3Z4SPDkER5Ih/vqRUvS5doFcZo="
-      crossorigin="anonymous"
-    ></script>
-    <script
   data-goatcounter="https://stats.tuinfeestbeerse.be/count"
   async
   defer
   src="https://stats.tuinfeestbeerse.be/count.js"
 ></script>
 
-    <script src="assets/js/clock.js" defer></script>
-    <script src="assets/js/map.js" defer></script>
+
+    
+    
+<script
+  src="https://cdn.jsdelivr.net/npm/leaflet@1.8.0/dist/leaflet.js"
+  integrity="sha256-OnFzHtqrwoenz6OjU3Z4SPDkER5Ih/vqRUvS5doFcZo="
+  crossorigin="anonymous"
+></script>
+<script src="assets/js/clock.js" defer></script>
+<script src="assets/js/map.js" defer></script>
+
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
