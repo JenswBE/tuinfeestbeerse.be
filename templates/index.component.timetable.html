@@ -50,7 +50,6 @@
           {{ range .Shows }}
           <div
             class="timetable-show position-absolute rounded-3 d-flex flex-column justify-content-center"
-            height="{{ $.Timetable.SlotHeightPixels }}"
             style="top: {{ .StartPixels }}px; height: {{ .HeightPixels }}px;"
           >
             <p class="my-0">{{ .Name }}</p>
