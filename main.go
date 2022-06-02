@@ -22,6 +22,7 @@ func main() {
 
 	// Refresh output dir
 	log.Info().Msg("Refreshing output dir ...")
+	generator.EnsureDirExists("output")
 	generator.DeleteDirContents("output")
 	generator.CopyDirContents("static", "output")
 

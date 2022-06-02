@@ -16,7 +16,6 @@ jobs:
 
       - name: Build website
         run: |
-          mkdir -p output
           go run .
 
       - name: Publish to GitHub Pages
