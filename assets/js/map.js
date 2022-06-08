@@ -12,6 +12,7 @@ var mymap = L.map("tf-map", {
 }).setView(coord_nief_park, 16);
 
 // Add map tile layer
+const colorSchemeQueryList = window.matchMedia("(prefers-color-scheme: dark)");
 L.tileLayer(
   "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
   {
@@ -20,7 +21,11 @@ L.tileLayer(
     maxZoom: 18,
     tileSize: 512,
     zoomOffset: -1,
-    id: "mapbox/streets-v11",
+    id: colorSchemeSwitch(
+      "mapbox/streets-v11",
+      "mapbox/dark-v10",
+      "mapbox/streets-v11"
+    ),
     accessToken:
       "pk.eyJ1IjoidHVpbmZlZXN0YmVlcnMiLCJhIjoiY2pxeTU1YzQxMDAxZzQ1cGV5NGlieGpnbyJ9.frYTXarGgo6JlWsXrtLs9A",
   }
@@ -40,3 +45,13 @@ var marker = L.marker(coord_nief_park, { icon: tfIcon }).addTo(mymap);
 marker
   .bindPopup("NIEF PARK<br>Ingang via:<br>Pastoriestraat 8<br>2340 Beerse")
   .openPopup();
+
+// Handle light/dark changes
+function colorSchemeSwitch(lightValue, darkValue, fallbackValue) {
+  if (!window.matchMedia) {
+    return fallbackValue;
+  }
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? darkValue
+    : lightValue;
+}
