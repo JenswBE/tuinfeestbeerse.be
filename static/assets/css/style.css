@@ -40,6 +40,10 @@
     scroll 0 0;
 }
 
+.text-grey {
+  color: #555;
+}
+
 /* =========================== */
 /* =         NAVBAR          = */
 /* =========================== */
@@ -157,17 +161,13 @@ div.carousel-caption {
   border-radius: 5px;
 }
 
-#tf-about p {
-  color: #9599a2;
-}
-
 #tf-about #collapseAboutButton {
   color: black;
   text-decoration: none;
 }
 
 #tf-about #collapseAboutButton:hover {
-  color: #9599a2;
+  color: #aaa;
 }
 
 #tf-about #collapseAboutButton[aria-expanded="false"] .text-expanded {
