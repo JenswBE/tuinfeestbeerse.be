@@ -2,6 +2,11 @@
 /* =         GENERAL         = */
 /* =========================== */
 
+/* COLORS 
+- TF green: #659975
+- TF dark green: #3d6649
+*/
+
 .tf-section {
   padding-top: 120px;
   padding-bottom: 120px;
@@ -40,8 +45,15 @@
     scroll 0 0;
 }
 
-.text-grey {
-  color: #555;
+@media (prefers-color-scheme: dark) {
+  .tf-section-bluegrey {
+    background-color: #2a363d;
+  }
+
+  .tf-section-greengradient {
+    background: rgba(0, 0, 0, 0) linear-gradient(100deg, #3d6649, #659975)
+      repeat scroll 0 0;
+  }
 }
 
 /* =========================== */
@@ -161,15 +173,6 @@ div.carousel-caption {
   border-radius: 5px;
 }
 
-#tf-about #collapseAboutButton {
-  color: black;
-  text-decoration: none;
-}
-
-#tf-about #collapseAboutButton:hover {
-  color: #aaa;
-}
-
 #tf-about #collapseAboutButton[aria-expanded="false"] .text-expanded {
   display: none;
 }
@@ -184,10 +187,10 @@ div.carousel-caption {
 
 #tf-timetable .timetable-header {
   margin: 0;
+  color: white;
   background: #659975;
   padding-top: 5px;
   padding-bottom: 5px;
-  color: white;
   text-transform: uppercase;
 }
 
@@ -215,6 +218,20 @@ div.carousel-caption {
   z-index: 1;
   background: #53cf79;
   width: 98%;
+}
+
+@media (prefers-color-scheme: dark) {
+  #tf-timetable .timetable-header {
+    background: #3d6649;
+  }
+
+  #tf-timetable .timetable-show {
+    background: #3d6649;
+  }
+
+  #tf-timetable .timetable-slot::before {
+    border-top: 1px solid #666;
+  }
 }
 
 /* =========================== */
@@ -297,13 +314,19 @@ div.carousel-caption {
   border-color: rgba(249, 0, 72, 0.2);
 }
 
+@media (prefers-color-scheme: dark) {
+  #tf-partners .partner-wrap {
+    background: #3d6649;
+  }
+
+  #tf-partners .partner-wrap a:hover {
+    border-color: white;
+  }
+}
+
 /* =========================== */
 /* =           INFO          = */
 /* =========================== */
 #tf-info p {
   margin-bottom: 0;
 }
-
-/* =========================== */
-/* =          FOOTER         = */
-/* =========================== */
