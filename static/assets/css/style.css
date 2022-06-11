@@ -330,3 +330,16 @@ div.carousel-caption {
 #tf-info p {
   margin-bottom: 0;
 }
+
+/* =========================== */
+/* =      HUISREGLEMENT      = */
+/* =========================== */
+@media (prefers-color-scheme: dark) {
+  #logo-korrekt-black {
+    display: none !important;
+  }
+
+  #logo-korrekt-white {
+    display: inline !important;
+  }
+}
