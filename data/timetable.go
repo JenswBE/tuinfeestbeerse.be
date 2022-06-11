@@ -46,7 +46,7 @@ func getTimetable(eventStart, eventEnd time.Time) Timetable {
 				Name: "Gazonfuif",
 				Shows: []*TimetableShow{
 					{
-						Name:  "DJ Van het JH",
+						Name:  "DJ Bramblusser",
 						Start: calcTime(eventStart, "20:00"),
 						End:   calcTime(eventStart, "21:00"),
 					},
