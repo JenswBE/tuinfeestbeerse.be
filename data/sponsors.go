@@ -7,12 +7,12 @@ func getSponsors() Sponsors {
 			{
 				Name:    "Campine",
 				Link:    "https://www.campine.com/",
-				Picture: "campine.jpg",
+				Picture: "campine.svg",
 			},
 			{
 				Name:    "Vastgoedpartners",
 				Link:    "https://www.vastgoedpartners.be/nl",
-				Picture: "vastgoed.png",
+				Picture: "vastgoed-small.jpg",
 			},
 		},
 		Sponsors: []*Sponsor{

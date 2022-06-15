@@ -299,27 +299,28 @@ div.carousel-caption {
 /* =========================== */
 /* Named "partners" to circumvent content blockers */
 
-#tf-partners .partner-wrap {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-#tf-partners .partner-wrap a {
+#tf-partners a.partner-link {
   display: block;
+  height: 100%;
   border: 1px solid rgba(53, 53, 53, 0.125);
-  padding: 20px;
+  color: black;
 }
 
-#tf-partners .partner-wrap a:hover {
+#tf-partners a.partner-link:hover {
   border-color: rgba(249, 0, 72, 0.2);
 }
 
+#tf-partners a.partner-link .partner-wrap,
+#tf-partners a.partner-link .partner-wrap > div {
+  height: 100%;
+}
+
 @media (prefers-color-scheme: dark) {
-  #tf-partners .partner-wrap {
+  #tf-partners a.partner-link .partner-wrap {
     background: #3d6649;
   }
 
-  #tf-partners .partner-wrap a:hover {
+  #tf-partners a.partner-link:hover {
     border-color: white;
   }
 }
