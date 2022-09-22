@@ -117,7 +117,7 @@ func getArtists() Artists {
 					"Wij verzorgen danslessen, workshops, initiaties, party's, demo's, salsadj-sets, ...",
 				}, " "),
 				Links: map[string]string{
-					"globe":    "https://www.salsmanians.be/",
+					// "globe":    "https://www.salsmanians.be/",
 					"facebook": "https://www.facebook.com/salsmanians/",
 				},
 			},
