@@ -10,10 +10,10 @@ const (
 
 func getGeneral() General {
 	return General{
-		SaturdayStart: time.Date(2022, time.June, 25, 20, 0, 0, 0, getTimeZoneLocation()),
-		SaturdayEnd:   time.Date(2022, time.June, 26, 3, 0, 0, 0, getTimeZoneLocation()),
-		SundayStart:   time.Date(2022, time.June, 26, 13, 0, 0, 0, getTimeZoneLocation()),
-		SundayEnd:     time.Date(2022, time.June, 26, 18, 0, 0, 0, getTimeZoneLocation()),
+		SaturdayStart: time.Date(2023, time.June, 24, 20, 0, 0, 0, getTimeZoneLocation()),
+		SaturdayEnd:   time.Date(2023, time.June, 25, 3, 0, 0, 0, getTimeZoneLocation()),
+		SundayStart:   time.Date(2023, time.June, 25, 13, 0, 0, 0, getTimeZoneLocation()),
+		SundayEnd:     time.Date(2023, time.June, 25, 18, 0, 0, 0, getTimeZoneLocation()),
 		Links: map[string]GeneralLink{
 			"mail-info": {
 				Title: "info@tuinfeestbeerse.be",

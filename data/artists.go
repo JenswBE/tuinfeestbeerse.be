@@ -4,7 +4,7 @@ import "strings"
 
 func getArtists() Artists {
 	return Artists{
-		Show: true,
+		Show: false,
 		Artists: []*Artist{
 			{
 				Name:    "Sub-lime",

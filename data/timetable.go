@@ -15,7 +15,7 @@ const (
 
 func getTimetable(eventStart, eventEnd time.Time) Timetable {
 	return completeTimetable(&Timetable{
-		Show: true,
+		Show: false,
 		Locations: []*TimetableLocation{
 			{
 				Name: "Live on Stage",

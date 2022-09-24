@@ -2,7 +2,7 @@ package data
 
 func getSponsors() Sponsors {
 	return Sponsors{
-		Show: true,
+		Show: false,
 		MainSponsors: []*Sponsor{
 			{
 				Name:    "Campine",
