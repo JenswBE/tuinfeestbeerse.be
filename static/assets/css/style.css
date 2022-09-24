@@ -142,6 +142,14 @@ div.carousel-caption {
   line-height: 34px;
 }
 
+.carousel-caption #carousel-clock-ongoing,
+.carousel-caption #carousel-clock-after {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 34px;
+}
+
 .carousel-caption p.carousel-clock-legend {
   font-size: 16px;
   text-transform: uppercase;
