@@ -61,13 +61,14 @@
 {{ template "index.component.about.html" . }}
 
 <!-- Time table -->
-{{ template "index.component.timetable.html" . }}
+{{ if .Timetable.Show }}{{ template "index.component.timetable.html" . }}{{
+end}}
 
 <!-- Artists -->
-{{ template "index.component.artists.html" . }}
+{{ if .Artists.Show }}{{ template "index.component.artists.html" . }}{{ end}}
 
 <!-- Sponsors -->
-{{ template "index.component.sponsors.html" . }}
+{{ if .Sponsors.Show }}{{ template "index.component.sponsors.html" . }}{{ end}}
 
 <!-- Info -->
 {{ template "index.component.info.html" . }}
