@@ -1,3 +1,9 @@
+{{ $imgPath := "assets/images/carousels/main" }}
+{{ $saturdayStart := time $.Site.Data.General.SaturdayStart }}
+{{ $saturdayEnd := time $.Site.Data.General.SaturdayEnd }}
+{{ $sundayStart := time $.Site.Data.General.SundayStart }}
+{{ $sundayEnd := time $.Site.Data.General.SundayEnd }}
+
 <div
   class="carousel slide"
   data-bs-ride="carousel"
@@ -7,10 +13,10 @@
   data-bs-interval="4000"
 >
   <div class="carousel-inner">
-    {{ range $index, $img := .CarouselImages.main }}
+    {{ range $index, $img := readDir (path.Join "static" $imgPath) }}
     <div class="carousel-item {{ if (eq $index 0) }}active{{ end }}">
       <img
-        src="{{ $img }}"
+        src="{{ $imgPath }}/{{ .Name }}"
         class="d-block w-100 vh-100"
         alt="Foto van een vorige Tuinfeest editie"
       />
@@ -19,17 +25,15 @@
     <div
       class="carousel-caption d-flex flex-column justify-content-center"
     >
-      <h1>Tuinfeest {{ .General.SaturdayStart.Format "2006" }}</h1>
+      <h1>Tuinfeest {{ $saturdayStart.Year }}</h1>
       <p class="carousel-dates">
-        Zaterdag {{ .General.SaturdayStart.Format "02" }} en zondag {{
-        .General.SundayStart.Format "02" }} Juni {{
-        .General.SaturdayStart.Format "2006" }}
+        Zaterdag {{ $saturdayStart.Format "02" }} en zondag {{ $sundayStart.Format "02" }} Juni {{ $saturdayStart.Year }}
       </p>
       <div class="container">
         <div
           id="carousel-clock"
-          data-start-date="{{ .General.SaturdayStart.Format "2006-01-02T15:04:05.999Z07:00" }}"
-          data-end-date="{{ .General.SundayEnd.Format "2006-01-02T15:04:05.999Z07:00" }}"
+          data-start-date="{{ $saturdayStart.Format "2006-01-02T15:04:05.999Z07:00" }}"
+          data-end-date="{{ $sundayEnd.Format "2006-01-02T15:04:05.999Z07:00" }}"
           class="justify-content-center d-none d-md-flex justify-content-evenly"
         >
           <div class="d-flex flex-column">

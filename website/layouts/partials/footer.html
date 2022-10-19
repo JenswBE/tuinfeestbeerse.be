@@ -3,7 +3,7 @@
     <div class="d-flex flex-column flex-md-row align-items-center">
       <div>
         <p class="d-flex flex-wrap justify-content-evenly mb-0">
-          {{ range .General.Links }}
+          {{ range $.Site.Data.General.Links }}
           <a
             class="btn btn-light rounded-pill m-2"
             href="{{ .Link }}"
@@ -22,7 +22,7 @@
           <p class="text-white mb-0">
             &copy;
             <a href="https://jensw.be" target="_blank">Jensw.be</a>
-            {{ .General.SaturdayStart.Format "2006" }}
+            {{ now.Year }}
           </p>
         </div>
       </div>

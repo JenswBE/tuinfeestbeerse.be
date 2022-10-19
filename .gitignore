@@ -1,1 +1,3 @@
-output/
+/public
+/website/data/**
+!/website/data/.gitkeep

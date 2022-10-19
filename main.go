@@ -1,40 +1,37 @@
 package main
 
 import (
-	"flag"
 	"os"
+	"path/filepath"
+	"time"
 
-	"github.com/JenswBE/tuinfeestbeerse.be/data"
-	"github.com/JenswBE/tuinfeestbeerse.be/generator"
+	"github.com/JenswBE/tuinfeestbeerse.be/preprocess"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
 )
 
+const Timezone = "Europe/Brussels"
+
 func main() {
-	// Parse flags
-	debug := flag.Bool("debug", false, "Sets log level to debug")
-	flag.Parse()
-
 	// Setup logging
-	log.Logger = log.Output(zerolog.ConsoleWriter{Out: os.Stderr})
+	output := zerolog.ConsoleWriter{Out: os.Stdout, TimeFormat: time.RFC3339}
+	log.Logger = log.Output(output)
 	zerolog.SetGlobalLevel(zerolog.InfoLevel)
-	if *debug {
-		zerolog.SetGlobalLevel(zerolog.DebugLevel)
-	}
 
-	// Fetch data
-	log.Info().Msg("Fetching data ...")
-	data, err := data.GetData("data", "static")
+	// Load timezone
+	timezone, err := time.LoadLocation(Timezone)
 	if err != nil {
-		log.Fatal().Err(err).Msg("Failed to get data")
+		log.Fatal().Err(err).Str("timezone", Timezone).Msg("Failed to load timezone")
 	}
 
-	// Refresh output dir
-	log.Info().Msg("Refreshing output dir ...")
-	generator.EnsureDirExists("output")
-	generator.DeleteDirContents("output")
-	generator.CopyDirContents("static", "output")
+	// Copy simple data files to destination
+	srcPath := "./data"
+	dstPath := "./website/data"
+	preprocess.CopyDirContents(srcPath, dstPath)
 
-	// Generate templates
-	generator.ParseTemplates("templates", "output", data)
+	// Process timetable
+	start, end := preprocess.GetEventStartAndEnd("./data/General.yml", timezone)
+	srcTimetable := filepath.Join(srcPath, "Timetable.yml")
+	dstTimetable := filepath.Join(dstPath, "Timetable.yml")
+	preprocess.PreprocessTimetable(srcTimetable, dstTimetable, start, end)
 }
