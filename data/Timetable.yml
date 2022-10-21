@@ -1,4 +1,4 @@
-Show: true
+Show: false
 PixelsPerMinute: 1.2 # Number of pixels to represent 1 minute on the timetable
 TimeslotMinutes: 30 # Number of minutes for each timeslot
 
