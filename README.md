@@ -9,7 +9,7 @@ go run .
 hugo server --source website/
 
 # Production build
-hugo --source website/ --destination public
+hugo --source website/ --destination ../public
 ```
 
 ## Directory structure
