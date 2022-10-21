@@ -1,15 +1,16 @@
+{{ $data := $.Site.Data.Sponsors }}
+
 <div id="tf-partners" class="tf-section container">
   <h2 class="text-center">Onze Sponsors</h2>
 
   <p class="text-center">
-    Bedankt voor jullie steun aan Tuinfeest {{ .General.SaturdayStart.Format
-    "2006" }}!
+    Bedankt voor jullie steun aan Tuinfeest {{ (time $.Site.Data.General.SaturdayStart).Year }}!
   </p>
 
   <div class="row">
     <div class="col-lg-8 offset-lg-2 col-sm-8 offset-sm-2 col-12">
       <div class="row align-items-stretch">
-        {{ range .Sponsors.MainSponsors }}
+        {{ range $data.MainSponsors }}
         <div class="col-12 col-lg-6 pb-3">
           <a href="{{ .Link }}" class="partner-link" target="_blank">
             <div class="partner-wrap">
@@ -32,7 +33,7 @@
   <div class="row">
     <div class="col-lg-8 offset-lg-2 col-sm-10 offset-sm-1 col-12">
       <div class="row">
-        {{ range .Sponsors.Sponsors }}
+        {{ range $data.Sponsors }}
         <div class="col-lg-3 col-md-4 col-sm-4 col-6 pb-3">
           <a href="{{ .Link }}" class="partner-link" target="_blank">
             <div class="partner-wrap">

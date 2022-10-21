@@ -1,0 +1,31 @@
+# ======== NOTES ========
+#  - Dates have to stay in this format as Hugo currently doesn't support custom formats.
+#  - Support icons can be found at https://icons.getbootstrap.com/. You have to remove the "bi-" prefix.
+# =======================
+
+SaturdayStart: 2023-06-24T20:00:00
+SaturdayEnd: 2023-06-25T03:00:00
+SundayStart: 2023-06-25T13:00:00
+SundayEnd: 2023-06-25T18:00:00
+
+Links:
+  MailInfo:
+    Title: info@tuinfeestbeerse.be
+    Link: mailto:info@tuinfeestbeerse.be
+    Icon: info
+  MailArtists:
+    Title: artiesten@tuinfeestbeerse.be
+    Link: mailto:artiesten@tuinfeestbeerse.be
+    Icon: music-note-beamed
+  Facebook:
+    Title: Facebook
+    Link: https://www.facebook.com/TuinfeestBeerse/
+    Icon: facebook
+  Instagram:
+    Title: Instagram
+    Link: https://www.instagram.com/tuinfeest_beerse/
+    Icon: instagram
+  YouTube:
+    Title: YouTube
+    Link: https://www.youtube.com/channel/UCdN0ff4rGCs9QGIcFIUlDXA
+    Icon: youtube

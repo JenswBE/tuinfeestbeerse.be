@@ -19,22 +19,22 @@
     />
     <link href="/assets/css/style.css" rel="stylesheet" />
     <title>Tuinfeest Beerse</title>
-    {{ template "component.favicon.html" . }}
+    {{ partial "favicon.html" . }}
     <!-- Extra head content -->
-    {{block "head" .}}{{end}}
+    {{block "head_end" .}}{{end}}
   </head>
   <body>
-    {{block "content" .}}{{end}}
+    {{block "main" .}}{{ .Content }}{{end}}
 
     <!-- Footer -->
-    {{ template "component.footer.html" . }}
+    {{ partial "footer.html" . }}
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha256-9SEPo+fwJFpMUet/KACSwO+Z/dKMReF9q4zFhU/fT9M="
       crossorigin="anonymous"
     ></script>
-    {{ template "component.goatcounter.html" . }}
+    {{ partial "goatcounter.html" . }}
 
     <!-- Extra body content -->
     {{block "body_end" .}}{{end}}

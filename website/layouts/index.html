@@ -1,8 +1,4 @@
-<!-- Base layout -->
-{{ template "component.base.html" . }}
-
-<!-- Extra head content -->
-{{ define "head" }}
+{{ define "head_end" }}
 <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/leaflet@1.8.0/dist/leaflet.css"
@@ -11,8 +7,7 @@
 />
 {{ end }}
 
-<!-- Body content -->
-{{ define "content" }}
+{{ define "main" }}
 <nav
   class="navbar position-absolute w-100 navbar-expand-lg navbar-dark border-bottom border-white bg-dark"
   style="z-index: 10000"
@@ -44,9 +39,15 @@
     >
       <div class="navbar-nav text-uppercase fw-bold">
         <a class="nav-link" href="#tf-about">Over tuinfeest</a>
+        {{ if $.Site.Data.Timetable.Show }}
         <a class="nav-link" href="#tf-timetable">Time table</a>
+        {{ end }}
+        {{ if $.Site.Data.Artists.Show }}
         <a class="nav-link" href="#tf-artists">Artiesten</a>
+        {{ end }}
+        {{ if $.Site.Data.Sponsors.Show }}
         <a class="nav-link" href="#tf-partners">Sponsors</a>
+        {{ end }}
         <a class="nav-link" href="#tf-map">Waar?</a>
         <a class="nav-link" href="/huisreglement">Huisreglement</a>
       </div>
@@ -55,29 +56,27 @@
 </nav>
 
 <!-- Carousel -->
-{{ template "index.component.carousel.html" . }}
+{{ partial "index/carousel.html" . }}
 
 <!-- About -->
-{{ template "index.component.about.html" . }}
+{{ partial "index/about.html" . }}
 
-<!-- Time table -->
-{{ if .Timetable.Show }}{{ template "index.component.timetable.html" . }}{{
-end}}
+<!-- Timetable -->
+{{ if $.Site.Data.Timetable.Show }}{{ partial "index/timetable.html" . }}{{ end}}
 
 <!-- Artists -->
-{{ if .Artists.Show }}{{ template "index.component.artists.html" . }}{{ end}}
+{{ if $.Site.Data.Artists.Show }}{{ partial "index/artists.html" . }}{{ end}}
 
 <!-- Sponsors -->
-{{ if .Sponsors.Show }}{{ template "index.component.sponsors.html" . }}{{ end}}
+{{ if $.Site.Data.Sponsors.Show }}{{ partial "index/sponsors.html" . }}{{ end}}
 
 <!-- Info -->
-{{ template "index.component.info.html" . }}
+{{ partial "index/info.html" . }}
 
 <!-- Map -->
 <div id="tf-map" style="height: 550px; width: 100%"></div>
 {{ end }}
 
-<!-- End of body content -->
 {{ define "body_end" }}
 <script
   src="https://cdn.jsdelivr.net/npm/leaflet@1.8.0/dist/leaflet.js"
