@@ -3,7 +3,7 @@ module github.com/JenswBE/tuinfeestbeerse.be
 go 1.18
 
 require (
-	github.com/goccy/go-yaml v1.9.6
+	github.com/goccy/go-yaml v1.9.8
 	github.com/rs/zerolog v1.28.0
 )
 
