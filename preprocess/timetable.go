@@ -45,7 +45,7 @@ type TimetableShow struct {
 	HeightPixels int `yaml:"HeightPixels"`
 }
 
-func PreprocessTimetable(src, dst string, eventStart, eventEnd time.Time) {
+func ProcessTimetable(src, dst string, eventStart, eventEnd time.Time) {
 	var timetable Timetable
 	parseYAMLFile(src, &timetable)
 	completeTimetable(&timetable, eventStart, eventEnd)

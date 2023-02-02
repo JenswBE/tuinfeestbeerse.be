@@ -49,7 +49,7 @@ func writeYAMLFile(dst string, data any) {
 	}()
 
 	// Write data into destination
-	if yaml.NewEncoder(file).Encode(data); err != nil {
+	if err = yaml.NewEncoder(file).Encode(data); err != nil {
 		logger.Fatal().Err(err).Msg("Failed to encode and write to YAML file")
 	}
 }

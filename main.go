@@ -33,5 +33,5 @@ func main() {
 	start, end := preprocess.GetEventStartAndEnd("./data/General.yml", timezone)
 	srcTimetable := filepath.Join(srcPath, "Timetable.yml")
 	dstTimetable := filepath.Join(dstPath, "Timetable.yml")
-	preprocess.PreprocessTimetable(srcTimetable, dstTimetable, start, end)
+	preprocess.ProcessTimetable(srcTimetable, dstTimetable, start, end)
 }
