@@ -5,7 +5,7 @@ on:
 
 env:
   GO_VERSION: "1.20"
-  HUGO_VERSION: "0.107.0"
+  HUGO_VERSION: "0.110.0"
 
 jobs:
   build-and-publish:
