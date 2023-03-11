@@ -5,6 +5,10 @@
 # Re-run this step if files changed in "data" folder.
 go run .
 
+# Install Hugo
+# See https://gohugo.io/installation/linux
+go install github.com/gohugoio/hugo@latest
+
 # Start Hugo server
 hugo server --source website/
 
