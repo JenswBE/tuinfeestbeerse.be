@@ -3,6 +3,7 @@
 #  - Support icons can be found at https://icons.getbootstrap.com/. You have to remove the "bi-" prefix.
 # =======================
 
+Timezone: Europe/Brussels
 SaturdayStart: 2023-06-24T20:00:00
 SaturdayEnd: 2023-06-25T03:00:00
 SundayStart: 2023-06-25T13:00:00

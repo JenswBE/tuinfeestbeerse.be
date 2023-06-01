@@ -2,7 +2,7 @@
   <h2 class="text-center">Artiesten</h2>
 
   <div class="row gx-0">
-    {{ range $.Site.Data.Artists.Artists }}
+    {{ range $.Data.Artists.Artists }}
     <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
       <div class="artist-wrap">
         <img
@@ -16,7 +16,7 @@
             {{ if .Type }}
             <span>{{ .Type }}</span>
             {{ end }} {{ if .Description }}
-            <p>{{ safeHTML .Description }}</p>
+            <p>{{ rawHTML .Description }}</p>
             {{ end }} {{ if .Links }}
           </div>
           <div class="artist-links d-flex">

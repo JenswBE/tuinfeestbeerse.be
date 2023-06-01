@@ -25,12 +25,15 @@
           />
           <div class="ps-3">
             <p class="fw-bold">
-              ZA {{ (time $.Site.Data.General.SaturdayStart).Format "02" }} JUNI {{
-              (time $.Site.Data.General.SaturdayStart).Format "2006" }}
+              ZA
+              {{ (parseTime $.Data.General.SaturdayStart).Format "02" }}
+              JUNI
+              {{ (parseTime $.Data.General.SaturdayStart).Format "2006" }}
             </p>
             <p>
-              {{ (time $.Site.Data.General.SaturdayStart).Format "15:04" }} - {{
-                (time $.Site.Data.General.SaturdayEnd).Format "15:04" }}
+              {{ (parseTime $.Data.General.SaturdayStart).Format "15:04" }}
+              -
+              {{ (parseTime $.Data.General.SaturdayEnd).Format "15:04" }}
             </p>
           </div>
         </div>
@@ -44,12 +47,14 @@
           />
           <div class="ps-3">
             <p class="fw-bold">
-              ZO {{ (time $.Site.Data.General.SundayStart).Format "02" }} JUNI {{
-                (time $.Site.Data.General.SundayStart).Format "2006" }}
+              ZO
+              {{ (parseTime $.Data.General.SundayStart).Format "02" }}
+              JUNI
+              {{ (parseTime $.Data.General.SundayStart).Format "2006" }}
             </p>
             <p>
-              {{ (time $.Site.Data.General.SundayStart).Format "15:04" }} - {{
-                (time $.Site.Data.General.SundayEnd).Format "15:04" }}
+              {{ (parseTime $.Data.General.SundayStart).Format "15:04" }} -
+              {{ (parseTime $.Data.General.SundayEnd).Format "15:04" }}
             </p>
           </div>
         </div>
