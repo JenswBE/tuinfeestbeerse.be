@@ -45,11 +45,10 @@ type TimetableShow struct {
 	HeightPixels int `yaml:"HeightPixels"`
 }
 
-func ProcessTimetable(src, dst string, eventStart, eventEnd time.Time) {
+func ProcessTimetable(src string, eventStart, eventEnd time.Time) Timetable {
 	var timetable Timetable
 	parseYAMLFile(src, &timetable)
-	completeTimetable(&timetable, eventStart, eventEnd)
-	writeYAMLFile(dst, timetable)
+	return completeTimetable(&timetable, eventStart, eventEnd)
 }
 
 // completeTimetable completes and returns the timetable.

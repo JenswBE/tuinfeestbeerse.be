@@ -1,9 +1,0 @@
-baseURL: https://tuinfeestbeerse.be/
-defaultContentLanguage: nl
-disableKinds:
-  - RSS
-  - taxonomy
-  - term
-languageCode: nl-be
-timeZone: Europe/Brussels
-title: Tuinfeest Beerse

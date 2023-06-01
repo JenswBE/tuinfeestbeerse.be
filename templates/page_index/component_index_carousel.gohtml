@@ -1,8 +1,9 @@
 {{ $imgPath := "assets/images/carousels/main" }}
-{{ $saturdayStart := time $.Site.Data.General.SaturdayStart }}
-{{ $saturdayEnd := time $.Site.Data.General.SaturdayEnd }}
-{{ $sundayStart := time $.Site.Data.General.SundayStart }}
-{{ $sundayEnd := time $.Site.Data.General.SundayEnd }}
+{{ $saturdayStart := parseTime $.Data.General.SaturdayStart }}
+{{ $saturdayEnd := parseTime $.Data.General.SaturdayEnd }}
+{{ $sundayStart := parseTime $.Data.General.SundayStart }}
+{{ $sundayEnd := parseTime $.Data.General.SundayEnd }}
+
 
 <div
   class="carousel slide"
@@ -13,21 +14,21 @@
   data-bs-interval="4000"
 >
   <div class="carousel-inner">
-    {{ range $index, $img := readDir (path.Join "static" $imgPath) }}
-    <div class="carousel-item {{ if (eq $index 0) }}active{{ end }}">
-      <img
-        src="{{ $imgPath }}/{{ .Name }}"
-        class="d-block w-100 vh-100"
-        alt="Foto van een vorige Tuinfeest editie"
-      />
-    </div>
+    {{ range $index, $img := readDir (pathJoin "static" $imgPath) }}
+      <div class="carousel-item {{ if (eq $index 0) }}active{{ end }}">
+        <img
+          src="{{ $imgPath }}/{{ .Name }}"
+          class="d-block w-100 vh-100"
+          alt="Foto van een vorige Tuinfeest editie"
+        />
+      </div>
     {{ end }}
-    <div
-      class="carousel-caption d-flex flex-column justify-content-center"
-    >
+    <div class="carousel-caption d-flex flex-column justify-content-center">
       <h1>Tuinfeest {{ $saturdayStart.Year }}</h1>
       <p class="carousel-dates">
-        Zaterdag {{ $saturdayStart.Format "02" }} en zondag {{ $sundayStart.Format "02" }} Juni {{ $saturdayStart.Year }}
+        Zaterdag {{ $saturdayStart.Format "02" }} en zondag
+        {{ $sundayStart.Format "02" }} Juni
+        {{ $saturdayStart.Year }}
       </p>
       <div class="container">
         <div

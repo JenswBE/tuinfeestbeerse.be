@@ -5,7 +5,6 @@ on:
 
 env:
   GO_VERSION: "1.20"
-  HUGO_VERSION: "0.111.2"
 
 jobs:
   build-and-publish:
@@ -24,18 +23,12 @@ jobs:
       - name: Lint service
         uses: golangci/golangci-lint-action@v3
 
-      - name: Preprocess data
+      - name: Generate website
         run: |
           go run .
-
-      - name: Generate website with Hugo
-        run: |
-          wget https://github.com/gohugoio/hugo/releases/download/v${{ env.HUGO_VERSION }}/hugo_${{ env.HUGO_VERSION }}_linux-amd64.tar.gz -O hugo.tar.gz
-          tar xf hugo.tar.gz
-          ./hugo --source website/ --destination ../public
 
       - name: Publish to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: ./output
