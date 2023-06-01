@@ -16,8 +16,10 @@ import (
 	"github.com/rs/zerolog/log"
 )
 
-const Timezone = "Europe/Brussels"
-const dataDir = "data"
+const (
+	Timezone = "Europe/Brussels"
+	dataDir  = "data"
+)
 
 func main() {
 	// Parse flags
@@ -30,8 +32,8 @@ func main() {
 		logLevel = zerolog.DebugLevel
 	}
 	zerolog.SetGlobalLevel(logLevel)
-	output := zerolog.ConsoleWriter{Out: os.Stdout, TimeFormat: time.RFC3339}
-	log.Logger = log.Output(output)
+	consoleWriter := zerolog.ConsoleWriter{Out: os.Stdout, TimeFormat: time.RFC3339}
+	log.Logger = log.Output(consoleWriter)
 
 	// Load timezone
 	timezone, err := time.LoadLocation(Timezone)
@@ -44,7 +46,11 @@ func main() {
 	timetable := preprocess.ProcessTimetable(getDataPath("Timetable.yml"), start, end)
 
 	// Copy static content
-	exec.Command("cp", "-R", "static/.", "output/").CombinedOutput()
+	cmd := exec.Command("cp", "-R", "static/.", "output/")
+	output, err := cmd.CombinedOutput()
+	if err != nil {
+		log.Fatal().Err(err).Str("cmd", cmd.String()).Bytes("output", output).Msg("Failed to copy static assets")
+	}
 
 	// Process website
 	pipeline.
@@ -84,6 +90,7 @@ func parseTimeInLocation(location *time.Location) func(string) time.Time {
 }
 
 func rawHTML(input string) template.HTML {
+	// #nosec G203
 	return template.HTML(input)
 }
 
