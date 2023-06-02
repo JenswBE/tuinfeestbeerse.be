@@ -17,65 +17,64 @@
 #       # See https://icons.getbootstrap.com/ for all supported icons.
 #       Icon: globe
 
-Show: false
+Show: true
 Artists:
-  - Name: Sub-lime
-    Type: Rock band
-    Picture: sub-lime.jpg
+  - Name: New Collective
+    Type: Coverband
+    Picture: new-collective.jpg
     Description: >
-      Sub-Lime is een 5-koppige rockband met roots in de Kempen.
-      Met een setlist geïnspireerd op iconische bands zoals Kiss, QOTSA, Foo Fighters, ...
-      krijgen ze jong en oud samen op de dansvloer.
+      New Collective is een leuke, jonge cover- / party-band uit de Kempen!
+      Ze hebben heeft zich volledig toegespitst op het entertainen van elk soort publiek op elke locatie!
+      Zo komt er aan een stevig tempo een hele hoop bekende nummers langs waardoor het voor het publiek nooit gaat vervelen.
+      Kelen smeren en dansschoenen aan is de boodschap!
     Links:
-      - URL: https://www.sub-lime.be/
+      - URL: https://www.new-collective.be/
         Icon: globe
-      - URL: https://www.facebook.com/watch/sublimeband/
+      - URL: https://www.facebook.com/newcollective
         Icon: facebook
-
-  - Name: The Skadillacs
-    Type: Ska band
-    Picture: skadillacs.jpg
-    Description: ""
-    Links:
-      - URL: http://www.theskadillacs.be/
-        Icon: globe
-      - URL: https://www.facebook.com/theskadillacs
-        Icon: facebook
-
-  - Name: De Romeo's
-    Type: Ambiance band
-    Picture: romeos.jpg
-    Description: ""
-    Links:
-      - URL: https://deromeos.be/
-        Icon: globe
-      - URL: https://www.facebook.com/deromeos
-        Icon: facebook
-      - URL: https://twitter.com/romeosofficial
-        Icon: twitter
-      - URL: https://www.instagram.com/deromeos/
+      - URL: https://www.instagram.com/newcollectiveband/
         Icon: instagram
 
-  - Name: De Koperdieven
-    Type: Koper cover band
-    Picture: koperdieven.jpg
+  - Name: Sergio
+    Type: Ambiance zanger
+    Picture: sergio.jpg
     Description: >
-      Een zootje losgeslagen ongeregeld die niets liever doen dan elk feestje op zijn kop te zetten.
-      Dit doen ze door dansbare, meezingbare en brulbare nummers op een bijna strafbare manier op jullie los te laten.
-      De koperdieven&hellip; ze stelen de show!
+      Het is weinigen gegeven aan een voornaam genoeg te hebben.
+      Arno, Toots, Adèle, en, jawel, Sergio.
+      Zijn naam staat voor een kruidig mengsel op basis van ruwe bolster en blanke pit.
     Links:
-      - URL: https://www.facebook.com/koperdieven
+      - URL: https://www.facebook.com/ikbendesergio
         Icon: facebook
 
-  - Name: Winnaar DJ contest @ JH Den Beir
+  - Name: Nancy's Neighbours
     Type: ""
-    Picture: den-beir.jpg
-    Description: >
-      De enige echte winnaar van de
-      <a href="https://www.facebook.com/events/729280071543041" style="color: lightblue; font-weight: bold">DJ contest van JH Den Beir</a>.
+    Picture: nancys-neighbours.jpg
+    Description: ""
     Links:
-      - URL: https://www.facebook.com/events/729280071543041
+      - URL: https://nancysneighbours.be/
+        Icon: globe
+      - URL: https://www.instagram.com/nancysneighbours/
+        Icon: instagram
+
+  - Name: Sjin Tonic
+    Type: All-round DJ
+    Picture: sjin-tonic.png
+    Description: ""
+    Links:
+      - URL: https://www.facebook.com/sjintonic
         Icon: facebook
+      - URL: https://soundcloud.com/sjintonic
+        Icon: soundwave
+
+  - Name: Univerzal soldier
+    Type: All-round DJ
+    Picture: univerzal-soldier.jpg
+    Description: ""
+    Links:
+      - URL: https://www.facebook.com/DJUniverzalSoldier
+        Icon: facebook
+      - URL: https://soundcloud.com/tomas-nobel
+        Icon: soundwave
 
   - Name: DJ N1CO
     Type: All-round DJ
@@ -92,20 +91,6 @@ Artists:
     Links:
       - URL: https://www.facebook.com/DJLenny007/
         Icon: facebook
-
-  - Name: DJ Double-U
-    Type: All-round DJ
-    Picture: double-u.jpg
-    Description: ""
-    Links:
-      - URL: https://www.djdouble-u.be/
-        Icon: globe
-      - URL: https://www.facebook.com/Double.U.DJ/
-        Icon: facebook
-      - URL: https://www.instagram.com/double_u_dj/
-        Icon: instagram
-      - URL: https://soundcloud.com/dj-doubleu
-        Icon: soundcloud
 
   - Name: DJ Polleke & Celis
     Type: All-round DJ's
