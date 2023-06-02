@@ -1,34 +1,31 @@
-Show: false
+Show: true
 PixelsPerMinute: 1.2 # Number of pixels to represent 1 minute on the timetable
 TimeslotMinutes: 30 # Number of minutes for each timeslot
 
 Locations:
   - Name: Live on Stage
     Shows:
-      - Name: Sub-lime
+      - Name: New Collective
         Start: "21:00"
-        End: "22:15"
-      - Name: The Skadillacs
-        Start: "22:45"
-        End: "00:00"
-      - Name: De Romeo's
-        Start: "00:30"
-        End: "01:10"
-      - Name: Koperdieven
-        Start: "01:10"
-        End: "02:00"
+        End: "22:30"
+      - Name: Sergio
+        Start: "23:00"
+        End: "23:40"
+      - Name: Nancy's Neighbours
+        Start: "00:10"
+        End: "01:40"
   - Name: Gazonfuif
     Shows:
-      - Name: DJ Bramblusser
+      - Name: Sjin Tonic
         Start: "20:00"
         End: "21:00"
-      - Name: DJ N1co
+      - Name: Univerzal soldier
         Start: "21:00"
         End: "22:00"
-      - Name: DJ Lenny
+      - Name: DJ N1CO
         Start: "22:00"
         End: "23:30"
-      - Name: Double-U
+      - Name: DJ Lenny
         Start: "23:30"
         End: "01:00"
       - Name: DJ Polleke & Celis
