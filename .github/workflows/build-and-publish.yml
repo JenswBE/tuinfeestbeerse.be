@@ -25,8 +25,7 @@ jobs:
         uses: golangci/golangci-lint-action@v3
 
       - name: Generate website
-        run: |
-          go run .
+        run: go run .
 
       - name: Publish to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
