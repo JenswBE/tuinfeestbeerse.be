@@ -4,10 +4,10 @@
 # =======================
 
 Timezone: Europe/Brussels
-SaturdayStart: 2023-06-24T20:00:00
-SaturdayEnd: 2023-06-25T03:00:00
-SundayStart: 2023-06-25T13:00:00
-SundayEnd: 2023-06-25T18:00:00
+SaturdayStart: 2024-06-29T20:00:00
+SaturdayEnd: 2024-06-30T03:00:00
+SundayStart: 2024-06-30T13:00:00
+SundayEnd: 2024-06-30T18:00:00
 
 Links:
   MailInfo:
@@ -26,7 +26,3 @@ Links:
     Title: Instagram
     Link: https://www.instagram.com/tuinfeest_beerse/
     Icon: instagram
-  YouTube:
-    Title: YouTube
-    Link: https://www.youtube.com/channel/UCdN0ff4rGCs9QGIcFIUlDXA
-    Icon: youtube

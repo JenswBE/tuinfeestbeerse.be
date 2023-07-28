@@ -3,7 +3,7 @@
 #  - All file names of pictures are relative to /website/static/assets/images/sponsor
 # =======================
 
-Show: true
+Show: false
 
 MainSponsors:
   - Name: Campine

@@ -17,7 +17,7 @@
 #       # See https://icons.getbootstrap.com/ for all supported icons.
 #       Icon: globe
 
-Show: true
+Show: false
 Artists:
   - Name: New Collective
     Type: Coverband
