@@ -70,6 +70,7 @@ func main() {
 		SetDataYAML("Artists", "Artists.yml").
 		SetDataYAML("General", "General.yml").
 		SetDataYAML("Sponsors", "Sponsors.yml").
+		LoadRenderSingle("page_404.gohtml", "404.html").
 		LoadRenderSingle("page_index/page.gohtml", "index.html").
 		LoadRenderSingle("page_huisreglement.gohtml", "huisreglement/index.html").
 		Must()
