@@ -3,7 +3,7 @@ module github.com/JenswBE/tuinfeestbeerse.be
 go 1.20
 
 require (
-	github.com/JenswBE/go-pipeline v0.0.0-20230601173844-96658d50d1a2
+	github.com/JenswBE/go-pipeline v1.0.0
 	github.com/goccy/go-yaml v1.11.0
 	github.com/rs/zerolog v1.30.0
 )
