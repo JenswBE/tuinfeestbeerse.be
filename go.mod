@@ -4,7 +4,7 @@ go 1.20
 
 require (
 	github.com/JenswBE/go-pipeline v1.0.0
-	github.com/goccy/go-yaml v1.11.0
+	github.com/goccy/go-yaml v1.11.2
 	github.com/rs/zerolog v1.30.0
 )
 
