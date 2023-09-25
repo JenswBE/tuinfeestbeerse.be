@@ -1,0 +1,137 @@
+<!-- Base layout -->
+{{ template "layout_base.gohtml" . }}
+
+
+<!-- Body content -->
+{{ define "content" }}
+  <div class="container">
+    <div class="d-grid my-5">
+      <a href="/vrijwilligers" class="btn btn-dark" style="background-color: #659975">
+        <i class="bi bi-arrow-left"></i> Naar vrijwilligers formulier
+      </a>
+    </div>
+
+    <h1>Privacy Policy voor Vrijwilligers</h1>
+
+    {{ with .Data.Privacy }}
+      <p>
+        {{ .OrgName }}, gevestigd aan {{ .Address.Street }} {{ .Address.HouseNumber }},
+        {{ .Address.PostalCode }}
+        {{ .Address.City }}
+        , is verantwoordelijk voor de verwerking van persoonsgegevens zoals weergegeven in deze privacyverklaring.
+      </p>
+
+      <p>
+        <span class="fw-bold">Contactgegevens:</span><br />
+        {{ .Address.Street }} {{ .Address.HouseNumber }}<br />
+        {{ .Address.PostalCode }} {{ .Address.City }}<br />
+        <a href="tel:{{ .PhoneNumber }}">{{ .PhoneNumber }}</a><br />
+        <a href="mailto:{{ .Email }}">{{ .Email }}</a>
+      </p>
+
+      <h2>Persoonsgegevens die wij verwerken</h2>
+      <p>
+        {{ .OrgName }} verwerkt je persoonsgegevens doordat je gebruik maakt van onze diensten en/of omdat je deze
+        gegevens zelf aan ons verstrekt.
+      </p>
+
+      <p>Hieronder vind je een overzicht van de persoonsgegevens die wij verwerken:</p>
+      <ul>
+        <li>Voor- en achternaam</li>
+        <li>Geboortedatum</li>
+        <li>Adresgegevens</li>
+        <li>Telefoonnummer</li>
+        <li>E-mailadres</li>
+        <li>IP-adres</li>
+      </ul>
+
+      <h2>Bijzondere en/of gevoelige persoonsgegevens die wij verwerken</h2>
+      <p>{{ .OrgName }} verwerkt de volgende bijzondere en/of gevoelige persoonsgegevens van jou:</p>
+      <ul>
+        <li>Rijksregisternummer</li>
+      </ul>
+
+      <h2>Met welk doel en op basis van welke grondslag wij persoonsgegevens verwerken</h2>
+      <p>{{ .OrgName }} verwerkt jouw persoonsgegevens voor de volgende doelen:</p>
+      <ul>
+        <li>Je te kunnen bellen of e-mailen indien dit nodig is om onze dienstverlening uit te kunnen voeren.</li>
+        <li>
+          {{ .OrgName }} verwerkt ook persoonsgegevens als wij hier wettelijk toe verplicht zijn, zoals gegevens die wij
+          nodig hebben voor onze evenementenvergunning.
+        </li>
+      </ul>
+
+      <h2>Geautomatiseerde besluitvorming</h2>
+      <p>{{ .OrgName }} maakt geen gebruik van geautomatiseerde besluitvorming.</p>
+
+      <h2>Hoe lang we persoonsgegevens bewaren</h2>
+      <p>
+        {{ .OrgName }} bewaart je persoonsgegevens niet langer dan strikt nodig is om de doelen te realiseren waarvoor
+        je gegevens worden verzameld.
+      </p>
+      <p>Wij hanteren de volgende bewaartermijnen voor de volgende (categorie&euml;n) van persoonsgegevens:</p>
+      <p>TODO</p>
+
+      <h2>Delen van persoonsgegevens met derden</h2>
+      <p>
+        {{ .OrgName }} verkoopt jouw gegevens niet aan derden en zal deze uitsluitend verstrekken indien dit nodig is
+        voor de uitvoering van onze overeenkomst met jou of om te voldoen aan een wettelijke verplichting. Met bedrijven
+        die jouw gegevens verwerken in onze opdracht, sluiten wij een bewerkersovereenkomst om te zorgen voor eenzelfde
+        niveau van beveiliging en vertrouwelijkheid van jouw gegevens. {{ .OrgName }} blijft verantwoordelijk voor deze
+        verwerkingen.
+      </p>
+      <p>
+        Je persoonsgegevens worden gedeeld met volgende derden:
+      </p>
+      <ul>
+        <li>Politie Beerse: Aanvraag evenementenvergunning</li>
+        <li>KBC: Verzekering vrijwilliger</li>
+        <li>Oracle: Registratieformulier vrijwilliger</li>
+      </ul>
+
+      <h2>Cookies, of vergelijkbare technieken, die wij gebruiken</h2>
+
+      <p>{{ .OrgName }} gebruikt geen cookies of vergelijkbare technieken.</p>
+
+      <h2>Gegevens inzien, aanpassen of verwijderen</h2>
+
+      <p>
+        Je hebt het recht om je persoonsgegevens in te zien, te corrigeren of te verwijderen. Daarnaast heb je het recht
+        om je eventuele toestemming voor de gegevensverwerking in te trekken of bezwaar te maken tegen de verwerking van
+        jouw persoonsgegevens door {{ .OrgName }} en heb je het recht op gegevensoverdraagbaarheid. Dat betekent dat je
+        bij ons een verzoek kan indienen om de persoonsgegevens die wij van jou beschikken in een computerbestand naar
+        jou of een ander, door jou genoemde organisatie, te sturen. Je kunt een verzoek tot inzage, correctie,
+        verwijdering, gegevensoverdraging van je persoonsgegevens of verzoek tot intrekking van je toestemming of
+        bezwaar op de verwerking van jouw persoonsgegevens sturen naar
+        <a href="mailto:{{ .Email }}">{{ .Email }}</a>.
+      </p>
+
+      <p>
+        Om er zeker van te zijn dat het verzoek tot inzage door jou is gedaan, vragen wij de aanvraag te versturen met
+        een mailadres dat bekend is bij ons. Indien je hier geen toegang tot hebt of het adres niet meer weet, vragen we
+        jou een kopie van je identiteitsbewijs met het verzoek mee te sturen. Maak in deze kopie je pasfoto, kaartnummer
+        en handtekening zwart. Dit ter bescherming van je privacy. We reageren zo snel mogelijk, maar binnen vier weken,
+        op jouw verzoek . {{ .OrgName }} wil je er tevens op wijzen dat je de mogelijkheid hebt om een klacht in te
+        dienen bij de nationale toezichthouder, de Gegevensbeschermingsautoriteit. Dat kan via de volgende link:
+        <a href="{{ .ComplaintLink }}">{{ .ComplaintLink }}</a>
+      </p>
+
+      <h2>Hoe wij persoonsgegevens beveiligen</h2>
+
+      <p>
+        {{ .OrgName }} neemt de bescherming van jouw gegevens serieus en neemt passende maatregelen om misbruik,
+        verlies, onbevoegde toegang, ongewenste openbaarmaking en ongeoorloofde wijziging tegen te gaan. Als jij het
+        idee hebt dat jouw gegevens toch niet goed beveiligd zijn of er aanwijzingen zijn van misbruik, neem dan contact
+        op via
+        <a href="mailto:{{ .Email }}">{{ .Email }}</a>.
+      </p>
+    {{ end }}
+
+
+    <div class="d-grid my-5">
+      <a href="/vrijwilligers" class="btn btn-dark" style="background-color: #659975">
+        <i class="bi bi-arrow-left"></i> Naar vrijwilligers formulier
+      </a>
+    </div>
+  </div>
+{{ end }}
