@@ -1,6 +1,6 @@
 module github.com/JenswBE/tuinfeestbeerse.be
 
-go 1.20
+go 1.22
 
 require (
 	github.com/JenswBE/go-pipeline v1.0.0
