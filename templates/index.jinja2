@@ -1,0 +1,51 @@
+{% extends "base.jinja2" %}
+
+{% block base_content %}
+<div class="row g-0 mx-0">
+    <div class="col">
+        <div class="card border-0" style="max-height: 95vh;">
+            <img src="/img/index/banner.jpg" class="card-img rounded-0"
+                style="height: 95vh; max-height: 95vh; object-fit: cover;" />
+            <div class="card-img-overlay rounded-0">
+                <div class="container h-100">
+                    <div class="d-flex flex-column h-100 justify-content-center">
+                        <div>
+                            <h1 id="index-main-title" class="fw-bold text-white">Uw specialist
+                            </h1>
+                            <h2 id="index-sub-title" class="text-white">aircoheaters, warmtepompen en ventilatie
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Realisaties-->
+<section id="portfolio" style="padding-top: 7rem; padding-bottom: 7rem;">
+    <div class="container px-4 px-lg-5">
+        <div class="text-center">
+            <h2 class="mb-5" id="realisaties" style="font-size: 3rem;">Realisaties</h2>
+        </div>
+        <div class="row g-3 justify-content-center">
+            {% for realisation in realisations %}
+            <div class="col-lg-6">
+                <a class="portfolio-item" href="/realisaties/{{ realisation.slug }}">
+                    <div class="caption">
+                        <div class="caption-content">
+                            <div class="h2">{{ realisation.name }}</div>
+                            {% if realisation.slogan.is_some() %}
+                            <p class="mb-0">{{ realisation.slogan.as_ref().unwrap() }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <img class="img-fluid" src="/assets/{{ realisation.main_image }}-index-realisatie.jpg"
+                        alt="{{ realisation.name }}" />
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
