@@ -1,0 +1,31 @@
+{
+  "collection": "general_settings",
+  "field": "divider_privacy",
+  "type": "alias",
+  "meta": {
+    "collection": "general_settings",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "divider_privacy",
+    "group": null,
+    "hidden": false,
+    "interface": "presentation-divider",
+    "note": null,
+    "options": {
+      "icon": "lock_person",
+      "title": "Privacy (GDPR)"
+    },
+    "readonly": false,
+    "required": false,
+    "sort": 16,
+    "special": [
+      "alias",
+      "no-data"
+    ],
+    "translations": null,
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

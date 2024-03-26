@@ -1,0 +1,49 @@
+<div class="carousel slide" data-bs-ride="carousel" data-bs-pause="false" data-bs-touch="false" data-bs-keyboard="false"
+  data-bs-interval="4000">
+  <div class="carousel-inner">
+    {% for image_id in carousel_images %}
+    <div class="carousel-item {% if loop.first %}active{% endif %}">
+      <img src="/assets/{{ image_id }}-carousel.jpg" class="d-block w-100 vh-100"
+        alt="Foto van een vorige Tuinfeest editie" />
+    </div>
+    {% endfor %}
+    <div class="carousel-caption d-flex flex-column justify-content-center">
+      <h1>Tuinfeest {{ saturday_start.year() }}</h1>
+      <p class="carousel-dates">
+        Zaterdag {{ saturday_start.day() }} en zondag
+        {{ sunday_start.day() }} Juni
+        {{ saturday_start.year() }}
+      </p>
+      <div class="container">
+        <div id="carousel-clock" data-start-date="{{ saturday_start.format(crate::TIME_FORMAT_RFC3339).unwrap() }}"
+          data-end-date="{{ sunday_start.format(crate::TIME_FORMAT_RFC3339).unwrap() }}"
+          class="justify-content-center d-none d-md-flex justify-content-evenly">
+          <div class="d-flex flex-column">
+            <p id="carousel-clock-days" class="carousel-clock-value">0</p>
+            <p class="carousel-clock-legend">DAGEN</p>
+          </div>
+          <div class="d-flex flex-column">
+            <p id="carousel-clock-hours" class="carousel-clock-value">0</p>
+            <p class="carousel-clock-legend">UREN</p>
+          </div>
+          <div class="d-flex flex-column">
+            <p id="carousel-clock-minutes" class="carousel-clock-value">0</p>
+            <p class="carousel-clock-legend">MINUTEN</p>
+          </div>
+          <div class="d-flex flex-column">
+            <p id="carousel-clock-seconds" class="carousel-clock-value">0</p>
+            <p class="carousel-clock-legend">SECONDEN</p>
+          </div>
+        </div>
+        <div id="carousel-clock-ongoing" class="d-none">
+          <p>We zijn er een lap op aan het geven.</p>
+          <p>Spring dus zeker eens binnen!</p>
+        </div>
+        <div id="carousel-clock-after" class="d-none">
+          <p>Bedankt voor de spetterende editie!</p>
+          <p>Jullie komen volgend jaar toch ook?</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

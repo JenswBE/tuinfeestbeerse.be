@@ -1,0 +1,35 @@
+<div id="tf-artists" class="tf-section container-fluid px-0">
+  <h2 class="text-center">Artiesten</h2>
+
+  <div class="row gx-0">
+    {% for artist in artists %}
+    <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+      <div class="artist-wrap">
+        <img src="{{ artist.picture_path }}" alt="{{ artist.picture_alt }}" style="width: 100%; height: auto" />
+        <div class="artist-content d-flex flex-column justify-content-center">
+          <div>
+            <h3>{{ artist.name }}</h3>
+            {% if artist.genre.is_some() %}
+            <span>{{ artist.genre.as_ref().unwrap() }}</span>
+            {% endif %}
+            {% if artist.description.is_some() %}
+            <p>{{ artist.description.as_ref().unwrap()|safe }}</p>
+            {% endif %}
+          </div>
+          {% if !artist.artist_links.is_empty() %}
+          <div class="artist-links d-flex">
+            {% for link in artist.artist_links %}
+            <p>
+              <a href="{{ link.link }}" target="_blank">
+                <i class="bi bi-{{ link.icon }}"></i>
+              </a>
+            </p>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>

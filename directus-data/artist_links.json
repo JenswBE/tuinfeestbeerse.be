@@ -1,0 +1,20 @@
+[
+  {
+    "artist": 1,
+    "icon": "globe",
+    "id": 1,
+    "link": "https://www.new-collective.be/"
+  },
+  {
+    "artist": 1,
+    "icon": "facebook",
+    "id": 2,
+    "link": "https://www.facebook.com/newcollective"
+  },
+  {
+    "artist": 1,
+    "icon": "instagram",
+    "id": 3,
+    "link": "https://www.instagram.com/newcollectiveband/"
+  }
+]

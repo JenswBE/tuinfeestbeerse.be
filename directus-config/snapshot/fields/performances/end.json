@@ -1,0 +1,49 @@
+{
+  "collection": "performances",
+  "field": "end",
+  "type": "time",
+  "meta": {
+    "collection": "performances",
+    "conditions": null,
+    "display": "datetime",
+    "display_options": {
+      "format": "short"
+    },
+    "field": "end",
+    "group": null,
+    "hidden": false,
+    "interface": "datetime",
+    "note": null,
+    "options": null,
+    "readonly": false,
+    "required": true,
+    "sort": 5,
+    "special": null,
+    "translations": [
+      {
+        "language": "nl-NL",
+        "translation": "Einde"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  },
+  "schema": {
+    "name": "end",
+    "table": "performances",
+    "data_type": "time without time zone",
+    "default_value": null,
+    "max_length": null,
+    "numeric_precision": null,
+    "numeric_scale": null,
+    "is_nullable": false,
+    "is_unique": false,
+    "is_primary_key": false,
+    "is_generated": false,
+    "generation_expression": null,
+    "has_auto_increment": false,
+    "foreign_key_table": null,
+    "foreign_key_column": null
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "collection": "performances",
+  "field": "artist",
+  "type": "integer",
+  "meta": {
+    "collection": "performances",
+    "conditions": null,
+    "display": "related-values",
+    "display_options": {
+      "template": "{{name}}"
+    },
+    "field": "artist",
+    "group": null,
+    "hidden": false,
+    "interface": "select-dropdown-m2o",
+    "note": null,
+    "options": {
+      "template": "{{name}}"
+    },
+    "readonly": false,
+    "required": true,
+    "sort": 3,
+    "special": [
+      "m2o"
+    ],
+    "translations": [
+      {
+        "language": "nl-NL",
+        "translation": "Artiest"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  },
+  "schema": {
+    "name": "artist",
+    "table": "performances",
+    "data_type": "integer",
+    "default_value": null,
+    "max_length": null,
+    "numeric_precision": 32,
+    "numeric_scale": 0,
+    "is_nullable": false,
+    "is_unique": false,
+    "is_primary_key": false,
+    "is_generated": false,
+    "generation_expression": null,
+    "has_auto_increment": false,
+    "foreign_key_table": "artists",
+    "foreign_key_column": "id"
+  }
+}

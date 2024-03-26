@@ -1,0 +1,36 @@
+{
+  "collection": "artists",
+  "field": "artist_links",
+  "type": "alias",
+  "meta": {
+    "collection": "artists",
+    "conditions": null,
+    "display": null,
+    "display_options": {
+      "template": "{{icon}}:{{link}}"
+    },
+    "field": "artist_links",
+    "group": null,
+    "hidden": false,
+    "interface": "list-o2m",
+    "note": null,
+    "options": {
+      "enableSelect": false,
+      "fields": [
+        "icon",
+        "link"
+      ],
+      "layout": "table"
+    },
+    "readonly": false,
+    "required": false,
+    "sort": 8,
+    "special": [
+      "o2m"
+    ],
+    "translations": null,
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

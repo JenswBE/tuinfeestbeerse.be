@@ -1,11 +1,16 @@
 name: Build and publish
 on:
+  pull_request:
   push:
     branches: [main]
   workflow_dispatch:
 
+concurrency:
+  group: generate_website
+  cancel-in-progress: true
+
 env:
-  GO_VERSION: "1.22"
+  CARGO_TERM_COLOR: always
 
 jobs:
   build-and-publish:
@@ -15,21 +20,26 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-go@v5
+      # From https://github.com/actions/cache/blob/main/examples.md#rust---cargo
+      - uses: actions/cache@v4
         with:
-          go-version: ${{ env.GO_VERSION }}
-          check-latest: true
-
-      - name: Pull common linter configs
-        run: wget -O .golangci.yml https://raw.githubusercontent.com/JenswBE/setup/main/programming_configs/golang/.golangci.yml
-
-      - name: Lint service
-        uses: golangci/golangci-lint-action@v4
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            target/
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
 
       - name: Generate website
-        run: go run .
+        run: cargo run --verbose
+        env:
+          TUINFEEST_BASE_URL: ${{ vars.TUINFEEST_BASE_URL }}
+          TUINFEEST_API_BASE_URL: ${{ vars.TUINFEEST_API_BASE_URL }}
+          TUINFEEST_API_KEY: ${{ secrets.TUINFEEST_API_KEY }}
 
       - name: Publish to GitHub Pages
+        if: github.event_name != 'pull_request'
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

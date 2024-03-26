@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "carousel_id": 1,
+    "directus_files_id": "c530ce3b-cb68-48f0-9df1-3d77416bfe83",
+    "sort": 1
+  },
+  {
+    "id": 2,
+    "carousel_id": 1,
+    "directus_files_id": "b719fec5-2f35-4768-a8af-016de6f03499",
+    "sort": 2
+  },
+  {
+    "id": 3,
+    "carousel_id": 1,
+    "directus_files_id": "da3c604b-e0aa-4b6a-9ecc-eaecf161acf9",
+    "sort": 3
+  },
+  {
+    "id": 4,
+    "carousel_id": null,
+    "directus_files_id": "81f10ada-bacf-4056-85ee-520faaf34dcc",
+    "sort": 2
+  }
+]
