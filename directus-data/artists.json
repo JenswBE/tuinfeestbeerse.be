@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "The Humming Birds",
+    "artist_type": "band",
+    "genre": "Coverband",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "picture": "81f10ada-bacf-4056-85ee-520faaf34dcc",
+    "sort": null
+  },
+  {
+    "id": 2,
+    "name": "Pictureless",
+    "artist_type": "dj",
+    "genre": "All-round DJ",
+    "description": null,
+    "picture": null,
+    "sort": null
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Artists",
+    "parent": null,
+    "_syncId": "7f97d806-5ee1-4816-a5a2-a02b0681c55d"
+  },
+  {
+    "name": "Sponsors",
+    "parent": null,
+    "_syncId": "914a2f96-f00d-453c-a6dc-cba22d9070a0"
+  },
+  {
+    "name": "Carousel",
+    "parent": null,
+    "_syncId": "f2a06d9b-5b8f-4671-a2d4-242416bb02ca"
+  }
+]

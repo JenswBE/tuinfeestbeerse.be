@@ -1,0 +1,24 @@
+[
+  {
+    "address_city": "Beerse",
+    "address_housenumber_box": "7",
+    "address_postal_code": "2340",
+    "address_street": "Sint-Barbarastraat",
+    "email_artists": "artiesten@tuinfeestbeerse.be",
+    "email_info": "info@tuinfeestbeerse.be",
+    "email_privacy": "privacy@tuinfeestbeerse.be",
+    "facebook_link": "https://www.facebook.com/TuinfeestBeerse/",
+    "id": 1,
+    "instagram_link": "https://www.instagram.com/tuinfeest_beerse/",
+    "is_section_artists_visible": true,
+    "is_section_sponsors_visible": true,
+    "is_section_timetable_visible": true,
+    "organisation_name": "Tuinfeest VZW",
+    "phone_number": "+32 474 02 99 19",
+    "privacy_complaint_link": "https://www.gegevensbeschermingsautoriteit.be/burger/acties/klacht-indienen",
+    "saturday_end": "2024-06-30T03:00:00",
+    "saturday_start": "2024-06-29T20:00:00",
+    "sunday_end": "2024-06-30T18:00:00",
+    "sunday_start": "2024-06-30T13:00:00"
+  }
+]

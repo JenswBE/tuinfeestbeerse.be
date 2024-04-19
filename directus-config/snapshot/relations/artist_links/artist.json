@@ -1,0 +1,25 @@
+{
+  "collection": "artist_links",
+  "field": "artist",
+  "related_collection": "artists",
+  "meta": {
+    "junction_field": null,
+    "many_collection": "artist_links",
+    "many_field": "artist",
+    "one_allowed_collections": null,
+    "one_collection": "artists",
+    "one_collection_field": null,
+    "one_deselect_action": "delete",
+    "one_field": "artist_links",
+    "sort_field": null
+  },
+  "schema": {
+    "table": "artist_links",
+    "column": "artist",
+    "foreign_key_table": "artists",
+    "foreign_key_column": "id",
+    "constraint_name": "artist_links_artist_foreign",
+    "on_update": "NO ACTION",
+    "on_delete": "CASCADE"
+  }
+}

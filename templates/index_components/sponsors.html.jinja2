@@ -1,0 +1,46 @@
+<div id="tf-partners" class="tf-section container">
+  <h2 class="text-center">Onze Sponsors</h2>
+
+  <p class="text-center">
+    Bedankt voor jullie steun aan Tuinfeest
+    {{ saturday_start.year() }}!
+  </p>
+
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-sm-8 offset-sm-2 col-12">
+      <div class="row align-items-stretch">
+        {% for sponsor in sponsors.main %}
+        <div class="col-12 col-lg-6 pb-3">
+          <a href="{{ sponsor.link }}" class="partner-link" target="_blank">
+            <div class="partner-wrap">
+              <div class="d-flex justify-content-center align-items-center p-3">
+                <img src="/assets/{{ sponsor.logo.as_ref().unwrap() }}-sponsor-main.jpg"
+                  alt="Logo van {{ sponsor.name }}" class="img-fluid" style="max-height: 200px" />
+              </div>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-sm-10 offset-sm-1 col-12">
+      <div class="row">
+        {% for sponsor in sponsors.regular %}
+        <div class="col-lg-3 col-md-4 col-sm-4 col-6 pb-3">
+          <a href="{{ sponsor.link }}" class="partner-link" target="_blank">
+            <div class="partner-wrap">
+              <div class="d-flex justify-content-center align-items-center p-3">
+                <img src="/assets/{{ sponsor.logo.as_ref().unwrap() }}-sponsor-regular.jpg" alt="{{ sponsor.name }}"
+                  class="img-fluid" />
+              </div>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+{
+  "collection": "performances",
+  "field": "artist",
+  "related_collection": "artists",
+  "meta": {
+    "junction_field": null,
+    "many_collection": "performances",
+    "many_field": "artist",
+    "one_allowed_collections": null,
+    "one_collection": "artists",
+    "one_collection_field": null,
+    "one_deselect_action": "nullify",
+    "one_field": null,
+    "sort_field": null
+  },
+  "schema": {
+    "table": "performances",
+    "column": "artist",
+    "foreign_key_table": "artists",
+    "foreign_key_column": "id",
+    "constraint_name": "performances_artist_foreign",
+    "on_update": "NO ACTION",
+    "on_delete": "NO ACTION"
+  }
+}

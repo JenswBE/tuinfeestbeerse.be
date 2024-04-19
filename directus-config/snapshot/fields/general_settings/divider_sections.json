@@ -1,0 +1,31 @@
+{
+  "collection": "general_settings",
+  "field": "divider_sections",
+  "type": "alias",
+  "meta": {
+    "collection": "general_settings",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "divider_sections",
+    "group": null,
+    "hidden": false,
+    "interface": "presentation-divider",
+    "note": null,
+    "options": {
+      "icon": "web",
+      "title": "Onderdelen tonen/verbergen"
+    },
+    "readonly": false,
+    "required": false,
+    "sort": 2,
+    "special": [
+      "alias",
+      "no-data"
+    ],
+    "translations": null,
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

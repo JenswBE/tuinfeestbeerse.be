@@ -1,0 +1,142 @@
+{% extends "base.html.jinja2" %}
+
+{% block content %}
+<div class="container">
+  <div class="d-grid my-5">
+    <a href="/vrijwilligers" class="btn btn-dark" style="background-color: #659975">
+      <i class="bi bi-arrow-left"></i> Naar vrijwilligers formulier
+    </a>
+  </div>
+
+  <h1>Privacy Policy voor Vrijwilligers</h1>
+
+  <p>
+    {{ organisation_name }}, gevestigd aan {{ address_street }} {{ address_housenumber_box }},
+    {{ address_postal_code }}
+    {{ address_city }}
+    , is verantwoordelijk voor de verwerking van persoonsgegevens zoals weergegeven in deze privacyverklaring.
+  </p>
+
+  <p>
+    <span class="fw-bold">Contactgegevens:</span><br />
+    {{ address_street }} {{ address_housenumber_box }}<br />
+    {{ address_postal_code }} {{ address_city }}<br />
+    <a href="tel:{{ phone_number }}">{{ phone_number }}</a><br />
+    <a href="mailto:{{ email }}">{{ email }}</a>
+  </p>
+
+  <h2>Persoonsgegevens die wij verwerken</h2>
+  <p>
+    {{ organisation_name }} verwerkt je persoonsgegevens doordat je gebruik maakt van onze diensten en/of omdat je deze
+    gegevens zelf aan ons verstrekt.
+  </p>
+
+  <p>Hieronder vind je een overzicht van de persoonsgegevens die wij verwerken:</p>
+  <ul>
+    <li>Voor- en achternaam</li>
+    <li>Geboortedatum</li>
+    <li>Adresgegevens</li>
+    <li>Telefoonnummer</li>
+    <li>E-mailadres</li>
+    <li>IP-adres</li>
+  </ul>
+
+  <h2>Bijzondere en/of gevoelige persoonsgegevens die wij verwerken</h2>
+  <p>{{ organisation_name }} verwerkt de volgende bijzondere en/of gevoelige persoonsgegevens van jou:</p>
+  <ul>
+    <li>Rijksregisternummer</li>
+  </ul>
+
+  <h2>Met welk doel en op basis van welke grondslag wij persoonsgegevens verwerken</h2>
+  <p>{{ organisation_name }} verwerkt jouw persoonsgegevens voor de volgende doelen:</p>
+  <ul>
+    <li>Je te kunnen bellen of e-mailen indien dit nodig is om onze dienstverlening uit te kunnen voeren.</li>
+    <li>
+      {{ organisation_name }} verwerkt ook persoonsgegevens als wij hier wettelijk toe verplicht zijn, zoals gegevens
+      die wij
+      nodig hebben voor onze evenementenvergunning.
+    </li>
+  </ul>
+
+  <h2>Geautomatiseerde besluitvorming</h2>
+  <p>{{ organisation_name }} maakt geen gebruik van geautomatiseerde besluitvorming.</p>
+
+  <h2>Hoe lang we persoonsgegevens bewaren</h2>
+  <p>
+    {{ organisation_name }} bewaart je persoonsgegevens niet langer dan strikt nodig is om de doelen te realiseren
+    waarvoor
+    je gegevens worden verzameld.
+  </p>
+  <p>Wij hanteren de volgende bewaartermijnen voor de volgende (categorie&euml;n) van persoonsgegevens:</p>
+  <ul>
+    <li>
+      Alle persoonsgegevens: 2 jaar (1 jaar voor uitvoering en 1 jaar om na te vragen i.v.m. interesse van een volgende
+      editie)
+    </li>
+  </ul>
+
+  <h2>Delen van persoonsgegevens met derden</h2>
+  <p>
+    {{ organisation_name }} verkoopt jouw gegevens niet aan derden en zal deze uitsluitend verstrekken indien dit nodig
+    is
+    voor de uitvoering van onze overeenkomst met jou of om te voldoen aan een wettelijke verplichting. Met bedrijven
+    die jouw gegevens verwerken in onze opdracht, sluiten wij een bewerkersovereenkomst om te zorgen voor eenzelfde
+    niveau van beveiliging en vertrouwelijkheid van jouw gegevens. {{ organisation_name }} blijft verantwoordelijk voor
+    deze
+    verwerkingen.
+  </p>
+  <p>
+    Je persoonsgegevens worden gedeeld met volgende derden:
+  </p>
+  <ul>
+    <li>Politie Beerse: Aanvraag evenementenvergunning</li>
+    <li>KBC: Verzekering vrijwilliger</li>
+    <li>Oracle: Registratieformulier vrijwilliger</li>
+  </ul>
+
+  <h2>Cookies, of vergelijkbare technieken, die wij gebruiken</h2>
+
+  <p>{{ organisation_name }} gebruikt geen cookies of vergelijkbare technieken.</p>
+
+  <h2>Gegevens inzien, aanpassen of verwijderen</h2>
+
+  <p>
+    Je hebt het recht om je persoonsgegevens in te zien, te corrigeren of te verwijderen. Daarnaast heb je het recht
+    om je eventuele toestemming voor de gegevensverwerking in te trekken of bezwaar te maken tegen de verwerking van
+    jouw persoonsgegevens door {{ organisation_name }} en heb je het recht op gegevensoverdraagbaarheid. Dat betekent
+    dat je
+    bij ons een verzoek kan indienen om de persoonsgegevens die wij van jou beschikken in een computerbestand naar
+    jou of een ander, door jou genoemde organisatie, te sturen. Je kunt een verzoek tot inzage, correctie,
+    verwijdering, gegevensoverdraging van je persoonsgegevens of verzoek tot intrekking van je toestemming of
+    bezwaar op de verwerking van jouw persoonsgegevens sturen naar
+    <a href="mailto:{{ email }}">{{ email }}</a>.
+  </p>
+
+  <p>
+    Om er zeker van te zijn dat het verzoek tot inzage door jou is gedaan, vragen wij de aanvraag te versturen met
+    een mailadres dat bekend is bij ons. Indien je hier geen toegang tot hebt of het adres niet meer weet, vragen we
+    jou een kopie van je identiteitsbewijs met het verzoek mee te sturen. Maak in deze kopie je pasfoto, kaartnummer
+    en handtekening zwart. Dit ter bescherming van je privacy. We reageren zo snel mogelijk, maar binnen vier weken,
+    op jouw verzoek . {{ organisation_name }} wil je er tevens op wijzen dat je de mogelijkheid hebt om een klacht in te
+    dienen bij de nationale toezichthouder, de Gegevensbeschermingsautoriteit. Dat kan via de volgende link:
+    <a href="{{ complaint_link }}">{{ complaint_link }}</a>
+  </p>
+
+  <h2>Hoe wij persoonsgegevens beveiligen</h2>
+
+  <p>
+    {{ organisation_name }} neemt de bescherming van jouw gegevens serieus en neemt passende maatregelen om misbruik,
+    verlies, onbevoegde toegang, ongewenste openbaarmaking en ongeoorloofde wijziging tegen te gaan. Als jij het
+    idee hebt dat jouw gegevens toch niet goed beveiligd zijn of er aanwijzingen zijn van misbruik, neem dan contact
+    op via
+    <a href="mailto:{{ email }}">{{ email }}</a>.
+  </p>
+
+
+  <div class="d-grid my-5">
+    <a href="/vrijwilligers" class="btn btn-dark" style="background-color: #659975">
+      <i class="bi bi-arrow-left"></i> Naar vrijwilligers formulier
+    </a>
+  </div>
+</div>
+{% endblock %}

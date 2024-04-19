@@ -1,0 +1,67 @@
+<div id="tf-timetable" class="tf-section tf-section-bluegrey container-fluid">
+  <div class="container">
+    <h2 class="text-center">Time table</h2>
+    <p class="text-center">
+      Je kan genieten van volgende artiesten op zaterdag
+    </p>
+    <div class="row gx-0 text-center fw-bold d-md-none">
+      <table class="table align-middle">
+        <thead>
+          <tr>
+            <th scope="col">Podium</th>
+            <th scope="col">Start</th>
+            <th scope="col">Einde</th>
+            <th scope="col">Artiest</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for stage in timetable.stages %}
+          {% for performance in stage.performances %}
+          <tr>
+            {% if loop.first %}
+            <th scope="row" rowspan="{{ stage.performances.len() }}">
+              {{ stage.name }}
+            </th>
+            {% endif %}
+            <td>{{ performance.start.format(crate::TIME_FORMAT_KITCHEN).unwrap() }}</td>
+            <td>{{ performance.end.format(crate::TIME_FORMAT_KITCHEN).unwrap() }}</td>
+            <td>{{ performance.artist_name }}</td>
+          </tr>
+          {% endfor %}
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div class="row gx-0 text-center fw-bold d-none d-md-flex">
+      <div class="offset-1 col-1 px-0">
+        <p class="timetable-header">
+          <i class="bi bi-clock"></i>
+        </p>
+        {% for slot in timetable.slots %}
+        <p class="timetable-slot" style="height: {{ timetable.slot_height_pixels }}px; line-height: {{
+            timetable.slot_height_pixels
+          }}px">
+          {{ slot }}
+        </p>
+        {% endfor %}
+      </div>
+      {% for stage in timetable.stages %}
+      <div class="col-3">
+        <p class="timetable-header">{{ stage.name }}</p>
+        <div class="position-relative">
+          {% for performance in stage.performances %}
+          <div class="timetable-show position-absolute rounded-3 d-flex flex-column justify-content-center"
+            style="top: {{ performance.start_pixels }}px; height: {{ performance.height_pixels }}px;">
+            <p class="my-0">{{ performance.artist_name }}</p>
+            <p class="fw-normal my-0">
+              {{ performance.start.format(crate::TIME_FORMAT_KITCHEN).unwrap() }} -
+              {{ performance.end.format(crate::TIME_FORMAT_KITCHEN).unwrap() }}
+            </p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

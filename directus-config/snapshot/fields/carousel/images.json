@@ -1,0 +1,35 @@
+{
+  "collection": "carousel",
+  "field": "images",
+  "type": "alias",
+  "meta": {
+    "collection": "carousel",
+    "conditions": null,
+    "display": null,
+    "display_options": null,
+    "field": "images",
+    "group": null,
+    "hidden": false,
+    "interface": "files",
+    "note": "Opgelet: SVG is niet ondersteund!",
+    "options": {
+      "folder": "f2a06d9b-5b8f-4671-a2d4-242416bb02ca",
+      "limit": 30
+    },
+    "readonly": false,
+    "required": true,
+    "sort": 2,
+    "special": [
+      "files"
+    ],
+    "translations": [
+      {
+        "language": "nl-NL",
+        "translation": "Foto's"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  }
+}

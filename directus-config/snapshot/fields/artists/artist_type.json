@@ -1,0 +1,71 @@
+{
+  "collection": "artists",
+  "field": "artist_type",
+  "type": "string",
+  "meta": {
+    "collection": "artists",
+    "conditions": null,
+    "display": "labels",
+    "display_options": {
+      "choices": [
+        {
+          "text": "Band",
+          "value": "band"
+        },
+        {
+          "text": "DJ",
+          "value": "dj"
+        }
+      ]
+    },
+    "field": "artist_type",
+    "group": null,
+    "hidden": false,
+    "interface": "select-dropdown",
+    "note": "Zorgt voor de juiste standaardfoto indien er geen foto is gekozen.",
+    "options": {
+      "choices": [
+        {
+          "text": "Band",
+          "value": "band"
+        },
+        {
+          "text": "DJ",
+          "value": "dj"
+        }
+      ],
+      "placeholder": null,
+      "trim": true
+    },
+    "readonly": false,
+    "required": true,
+    "sort": 4,
+    "special": null,
+    "translations": [
+      {
+        "language": "nl-NL",
+        "translation": "Soort artiest"
+      }
+    ],
+    "validation": null,
+    "validation_message": null,
+    "width": "full"
+  },
+  "schema": {
+    "name": "artist_type",
+    "table": "artists",
+    "data_type": "character varying",
+    "default_value": null,
+    "max_length": 255,
+    "numeric_precision": null,
+    "numeric_scale": null,
+    "is_nullable": false,
+    "is_unique": false,
+    "is_primary_key": false,
+    "is_generated": false,
+    "generation_expression": null,
+    "has_auto_increment": false,
+    "foreign_key_table": null,
+    "foreign_key_column": null
+  }
+}

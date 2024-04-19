@@ -1,0 +1,768 @@
+type Query {
+  general_settings: general_settings
+  general_settings_by_version(version: String!): version_general_settings
+  artist_links(
+    filter: artist_links_filter
+    sort: [String]
+    limit: Int
+    offset: Int
+    page: Int
+    search: String
+  ): [artist_links!]!
+  artist_links_by_id(id: ID!, version: String): artist_links
+  artist_links_aggregated(
+    groupBy: [String]
+    filter: artist_links_filter
+    limit: Int
+    offset: Int
+    page: Int
+    search: String
+    sort: [String]
+  ): [artist_links_aggregated!]!
+  artist_links_by_version(version: String!, id: ID!): version_artist_links
+  performances(
+    filter: performances_filter
+    sort: [String]
+    limit: Int
+    offset: Int
+    page: Int
+    search: String
+  ): [performances!]!
+  performances_by_id(id: ID!, version: String): performances
+  performances_aggregated(
+    groupBy: [String]
+    filter: performances_filter
+    limit: Int
+    offset: Int
+    page: Int
+    search: String
+    sort: [String]
+  ): [performances_aggregated!]!
+  performances_by_version(version: String!, id: ID!): version_performances
+  stages(filter: stages_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [stages!]!
+  stages_by_id(id: ID!, version: String): stages
+  stages_aggregated(
+    groupBy: [String]
+    filter: stages_filter
+    limit: Int
+    offset: Int
+    page: Int
+    search: String
+    sort: [String]
+  ): [stages_aggregated!]!
+  stages_by_version(version: String!, id: ID!): version_stages
+  sponsors(filter: sponsors_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [sponsors!]!
+  sponsors_by_id(id: ID!, version: String): sponsors
+  sponsors_aggregated(
+    groupBy: [String]
+    filter: sponsors_filter
+    limit: Int
+    offset: Int
+    page: Int
+    search: String
+    sort: [String]
+  ): [sponsors_aggregated!]!
+  sponsors_by_version(version: String!, id: ID!): version_sponsors
+  carousel: carousel
+  carousel_by_version(version: String!): version_carousel
+  carousel_files(
+    filter: carousel_files_filter
+    sort: [String]
+    limit: Int
+    offset: Int
+    page: Int
+    search: String
+  ): [carousel_files!]!
+  carousel_files_by_id(id: ID!, version: String): carousel_files
+  carousel_files_aggregated(
+    groupBy: [String]
+    filter: carousel_files_filter
+    limit: Int
+    offset: Int
+    page: Int
+    search: String
+    sort: [String]
+  ): [carousel_files_aggregated!]!
+  carousel_files_by_version(version: String!, id: ID!): version_carousel_files
+  artists(filter: artists_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): [artists!]!
+  artists_by_id(id: ID!, version: String): artists
+  artists_aggregated(
+    groupBy: [String]
+    filter: artists_filter
+    limit: Int
+    offset: Int
+    page: Int
+    search: String
+    sort: [String]
+  ): [artists_aggregated!]!
+  artists_by_version(version: String!, id: ID!): version_artists
+}
+
+type general_settings {
+  """
+  van de organisatie, niet het evenement.
+  """
+  address_city: String!
+  """
+  van de organisatie, niet het evenement.
+  """
+  address_housenumber_box: String!
+  """
+  van de organisatie, niet het evenement.
+  """
+  address_postal_code: String!
+  """
+  van de organisatie, niet het evenement.
+  """
+  address_street: String!
+  email_artists: String
+  email_info: String!
+  email_privacy: String!
+  facebook_link: String
+  id: ID!
+  instagram_link: String
+  is_section_artists_visible: Boolean
+  is_section_sponsors_visible: Boolean
+  is_section_timetable_visible: Boolean
+  organisation_name: String!
+  phone_number: String!
+  privacy_complaint_link: String!
+  saturday_end: Date!
+  saturday_end_func: datetime_functions
+  saturday_start: Date!
+  saturday_start_func: datetime_functions
+  sunday_end: Date!
+  sunday_end_func: datetime_functions
+  sunday_start: Date!
+  sunday_start_func: datetime_functions
+}
+
+"""
+ISO8601 Date values
+"""
+scalar Date
+
+type datetime_functions {
+  year: Int
+  month: Int
+  week: Int
+  day: Int
+  weekday: Int
+  hour: Int
+  minute: Int
+  second: Int
+}
+
+"""
+
+"""
+type version_general_settings {
+  """
+  van de organisatie, niet het evenement.
+  """
+  address_city: String!
+  """
+  van de organisatie, niet het evenement.
+  """
+  address_housenumber_box: String!
+  """
+  van de organisatie, niet het evenement.
+  """
+  address_postal_code: String!
+  """
+  van de organisatie, niet het evenement.
+  """
+  address_street: String!
+  email_artists: String
+  email_info: String!
+  email_privacy: String!
+  facebook_link: String
+  id: ID!
+  instagram_link: String
+  is_section_artists_visible: Boolean
+  is_section_sponsors_visible: Boolean
+  is_section_timetable_visible: Boolean
+  organisation_name: String!
+  phone_number: String!
+  privacy_complaint_link: String!
+  saturday_end: Date!
+  saturday_end_func: datetime_functions
+  saturday_start: Date!
+  saturday_start_func: datetime_functions
+  sunday_end: Date!
+  sunday_end_func: datetime_functions
+  sunday_start: Date!
+  sunday_start_func: datetime_functions
+}
+
+type artist_links {
+  artist(filter: artists_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): artists
+  icon: String!
+  id: ID!
+  link: String!
+}
+
+type artists {
+  """
+  Zorgt voor de juiste standaardfoto indien er geen foto is gekozen.
+  """
+  artist_type: String!
+  description: String
+  id: ID!
+  name: String!
+  """
+  Opgelet: SVG is niet ondersteund!
+  """
+  picture: String
+  sort: Int
+  genre: String
+  artist_links(
+    filter: artist_links_filter
+    sort: [String]
+    limit: Int
+    offset: Int
+    page: Int
+    search: String
+  ): [artist_links]
+  artist_links_func: count_functions
+}
+
+input artist_links_filter {
+  artist: artists_filter
+  icon: string_filter_operators
+  id: number_filter_operators
+  link: string_filter_operators
+  _and: [artist_links_filter]
+  _or: [artist_links_filter]
+}
+
+input artists_filter {
+  artist_type: string_filter_operators
+  description: string_filter_operators
+  id: number_filter_operators
+  name: string_filter_operators
+  picture: string_filter_operators
+  sort: number_filter_operators
+  genre: string_filter_operators
+  artist_links: artist_links_filter
+  artist_links_func: count_function_filter_operators
+  _and: [artists_filter]
+  _or: [artists_filter]
+}
+
+input string_filter_operators {
+  _eq: String
+  _neq: String
+  _contains: String
+  _icontains: String
+  _ncontains: String
+  _starts_with: String
+  _nstarts_with: String
+  _istarts_with: String
+  _nistarts_with: String
+  _ends_with: String
+  _nends_with: String
+  _iends_with: String
+  _niends_with: String
+  _in: [String]
+  _nin: [String]
+  _null: Boolean
+  _nnull: Boolean
+  _empty: Boolean
+  _nempty: Boolean
+}
+
+input number_filter_operators {
+  _eq: GraphQLStringOrFloat
+  _neq: GraphQLStringOrFloat
+  _in: [GraphQLStringOrFloat]
+  _nin: [GraphQLStringOrFloat]
+  _gt: GraphQLStringOrFloat
+  _gte: GraphQLStringOrFloat
+  _lt: GraphQLStringOrFloat
+  _lte: GraphQLStringOrFloat
+  _null: Boolean
+  _nnull: Boolean
+  _between: [GraphQLStringOrFloat]
+  _nbetween: [GraphQLStringOrFloat]
+}
+
+"""
+A Float or a String
+"""
+scalar GraphQLStringOrFloat
+
+input count_function_filter_operators {
+  count: number_filter_operators
+}
+
+type count_functions {
+  count: Int
+}
+
+type artist_links_aggregated {
+  group: JSON
+  countAll: Int
+  count: artist_links_aggregated_count
+  countDistinct: artist_links_aggregated_count
+  avg: artist_links_aggregated_fields
+  sum: artist_links_aggregated_fields
+  avgDistinct: artist_links_aggregated_fields
+  sumDistinct: artist_links_aggregated_fields
+  min: artist_links_aggregated_fields
+  max: artist_links_aggregated_fields
+}
+
+"""
+The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSON
+
+type artist_links_aggregated_count {
+  artist: Int
+  icon: Int
+  id: Int
+  link: Int
+}
+
+type artist_links_aggregated_fields {
+  artist: Float
+  id: Float
+}
+
+"""
+
+"""
+type version_artist_links {
+  artist: JSON
+  icon: String!
+  id: ID!
+  link: String!
+}
+
+type performances {
+  artist(filter: artists_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): artists
+  end: String!
+  end_func: time_functions
+  id: ID!
+  stage(filter: stages_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): stages
+  start: String!
+  start_func: time_functions
+}
+
+type time_functions {
+  hour: Int
+  minute: Int
+  second: Int
+}
+
+type stages {
+  id: ID!
+  name: String!
+  performances(
+    filter: performances_filter
+    sort: [String]
+    limit: Int
+    offset: Int
+    page: Int
+    search: String
+  ): [performances]
+  performances_func: count_functions
+}
+
+input performances_filter {
+  artist: artists_filter
+  end: string_filter_operators
+  end_func: time_function_filter_operators
+  id: number_filter_operators
+  stage: stages_filter
+  start: string_filter_operators
+  start_func: time_function_filter_operators
+  _and: [performances_filter]
+  _or: [performances_filter]
+}
+
+input time_function_filter_operators {
+  hour: number_filter_operators
+  minute: number_filter_operators
+  second: number_filter_operators
+}
+
+input stages_filter {
+  id: number_filter_operators
+  name: string_filter_operators
+  performances: performances_filter
+  performances_func: count_function_filter_operators
+  _and: [stages_filter]
+  _or: [stages_filter]
+}
+
+type performances_aggregated {
+  group: JSON
+  countAll: Int
+  count: performances_aggregated_count
+  countDistinct: performances_aggregated_count
+  avg: performances_aggregated_fields
+  sum: performances_aggregated_fields
+  avgDistinct: performances_aggregated_fields
+  sumDistinct: performances_aggregated_fields
+  min: performances_aggregated_fields
+  max: performances_aggregated_fields
+}
+
+type performances_aggregated_count {
+  artist: Int
+  end: Int
+  id: Int
+  stage: Int
+  start: Int
+}
+
+type performances_aggregated_fields {
+  artist: Float
+  id: Float
+  stage: Float
+}
+
+"""
+
+"""
+type version_performances {
+  artist: JSON
+  end: String!
+  end_func: time_functions
+  id: ID!
+  stage: JSON
+  start: String!
+  start_func: time_functions
+}
+
+type stages_aggregated {
+  group: JSON
+  countAll: Int
+  count: stages_aggregated_count
+  countDistinct: stages_aggregated_count
+  avg: stages_aggregated_fields
+  sum: stages_aggregated_fields
+  avgDistinct: stages_aggregated_fields
+  sumDistinct: stages_aggregated_fields
+  min: stages_aggregated_fields
+  max: stages_aggregated_fields
+}
+
+type stages_aggregated_count {
+  id: Int
+  name: Int
+  performances: Int
+}
+
+type stages_aggregated_fields {
+  id: Float
+}
+
+"""
+
+"""
+type version_stages {
+  id: ID!
+  name: String!
+  performances: JSON
+  performances_func: count_functions
+}
+
+type sponsors {
+  id: ID!
+  """
+  Staat bovenaan pagina en is groter
+  """
+  is_main_sponsor: Boolean!
+  """
+  Link naar website, sociale media, ...
+  """
+  link: String!
+  """
+  Opgelet: SVG is niet ondersteund!
+  """
+  logo: String
+  name: String!
+  sort: Int
+}
+
+input sponsors_filter {
+  id: number_filter_operators
+  is_main_sponsor: boolean_filter_operators
+  link: string_filter_operators
+  logo: string_filter_operators
+  name: string_filter_operators
+  sort: number_filter_operators
+  _and: [sponsors_filter]
+  _or: [sponsors_filter]
+}
+
+input boolean_filter_operators {
+  _eq: Boolean
+  _neq: Boolean
+  _null: Boolean
+  _nnull: Boolean
+}
+
+type sponsors_aggregated {
+  group: JSON
+  countAll: Int
+  count: sponsors_aggregated_count
+  countDistinct: sponsors_aggregated_count
+  avg: sponsors_aggregated_fields
+  sum: sponsors_aggregated_fields
+  avgDistinct: sponsors_aggregated_fields
+  sumDistinct: sponsors_aggregated_fields
+  min: sponsors_aggregated_fields
+  max: sponsors_aggregated_fields
+}
+
+type sponsors_aggregated_count {
+  id: Int
+  """
+  Staat bovenaan pagina en is groter
+  """
+  is_main_sponsor: Int
+  """
+  Link naar website, sociale media, ...
+  """
+  link: Int
+  """
+  Opgelet: SVG is niet ondersteund!
+  """
+  logo: Int
+  name: Int
+  sort: Int
+}
+
+type sponsors_aggregated_fields {
+  id: Float
+  sort: Float
+}
+
+"""
+
+"""
+type version_sponsors {
+  id: ID!
+  """
+  Staat bovenaan pagina en is groter
+  """
+  is_main_sponsor: Boolean!
+  """
+  Link naar website, sociale media, ...
+  """
+  link: String!
+  """
+  Opgelet: SVG is niet ondersteund!
+  """
+  logo: String
+  name: String!
+  sort: Int
+}
+
+type carousel {
+  id: ID!
+  images(
+    filter: carousel_files_filter
+    sort: [String]
+    limit: Int
+    offset: Int
+    page: Int
+    search: String
+  ): [carousel_files]
+  images_func: count_functions
+}
+
+type carousel_files {
+  id: ID!
+  carousel_id(filter: carousel_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): carousel
+  directus_files_id: String
+  sort: Int
+}
+
+input carousel_filter {
+  id: number_filter_operators
+  images: carousel_files_filter
+  images_func: count_function_filter_operators
+  _and: [carousel_filter]
+  _or: [carousel_filter]
+}
+
+input carousel_files_filter {
+  id: number_filter_operators
+  carousel_id: carousel_filter
+  directus_files_id: string_filter_operators
+  sort: number_filter_operators
+  _and: [carousel_files_filter]
+  _or: [carousel_files_filter]
+}
+
+"""
+
+"""
+type version_carousel {
+  id: ID!
+  images: JSON
+  images_func: count_functions
+}
+
+type carousel_files_aggregated {
+  group: JSON
+  countAll: Int
+  count: carousel_files_aggregated_count
+  countDistinct: carousel_files_aggregated_count
+  avg: carousel_files_aggregated_fields
+  sum: carousel_files_aggregated_fields
+  avgDistinct: carousel_files_aggregated_fields
+  sumDistinct: carousel_files_aggregated_fields
+  min: carousel_files_aggregated_fields
+  max: carousel_files_aggregated_fields
+}
+
+type carousel_files_aggregated_count {
+  id: Int
+  carousel_id: Int
+  directus_files_id: Int
+  sort: Int
+}
+
+type carousel_files_aggregated_fields {
+  id: Float
+  carousel_id: Float
+  sort: Float
+}
+
+"""
+
+"""
+type version_carousel_files {
+  id: ID!
+  carousel_id: JSON
+  directus_files_id: String
+  sort: Int
+}
+
+type artists_aggregated {
+  group: JSON
+  countAll: Int
+  count: artists_aggregated_count
+  countDistinct: artists_aggregated_count
+  avg: artists_aggregated_fields
+  sum: artists_aggregated_fields
+  avgDistinct: artists_aggregated_fields
+  sumDistinct: artists_aggregated_fields
+  min: artists_aggregated_fields
+  max: artists_aggregated_fields
+}
+
+type artists_aggregated_count {
+  """
+  Zorgt voor de juiste standaardfoto indien er geen foto is gekozen.
+  """
+  artist_type: Int
+  description: Int
+  id: Int
+  name: Int
+  """
+  Opgelet: SVG is niet ondersteund!
+  """
+  picture: Int
+  sort: Int
+  genre: Int
+  artist_links: Int
+}
+
+type artists_aggregated_fields {
+  id: Float
+  sort: Float
+}
+
+"""
+
+"""
+type version_artists {
+  """
+  Zorgt voor de juiste standaardfoto indien er geen foto is gekozen.
+  """
+  artist_type: String!
+  description: String
+  id: ID!
+  name: String!
+  """
+  Opgelet: SVG is niet ondersteund!
+  """
+  picture: String
+  sort: Int
+  genre: String
+  artist_links: JSON
+  artist_links_func: count_functions
+}
+
+type Subscription {
+  general_settings_mutated(event: EventEnum): general_settings_mutated
+  artist_links_mutated(event: EventEnum): artist_links_mutated
+  performances_mutated(event: EventEnum): performances_mutated
+  stages_mutated(event: EventEnum): stages_mutated
+  sponsors_mutated(event: EventEnum): sponsors_mutated
+  carousel_mutated(event: EventEnum): carousel_mutated
+  carousel_files_mutated(event: EventEnum): carousel_files_mutated
+  artists_mutated(event: EventEnum): artists_mutated
+}
+
+type general_settings_mutated {
+  key: ID!
+  event: EventEnum
+  data: general_settings
+}
+
+enum EventEnum {
+  create
+  update
+  delete
+}
+
+type artist_links_mutated {
+  key: ID!
+  event: EventEnum
+  data: artist_links
+}
+
+type performances_mutated {
+  key: ID!
+  event: EventEnum
+  data: performances
+}
+
+type stages_mutated {
+  key: ID!
+  event: EventEnum
+  data: stages
+}
+
+type sponsors_mutated {
+  key: ID!
+  event: EventEnum
+  data: sponsors
+}
+
+type carousel_mutated {
+  key: ID!
+  event: EventEnum
+  data: carousel
+}
+
+type carousel_files_mutated {
+  key: ID!
+  event: EventEnum
+  data: carousel_files
+}
+
+type artists_mutated {
+  key: ID!
+  event: EventEnum
+  data: artists
+}
+

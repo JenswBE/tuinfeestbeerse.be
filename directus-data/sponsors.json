@@ -1,0 +1,18 @@
+[
+  {
+    "id": 2,
+    "is_main_sponsor": false,
+    "link": "https://jensw.be",
+    "logo": "a95192fc-a00b-49b5-8495-3144527f9093",
+    "name": "Sunny Beach",
+    "sort": null
+  },
+  {
+    "id": 1,
+    "is_main_sponsor": true,
+    "link": "https://jensw.be",
+    "logo": "b38145ee-6cf3-4447-976f-225846269e3d",
+    "name": "Chefferson",
+    "sort": null
+  }
+]
