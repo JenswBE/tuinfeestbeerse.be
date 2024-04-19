@@ -1,233 +1,116 @@
-
 <!DOCTYPE html>
 <html lang="nl">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="referrer" content="no-referrer" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="light dark" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
-      integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
-      integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link href="/assets/css/style.css" rel="stylesheet" />
-    <title>Tuinfeest Beerse</title>
 
-    
-    <link
-      rel="apple-touch-icon"
-      sizes="57x57"
-      href="/assets/favicon/apple-icon-57x57.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="60x60"
-      href="/assets/favicon/apple-icon-60x60.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="72x72"
-      href="/assets/favicon/apple-icon-72x72.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="76x76"
-      href="/assets/favicon/apple-icon-76x76.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="114x114"
-      href="/assets/favicon/apple-icon-114x114.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="120x120"
-      href="/assets/favicon/apple-icon-120x120.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="144x144"
-      href="/assets/favicon/apple-icon-144x144.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="152x152"
-      href="/assets/favicon/apple-icon-152x152.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/assets/favicon/apple-icon-180x180.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="192x192"
-      href="/assets/favicon/android-icon-192x192.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/assets/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="96x96"
-      href="/assets/favicon/favicon-96x96.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/assets/favicon/favicon-16x16.png"
-    />
-    <link rel="manifest" href="/assets/favicon/manifest.json" />
-    <meta name="msapplication-TileColor" content="#ffffff" />
-    <meta
-      name="msapplication-TileImage"
-      content="/assets/favicon/ms-icon-144x144.png"
-    />
-    <meta name="theme-color" content="#ffffff" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="referrer" content="no-referrer" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+    integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+    integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="/assets/css/style.css" rel="stylesheet" />
+  
+  <title>Tuinfeest Beerse</title>
+  
+  <link rel="canonical" href="https://tuinfeestbeerse.be" />
 
-    
-    
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"
-    integrity="sha512-h9FcoyWjHcOcmEVkxOfTLnmZFWIH0iZhZT1H2TbOq55xssQGEJHEaIm+PgoUaZbRvQTNTluNOEfb1ZRy6D3BOw=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon/apple-icon-57x57.png" />
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon/apple-icon-60x60.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon/apple-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon/apple-icon-76x76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon/apple-icon-114x114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon/apple-icon-120x120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon/apple-icon-144x144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon/apple-icon-152x152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-icon-180x180.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/android-icon-192x192.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png" />
+  <link rel="manifest" href="/assets/favicon/manifest.json" />
+  <meta name="msapplication-TileColor" content="#ffffff" />
+  <meta name="msapplication-TileImage" content="/assets/favicon/ms-icon-144x144.png" />
+  <meta name="theme-color" content="#ffffff" />
 
-  </head>
-  <body>
-    
-  <nav
-    class="navbar position-absolute w-100 navbar-expand-lg navbar-dark border-bottom border-white bg-dark"
-    style="z-index: 10000"
-  >
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/">
-        <img
-          src="/assets/images/logo.png"
-          alt="Logo Tuinfeest"
-          width="56"
-          height="56"
-          class="d-inline-block align-text-top"
-        />
-      </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div
-        class="collapse navbar-collapse justify-content-end"
-        id="navbarNavAltMarkup"
-      >
-        <div class="navbar-nav text-uppercase fw-bold">
-          <a class="nav-link" href="#tf-about">Over tuinfeest</a>
-          
-          
-          
-          <a class="nav-link" href="#tf-map">Waar?</a>
-          <a class="nav-link" href="/huisreglement">Huisreglement</a>
-        </div>
+  <!-- Extra head content -->
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"
+  integrity="sha512-h9FcoyWjHcOcmEVkxOfTLnmZFWIH0iZhZT1H2TbOq55xssQGEJHEaIm+PgoUaZbRvQTNTluNOEfb1ZRy6D3BOw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+  
+<nav class="navbar position-absolute w-100 navbar-expand-lg navbar-dark border-bottom border-white bg-dark"
+  style="z-index: 10000">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">
+      <img src="/assets/images/logo.png" alt="Logo Tuinfeest" width="56" height="56"
+        class="d-inline-block align-text-top" />
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+      <div class="navbar-nav text-uppercase fw-bold">
+        <a class="nav-link" href="#tf-about">Over tuinfeest</a>
+        
+        
+        
+        <a class="nav-link" href="#tf-map">Waar?</a>
+        <a class="nav-link" href="/huisreglement">Huisreglement</a>
       </div>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  
-  
-
-
-
-
-
-
-<div
-  class="carousel slide"
-  data-bs-ride="carousel"
-  data-bs-pause="false"
-  data-bs-touch="false"
-  data-bs-keyboard="false"
-  data-bs-interval="4000"
->
+<!-- Carousel -->
+<div class="carousel slide" data-bs-ride="carousel" data-bs-pause="false" data-bs-touch="false" data-bs-keyboard="false"
+  data-bs-interval="4000">
   <div class="carousel-inner">
     
-      <div class="carousel-item active">
-        <img
-          src="assets/images/carousels/main/01.jpg"
-          class="d-block w-100 vh-100"
-          alt="Foto van een vorige Tuinfeest editie"
-        />
-      </div>
+    <div class="carousel-item active">
+      <img src="/assets/54eb0a5c-3ebc-4d8f-a61b-396c997403cf-carousel.jpg" class="d-block w-100 vh-100"
+        alt="Foto van een vorige Tuinfeest editie" />
+    </div>
     
-      <div class="carousel-item ">
-        <img
-          src="assets/images/carousels/main/02.jpg"
-          class="d-block w-100 vh-100"
-          alt="Foto van een vorige Tuinfeest editie"
-        />
-      </div>
+    <div class="carousel-item ">
+      <img src="/assets/149fc96b-4f6b-4b19-a673-34a457a4758b-carousel.jpg" class="d-block w-100 vh-100"
+        alt="Foto van een vorige Tuinfeest editie" />
+    </div>
     
-      <div class="carousel-item ">
-        <img
-          src="assets/images/carousels/main/03.jpg"
-          class="d-block w-100 vh-100"
-          alt="Foto van een vorige Tuinfeest editie"
-        />
-      </div>
+    <div class="carousel-item ">
+      <img src="/assets/e3660ea6-b70c-4d84-9fef-764d5bc815ca-carousel.jpg" class="d-block w-100 vh-100"
+        alt="Foto van een vorige Tuinfeest editie" />
+    </div>
     
-      <div class="carousel-item ">
-        <img
-          src="assets/images/carousels/main/04.jpg"
-          class="d-block w-100 vh-100"
-          alt="Foto van een vorige Tuinfeest editie"
-        />
-      </div>
+    <div class="carousel-item ">
+      <img src="/assets/451507de-ffe4-4bd3-be66-58343d18b5d7-carousel.jpg" class="d-block w-100 vh-100"
+        alt="Foto van een vorige Tuinfeest editie" />
+    </div>
     
-      <div class="carousel-item ">
-        <img
-          src="assets/images/carousels/main/05.jpg"
-          class="d-block w-100 vh-100"
-          alt="Foto van een vorige Tuinfeest editie"
-        />
-      </div>
+    <div class="carousel-item ">
+      <img src="/assets/ddf7a1f9-0dd8-4b30-9c35-3ff5defbb3d8-carousel.jpg" class="d-block w-100 vh-100"
+        alt="Foto van een vorige Tuinfeest editie" />
+    </div>
     
-      <div class="carousel-item ">
-        <img
-          src="assets/images/carousels/main/06.jpg"
-          class="d-block w-100 vh-100"
-          alt="Foto van een vorige Tuinfeest editie"
-        />
-      </div>
+    <div class="carousel-item ">
+      <img src="/assets/b6c81c43-b93d-438c-b23e-24e0a8d6f55e-carousel.jpg" class="d-block w-100 vh-100"
+        alt="Foto van een vorige Tuinfeest editie" />
+    </div>
     
-      <div class="carousel-item ">
-        <img
-          src="assets/images/carousels/main/07.jpg"
-          class="d-block w-100 vh-100"
-          alt="Foto van een vorige Tuinfeest editie"
-        />
-      </div>
+    <div class="carousel-item ">
+      <img src="/assets/a9f6d365-a190-4d33-a356-eb3613fb91f0-carousel.jpg" class="d-block w-100 vh-100"
+        alt="Foto van een vorige Tuinfeest editie" />
+    </div>
     
     <div class="carousel-caption d-flex flex-column justify-content-center">
       <h1>Tuinfeest 2024</h1>
@@ -237,12 +120,9 @@
         2024
       </p>
       <div class="container">
-        <div
-          id="carousel-clock"
-          data-start-date="2024-06-29T20:00:00&#43;02:00"
-          data-end-date="2024-06-30T18:00:00&#43;02:00"
-          class="justify-content-center d-none d-md-flex justify-content-evenly"
-        >
+        <div id="carousel-clock" data-start-date="2024-06-29T20:00:00+02:00"
+          data-end-date="2024-06-30T13:00:00+02:00"
+          class="justify-content-center d-none d-md-flex justify-content-evenly">
           <div class="d-flex flex-column">
             <p id="carousel-clock-days" class="carousel-clock-value">0</p>
             <p class="carousel-clock-legend">DAGEN</p>
@@ -274,9 +154,8 @@
 </div>
 
 
-
-  
-  <div id="tf-about" class="tf-section container">
+<!-- About -->
+<div id="tf-about" class="tf-section container">
   <h2 id="tf-about-title">Over Tuinfeest</h2>
   <p class="text-bold">
     Het Tuinfeest is een gratis festival met 3 verschillende podia op een groene
@@ -357,30 +236,25 @@
 </div>
 
 
-
-  
-  
+<!-- Timetable -->
 
 
-  
-  
+
+<!-- Artists -->
 
 
-  
-  
+
+<!-- Sponsors -->
 
 
-  
-  <div id="tf-info" class="container-fluid tf-section tf-section-greengradient">
+
+<!-- Info -->
+<div id="tf-info" class="container-fluid tf-section tf-section-greengradient">
   <div class="container text-white">
     <div class="row align-content-center">
       <div class="col-lg-3 col-sm-6 col-12">
         <div class="d-flex py-3">
-          <img
-            src="/assets/images/icons/location.png"
-            alt="Location icon"
-            height="50"
-          />
+          <img src="/assets/images/icons/location.png" alt="Location icon" height="50" />
           <div class="ps-3">
             <p class="fw-bold">NIEF PARK</p>
             <p>Ingang via:</p>
@@ -391,11 +265,7 @@
       </div>
       <div class="col-lg-3 col-sm-6 col-12">
         <div class="d-flex py-3">
-          <img
-            src="/assets/images/icons/clock.png"
-            alt="Clock icon"
-            height="50"
-          />
+          <img src="/assets/images/icons/clock.png" alt="Clock icon" height="50" />
           <div class="ps-3">
             <p class="fw-bold">
               ZA
@@ -413,11 +283,7 @@
       </div>
       <div class="col-lg-3 col-sm-6 col-12">
         <div class="d-flex py-3">
-          <img
-            src="/assets/images/icons/seat.png"
-            alt="Chair icon"
-            height="50"
-          />
+          <img src="/assets/images/icons/seat.png" alt="Chair icon" height="50" />
           <div class="ps-3">
             <p class="fw-bold">
               ZO
@@ -426,7 +292,8 @@
               2024
             </p>
             <p>
-              13:00 -
+              13:00
+              -
               18:00
             </p>
           </div>
@@ -434,11 +301,7 @@
       </div>
       <div class="col-lg-3 col-sm-6 col-12">
         <div class="d-flex py-3">
-          <img
-            src="/assets/images/icons/lunch.png"
-            alt="Lunch icon"
-            height="50"
-          />
+          <img src="/assets/images/icons/lunch.png" alt="Lunch icon" height="50" />
           <div class="ps-3">
             <p class="fw-bold">SPEK EN EI</p>
             <p>Zaterdagavond</p>
@@ -451,125 +314,90 @@
 </div>
 
 
-
-  
-  <div id="tf-map" style="height: 550px; width: 100%"></div>
-
+<!-- Map -->
+<div id="tf-map" style="height: 550px; width: 100%"></div>
 
 
-    
-    <footer style="background-color: #252525" class="py-5">
-      <div class="container">
-        <div class="d-flex flex-column flex-md-row align-items-center">
-          <div>
-            <p class="d-flex flex-wrap justify-content-evenly mb-0">
-              
-                <a
-                  class="btn btn-light rounded-pill m-2"
-                  href="https://www.facebook.com/TuinfeestBeerse/"
-                  title="Facebook"
-                >
-                  <i class="bi bi-facebook"></i>
-                </a>
-              
-                <a
-                  class="btn btn-light rounded-pill m-2"
-                  href="https://www.instagram.com/tuinfeest_beerse/"
-                  title="Instagram"
-                >
-                  <i class="bi bi-instagram"></i>
-                </a>
-              
-                <a
-                  class="btn btn-light rounded-pill m-2"
-                  href="mailto:artiesten@tuinfeestbeerse.be"
-                  title="artiesten@tuinfeestbeerse.be"
-                >
-                  <i class="bi bi-music-note-beamed"></i>
-                </a>
-              
-                <a
-                  class="btn btn-light rounded-pill m-2"
-                  href="mailto:info@tuinfeestbeerse.be"
-                  title="info@tuinfeestbeerse.be"
-                >
-                  <i class="bi bi-info"></i>
-                </a>
-              
+  <!-- Footer -->
+  <footer style="background-color: #252525" class="py-5">
+    <div class="container">
+      <div class="d-flex flex-column flex-md-row align-items-center">
+        <div>
+          <p class="d-flex flex-wrap justify-content-evenly mb-0">
+            
+            <a class="btn btn-light rounded-pill m-2" href="https://www.facebook.com/TuinfeestBeerse/"
+              title="Facebook">
+              <i class="bi bi-facebook"></i>
+            </a>
+            
+            
+            <a class="btn btn-light rounded-pill m-2" href="https://www.instagram.com/tuinfeest_beerse/"
+              title="Instagram">
+              <i class="bi bi-instagram"></i>
+            </a>
+            
+            
+            <a class="btn btn-light rounded-pill m-2" href="mailto:artiesten@tuinfeestbeerse.be"
+              title="artiesten@tuinfeestbeerse.be">
+              <i class="bi bi-music-note-beamed"></i>
+            </a>
+            
+            <a class="btn btn-light rounded-pill m-2" href="mailto:info@tuinfeestbeerse.be"
+              title="info@tuinfeestbeerse.be">
+              <i class="bi bi-info"></i>
+            </a>
+          </p>
+        </div>
+        <div class="order-md-first flex-md-grow-1 m-3">
+          <p>
+            <a href="/huisreglement">Huisreglement</a>
+          </p>
+          <div class="copyright">
+            <p class="text-white mb-0">
+              &copy;
+              <a href="https://jensw.be" target="_blank">Jensw.be</a>
+              2024
             </p>
-          </div>
-          <div class="order-md-first flex-md-grow-1 m-3">
-            <p>
-              <a href="/huisreglement">Huisreglement</a>
-            </p>
-            <div class="copyright">
-              <p class="text-white mb-0">
-                &copy;
-                <a href="https://jensw.be" target="_blank">Jensw.be</a>
-                2024
-              </p>
-            </div>
           </div>
         </div>
       </div>
-    </footer>
+    </div>
+  </footer>
 
-    <script>
-      
-      
-      function updateTheme() {
-        const colorMode = window.matchMedia("(prefers-color-scheme: dark)")
-          .matches
-          ? "dark"
-          : "light";
-        document.querySelector("html").setAttribute("data-bs-theme", colorMode);
-      }
+  <script>
+    // Based on https://stackoverflow.com/a/75065536
+    // Set theme to the user's preferred color scheme
+    function updateTheme() {
+      const colorMode = window.matchMedia("(prefers-color-scheme: dark)")
+        .matches
+        ? "dark"
+        : "light";
+      document.querySelector("html").setAttribute("data-bs-theme", colorMode);
+    }
 
-      
-      updateTheme();
+    // Set theme on load
+    updateTheme();
 
-      
-      window
-        .matchMedia("(prefers-color-scheme: dark)")
-        .addEventListener("change", updateTheme);
-    </script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
-      integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+    // Update theme when the preferred scheme changes
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", updateTheme);
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
+    integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script
-      data-goatcounter="https://stats.tuinfeestbeerse.be/count"
-      async
-      defer
-      src="https://stats.tuinfeestbeerse.be/count.js"
-    ></script>
+  <script data-goatcounter="https://stats.tuinfeestbeerse.be/count" async defer
+    src="https://stats.tuinfeestbeerse.be/count.js"></script>
 
-    
-    
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"
-    integrity="sha512-puJW3E/qXDqYp9IfhAI54BJEaWIfloJ7JWs7OeD5i6ruC9JZL1gERT1wjtwXFlh7CjE7ZJ+/vcRZRkIYIb6p4g=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  ></script>
-  <script src="assets/js/clock.js" defer></script>
-  <script src="assets/js/map.js" defer></script>
+  <!-- Extra body content -->
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"
+  integrity="sha512-puJW3E/qXDqYp9IfhAI54BJEaWIfloJ7JWs7OeD5i6ruC9JZL1gERT1wjtwXFlh7CjE7ZJ+/vcRZRkIYIb6p4g=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="assets/js/clock.js" defer></script>
+<script src="assets/js/map.js" defer></script>
 
-  </body>
+</body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
