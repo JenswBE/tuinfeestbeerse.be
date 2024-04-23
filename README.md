@@ -8,7 +8,7 @@ podman compose up -d
 # Podman Compose doesn't consider condition "service_healthy".
 # Therefore, Directus tries to start before DB is healthy and fails to start.
 # See https://github.com/containers/podman-compose/issues/866 for more info
-podman compose up -d
+podman compose restart directus
 
 # Sync collections and data
 npx directus-sync push -c directus-sync/local.js
