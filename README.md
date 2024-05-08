@@ -2,6 +2,8 @@
 
 ```bash
 # Start Directus
+podman compose pull
+podman compose build --pull
 podman compose up -d
 
 # Start Directus again
