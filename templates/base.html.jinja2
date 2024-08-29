@@ -43,6 +43,27 @@
   <meta name="msapplication-TileImage" content="/assets/favicon/ms-icon-144x144.png" />
   <meta name="theme-color" content="#ffffff" />
 
+  <!-- Update theme -->
+  <script>
+    // Based on https://stackoverflow.com/a/75065536
+    // Set theme to the user's preferred color scheme
+    function updateTheme() {
+      const colorMode = window.matchMedia("(prefers-color-scheme: dark)")
+        .matches
+        ? "dark"
+        : "light";
+      document.querySelector("html").setAttribute("data-bs-theme", colorMode);
+    }
+
+    // Set theme on load
+    updateTheme();
+
+    // Update theme when the preferred scheme changes
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", updateTheme);
+  </script>
+
   <!-- Extra head content -->
   {% block head_end %}{% endblock %}
 </head>
@@ -96,25 +117,6 @@
     </div>
   </footer>
 
-  <script>
-    // Based on https://stackoverflow.com/a/75065536
-    // Set theme to the user's preferred color scheme
-    function updateTheme() {
-      const colorMode = window.matchMedia("(prefers-color-scheme: dark)")
-        .matches
-        ? "dark"
-        : "light";
-      document.querySelector("html").setAttribute("data-bs-theme", colorMode);
-    }
-
-    // Set theme on load
-    updateTheme();
-
-    // Update theme when the preferred scheme changes
-    window
-      .matchMedia("(prefers-color-scheme: dark)")
-      .addEventListener("change", updateTheme);
-  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
     integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
