@@ -21,7 +21,7 @@ use time::{
 
 const LOCAL_BASE_URL: &'static str = "http://localhost:8000";
 const LOCAL_API_BASE_URL: &'static str = "http://localhost:8055";
-const LOCAL_API_KEY: &'static str = "YR9_OxK1MHywW71CZ9tG-SFnDD65qnTo";
+const LOCAL_API_KEY: &'static str = "token_generator";
 const TIME_FORMAT_KITCHEN: &[BorrowedFormatItem<'_>] = format_description!("[hour]:[minute]");
 const TIME_FORMAT_RFC3339: &Rfc3339 = &Rfc3339;
 

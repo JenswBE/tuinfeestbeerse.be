@@ -47,5 +47,5 @@ npx directus-sync push -c directus-sync/prod.secret.js
 
 ```bash
 cargo install --locked cynic-cli
-cynic introspect -H 'Authorization: Bearer YR9_OxK1MHywW71CZ9tG-SFnDD65qnTo' 'http://localhost:8055/graphql' -o schemas/directus.graphql
+cynic introspect -H 'Authorization: Bearer token_generator' 'http://localhost:8055/graphql' -o schemas/directus.graphql
 ```
