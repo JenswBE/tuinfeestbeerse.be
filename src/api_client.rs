@@ -366,7 +366,7 @@ pub struct Performance {
     pub artist: Option<PerformanceArtist>,
 }
 
-impl_scalar!(GraphTime, schema::String);
+impl_scalar!(GraphTime, schema::Date);
 
 #[derive(Debug)]
 pub struct GraphTime(pub Time);

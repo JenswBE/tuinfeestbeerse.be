@@ -32,3 +32,6 @@ push_collection "artists"
 push_collection "artist_links"
 push_collection "performances"
 push_collection "flow_debounce"
+
+# Push users
+push_local_user

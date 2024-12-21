@@ -480,11 +480,11 @@ type version_carousel_files {
 
 type performances {
   artist(filter: artists_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): artists
-  end: String!
+  end: Date!
   end_func: time_functions
   id: ID!
   stage(filter: stages_filter, sort: [String], limit: Int, offset: Int, page: Int, search: String): stages
-  start: String!
+  start: Date!
   start_func: time_functions
 }
 
@@ -510,14 +510,29 @@ type stages {
 
 input performances_filter {
   artist: artists_filter
-  end: string_filter_operators
+  end: date_filter_operators
   end_func: time_function_filter_operators
   id: number_filter_operators
   stage: stages_filter
-  start: string_filter_operators
+  start: date_filter_operators
   start_func: time_function_filter_operators
   _and: [performances_filter]
   _or: [performances_filter]
+}
+
+input date_filter_operators {
+  _eq: String
+  _neq: String
+  _gt: String
+  _gte: String
+  _lt: String
+  _lte: String
+  _null: Boolean
+  _nnull: Boolean
+  _in: [String]
+  _nin: [String]
+  _between: [GraphQLStringOrFloat]
+  _nbetween: [GraphQLStringOrFloat]
 }
 
 input time_function_filter_operators {
@@ -567,11 +582,11 @@ type performances_aggregated_fields {
 """
 type version_performances {
   artist: JSON
-  end: String!
+  end: Date!
   end_func: time_functions
   id: ID!
   stage: JSON
-  start: String!
+  start: Date!
   start_func: time_functions
 }
 
