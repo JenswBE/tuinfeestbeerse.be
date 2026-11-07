@@ -45,10 +45,11 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request'
     needs: build
     permissions:
-      pages: write      # to deploy to Pages
-      id-token: write   # to verify the deployment originates from an appropriate source
+      id-token: write # to verify the deployment originates from an appropriate source
+      pages: write    # to deploy to Pages
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
